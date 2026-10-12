@@ -1,0 +1,147 @@
+{
+  "passed": true,
+  "frames": 9775,
+  "simulationSeconds": 162.91666666666666,
+  "deaths": 0,
+  "trace": [
+    {
+      "frame": 0,
+      "room": "hub",
+      "hp": 100,
+      "shards": 0
+    },
+    {
+      "frame": 214,
+      "room": "wood-0",
+      "hp": 100,
+      "shards": 0
+    },
+    {
+      "frame": 550,
+      "room": "wood-1",
+      "hp": 92,
+      "shards": 0
+    },
+    {
+      "frame": 961,
+      "room": "wood-2",
+      "hp": 69,
+      "shards": 0
+    },
+    {
+      "frame": 1385,
+      "room": "mine-0",
+      "hp": 120,
+      "shards": 1
+    },
+    {
+      "frame": 1722,
+      "room": "mine-1",
+      "hp": 112,
+      "shards": 1
+    },
+    {
+      "frame": 2154,
+      "room": "mine-2",
+      "hp": 140,
+      "shards": 1
+    },
+    {
+      "frame": 2625,
+      "room": "mire-0",
+      "hp": 140,
+      "shards": 2
+    },
+    {
+      "frame": 3017,
+      "room": "mire-1",
+      "hp": 123,
+      "shards": 2
+    },
+    {
+      "frame": 3514,
+      "room": "mire-2",
+      "hp": 87,
+      "shards": 2
+    },
+    {
+      "frame": 4070,
+      "room": "ice-0",
+      "hp": 160,
+      "shards": 3
+    },
+    {
+      "frame": 4488,
+      "room": "ice-1",
+      "hp": 143,
+      "shards": 3
+    },
+    {
+      "frame": 4924,
+      "room": "ice-2",
+      "hp": 130,
+      "shards": 3
+    },
+    {
+      "frame": 5515,
+      "room": "forge-0",
+      "hp": 160,
+      "shards": 4
+    },
+    {
+      "frame": 5935,
+      "room": "forge-1",
+      "hp": 152,
+      "shards": 4
+    },
+    {
+      "frame": 6418,
+      "room": "forge-2",
+      "hp": 139,
+      "shards": 4
+    },
+    {
+      "frame": 6994,
+      "room": "sky-0",
+      "hp": 160,
+      "shards": 5
+    },
+    {
+      "frame": 7404,
+      "room": "sky-1",
+      "hp": 143,
+      "shards": 5
+    },
+    {
+      "frame": 7851,
+      "room": "sky-2",
+      "hp": 130,
+      "shards": 5
+    },
+    {
+      "frame": 8405,
+      "room": "hollow-0",
+      "hp": 160,
+      "shards": 6
+    },
+    {
+      "frame": 8824,
+      "room": "hollow-1",
+      "hp": 152,
+      "shards": 6
+    },
+    {
+      "frame": 9277,
+      "room": "hollow-2",
+      "hp": 139,
+      "shards": 6
+    }
+  ],
+  "shards": 6,
+  "level": 6,
+  "endingOptions": [
+    "share",
+    "bind"
+  ],
+  "method": "Ordinary Game.update inputs plus earned point allocation. No injected stats, items, enemy damage, defeat flags or room skips. Not human play-time or full secret-route coverage."
+}

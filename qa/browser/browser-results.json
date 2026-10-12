@@ -217,13 +217,13 @@
       "detail": []
     }
   ],
-  "browser": "Google Chrome for Testing 150.0.7871.115",
+  "browser": "Google Chrome for Testing 153.0.8010.12",
   "scope": "Actual Chromium DOM/Canvas, native keyboard/multi-touch/mouse, download/file input, Web Audio user-gesture activation, save confirmation/backup/async cancellation, earned ending restore and reload/privacy checks. Controller poller uses a standards-shaped synthetic navigator gamepad, not physical hardware. Assets served by CDP request fulfillment when --base-url is omitted. Not a public deployment, full browser campaign, cross-browser/device or accessibility certification.",
   "browserSandbox": "explicit --no-sandbox in isolated test container",
   "assetTransport": "local CDP Fetch fulfillment",
   "fulfilledAssets": [
     {
-      "path": "index.html",
+      "path": "assets/legacy.html",
       "status": 200
     },
     {
@@ -271,7 +271,15 @@
       "status": 200
     },
     {
-      "path": "index.html",
+      "path": "favicon.ico",
+      "status": 404
+    },
+    {
+      "path": "favicon.ico",
+      "status": 404
+    },
+    {
+      "path": "assets/legacy.html",
       "status": 200
     },
     {
@@ -319,7 +327,7 @@
       "status": 200
     },
     {
-      "path": "index.html",
+      "path": "assets/legacy.html",
       "status": 200
     },
     {

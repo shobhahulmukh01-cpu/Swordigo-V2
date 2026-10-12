@@ -15,7 +15,8 @@ jobs:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '24'
-      - run: npm test && npm run check:secrets && npm run build && npm run test:campaign
+      - run: npm ci
+      - run: npm test && npm run check:secrets && npm run build && npm run test:campaign && npm run test:lumen:campaign
       - name: Required browser harness
         shell: bash
         run: |
@@ -23,3 +24,12 @@ jobs:
           test -n "$chrome" || { echo 'Google Chrome is required' >&2; exit 1; }
           export CHROME_BIN="$chrome" CHROME_PATH="$chrome"
           npm run test:browser
+      - name: Lumenblade browser and offline checks
+        shell: bash
+        run: |
+          export CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable)"
+          node scripts/serve.mjs --port 4173 --base /Swordigo-V2/ > /tmp/lumen-server.log 2>&1 &
+          server=$!
+          trap 'kill "$server"' EXIT
+          for n in $(seq 1 30); do curl -sf http://127.0.0.1:4173/Swordigo-V2/ > /dev/null && break; sleep 1; done
+          npm run test:lumen:browser

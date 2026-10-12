@@ -1,33 +1,71 @@
-# EMBERWAKE: The Hollow Crown — 1.1.0-rc.3
+# LUMENBLADE — Second Dawn
 
-An original browser sword-and-spell platform adventure, developed from the existing Emberwake project for the requested Swordigo-V2 repository. It is not an official Swordigo product. Three realms and guardians, six rune sigils, timed guard/projectile reflection, double jump, spells, dash, shrines, portable journey saves, two story endings and an unlockable gauntlet. Keyboard, touch and standard-layout gamepad support.
+An original, complete, compact sword-and-spell browser adventure: **22 connected rooms, seven regions, six Dawn Shards, seven guardians, four spells and two endings**. Full-viewport WebGL2 2.5D landscapes, articulated low-poly characters, responsive platforming, equipment and level choices, shrines, discoverable caches, portals and a synthesized original soundtrack.
 
-## Run locally
+This is a **playable release candidate**, not a claim of commercial-production certification or AAA/2026 visual parity. It is a fan-made spiritual-sequel interpretation inspired by Swordigo's genre and feel, **not an official Swordigo sequel and not affiliated with Touch Foo**. All Lumenblade story, world names, geometry and audio are original. The owner's repository name is not the in-game brand.
 
-The full source export includes `index.html`, `assets/`, all scripts, tests, docs and workflow files. No npm install or third-party runtime dependencies are required. Node >=22 is declared; CI is configured for Node 24. This session executed Node 26.10.0, not Node 22/24.
+The complete Emberwake 1.1.0-rc.3 baseline is retained in Git history and remains playable at `assets/legacy.html`, including its original regression suites.
 
-1. `npm test`
-2. `npm run check:secrets`
-3. `npm run build`
-4. `npm start`
-5. Open the loopback URL printed by the server (default port 4173).
+## Play / build
 
-To check a project-prefix path: `npm start -- --port 4173 --base /Swordigo-V2/`.
+Requires a modern WebGL2 browser. No account, ads, telemetry, runtime CDN or game server. Saves are local to your browser; export a copy before clearing storage.
 
-## Reproduce the game verification
+```sh
+npm ci
+npm test
+npm run check:secrets
+npm run build
+npm start -- --port 4173 --base /Swordigo-V2/
+```
 
-`npm run test:campaign` runs engine/save/combat regressions, input-only story and gauntlet completions at fixed 60/120 Hz simulation steps, exact input replays, deterministic repeat, and additional Adventure/Veteran/ending cases. Those rates are simulation steps, not a measured rendering-FPS or human-play-time guarantee. Proofs and summaries are written to `qa/`.
+Open `http://127.0.0.1:4173/Swordigo-V2/`. Node 24 is the CI version. Build bundles pinned Three.js with esbuild, then uses the integrity-manifest release builder. Only built runtime files are deployed. Offline shell installs after an online visit and service-worker activation; updates apply after old tabs close/reload. Install support varies by browser.
 
-Then run `npm run test:browser` with Python 3.9+ and a local Chromium/Google Chrome executable (`CHROME_BIN` may select it). The browser harness uses actual keyboard/multi-touch, file input/download, reload and Canvas. Controller injection is a standards-shaped test fixture, not physical-controller certification. It consumes the earned completed-save proof from the campaign suite for ending-restore tests; run the campaign first. When no `--base-url` is given, CDP Fetch serves the local exported bytes, not a production TCP server. `--base-url` targets a separately running HTTP server. Only in an isolated, trusted test container with blocked Chromium namespaces may you explicitly add `--no-sandbox`; it is not the default.
+## Controls
 
-`qa/` contains the captured evidence, scope and limitations. A completed-save UI test restores an input-earned campaign final state, rather than changing live player/enemy stats.
+| Action | Keyboard | Standard gamepad |
+|---|---|---|
+| Move | A/D or arrows | Left stick / D-pad |
+| Jump / unlocked double jump | Space/W/up | A |
+| Sword / hold-release spin | J | X |
+| Aerial downward strike | S + J | Down + X |
+| Cast | K | B |
+| Select spell | 1–4 / Q | LT cycles |
+| Unlocked dash | Shift | RB |
+| Rest / speak | E | Y |
+| Healing flask | H | LB |
+| Map / pause | M / Escape | Back / Start |
+| Character | I | Pause menu |
+| Menu navigation | Tab / Enter | D-pad up/down, A confirm, B back |
 
-## Build and server contracts
+Touch controls appear automatically on touch devices and support independent simultaneous pointers. In Thistlebrook, rest at the glowing shrine and speak to Sela. Follow the eastern paths; amber, blue and violet seals respond to different guardian gifts. Shrines restore health/energy/flasks and establish a checkpoint. Energy regenerates for free. Keep earned level points allocated through Character.
 
-Build is a byte-exact copy of `index.html` and `assets/`, with sorted path/size/SHA-256 inventory. It manages only `sourceRoot/dist`; unknown/tampered output is preserved and refused, not silently deleted. Inspect and move it aside manually. `node scripts/build.mjs [sourceRoot]` accepts a source root.
+## Saves
 
-`requestHandler(rootDir, basePath='/')` synchronously returns an HTTP handler; `rootDir` must be a validated built `dist`. GET/HEAD, conditional 304 and project-prefix routes are supported. No SPA fallback or directory listing. The local preview CLI binds only 127.0.0.1 and accepts `--port`, `--base`, `--root`. Source/server caps and refusals are described in SECURITY.md.
+Three independent versioned slots, validation, last-readable-save backup, export/import with explicit confirmation, and storage-denied warnings. A new journey asks before replacing a populated slot. Reload restores progress to the current room's safe entrance or its checkpoint, with replenished health; exact position/combat-state snapshots are intentionally not supported. Back up valuable saves outside the browser.
 
-## Release status
+## Verification
 
-This is a tested release candidate, not a claimed cross-device commercial-production certification. See DEPLOYMENT.md for authenticated owner publishing and remaining release gates. The code was not pushed, no PR was created, and the workflows/public deployment were not executed in this session. Rights and license decisions remain with the owner; no license has been invented.
+```sh
+npm test                       # simulation/save + original release contracts
+npm run test:lumen:campaign     # input-only complete new campaign
+npm run test:campaign           # preserved Emberwake proofs
+npm run build
+# Start the HTTP preview in another terminal first:
+CHROME_BIN=/path/to/chromium npm run test:lumen:browser
+CHROME_BIN=/path/to/chromium npm run test:browser -- --no-sandbox
+```
+
+`--no-sandbox` is used only for the isolated test container; do not disable a browser sandbox for normal play. New browser tests target the project-prefix HTTP URL by default (`LUMEN_URL` overrides). Legacy browser tests select the preserved legacy entry. `qa/lumen/` contains the campaign proof, completed-save fixture and browser evidence. The completed-save import and visual-fixture traversal are explicitly **not** browser campaign completion proofs. See [QA scope and remaining release gates](docs/QA.md).
+
+## Architecture / planning
+
+- `src/sim`: fixed-60-Hz authoritative game state, no DOM or WebGL.
+- `src/content`: connected campaign, enemy types, spell and story definitions.
+- `src/render`: Three.js environments, rigs, effects and resource disposal.
+- `src/input`, `src/ui`, `src/audio`, `src/save`: separate device/UI/audio/storage layers.
+- `docs/plan/`: sourced research, creative bible, systems, architecture, premortem and council decisions.
+- `THIRD_PARTY_NOTICES.md`: rendering/build/test dependency licenses.
+
+Parallel subagent startup failed; council roles were reviewed sequentially by one agent. Lore installation was canceled; Git/GitHub remained the source of truth. The supplied technology list is archived as a reference; irrelevant orchestration stacks were not installed.
+
+Owner source remains UNLICENSED. Rights/trademark review, real mobile hardware, Safari, physical controllers, longer-play balance and accessibility review are required before representing this candidate as a commercial production release.

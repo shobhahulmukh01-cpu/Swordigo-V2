@@ -1,0 +1,227 @@
+{
+  "passed": 53,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "desktop boot with all three realm artworks",
+      "passed": true
+    },
+    {
+      "name": "boot is idempotent",
+      "passed": true
+    },
+    {
+      "name": "difficulty selection dialog",
+      "passed": true
+    },
+    {
+      "name": "story intro opens",
+      "passed": true
+    },
+    {
+      "name": "story simulation resumes",
+      "passed": true
+    },
+    {
+      "name": "Web Audio unlocks after a real user gesture",
+      "passed": true
+    },
+    {
+      "name": "real keyboard movement",
+      "passed": true
+    },
+    {
+      "name": "real keyboard double jump",
+      "passed": true
+    },
+    {
+      "name": "keyboard precision guard",
+      "passed": true
+    },
+    {
+      "name": "pause dialog",
+      "passed": true
+    },
+    {
+      "name": "pause freezes simulation",
+      "passed": true
+    },
+    {
+      "name": "map renders current realm",
+      "passed": true
+    },
+    {
+      "name": "journal includes local milestones",
+      "passed": true
+    },
+    {
+      "name": "settings inputs obey modal focus trap",
+      "passed": true
+    },
+    {
+      "name": "Escape closes settings while input focused",
+      "passed": true
+    },
+    {
+      "name": "keyboard remap is persisted",
+      "passed": true
+    },
+    {
+      "name": "remapped guard works",
+      "passed": true
+    },
+    {
+      "name": "real save download completed",
+      "passed": true
+    },
+    {
+      "name": "exported save validates",
+      "passed": true
+    },
+    {
+      "name": "import requires confirmation",
+      "passed": true
+    },
+    {
+      "name": "import cancel leaves saved journey untouched",
+      "passed": true
+    },
+    {
+      "name": "accepted native file restore validates and resumes",
+      "passed": true
+    },
+    {
+      "name": "accept keeps a valid rolling story backup",
+      "passed": true
+    },
+    {
+      "name": "stale asynchronous file read cannot replace a newer modal",
+      "passed": true
+    },
+    {
+      "name": "new journey replacement requires confirmation",
+      "passed": true
+    },
+    {
+      "name": "new journey cancel preserves save",
+      "passed": true
+    },
+    {
+      "name": "continue restores playable journey",
+      "passed": true
+    },
+    {
+      "name": "portrait has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "all portrait touch buttons fit viewport",
+      "passed": true
+    },
+    {
+      "name": "real multi-touch move and jump",
+      "passed": true
+    },
+    {
+      "name": "touch release clears held state",
+      "passed": true
+    },
+    {
+      "name": "touch cancellation clears held state",
+      "passed": true
+    },
+    {
+      "name": "landscape has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "analog trigger held at controller attachment is quarantined",
+      "passed": true
+    },
+    {
+      "name": "analog trigger guard works after neutral re-arm",
+      "passed": true
+    },
+    {
+      "name": "controller Start opens pause",
+      "passed": true
+    },
+    {
+      "name": "controller pause freezes world",
+      "passed": true
+    },
+    {
+      "name": "controller D-pad moves modal focus",
+      "passed": true
+    },
+    {
+      "name": "controller can select the map action",
+      "passed": true
+    },
+    {
+      "name": "controller A activates focused modal action",
+      "passed": true
+    },
+    {
+      "name": "controller B returns from a soft modal",
+      "passed": true
+    },
+    {
+      "name": "mini-map preference toggles and persists",
+      "passed": true
+    },
+    {
+      "name": "input-earned completed save restores the real ending UI",
+      "passed": true
+    },
+    {
+      "name": "controller B cannot dismiss a hard ending",
+      "passed": true
+    },
+    {
+      "name": "controller can select title from hard ending",
+      "passed": true
+    },
+    {
+      "name": "controller A exits ending through the actual title action",
+      "passed": true
+    },
+    {
+      "name": "completed story unlocks controller-selectable gauntlet",
+      "passed": true
+    },
+    {
+      "name": "controller launches the unlocked gauntlet",
+      "passed": true
+    },
+    {
+      "name": "keyboard remap survives actual page reload",
+      "passed": true
+    },
+    {
+      "name": "mini-map preference survives actual page reload",
+      "passed": true
+    },
+    {
+      "name": "privacy mode remains playable with denied storage",
+      "passed": true
+    },
+    {
+      "name": "no browser runtime exceptions",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no missing game asset responses",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "browser": "Google Chrome for Testing 153.0.8010.12",
+  "scope": "Actual Chromium DOM/Canvas, native keyboard/multi-touch/mouse, download/file input, Web Audio user-gesture activation, save confirmation/backup/async cancellation, earned ending restore and reload/privacy checks. Controller poller uses a standards-shaped synthetic navigator gamepad, not physical hardware. Assets served by CDP request fulfillment when --base-url is omitted. Not a public deployment, full browser campaign, cross-browser/device or accessibility certification.",
+  "browserSandbox": "explicit --no-sandbox in isolated test container",
+  "assetTransport": "requested HTTP server",
+  "fulfilledAssets": [],
+  "runtimeExceptions": [],
+  "missingAssets": []
+}

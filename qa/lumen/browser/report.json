@@ -1,0 +1,23 @@
+{
+  "passed": 15,
+  "checks": [
+    "full-screen WebGL2 title and project-prefix assets",
+    "new journey, keyboard movement and variable jump",
+    "pause freezes authoritative time; focus is trapped",
+    "downloadable save export",
+    "map disallows uncharted portals",
+    "keyboard sword and magic consume energy",
+    "slot persistence on reload",
+    "quality, audio and reduced-motion settings apply",
+    "real file input validates malformed import and confirms valid restore",
+    "fixture final encounter rendering and both ending UI branches",
+    "repeated travel disposes geometries (fixture-only render traversal)",
+    "offline shell after service-worker activation",
+    "390px touch layout and independent multi-pointer controls",
+    "gamepad movement and menu confirm (standards-shaped fixture)",
+    "zero runtime exceptions or missing assets"
+  ],
+  "errors": [],
+  "failures": [],
+  "scope": "Actual Chromium SwiftShader, project-prefix HTTP, DOM keyboard/touch/file/download and offline shell. Completed-save import and render traversal are fixtures, not browser campaign proof. Gamepad is synthetic, not hardware certification. No real-phone FPS/Safari/accessibility certification."
+}

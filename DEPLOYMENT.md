@@ -1,28 +1,18 @@
-# Publishing and release gates
+# Release / deployment handoff
 
-## Credentials and safe Git publication
+## Published source lineage
+The supplied Emberwake baseline was imported to `main` before any sequel work. Planning was reviewed in GitHub PR #1. Lumenblade's implementation is developed in a separate feature PR, with the baseline preserved at `assets/legacy.html`. No force-push is required.
 
-Revoke the token exposed in chat. Never put it in source, a command URL, a workflow, a log or this archive. Use a fresh securely managed credential. With GitHub CLI installed, an interactive owner flow is `gh auth login --web` followed by `gh auth setup-git`.
+## Local / CI contract
+Node 24, `npm ci`, `npm test`, secret scan, bundle/integrity build, both campaign suites and both browser suites. `npm start -- --base /Swordigo-V2/` serves an immutable validated dist snapshot: restart it after rebuilding. The browser scripts require Chromium; CI resolves the installed Chrome binary.
 
-Run a fresh authenticated `git ls-remote --heads https://github.com/shobhahulmukh01-cpu/Swordigo-V2.git` before publishing. The public-empty observation on October 6, 2026 is historical, not permission to overwrite a later branch. Abort any auth/network error. If heads now exist, fetch and inspect before integrating; do not force-push or discard existing work.
+## GitHub Pages
+Use Actions-based Pages from `main`. Run the **Manual Pages release** workflow after merge. It verifies both games, uploads only `dist`, then deploys through the GitHub Pages environment. All runtime URLs are project-prefix relative. The public URL is the owner's GitHub Pages project path, not a Notion artifact URL.
 
-For a still-empty remote, initialize the exported folder with Git, commit the entire source on a real main branch and push normally. Do not include browser profiles, temporary files or credentials. For later changes, create a feature branch from the actual fetched main and open a PR against that real base. An empty remote cannot host a meaningful PR before a base commit exists.
+The new game's service worker is scoped to the project root and caches only the explicit shipped same-origin shell. No authenticated requests, user saves or arbitrary network responses are cached. Old version caches are removed on activation; close old tabs/reload to finish an update. Saves are localStorage, not the offline cache. A failed update must not clear saves.
 
-This session authenticated as the repository owner, but its connector exposes only read/issue/review actions, not file pushes, branch creation or PR creation. Consequently no push, commit SHA, PR URL, CI run or deployment is claimed.
+## Production gates
+This is a playable release candidate. Do not market commercial-production or device-performance certification before the real-device/human/accessibility/legal checks in `docs/QA.md`. A completed automated bot campaign is not a full browser campaign or human play-time guarantee.
 
-## CI and Pages
-
-CI uses Node 24, read-only repository permissions, disabled persisted checkout credentials and immutable official action commit pins verified on October 6, 2026. There is no dependency installation. Browser checks require Chrome and Python; campaign proofs are generated before browser tests. CI has not been executed here; local execution used Node 26.10.0.
-
-Pages release is manual `workflow_dispatch`, main-only, gated by unit/secret/build/campaign/browser checks, and uploads only `dist`. The owner must configure the GitHub Pages Actions source and appropriate environment protection before requesting deployment. Pages does not inherit the local Node server's CSP/other response headers. Check `/Swordigo-V2/` routing in the real deployment, or use a host that can set the documented headers.
-
-## Before public/commercial production approval
-
-- Execute the committed CI on Node 24; verify its result and hosted URL, not merely these workflow files.
-- Exercise desktop Firefox and Safari plus physical iOS/Android browsers, touch orientation, gamepad models and audio. This session's Chromium emulation/synthetic gamepad is not that certification.
-- Measure rendering frame pacing, memory and input latency on target low-end hardware; 60/120 Hz proof traces are simulation steps.
-- Review source/asset rights and choose the license; `UNLICENSED` is retained pending that decision.
-- Review accessibility limits of a Canvas action game and test real focus/touch behavior. No full screen-reader or accessibility certification is claimed.
-- Revoke exposed credentials and review account security logs.
-
-Lore was evaluated as an optional pre-1.0 separate VCS, not installed. It does not solve the missing GitHub-write capability or network access; this project is Git-ready without adding it.
+## Credential handling
+GitHub credentials are external to the repository and never part of the runtime/build export. The token previously supplied in chat should be revoked or replaced by the owner after publication. Prefer a short-lived fine-grained token scoped only to this repository for future work.

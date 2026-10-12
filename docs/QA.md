@@ -20,6 +20,8 @@
 8. Improved HUD contrast over snow, fixed missing touch-cycle glyph with a plain label, made touch onboarding device-appropriate, and restricted flashing to actual damage rather than newly spawned invulnerability.
 9. Browser-test failures from hidden/behind-overlay duplicate selectors were corrected by selecting the visible dialog controls and awaiting actual state changes rather than fixed sleeps.
 
+10. Final portrait screenshot review found the title camera lingering east of the new-game spawn. Snap the camera on start/room transitions so the hero is immediately in frame; added a mobile assertion.
+
 ## Scope adjustments from the plan
 - Compact 22-room campaign, not the brainstorm's 26+ rooms.
 - Four shared regular enemy behavior archetypes with biome variants, plus seven distinct guardian patterns; not 14 fully independent enemy species.

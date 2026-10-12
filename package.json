@@ -1,0 +1,15 @@
+{
+  "name": "emberwake-release",
+  "version": "1.1.0-rc.3",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/release.test.mjs",
+    "test:campaign": "node tests/emberwake-qa.js && node tests/difficulty-matrix.cjs",
+    "test:browser": "python3 tests/browser-smoke.py",
+    "check:secrets": "node scripts/check-secrets.mjs"
+  }
+}

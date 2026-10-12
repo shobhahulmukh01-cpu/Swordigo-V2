@@ -1,0 +1,227 @@
+{
+  "format": "SHA-256 over exact committed source/conversion files and actual computed verification data",
+  "files": [
+    {
+      "path": ".editorconfig",
+      "bytes": 114,
+      "sha256": "1b3d862b18cfdc4cf1c761c47d4dcb056f3d91a3638111bb36ecccc667c0d48f"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 92,
+      "sha256": "cba7872b84c637059e7e6574a12897220711bd81243e0b2575c0edae8080def1"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 836,
+      "sha256": "90692e10526418149d05e7963d40c18109c6af0c3886b5b20e836d992a46e126"
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "bytes": 1479,
+      "sha256": "528bb5cbf5578b741d68f2c1ec84f254f42bca6be1d9b2a4d01a07b108bf6a16"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 92,
+      "sha256": "8c431613ade453509c6460aa9e106b5067673abc48423c83c6b59b9f03b7416a"
+    },
+    {
+      "path": "ASSETS.md",
+      "bytes": 1192,
+      "sha256": "794cbd584bfb72c44e6c03ef9e0f0d52bd68a123e4b1507348bcac25e052dcfd"
+    },
+    {
+      "path": "DEPLOYMENT.md",
+      "bytes": 3126,
+      "sha256": "b9e0018a0bf05933b66576f1ab448715c06f70bc04afd7c605a03e5f414577e8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3408,
+      "sha256": "927ffecdab34571c8167d18f8663f972d99b86bd4d774a5c89b0efb8720ad48d"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1866,
+      "sha256": "e571e72ffb7fca65e82a0841d540adbebd1a1356a4d4314c399fb377d7c45e02"
+    },
+    {
+      "path": "assets/data/browser-test-results.json",
+      "bytes": 8306,
+      "sha256": "27a9ec7ae2b9cc0600a6a5211bb6a011d779b553232baf79d96f16d123e015dc"
+    },
+    {
+      "path": "assets/data/release.json",
+      "bytes": 3913,
+      "sha256": "d76f1e02b965a75c8197fcc7e615a625d08a4df3c508c9735b5197ab3565f7c9"
+    },
+    {
+      "path": "assets/images/cinderworks_hd.webp",
+      "bytes": 327328,
+      "sha256": "5efad2ebd7979485a94d8107ddc8fb1892c9c42edf22c541efb33760d9889c52"
+    },
+    {
+      "path": "assets/images/emberwake_panorama.png",
+      "bytes": 2612529,
+      "sha256": "df46625ae34641b7a68aa74607e387621dafd191fa626a7af9f695fc2e6f7740"
+    },
+    {
+      "path": "assets/images/hollowspire_hd.webp",
+      "bytes": 438576,
+      "sha256": "e3957419c3aec2ee16536ffb8d06b4550aff89fc1fd23102dfb4fc8430442e03"
+    },
+    {
+      "path": "assets/images/moonroot_hd.webp",
+      "bytes": 417744,
+      "sha256": "fb0347cb3d06f62a3c9a10f8a11f5e475c6b8580ace85da0cd40ff3067c0856f"
+    },
+    {
+      "path": "assets/scripts/client.js",
+      "bytes": 83344,
+      "sha256": "4af52ca554f70971b70fb39db72f4f67fba75dbb7ee4937b3651c09d1992fbc7"
+    },
+    {
+      "path": "assets/scripts/controls-v11.js",
+      "bytes": 10363,
+      "sha256": "a4bb090df0e1095579c2fbb36d3191b001914c8c45c369aeaf0845bbcf4120d5"
+    },
+    {
+      "path": "assets/scripts/core-v11.js",
+      "bytes": 6258,
+      "sha256": "ab2982d747e072e8c12704be19eca158a5ed0c9650bf8c749ed4c34e2e7547d6"
+    },
+    {
+      "path": "assets/scripts/engine.js",
+      "bytes": 19451,
+      "sha256": "687f8ed258fe56a7547bf221a95eadba3656a370980c63c9c2d40aaee4b0b4d2"
+    },
+    {
+      "path": "assets/scripts/journey-v11.js",
+      "bytes": 6641,
+      "sha256": "5adac3b3dc4374b98e5151455c125b5497c326ba2e65f580875d972899edf209"
+    },
+    {
+      "path": "assets/scripts/realm-v11.js",
+      "bytes": 4154,
+      "sha256": "932b7b421984795cefaf5aa8ecc2ce1fa363224b06abaa7491e19032a985dc7d"
+    },
+    {
+      "path": "assets/scripts/worlds.js",
+      "bytes": 10064,
+      "sha256": "11be3617782e2db4abb5d6efa996f667837374237d3956c1f4d9a90b68c4789f"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2725,
+      "sha256": "309f58c4298a36479395db67a9aa96d2dbce44bdcccbf23a9f53f7693f6966fe"
+    },
+    {
+      "path": "package.json",
+      "bytes": 481,
+      "sha256": "bed036d452ae95e0f6c4975e8f538c56a92050cc48c6d52cddc25a42b1558d6d"
+    },
+    {
+      "path": "qa/browser/browser-results.json",
+      "bytes": 8306,
+      "sha256": "27a9ec7ae2b9cc0600a6a5211bb6a011d779b553232baf79d96f16d123e015dc"
+    },
+    {
+      "path": "qa/browser/desktop-title.png",
+      "bytes": 1661888,
+      "sha256": "26e70b171a8c7c8381c7a0dc4c241ecc0713e2c9ab0e7560f18567bcd0d6b5d2"
+    },
+    {
+      "path": "qa/browser/landscape-game.png",
+      "bytes": 379572,
+      "sha256": "f1000d7658078c5ef87a0350a61a1ea0b6252907ee5859fdae5fbc9183e2fa45"
+    },
+    {
+      "path": "qa/browser/portrait-game.png",
+      "bytes": 853182,
+      "sha256": "dfcfbf623f31f3b0e3b2921b226ae50c1f24d9fae04df158c7ba6f7498f8cf92"
+    },
+    {
+      "path": "qa/emberwake-input-proof.json",
+      "bytes": 511364,
+      "sha256": "0de2218c0d123d2b8be480e294eecbed708bd7fc2aefb84ed26ac071f948cd53"
+    },
+    {
+      "path": "qa/emberwake-qa-results.json",
+      "bytes": 15034,
+      "sha256": "3c96e0abab9ebd41e7b8548e8ef35f592016d496c654ca237897d9b17bddb21c"
+    },
+    {
+      "path": "qa/extended-difficulty-input-proof.json",
+      "bytes": 719110,
+      "sha256": "f83a0d705104927eabb194fe12dd0f5c3423e943ba99f0e356598435a83c3f89"
+    },
+    {
+      "path": "qa/extended-difficulty-results.json",
+      "bytes": 1529,
+      "sha256": "e19662a1d368a95f39214dd800a13ac6417c94a96d776808ea0ad8327d7b0451"
+    },
+    {
+      "path": "qa/final-validation.json",
+      "bytes": 20086,
+      "sha256": "c393604701de60d1905a588aa57cbf62b329eccbdae0da8236b370f29fd6e755"
+    },
+    {
+      "path": "qa/prepackaging-release-checks.json",
+      "bytes": 2118,
+      "sha256": "fc967fa7cf67894e30059bc98f818f0b276db584f4056df63db8690448e2e532"
+    },
+    {
+      "path": "scripts/build.mjs",
+      "bytes": 3811,
+      "sha256": "325970f96854b3708e407358baae8fc00575260b10372e1bf1f5344e9705f313"
+    },
+    {
+      "path": "scripts/check-secrets.mjs",
+      "bytes": 1963,
+      "sha256": "182c8a3161ed3cbbfd11a1b5706f7d4df11ca5f1f26ae00c581e0461e1176b8c"
+    },
+    {
+      "path": "scripts/serve.mjs",
+      "bytes": 4295,
+      "sha256": "47fccd94d681d8d4a0e69e0810ca7a7d146cca70ecb274ac2f869c2053407104"
+    },
+    {
+      "path": "tests/browser-smoke.py",
+      "bytes": 26354,
+      "sha256": "0b5005974f08711b433c05e291e4be2105224919fae63958de1506624170bdb7"
+    },
+    {
+      "path": "tests/cdp-pipe.cjs",
+      "bytes": 1653,
+      "sha256": "2f7638c9f104a1cb3a840e88079a763dc5380d1573519ff2da0b7c0b91f8c843"
+    },
+    {
+      "path": "tests/difficulty-matrix.cjs",
+      "bytes": 1075,
+      "sha256": "42d3a4fc1942b524ab603cd8310eb0d68d2a41e77f395a7a8f99e98ff4af4157"
+    },
+    {
+      "path": "tests/emberwake-qa.js",
+      "bytes": 28473,
+      "sha256": "b54b7e0d793dc1e15058a6f4a2e1bfb56787f4879a83c4862f9cc8c97e5dd817"
+    },
+    {
+      "path": "tests/release.test.mjs",
+      "bytes": 7718,
+      "sha256": "24bac4cd780f26b7c3fd8afd6edcd7aaed51977342e3f0230733335b1ab24211"
+    }
+  ],
+  "exclusions": [
+    "dist (reproducible)",
+    "scratch/temporary Chromium profiles",
+    "private worker manifests",
+    "connector/profile responses",
+    "unvalidated old reports",
+    "credentials"
+  ],
+  "notes": [
+    "This manifest excludes itself to avoid self-reference.",
+    "Original source committed through ApplyPatch; ZIP is a format conversion, not newly authored source."
+  ]
+}

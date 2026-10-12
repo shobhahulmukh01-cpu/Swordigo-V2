@@ -1,0 +1,138 @@
+{
+  "status": "tested-release-candidate-not-published",
+  "generatedUTC": "2026-10-06T22:24:36.375701+00:00",
+  "artifactContentId": "1cedcc20-251e-5452-b480-df480efe59c3",
+  "primarySourceFiles": 32,
+  "runtimeFiles": 14,
+  "runtimeScriptSHA256": {
+    "worlds.js": "11be3617782e2db4abb5d6efa996f667837374237d3956c1f4d9a90b68c4789f",
+    "engine.js": "687f8ed258fe56a7547bf221a95eadba3656a370980c63c9c2d40aaee4b0b4d2",
+    "client.js": "4af52ca554f70971b70fb39db72f4f67fba75dbb7ee4937b3651c09d1992fbc7",
+    "journey-v11.js": "5adac3b3dc4374b98e5151455c125b5497c326ba2e65f580875d972899edf209",
+    "core-v11.js": "ab2982d747e072e8c12704be19eca158a5ed0c9650bf8c749ed4c34e2e7547d6",
+    "controls-v11.js": "a4bb090df0e1095579c2fbb36d3191b001914c8c45c369aeaf0845bbcf4120d5",
+    "realm-v11.js": "932b7b421984795cefaf5aa8ecc2ce1fa363224b06abaa7491e19032a985dc7d"
+  },
+  "unchangedCodeArtHTMLComparedToPriorVerifiedExport": 12,
+  "qaSourceSHA256": "b54b7e0d793dc1e15058a6f4a2e1bfb56787f4879a83c4862f9cc8c97e5dd817",
+  "executedNode": "v26.10.0",
+  "npmExecuted": false,
+  "npmNote": "npm absent in execution sandbox; exact package scripts ran as direct Node/Python commands. npm scripts are provided for normal local/CI environments.",
+  "configuredCINode": "24 (not executed here)",
+  "browser": {
+    "passed": 53,
+    "failed": 0,
+    "version": "Google Chrome for Testing 150.0.7871.115",
+    "runtimeExceptions": 0,
+    "missingAssets": 0,
+    "transport": "local CDP Fetch fulfillment",
+    "controller": "synthetic standard-layout navigator gamepad; not physical hardware",
+    "sandbox": "explicit --no-sandbox in isolated test container"
+  },
+  "deterministicBuild": true,
+  "byteExactRuntimeCopy": true,
+  "githubPush": false,
+  "pullRequestCreated": false,
+  "ciExecuted": false,
+  "publicDeploymentVerified": false,
+  "physicalDeviceCrossBrowserPerformanceOrAccessibilityCertification": false,
+  "license": "UNLICENSED pending owner review",
+  "commands": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/release.test.mjs"
+      ],
+      "packageScript": "test",
+      "exitCode": 0,
+      "elapsedSeconds": 2.001,
+      "stdout": "\u2714 determinism and SHA (21.467954ms)\n\u2714 root exclusions (9.190375ms)\n\u2714 tamper (7.375902ms)\n\u2714 unknown file (3.983506ms)\n\u2714 secret (3.712986ms)\n\u2714 fixture (4.463837ms)\n\u2714 unknown directory (56.641349ms)\n\u2714 manifest tamper (6.551741ms)\n\u2714 unmanaged preservation (38.99734ms)\n\u2714 asset link (3.907396ms)\n\u2714 dist/root links (5.115088ms)\n\u2714 missing index (3.961106ms)\n\u2714 file cap (4.132337ms)\n\u2714 total cap (282.974779ms)\n\u2714 depth cap (23.172775ms)\n\u2714 entry cap (207.958296ms)\n\u2714 PAT/key/AWS scanner (2.389884ms)\n\u2714 redaction-only CLI (73.839732ms)\n\u2714 scanner clean/git/link (5.488128ms)\n\u2714 GET bytes/HEAD/MIME (4.680718ms)\n\u2714 conditional GET/HEAD (2.840395ms)\n\u2714 methods and HEAD errors (3.285675ms)\n\u2714 no catchall (2.540374ms)\n\u2714 dotfiles (2.768294ms)\n\u2714 unsafe URI (3.232795ms)\n\u2714 prefix/index/redirect (3.976636ms)\n\u2714 Host checks (3.132325ms)\n\u2714 prefix/URI caps (2.146383ms)\n\u2714 snapshot isolation (2.682024ms)\n\u2714 CSP normalized inline hash (4.252926ms)\n\u2714 CLI bind/port/prototype (596.74348ms)\n\u2714 real HTTP AF_UNIX (50.645681ms)\n\u2139 tests 32\n\u2139 suites 0\n\u2139 pass 32\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1753.573792\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "tests/emberwake-qa.js"
+      ],
+      "packageScript": "test:campaign",
+      "exitCode": 0,
+      "elapsedSeconds": 1.191,
+      "stdout": "{\n  \"runs\": [\n    {\n      \"pass\": true,\n      \"mode\": \"story\",\n      \"difficulty\": \"story\",\n      \"dt\": 0.008333333333333333,\n      \"frames\": 7474,\n      \"seconds\": 62.27499999999711,\n      \"kills\": 29,\n      \"deaths\": 0,\n      \"ending\": \"mercy\",\n      \"runes\": 6,\n      \"sigils\": 6,\n      \"counts\": {\n        \"realm\": 3,\n        \"save\": 62,\n        \"intro\": 3,\n        \"checkpoint\": 15,\n        \"shrine\": 6,\n        \"chest\": 2,\n        \"dialogue\": 2,\n        \"slash\": 118,\n        \"spell\": 81,\n        \"hit\": 102,\n        \"defeat\": 29,\n        \"jump\": 32,\n        \"rune\": 6,\n        \"note\": 313,\n        \"guard\": 28,\n        \"land\": 30,\n        \"rank\": 5,\n        \"sigil\": 6,\n        \"bossIntro\": 3,\n        \"warning\": 3,\n        \"bossVictory\": 3,\n        \"parry\": 8,\n        \"dash\": 1,\n        \"choice\": 1,\n        \"ending\": 1\n      },\n      \"error\": null\n    },\n    {\n      \"pass\": true,\n      \"mode\": \"rush\",\n      \"difficulty\": \"story\",\n      \"dt\": 0.008333333333333333,\n      \"frames\": 2025,\n      \"seconds\": 16.874999999999684,\n      \"kills\": 3,\n      \"deaths\": 0,\n      \"ending\": \"rekindle\",\n      \"runes\": 6,\n      \"sigils\": 6,\n      \"counts\": {\n        \"realm\": 3,\n        \"save\": 7,\n        \"intro\": 3,\n        \"slash\": 48,\n        \"bossIntro\": 3,\n        \"spell\": 21,\n        \"hit\": 31,\n        \"warning\": 3,\n        \"guard\": 4,\n        \"rank\": 2,\n        \"defeat\": 3,\n        \"bossVictory\": 3,\n        \"dash\": 2,\n        \"note\": 29,\n        \"ending\": 1\n      },\n      \"error\": null\n    },\n    {\n      \"pass\": true,\n      \"mode\": \"story\",\n      \"difficulty\": \"story\",\n      \"dt\": 0.016666666666666666,\n      \"frames\": 3825,\n      \"seconds\": 63.733333333331,\n      \"kills\": 29,\n      \"deaths\": 0,\n      \"ending\": \"mercy\",\n      \"runes\": 6,\n      \"sigils\": 6,\n      \"counts\": {\n        \"realm\": 3,\n        \"save\": 62,\n        \"intro\": 3,\n        \"checkpoint\": 15,\n        \"shrine\": 6,\n        \"chest\": 2,\n        \"dialogue\": 2,\n        \"slash\": 118,\n        \"spell\": 83,\n        \"hit\": 101,\n        \"defeat\": 29,\n        \"jump\": 32,\n        \"rune\": 6,\n        \"note\": 195,\n        \"guard\": 31,\n        \"hurt\": 1,\n        \"land\": 30,\n        \"rank\": 5,\n        \"sigil\": 6,\n        \"parry\": 10,\n        \"bossIntro\": 3,\n        \"warning\": 3,\n        \"bossVictory\": 3,\n        \"dash\": 2,\n        \"choice\": 1,\n        \"ending\": 1\n      },\n      \"error\": null\n    },\n    {\n      \"pass\": true,\n      \"mode\": \"rush\",\n      \"difficulty\": \"story\",\n      \"dt\": 0.016666666666666666,\n      \"frames\": 1193,\n      \"seconds\": 19.883333333333486,\n      \"kills\": 3,\n      \"deaths\": 0,\n      \"ending\": \"rekindle\",\n      \"runes\": 6,\n      \"sigils\": 6,\n      \"counts\": {\n        \"realm\": 3,\n        \"save\": 7,\n        \"intro\": 3,\n        \"slash\": 56,\n        \"bossIntro\": 3,\n        \"spell\": 24,\n        \"hit\": 30,\n        \"warning\": 3,\n        \"guard\": 5,\n        \"dash\": 3,\n        \"rank\": 2,\n        \"defeat\": 3,\n        \"bossVictory\": 3,\n        \"note\": 44,\n        \"ending\": 1\n      },\n      \"error\": null\n    }\n  ],\n  \"replays\": [\n    {\n      \"pass\": true,\n      \"mode\": \"story\",\n      \"dt\": 0.008333333333333333,\n      \"frames\": 7474\n    },\n    {\n      \"pass\": true,\n      \"mode\": \"rush\",\n      \"dt\": 0.008333333333333333,\n      \"frames\": 2025\n    },\n    {\n      \"pass\": true,\n      \"mode\": \"story\",\n      \"dt\": 0.016666666666666666,\n      \"frames\": 3825\n    },\n    {\n      \"pass\": true,\n      \"mode\": \"rush\",\n      \"dt\": 0.016666666666666666,\n      \"frames\": 1193\n    }\n  ],\n  \"deterministic\": {\n    \"pass\": true,\n    \"frames\": 7474\n  },\n  \"regressions\": {\n    \"total\": 116,\n    \"passed\": 116,\n    \"failed\": 0,\n    \"failures\": []\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "tests/difficulty-matrix.cjs"
+      ],
+      "packageScript": "test:campaign",
+      "exitCode": 0,
+      "elapsedSeconds": 1.105,
+      "stdout": "[\n  {\n    \"pass\": true,\n    \"mode\": \"story\",\n    \"difficulty\": \"adventure\",\n    \"ending\": \"mercy\",\n    \"frames\": 3911,\n    \"deaths\": 0,\n    \"error\": null,\n    \"replay\": {\n      \"pass\": true,\n      \"mode\": \"story\",\n      \"dt\": 0.016666666666666666,\n      \"frames\": 3911\n    }\n  },\n  {\n    \"pass\": true,\n    \"mode\": \"story\",\n    \"difficulty\": \"veteran\",\n    \"ending\": \"mercy\",\n    \"frames\": 7388,\n    \"deaths\": 0,\n    \"error\": null,\n    \"replay\": {\n      \"pass\": true,\n      \"mode\": \"story\",\n      \"dt\": 0.008333333333333333,\n      \"frames\": 7388\n    }\n  },\n  {\n    \"pass\": true,\n    \"mode\": \"story\",\n    \"difficulty\": \"adventure\",\n    \"ending\": \"rekindle\",\n    \"frames\": 7388,\n    \"deaths\": 0,\n    \"error\": null,\n    \"replay\": {\n      \"pass\": true,\n      \"mode\": \"story\",\n      \"dt\": 0.008333333333333333,\n      \"frames\": 7388\n    }\n  },\n  {\n    \"pass\": true,\n    \"mode\": \"rush\",\n    \"difficulty\": \"veteran\",\n    \"ending\": \"rekindle\",\n    \"frames\": 2146,\n    \"deaths\": 0,\n    \"error\": null,\n    \"replay\": {\n      \"pass\": true,\n      \"mode\": \"rush\",\n      \"dt\": 0.008333333333333333,\n      \"frames\": 2146\n    }\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/check-secrets.mjs"
+      ],
+      "packageScript": "check:secrets",
+      "exitCode": 0,
+      "elapsedSeconds": 0.097,
+      "stdout": "{\"findings\":[]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/build.mjs"
+      ],
+      "packageScript": "build",
+      "exitCode": 0,
+      "elapsedSeconds": 0.249,
+      "stdout": "Built 14 runtime files\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/build.mjs"
+      ],
+      "packageScript": "build",
+      "exitCode": 0,
+      "elapsedSeconds": 0.379,
+      "stdout": "Built 14 runtime files\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "tests/browser-smoke.py",
+        "--root",
+        "dist",
+        "--output",
+        "qa/browser",
+        "--completed-proof",
+        "qa/emberwake-input-proof.json",
+        "--no-sandbox"
+      ],
+      "packageScript": "test:browser with isolated-container sandbox opt-in",
+      "exitCode": 0,
+      "elapsedSeconds": 17.248,
+      "stdout": "{\n  \"passed\": 53,\n  \"failed\": 0,\n  \"checks\": [\n    {\n      \"name\": \"desktop boot with all three realm artworks\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"boot is idempotent\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"difficulty selection dialog\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"story intro opens\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"story simulation resumes\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"Web Audio unlocks after a real user gesture\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"real keyboard movement\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"real keyboard double jump\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"keyboard precision guard\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"pause dialog\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"pause freezes simulation\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"map renders current realm\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"journal includes local milestones\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"settings inputs obey modal focus trap\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"Escape closes settings while input focused\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"keyboard remap is persisted\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"remapped guard works\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"real save download completed\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"exported save validates\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"import requires confirmation\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"import cancel leaves saved journey untouched\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"accepted native file restore validates and resumes\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"accept keeps a valid rolling story backup\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"stale asynchronous file read cannot replace a newer modal\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"new journey replacement requires confirmation\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"new journey cancel preserves save\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"continue restores playable journey\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"portrait has no horizontal overflow\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"all portrait touch buttons fit viewport\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"real multi-touch move and jump\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"touch release clears held state\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"touch cancellation clears held state\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"landscape has no horizontal overflow\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"analog trigger held at controller attachment is quarantined\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"analog trigger guard works after neutral re-arm\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"controller Start opens pause\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"controller pause freezes world\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"controller D-pad moves modal focus\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"controller can select the map action\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"controller A activates focused modal action\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"controller B returns from a soft modal\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"mini-map preference toggles and persists\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"input-earned completed save restores the real ending UI\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"controller B cannot dismiss a hard ending\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"controller can select title from hard ending\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"controller A exits ending through the actual title action\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"completed story unlocks controller-selectable gauntlet\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"controller launches the unlocked gauntlet\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"keyboard remap survives actual page reload\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"mini-map preference survives actual page reload\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"privacy mode remains playable with denied storage\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"no browser runtime exceptions\",\n      \"passed\": true,\n      \"detail\": []\n    },\n    {\n      \"name\": \"no missing game asset responses\",\n      \"passed\": true,\n      \"detail\": []\n    }\n  ],\n  \"browser\": \"Google Chrome for Testing 150.0.7871.115\",\n  \"scope\": \"Actual Chromium DOM/Canvas, native keyboard/multi-touch/mouse, download/file input, Web Audio user-gesture activation, save confirmation/backup/async cancellation, earned ending restore and reload/privacy checks. Controller poller uses a standards-shaped synthetic navigator gamepad, not physical hardware. Assets served by CDP request fulfillment when --base-url is omitted. Not a public deployment, full browser campaign, cross-browser/device or accessibility certification.\",\n  \"browserSandbox\": \"explicit --no-sandbox in isolated test container\",\n  \"assetTransport\": \"local CDP Fetch fulfillment\",\n  \"fulfilledAssets\": [\n    {\n      \"path\": \"index.html\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/worlds.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/engine.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/core-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/client.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/controls-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/journey-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/realm-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/emberwake_panorama.png\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/moonroot_hd.webp\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/cinderworks_hd.webp\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/hollowspire_hd.webp\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"index.html\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/worlds.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/engine.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/core-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/client.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/controls-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/journey-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/realm-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/emberwake_panorama.png\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/moonroot_hd.webp\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/cinderworks_hd.webp\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/hollowspire_hd.webp\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"index.html\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/worlds.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/engine.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/core-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/client.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/controls-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/journey-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/scripts/realm-v11.js\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/emberwake_panorama.png\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/moonroot_hd.webp\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/cinderworks_hd.webp\",\n      \"status\": 200\n    },\n    {\n      \"path\": \"assets/images/hollowspire_hd.webp\",\n      \"status\": 200\n    }\n  ],\n  \"runtimeExceptions\": [],\n  \"missingAssets\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/check-secrets.mjs"
+      ],
+      "packageScript": "check:secrets",
+      "exitCode": 0,
+      "elapsedSeconds": 0.118,
+      "stdout": "{\"findings\":[]}\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0c191d">
+<meta name="application-name" content="EMBERWAKE: The Hollow Crown">
+<meta name="description" content="An original sword-and-magic web adventure. Three stolen world-hearts. One courier. A future you get to write. Keyboard, touch, and controller support; local journey saves.">
+<title>EMBERWAKE — The Hollow Crown</title>
+<style data-section-id="01a112a3-c127-7aee-99ec-4c105bffe418">
+html,body{margin:0;min-height:100%;background:#0c191d;color:#f2e9d4;font-family:Georgia,serif}#loading{min-height:70vh;display:grid;place-content:center;text-align:center;padding:40px}#loading h1{font-weight:400;letter-spacing:.14em;font-size:34px;margin:0 0 16px}#loading p{font:12px 'Trebuchet MS',sans-serif;letter-spacing:.1em;color:#a8c6b4}noscript{display:block;padding:32px;line-height:1.8;color:#e8d2ae}
+</style>
+<script src="assets/scripts/worlds.js" defer data-section-id="01a112a6-42b1-7a13-b3a8-802f14ad9b8e"></script>
+<script src="assets/scripts/engine.js" defer data-section-id="01a112a6-42b1-7a52-a999-eceec00d63b2"></script>
+<script src="assets/scripts/core-v11.js" defer data-section-id="01a112c3-46f3-7c6a-9b0e-ed57f144038e"></script>
+<script src="assets/scripts/client.js" defer data-section-id="01a112a6-42b1-7a77-a298-82a6684eafbf"></script>
+<script src="assets/scripts/controls-v11.js" defer data-section-id="01a112c4-eff0-7a9f-b45f-b4cf413c1ae2"></script>
+<script src="assets/scripts/journey-v11.js" defer data-section-id="01a112c7-e0b0-74c3-abcf-dfca5e9e1124"></script>
+<script src="assets/scripts/realm-v11.js" defer data-section-id="01a112c7-e0b0-74e7-8bad-1dc3cec5d6c1"></script>
+</head>
+<body>
+<div id="ember-root"><div id="loading"><h1 data-section-id="01a112a3-c127-7b41-96a2-119c622345ef">EMBERWAKE</h1><p data-section-id="01a112a3-c127-7b48-b8f2-99187f1ad0d1">A letter to tomorrow is opening…</p></div></div>
+<noscript>Emberwake needs JavaScript and Canvas enabled to play. No account is required. Open the game in a modern browser with JavaScript enabled.</noscript>
+<script data-section-id="01a112a6-42b1-7ad0-97ee-62a5192236f8">
+(function(){
+'use strict';
+document.addEventListener('DOMContentLoaded',function(){
+ if(!window.EWClient||!window.EW||!window.EW_LEVELS||!window.EW_V11){
+  var loading=document.getElementById('loading');
+  if(loading)loading.textContent='One of the game files could not load. Refresh the page, or open the complete game package rather than the HTML file alone.';
+  return;
+ }
+ window.EWClient.boot();
+});
+})();
+</script>
+</body>
+</html>

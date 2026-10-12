@@ -9,3 +9,6 @@ The server snapshots validated dist bytes, validates loopback Hosts, refuses uns
 Journey input has strict known schema/IDs, bounded raw size and progression-lineage consistency checks. Restore/replacement requires UI confirmation when a current journey exists, with a rolling valid story backup and stale async-read/modal ownership guards. Saves/milestones are local client data, not server-authoritative anti-cheat or a global leaderboard.
 
 Reporting: use the owner's repository issue/security channel without including exploitable secrets or private saves. No third-party scanning service, global user collection or telemetry is included.
+
+## Lumenblade candidate additions
+The build permits one additional explicit root runtime file, `sw.js`, under the same integrity/secret checks; unknown root output remains refused. The local preview permits same-origin workers and same-origin base paths to support the offline shell and legacy entry. Only hashes of inline scripts present in trusted built HTML are admitted; unsafe-inline scripts, eval and external script hosts remain disallowed. PWA manifest/icon files are shipped from the same origin. Save import is bounded at 100 KB, validated field-by-field, and confirmed before replacing a slot; imported text is never executed. Storage-denied warnings do not block gameplay. No credentials are needed by players.

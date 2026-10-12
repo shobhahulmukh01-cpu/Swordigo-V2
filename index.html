@@ -1,39 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0c191d">
-<meta name="application-name" content="EMBERWAKE: The Hollow Crown">
-<meta name="description" content="An original sword-and-magic web adventure. Three stolen world-hearts. One courier. A future you get to write. Keyboard, touch, and controller support; local journey saves.">
-<title>EMBERWAKE — The Hollow Crown</title>
-<style data-section-id="01a112a3-c127-7aee-99ec-4c105bffe418">
-html,body{margin:0;min-height:100%;background:#0c191d;color:#f2e9d4;font-family:Georgia,serif}#loading{min-height:70vh;display:grid;place-content:center;text-align:center;padding:40px}#loading h1{font-weight:400;letter-spacing:.14em;font-size:34px;margin:0 0 16px}#loading p{font:12px 'Trebuchet MS',sans-serif;letter-spacing:.1em;color:#a8c6b4}noscript{display:block;padding:32px;line-height:1.8;color:#e8d2ae}
-</style>
-<script src="assets/scripts/worlds.js" defer data-section-id="01a112a6-42b1-7a13-b3a8-802f14ad9b8e"></script>
-<script src="assets/scripts/engine.js" defer data-section-id="01a112a6-42b1-7a52-a999-eceec00d63b2"></script>
-<script src="assets/scripts/core-v11.js" defer data-section-id="01a112c3-46f3-7c6a-9b0e-ed57f144038e"></script>
-<script src="assets/scripts/client.js" defer data-section-id="01a112a6-42b1-7a77-a298-82a6684eafbf"></script>
-<script src="assets/scripts/controls-v11.js" defer data-section-id="01a112c4-eff0-7a9f-b45f-b4cf413c1ae2"></script>
-<script src="assets/scripts/journey-v11.js" defer data-section-id="01a112c7-e0b0-74c3-abcf-dfca5e9e1124"></script>
-<script src="assets/scripts/realm-v11.js" defer data-section-id="01a112c7-e0b0-74e7-8bad-1dc3cec5d6c1"></script>
-</head>
-<body>
-<div id="ember-root"><div id="loading"><h1 data-section-id="01a112a3-c127-7b41-96a2-119c622345ef">EMBERWAKE</h1><p data-section-id="01a112a3-c127-7b48-b8f2-99187f1ad0d1">A letter to tomorrow is opening…</p></div></div>
-<noscript>Emberwake needs JavaScript and Canvas enabled to play. No account is required. Open the game in a modern browser with JavaScript enabled.</noscript>
-<script data-section-id="01a112a6-42b1-7ad0-97ee-62a5192236f8">
-(function(){
-'use strict';
-document.addEventListener('DOMContentLoaded',function(){
- if(!window.EWClient||!window.EW||!window.EW_LEVELS||!window.EW_V11){
-  var loading=document.getElementById('loading');
-  if(loading)loading.textContent='One of the game files could not load. Refresh the page, or open the complete game package rather than the HTML file alone.';
-  return;
- }
- window.EWClient.boot();
-});
-})();
-</script>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#162c34"><meta name="color-scheme" content="dark"><meta name="description" content="Lumenblade: Second Dawn. An original sword-and-spell adventure across seven luminous realms. Play offline, with keyboard, touch or gamepad."><link rel="manifest" href="assets/lumen/manifest.webmanifest"><link rel="icon" href="assets/lumen/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/lumen/game.css"><title>Lumenblade — Second Dawn</title><script src="assets/lumen/game.js" defer></script></head>
+<body><canvas id="world" aria-label="Lumenblade dimensional game world"></canvas>
+<div id="title" class="title-screen"><div class="brandline"><span class="sunmark" aria-hidden="true">✧</span> AN ORIGINAL SWORD &amp; SPELL ADVENTURE</div><div class="title-copy"><p class="eyebrow">THE WORLD IS WAITING FOR MORNING</p><h1>LUMEN<span>BLADE</span></h1><p class="subtitle">S E C O N D &nbsp; D A W N</p><p class="intro">Six fragments of light.<br>A crown that should never have been forged.<br>And one small voice that can change everything.</p><div class="title-actions"><button class="primary" data-action="slots">Enter the world <span aria-hidden="true">↗</span></button><button data-action="settings">Settings</button></div><p class="title-hint">A / D move &nbsp; · &nbsp; Space jump &nbsp; · &nbsp; J sword &nbsp; · &nbsp; K magic</p></div><div class="title-footer"><span>PLAY YOUR WAY · KEYBOARD / TOUCH / GAMEPAD</span><span>2.0.0 · RELEASE CANDIDATE <a href="assets/legacy.html">Play Emberwake legacy ↗</a></span></div></div>
+<div id="hud" hidden><div class="vitals"><div class="hero-label">WREN <span id="level-label">LV. 1</span></div><div class="meter-row"><span>HP</span><div class="meter hp"><i id="hp-fill"></i></div><b id="hp-text">100</b></div><div class="meter-row"><span>MP</span><div class="meter mp"><i id="mp-fill"></i></div><b id="mp-text">100</b></div><div class="resources"><span id="glimmer-label">0 Glimmer</span><button data-action="character" id="points-label">Character</button></div></div><div class="location"><span id="room-label"></span><small id="region-label"></small></div><nav aria-label="Game menu"><button data-action="map" aria-label="World map (M)">Map</button><button data-action="journal" aria-label="Journal">Journal</button><button data-action="pause" aria-label="Pause (Escape)">Ⅱ</button></nav><div class="quest"><span class="eyebrow">THE SECOND DAWN</span><p id="objective"></p><small id="prompt"></small></div><div class="spell-status"><span id="spell-label">Lumen Bolt</span><small id="flask-label">H · Heal ×3</small></div></div>
+<div id="touch" aria-label="Touch controls" hidden><div class="touch-move"><button data-control="left" aria-label="Move left">◀</button><button data-control="right" aria-label="Move right">▶</button></div><div class="touch-actions"><button data-control="interact" aria-label="Interact">E</button><button data-control="cycle" aria-label="Cycle spell">Spell</button><button data-control="heal" aria-label="Healing flask">＋</button><button data-control="dash" aria-label="Dash">Dash</button><button data-control="cast" aria-label="Cast spell">Magic</button><button data-control="attack" aria-label="Sword attack">Sword</button><button data-control="jump" class="touch-jump" aria-label="Jump">↑</button></div></div>
+<div id="toast" role="status" aria-live="polite" hidden></div><div id="save-warning" role="alert" hidden></div>
+<div id="overlay" hidden><section id="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1"><div class="dialog-head"><div><p class="eyebrow" id="dialog-eyebrow">LUMENBLADE</p><h2 id="dialog-title"></h2></div><button id="dialog-close" data-action="close" aria-label="Close dialog">×</button></div><div id="dialog-body"></div></section></div>
+<noscript><div class="fatal">This adventure needs JavaScript and WebGL2. Enable JavaScript or play in a compatible modern browser.</div></noscript></body></html>

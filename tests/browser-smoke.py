@@ -137,7 +137,7 @@ def run(args):
         c.call('Emulation.setDeviceMetricsOverride',{'width':1440,'height':980,'deviceScaleFactor':1,'mobile':False})
         downloads=work/'downloads';downloads.mkdir(exist_ok=True)
         c.call('Browser.setDownloadBehavior',{'behavior':'allow','downloadPath':str(downloads.resolve())})
-        c.call('Page.navigate',{'url':base});c.wait('Boolean(window.emberwake&&window.EW_V11)')
+        c.call('Page.navigate',{'url':base+'assets/legacy.html'});c.wait('Boolean(window.emberwake&&window.EW_V11)')
         c.wait('window.emberwake.renderer.realmImages&&window.emberwake.renderer.realmImages.every(i=>i.complete&&i.naturalWidth>0)')
         check('desktop boot with all three realm artworks',c.evaluate("!document.getElementById('fatal').hidden===false && !document.getElementById('title-screen').hidden"))
         check('boot is idempotent',c.evaluate('EWClient.boot()===window.emberwake'))
@@ -241,7 +241,7 @@ def run(args):
         check('keyboard remap survives actual page reload',c.evaluate("emberwake.bindings.parry==='KeyU'"))
         check('mini-map preference survives actual page reload',c.evaluate("emberwake.miniMap===JSON.parse(localStorage.getItem('EW_MINIMAP_V1'))"))
         c.call('Page.addScriptToEvaluateOnNewDocument',{'source':"Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Storage denied for privacy test','SecurityError')}});"})
-        c.call('Page.navigate',{'url':base});c.wait('Boolean(window.emberwake)');c.click('[data-act="new"]');c.click('[data-act="launch"]')
+        c.call('Page.navigate',{'url':base+'assets/legacy.html'});c.wait('Boolean(window.emberwake)');c.click('[data-act="new"]');c.click('[data-act="launch"]')
         check('privacy mode remains playable with denied storage',c.evaluate("emberwake.game.status==='playing'&&emberwake.storageWarned===true&&emberwake.storage===null"))
         check('no browser runtime exceptions',not c.exceptions,c.exceptions);check('no missing game asset responses',not c.failures,c.failures)
     except Exception as e:

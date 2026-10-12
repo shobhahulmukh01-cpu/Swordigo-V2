@@ -3,13 +3,13 @@ import {resolve,extname} from 'node:path';
 import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {loadDist,sha} from './build.mjs';
-const mime=Object.fromEntries('html:text/html js:application/javascript css:text/css json:application/json svg:image/svg+xml png:image/png jpg:image/jpeg jpeg:image/jpeg webp:image/webp ico:image/x-icon mp3:audio/mpeg ogg:audio/ogg wav:audio/wav m4a:audio/mp4 woff:font/woff woff2:font/woff2 ttf:font/ttf otf:font/otf'.split(' ').map(x=>{const [e,t]=x.split(':');return ['.'+e,t+(['html','js','css','json'].includes(e)?'; charset=utf-8':'')];}));
+const mime=Object.fromEntries('webmanifest:application/manifest+json txt:text/plain html:text/html js:application/javascript css:text/css json:application/json svg:image/svg+xml png:image/png jpg:image/jpeg jpeg:image/jpeg webp:image/webp ico:image/x-icon mp3:audio/mpeg ogg:audio/ogg wav:audio/wav m4a:audio/mp4 woff:font/woff woff2:font/woff2 ttf:font/ttf otf:font/otf'.split(' ').map(x=>{const [e,t]=x.split(':');return ['.'+e,t+(['html','js','css','json'].includes(e)?'; charset=utf-8':'')];}));
 export function requestHandler(rootDir,basePath='/'){
 if(typeof basePath!=='string'||!/^\/(?:[A-Za-z0-9_-]+\/)*$/.test(basePath))throw Error('Invalid base path');
 const {files,dirs}=loadDist(rootDir),hashes=new Set(),tags=new Map([...files].map(([p,b])=>[p,'"'+sha(b)+'"']));
-const html=new TextDecoder('utf-8',{fatal:true}).decode(files.get('index.html')).replace(/\r\n?/g,'\n');
-for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi))if(!/(?:^|\s)src\s*=/i.test(m[1]))hashes.add("'sha256-"+createHash('sha256').update(m[2]).digest('base64')+"'");
-const common={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Cross-Origin-Resource-Policy':'same-origin','Content-Security-Policy':"default-src 'none'; script-src 'self' "+[...hashes].sort().join(' ')+"; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'; worker-src 'none'"};
+for(const [path,bytes] of files){if(!path.endsWith('.html'))continue;const html=new TextDecoder('utf-8',{fatal:true}).decode(bytes).replace(/\r\n?/g,'\n');
+for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi))if(!/(?:^|\s)src\s*=/i.test(m[1]))hashes.add("'sha256-"+createHash('sha256').update(m[2]).digest('base64')+"'");}
+const common={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Cross-Origin-Resource-Policy':'same-origin','Content-Security-Policy':"default-src 'none'; script-src 'self' "+[...hashes].sort().join(' ')+"; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'; worker-src 'self'"};
 return (req,res)=>{
 function send(s,b='',h={}){b=Buffer.isBuffer(b)?b:Buffer.from(b);res.writeHead(s,{...common,'Content-Type':'text/plain; charset=utf-8',...(s===304?{}:{'Content-Length':b.length}),...h});res.end(req.method==='HEAD'||s===304?undefined:b);}
 const host=req.headers?.host,m=typeof host==='string'&&/^(?:127\.0\.0\.1|localhost|\[::1\])(?::([0-9]{1,5}))?$/i.exec(host);

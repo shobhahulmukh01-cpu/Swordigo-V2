@@ -1,15 +1,27 @@
 {
-  "name": "emberwake-release",
-  "version": "1.1.0-rc.3",
+  "name": "lumenblade-second-dawn",
+  "version": "2.0.0-rc.1",
   "private": true,
   "license": "UNLICENSED",
-  "engines": {"node": ">=22"},
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "build": "node scripts/build.mjs",
+    "build": "node scripts/bundle.mjs && node scripts/build.mjs",
     "start": "node scripts/serve.mjs",
-    "test": "node --test tests/release.test.mjs",
+    "test": "node --test tests/release.test.mjs tests/lumen.test.mjs",
     "test:campaign": "node tests/emberwake-qa.js && node tests/difficulty-matrix.cjs",
     "test:browser": "python3 tests/browser-smoke.py",
-    "check:secrets": "node scripts/check-secrets.mjs"
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "test:lumen": "node --test tests/lumen.test.mjs",
+    "test:lumen:browser": "node tests/lumen-browser.mjs",
+    "test:lumen:campaign": "node tests/lumen-campaign.mjs"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.58.2",
+    "esbuild": "0.25.12"
   }
 }

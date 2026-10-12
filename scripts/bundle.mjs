@@ -1,0 +1,7 @@
+import {build} from 'esbuild';
+import {readFileSync,writeFileSync} from 'node:fs';
+await build({entryPoints:['src/app.mjs'],bundle:true,minify:true,format:'iife',target:['es2022'],outfile:'assets/lumen/game.js',legalComments:'eof'});
+writeFileSync('assets/lumen/game.css',readFileSync('src/ui/style.css'));
+const version='lumen-'+(await import('node:crypto')).createHash('sha256').update(readFileSync('assets/lumen/game.js')).update(readFileSync('assets/lumen/game.css')).update(readFileSync('index.html')).update(readFileSync('assets/lumen/manifest.webmanifest')).digest('hex').slice(0,12);
+writeFileSync('sw.js',`const CACHE=${JSON.stringify(version)};\nconst FILES=['./','index.html','assets/lumen/game.js','assets/lumen/game.css','assets/lumen/icon.svg','assets/lumen/icon-192.png','assets/lumen/icon-512.png','assets/lumen/manifest.webmanifest'];\nself.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));\nself.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith('lumen-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));\nself.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin||!FILES.some(f=>new URL(f,self.registration.scope).href===e.request.url))return;e.respondWith(fetch(e.request).then(r=>r).catch(()=>caches.match(e.request)));});\n`);
+console.log('Bundled Lumenblade; offline shell '+version);

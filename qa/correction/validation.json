@@ -1,0 +1,682 @@
+{
+  "generatedUTC": "2026-10-13T20:44:40.255194+00:00",
+  "packageVersion": "1.2.0-alpha.1",
+  "engineVersion": "1.1.0-rc.3",
+  "branch": "feat/emberwake-in-place-sequel",
+  "baseCommit": "6c266e9d0d8eaf8ceb73f298b9cf76174fe25290",
+  "sourceState": "pre-commit; exact runtime hashes below",
+  "environment": {
+    "node": "v24.14.1",
+    "chromium": "Google Chrome for Testing 153.0.8010.12",
+    "previewURL": "http://127.0.0.1:4173/Swordigo-V2/"
+  },
+  "results": {
+    "unitAndContractTests": {
+      "passed": 159,
+      "failed": 0
+    },
+    "retainedSimulationRegressions": {
+      "total": 116,
+      "passed": 116,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "version and feature flags",
+          "pass": true
+        },
+        {
+          "name": "fresh save round trip",
+          "pass": true
+        },
+        {
+          "name": "completed story save and resume round trip",
+          "pass": true
+        },
+        {
+          "name": "completed rush save round trip",
+          "pass": true
+        },
+        {
+          "name": "reject malformed/nonjourney {",
+          "pass": true
+        },
+        {
+          "name": "reject malformed/nonjourney null",
+          "pass": true
+        },
+        {
+          "name": "reject malformed/nonjourney []",
+          "pass": true
+        },
+        {
+          "name": "reject malformed/nonjourney true",
+          "pass": true
+        },
+        {
+          "name": "reject malformed/nonjourney \"text\"",
+          "pass": true
+        },
+        {
+          "name": "reject unknown ID in chests",
+          "pass": true
+        },
+        {
+          "name": "reject unknown ID in runes",
+          "pass": true
+        },
+        {
+          "name": "reject unknown ID in sigils",
+          "pass": true
+        },
+        {
+          "name": "reject unknown ID in defeated",
+          "pass": true
+        },
+        {
+          "name": "reject unknown ID in seen",
+          "pass": true
+        },
+        {
+          "name": "reject misplaced ID in chests",
+          "pass": true
+        },
+        {
+          "name": "reject misplaced ID in runes",
+          "pass": true
+        },
+        {
+          "name": "reject misplaced ID in sigils",
+          "pass": true
+        },
+        {
+          "name": "reject misplaced ID in defeated",
+          "pass": true
+        },
+        {
+          "name": "reject misplaced ID in seen",
+          "pass": true
+        },
+        {
+          "name": "reject sigil without released rune",
+          "pass": true
+        },
+        {
+          "name": "reject unseen current realm",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter gold=1.5",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter gold=-1",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter kills=0.5",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter kills=-1",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter deaths=0.5",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter deaths=-1",
+          "pass": true
+        },
+        {
+          "name": "reject nonboolean completed undefined",
+          "pass": true
+        },
+        {
+          "name": "reject nonboolean completed null",
+          "pass": true
+        },
+        {
+          "name": "reject nonboolean completed 0",
+          "pass": true
+        },
+        {
+          "name": "reject nonboolean completed false",
+          "pass": true
+        },
+        {
+          "name": "reject invalid level",
+          "pass": true
+        },
+        {
+          "name": "reject invalid level",
+          "pass": true
+        },
+        {
+          "name": "reject invalid rank",
+          "pass": true
+        },
+        {
+          "name": "reject invalid mode",
+          "pass": true
+        },
+        {
+          "name": "reject invalid difficulty",
+          "pass": true
+        },
+        {
+          "name": "reject invalid upgrade -1",
+          "pass": true
+        },
+        {
+          "name": "reject invalid upgrade 4",
+          "pass": true
+        },
+        {
+          "name": "reject invalid upgrade 0.5",
+          "pass": true
+        },
+        {
+          "name": "reject missing upgrades",
+          "pass": true
+        },
+        {
+          "name": "reject incomplete save with ending",
+          "pass": true
+        },
+        {
+          "name": "reject inconsistent completed ending",
+          "pass": true
+        },
+        {
+          "name": "reject inconsistent completed historical sigil",
+          "pass": true
+        },
+        {
+          "name": "reject inconsistent completed boss",
+          "pass": true
+        },
+        {
+          "name": "reject inconsistent completed level",
+          "pass": true
+        },
+        {
+          "name": "deduplicate valid flags",
+          "pass": true
+        },
+        {
+          "name": "normalize unrecognized checkpoint to current first beacon",
+          "pass": true
+        },
+        {
+          "name": "save backup fallback on invalid primary",
+          "pass": true
+        },
+        {
+          "name": "save backup fallback when primary read throws",
+          "pass": true
+        },
+        {
+          "name": "save write preserves prior valid backup",
+          "pass": true
+        },
+        {
+          "name": "invalid save write leaves storage untouched",
+          "pass": true
+        },
+        {
+          "name": "unavailable storage reports read/write failure",
+          "pass": true
+        },
+        {
+          "name": "reject advanced story save without prior realm completion",
+          "pass": true
+        },
+        {
+          "name": "raw JSON 150000-byte safety limit remains enforced",
+          "pass": true
+        },
+        {
+          "name": "finish rejected from menu",
+          "pass": true
+        },
+        {
+          "name": "finish rejected early, without mutation",
+          "pass": true
+        },
+        {
+          "name": "finish rejects a missing historical boss after valid resume",
+          "pass": true
+        },
+        {
+          "name": "finish requires final sigils",
+          "pass": true
+        },
+        {
+          "name": "finish requires final boss",
+          "pass": true
+        },
+        {
+          "name": "finish rejects invalid ending",
+          "pass": true
+        },
+        {
+          "name": "completed finish cannot be repeated",
+          "pass": true
+        },
+        {
+          "name": "successful finish must produce a valid completed save",
+          "pass": true
+        },
+        {
+          "name": "invalid step dt 0 is inert",
+          "pass": true
+        },
+        {
+          "name": "invalid step dt -1 is inert",
+          "pass": true
+        },
+        {
+          "name": "invalid step dt NaN is inert",
+          "pass": true
+        },
+        {
+          "name": "invalid step dt Infinity is inert",
+          "pass": true
+        },
+        {
+          "name": "out-of-range step dt 2 is inert including guard",
+          "pass": true
+        },
+        {
+          "name": "nonlethal void rescue preserves damaged vitals story",
+          "pass": true
+        },
+        {
+          "name": "nonlethal void rescue preserves damaged vitals adventure",
+          "pass": true
+        },
+        {
+          "name": "nonlethal void rescue preserves damaged vitals veteran",
+          "pass": true
+        },
+        {
+          "name": "void damage cannot be parried",
+          "pass": true
+        },
+        {
+          "name": "lethal void increments death once without free rescue",
+          "pass": true
+        },
+        {
+          "name": "lava rescue preserves loss and flask count",
+          "pass": true
+        },
+        {
+          "name": "standing at same beacon does not silently rest",
+          "pass": true
+        },
+        {
+          "name": "E explicitly rests at same beacon",
+          "pass": true
+        },
+        {
+          "name": "rest interaction is disabled during active boss",
+          "pass": true
+        },
+        {
+          "name": "normal heal input consumes one flask and restores 55 percent",
+          "pass": true
+        },
+        {
+          "name": "heal at full health consumes nothing",
+          "pass": true
+        },
+        {
+          "name": "heal with no flask restores nothing",
+          "pass": true
+        },
+        {
+          "name": "parry input starts window and cooldown",
+          "pass": true
+        },
+        {
+          "name": "held parry cannot retrigger before cooldown",
+          "pass": true
+        },
+        {
+          "name": "parry window expires and rear attacks still hurt",
+          "pass": true
+        },
+        {
+          "name": "front parry consumes window and rewards mana",
+          "pass": true
+        },
+        {
+          "name": "parry cannot activate while already dashing",
+          "pass": true
+        },
+        {
+          "name": "parry cooldown permits next timed activation",
+          "pass": true
+        },
+        {
+          "name": "front projectile reflects with hero ownership face -1",
+          "pass": true
+        },
+        {
+          "name": "front projectile reflects with hero ownership face 1",
+          "pass": true
+        },
+        {
+          "name": "rear projectile is not reflected",
+          "pass": true
+        },
+        {
+          "name": "expired projectile cannot reflect",
+          "pass": true
+        },
+        {
+          "name": "single guard reflects at most one projectile",
+          "pass": true
+        },
+        {
+          "name": "reflection damage scales with focus",
+          "pass": true
+        },
+        {
+          "name": "reflected projectile actually damages ordinary enemy through simulation",
+          "pass": true
+        },
+        {
+          "name": "parry stun freezes enemy movement and attack timer",
+          "pass": true
+        },
+        {
+          "name": "sigil gate progression realm 0",
+          "pass": true
+        },
+        {
+          "name": "physical gate prevents arena entry realm 0",
+          "pass": true
+        },
+        {
+          "name": "collecting both opens boss and arena locks realm 0",
+          "pass": true
+        },
+        {
+          "name": "inactive boss cannot take sword/spell damage realm 0",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp left realm 0",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp right realm 0",
+          "pass": true
+        },
+        {
+          "name": "living boss prevents exit realm 0",
+          "pass": true
+        },
+        {
+          "name": "sigil gate progression realm 1",
+          "pass": true
+        },
+        {
+          "name": "physical gate prevents arena entry realm 1",
+          "pass": true
+        },
+        {
+          "name": "collecting both opens boss and arena locks realm 1",
+          "pass": true
+        },
+        {
+          "name": "inactive boss cannot take sword/spell damage realm 1",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp left realm 1",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp right realm 1",
+          "pass": true
+        },
+        {
+          "name": "living boss prevents exit realm 1",
+          "pass": true
+        },
+        {
+          "name": "sigil gate progression realm 2",
+          "pass": true
+        },
+        {
+          "name": "physical gate prevents arena entry realm 2",
+          "pass": true
+        },
+        {
+          "name": "collecting both opens boss and arena locks realm 2",
+          "pass": true
+        },
+        {
+          "name": "inactive boss cannot take sword/spell damage realm 2",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp left realm 2",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp right realm 2",
+          "pass": true
+        },
+        {
+          "name": "living boss prevents exit realm 2",
+          "pass": true
+        },
+        {
+          "name": "invalid level indices cannot mutate game",
+          "pass": true
+        },
+        {
+          "name": "normal replay evidence comes exclusively from allowed inputs",
+          "pass": true
+        }
+      ]
+    },
+    "campaignCases": {
+      "passed": 20,
+      "failed": 0,
+      "exactReplays": 20,
+      "optionalRouteCases": 12,
+      "scope": "ordinary-input cloned-observation controller; not browser/human campaign"
+    },
+    "retainedHTTPBrowser": {
+      "passed": 53,
+      "failed": 0
+    },
+    "upgradeBrowser": {
+      "passed": 13,
+      "failed": 0
+    },
+    "persistenceBrowser": {
+      "passed": 17,
+      "failed": 0
+    },
+    "workerUpdateBrowser": {
+      "passed": 5,
+      "failed": 0
+    },
+    "secretPatternScan": {
+      "findings": 0,
+      "scope": "limited pattern scan, not exhaustive audit"
+    }
+  },
+  "runtimeFiles": [
+    {
+      "path": "assets/data/browser-test-results.json",
+      "bytes": 8306,
+      "sha256": "27a9ec7ae2b9cc0600a6a5211bb6a011d779b553232baf79d96f16d123e015dc"
+    },
+    {
+      "path": "assets/data/release.json",
+      "bytes": 3913,
+      "sha256": "d76f1e02b965a75c8197fcc7e615a625d08a4df3c508c9735b5197ab3565f7c9"
+    },
+    {
+      "path": "assets/images/cinderworks_hd.webp",
+      "bytes": 327328,
+      "sha256": "5efad2ebd7979485a94d8107ddc8fb1892c9c42edf22c541efb33760d9889c52"
+    },
+    {
+      "path": "assets/images/emberwake_panorama.png",
+      "bytes": 2612529,
+      "sha256": "df46625ae34641b7a68aa74607e387621dafd191fa626a7af9f695fc2e6f7740"
+    },
+    {
+      "path": "assets/images/hollowspire_hd.webp",
+      "bytes": 438576,
+      "sha256": "e3957419c3aec2ee16536ffb8d06b4550aff89fc1fd23102dfb4fc8430442e03"
+    },
+    {
+      "path": "assets/images/moonroot_hd.webp",
+      "bytes": 417744,
+      "sha256": "fb0347cb3d06f62a3c9a10f8a11f5e475c6b8580ace85da0cd40ff3067c0856f"
+    },
+    {
+      "path": "assets/legacy.html",
+      "bytes": 2743,
+      "sha256": "e9d479e98a8797396f2ab7aec6911e1a48c44fa9c7f64628dadb046980843841"
+    },
+    {
+      "path": "assets/lumen-preview.html",
+      "bytes": 4160,
+      "sha256": "201514eab37eb3582428def0835d679a08e248c9b1c622912f5b5507847a25a8"
+    },
+    {
+      "path": "assets/lumen/game.css",
+      "bytes": 10528,
+      "sha256": "f956c5a64f901ec6b25a787bee99b83440eeb60ec5e99c39f80cdfb65b19314f"
+    },
+    {
+      "path": "assets/lumen/game.js",
+      "bytes": 599867,
+      "sha256": "592d2f96b0777aa753e51b7116ed8274c3cb2762cc575724f3021b9c8743219d"
+    },
+    {
+      "path": "assets/lumen/icon-192.png",
+      "bytes": 3464,
+      "sha256": "e7d58e38a5be148cc95e0077bcd7c9aa6d2a5cbb2d9c7e20088a87a666afb0c2"
+    },
+    {
+      "path": "assets/lumen/icon-512.png",
+      "bytes": 53664,
+      "sha256": "39c7d8243e89fc49b2007f42dc6b3265f9cdb1149c2984f5ee5fee0e3e596026"
+    },
+    {
+      "path": "assets/lumen/icon.svg",
+      "bytes": 381,
+      "sha256": "83e845c869e778a3e119061956b18cfddc267b5efe85a6dd31c5e9a8d3287dba"
+    },
+    {
+      "path": "assets/lumen/manifest.webmanifest",
+      "bytes": 375,
+      "sha256": "32bc461cb134e777d945dd26820acab8587492d7bc466548ba46665d470ccb23"
+    },
+    {
+      "path": "assets/lumen/third-party.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "assets/scripts/client.js",
+      "bytes": 83928,
+      "sha256": "0bb2b6480f5eeb00439ece144a8f922cea19a5d9c5dd29c14e815e9cb640eca8"
+    },
+    {
+      "path": "assets/scripts/controls-v11.js",
+      "bytes": 10873,
+      "sha256": "d9fdad13cac437ecd152eac812a564e389b05bbc75248b311ffd2ff8119e43e8"
+    },
+    {
+      "path": "assets/scripts/core-v11.js",
+      "bytes": 7004,
+      "sha256": "823ab267aa5bbbbeae7d8c0ae16e05e1387f79119844679105756cc92a1d16e8"
+    },
+    {
+      "path": "assets/scripts/encounters-v12.js",
+      "bytes": 7375,
+      "sha256": "0a6e03cdfb352be8b5c0e6ccaf8417db6d59cc1616e9b59acfb5fd2e5bba5abe"
+    },
+    {
+      "path": "assets/scripts/engine.js",
+      "bytes": 19614,
+      "sha256": "764ef82fbd44f57256fbb748b5bfed1636939ae2fc2bb9af2a4660b8c47d6b8a"
+    },
+    {
+      "path": "assets/scripts/journal-v12.js",
+      "bytes": 2857,
+      "sha256": "b04990a098cc2a8a9af1bb457c4a1804b37710e27ab02036f8338556dc1b711f"
+    },
+    {
+      "path": "assets/scripts/journey-v11.js",
+      "bytes": 9233,
+      "sha256": "99cc751ab85c5c5f8931ddf8996ee17463ce2921a0710274a4ccd49493c7fc00"
+    },
+    {
+      "path": "assets/scripts/presentation-v12.js",
+      "bytes": 6208,
+      "sha256": "010e8fffe68d0cc9a43821d6203198d320cafce9baa0803b07392634a0b32461"
+    },
+    {
+      "path": "assets/scripts/realm-v11.js",
+      "bytes": 4190,
+      "sha256": "90686783ab8193e66f7423c199be7220b258995d35cd1fa993e9355560402b4e"
+    },
+    {
+      "path": "assets/scripts/worlds.js",
+      "bytes": 13964,
+      "sha256": "32eb12c3920fc8c5ab00e6f9accd3e909fb504605573c880067232383fc4ca9a"
+    },
+    {
+      "path": "assets/styles/sequel-v12.css",
+      "bytes": 7619,
+      "sha256": "a65ad19eb20957cc9830bbd69d9a39966c10c0b4a875c13e2c4c318c176a1d2a"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3200,
+      "sha256": "e24cacedca561120f1564c6b336ee1771790bde892ac7acc2c46ba66a2f3c2f7"
+    },
+    {
+      "path": "sw.js",
+      "bytes": 3400,
+      "sha256": "76ab498d3cab52587a1a79257e19d006e4f70a73ef8fa69dc774e4d18dff6470"
+    }
+  ],
+  "integrityManifestSHA256": "abaa480963a9ca0f7720bb6cbc977e0d013fe3739e87127f5016a15e82908be6",
+  "originalImagesUnchanged": {
+    "assets/images/cinderworks_hd.webp": "5efad2ebd7979485a94d8107ddc8fb1892c9c42edf22c541efb33760d9889c52",
+    "assets/images/emberwake_panorama.png": "df46625ae34641b7a68aa74607e387621dafd191fa626a7af9f695fc2e6f7740",
+    "assets/images/hollowspire_hd.webp": "e3957419c3aec2ee16536ffb8d06b4550aff89fc1fd23102dfb4fc8430442e03",
+    "assets/images/moonroot_hd.webp": "fb0347cb3d06f62a3c9a10f8a11f5e475c6b8580ace85da0cd40ff3067c0856f"
+  },
+  "unqualified": [
+    "physical Android/iOS/controllers",
+    "Safari/Firefox",
+    "device FPS/thermals/battery/memory",
+    "independent accessibility/human pacing",
+    "owner asset/trademark/licensing review",
+    "remote CI and public deployment at generation time"
+  ],
+  "intermediateFailures": [
+    "journal extension initially indexed milestone as a realm; fixed and rerun",
+    "inherited harness settings navigation assumed visible topbar; adapted native Pause navigation",
+    "scanner rejected old temporary browser symlinks; scratch moved out and harness uses cleaned system tempdir",
+    "update harness missing scope arguments; fixed",
+    "500ms failed-install sample caught second active attempt; bounded-quiescence assertion with forced retry verified"
+  ],
+  "scope": "Emberwake in-place alpha with original Canvas engine, V3 journeys, three realms/guardians/endings/gauntlet. No official Swordigo rights or deferred persistent sequel chapter claimed."
+}

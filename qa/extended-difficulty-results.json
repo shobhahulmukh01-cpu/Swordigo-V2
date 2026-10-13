@@ -1,68 +1,363 @@
 {
   "hashes": {
-    "engine.js": "687f8ed258fe56a7547bf221a95eadba3656a370980c63c9c2d40aaee4b0b4d2",
-    "worlds.js": "11be3617782e2db4abb5d6efa996f667837374237d3956c1f4d9a90b68c4789f",
-    "core-v11.js": "ab2982d747e072e8c12704be19eca158a5ed0c9650bf8c749ed4c34e2e7547d6"
+    "engine.js": "764ef82fbd44f57256fbb748b5bfed1636939ae2fc2bb9af2a4660b8c47d6b8a",
+    "worlds.js": "32eb12c3920fc8c5ab00e6f9accd3e909fb504605573c880067232383fc4ca9a",
+    "core-v11.js": "823ab267aa5bbbbeae7d8c0ae16e05e1387f79119844679105756cc92a1d16e8",
+    "encounters-v12.js": "0a6e03cdfb352be8b5c0e6ccaf8417db6d59cc1616e9b59acfb5fd2e5bba5abe"
   },
+  "encounterVersion": "1.2.0-encounters.1",
+  "scope": "Ordinary-input whole campaigns and exact replays; optional cases land on every declared branch path/return platform. No browser or human pacing evidence.",
   "results": [
     {
       "pass": true,
       "mode": "story",
       "difficulty": "adventure",
+      "dt": 0.016666666666666666,
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 17,
       "ending": "mercy",
-      "frames": 3911,
+      "frames": 3845,
       "deaths": 0,
       "error": null,
       "replay": {
         "pass": true,
         "mode": "story",
         "dt": 0.016666666666666666,
-        "frames": 3911
+        "routeMode": "original",
+        "routeLandings": 0,
+        "stateChecks": 17,
+        "frames": 3845
       }
     },
     {
       "pass": true,
       "mode": "story",
       "difficulty": "veteran",
+      "dt": 0.008333333333333333,
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 32,
       "ending": "mercy",
-      "frames": 7388,
+      "frames": 7602,
       "deaths": 0,
       "error": null,
       "replay": {
         "pass": true,
         "mode": "story",
         "dt": 0.008333333333333333,
-        "frames": 7388
+        "routeMode": "original",
+        "routeLandings": 0,
+        "stateChecks": 32,
+        "frames": 7602
       }
     },
     {
       "pass": true,
       "mode": "story",
       "difficulty": "adventure",
+      "dt": 0.008333333333333333,
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 32,
       "ending": "rekindle",
-      "frames": 7388,
+      "frames": 7602,
       "deaths": 0,
       "error": null,
       "replay": {
         "pass": true,
         "mode": "story",
         "dt": 0.008333333333333333,
-        "frames": 7388
+        "routeMode": "original",
+        "routeLandings": 0,
+        "stateChecks": 32,
+        "frames": 7602
       }
     },
     {
       "pass": true,
       "mode": "rush",
       "difficulty": "veteran",
+      "dt": 0.008333333333333333,
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 9,
       "ending": "rekindle",
-      "frames": 2146,
+      "frames": 2052,
       "deaths": 0,
       "error": null,
       "replay": {
         "pass": true,
         "mode": "rush",
         "dt": 0.008333333333333333,
-        "frames": 2146
+        "routeMode": "original",
+        "routeLandings": 0,
+        "stateChecks": 9,
+        "frames": 2052
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "story",
+      "dt": 0.016666666666666666,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 25,
+      "ending": "mercy",
+      "frames": 5909,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.016666666666666666,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 25,
+        "frames": 5909
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "story",
+      "dt": 0.016666666666666666,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 25,
+      "ending": "rekindle",
+      "frames": 5909,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.016666666666666666,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 25,
+        "frames": 5909
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "story",
+      "dt": 0.008333333333333333,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 49,
+      "ending": "mercy",
+      "frames": 11604,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.008333333333333333,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 49,
+        "frames": 11604
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "story",
+      "dt": 0.008333333333333333,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 49,
+      "ending": "rekindle",
+      "frames": 11604,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.008333333333333333,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 49,
+        "frames": 11604
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "adventure",
+      "dt": 0.016666666666666666,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 25,
+      "ending": "mercy",
+      "frames": 5933,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.016666666666666666,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 25,
+        "frames": 5933
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "adventure",
+      "dt": 0.016666666666666666,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 25,
+      "ending": "rekindle",
+      "frames": 5933,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.016666666666666666,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 25,
+        "frames": 5933
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "adventure",
+      "dt": 0.008333333333333333,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 49,
+      "ending": "mercy",
+      "frames": 11606,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.008333333333333333,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 49,
+        "frames": 11606
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "adventure",
+      "dt": 0.008333333333333333,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 49,
+      "ending": "rekindle",
+      "frames": 11606,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.008333333333333333,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 49,
+        "frames": 11606
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "veteran",
+      "dt": 0.016666666666666666,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 25,
+      "ending": "mercy",
+      "frames": 5933,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.016666666666666666,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 25,
+        "frames": 5933
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "veteran",
+      "dt": 0.016666666666666666,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 25,
+      "ending": "rekindle",
+      "frames": 5933,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.016666666666666666,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 25,
+        "frames": 5933
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "veteran",
+      "dt": 0.008333333333333333,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 49,
+      "ending": "mercy",
+      "frames": 11606,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.008333333333333333,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 49,
+        "frames": 11606
+      }
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "veteran",
+      "dt": 0.008333333333333333,
+      "routeMode": "optional",
+      "routeLandings": 27,
+      "stateChecks": 49,
+      "ending": "rekindle",
+      "frames": 11606,
+      "deaths": 0,
+      "error": null,
+      "replay": {
+        "pass": true,
+        "mode": "story",
+        "dt": 0.008333333333333333,
+        "routeMode": "optional",
+        "routeLandings": 27,
+        "stateChecks": 49,
+        "frames": 11606
       }
     }
   ]

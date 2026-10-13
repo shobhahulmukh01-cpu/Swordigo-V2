@@ -1,0 +1,1777 @@
+{
+  "generatedUTC": "2026-10-13T20:38:32.983Z",
+  "passed": 5,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+      "milliseconds": 12868,
+      "evidence": {
+        "oldWorkerActual": true,
+        "waitingWithTwoClients": true,
+        "waitingWithLastClient": true,
+        "saveSHA256": "41b948a56a7165ffa1b95acc5ea4210e08a751cc3ed325f14ba316b4117f91c9",
+        "retainedKeys": [
+          "lumen-other-deployment-fixture",
+          "emberwake-other-deployment-fixture"
+        ],
+        "foreignOriginRetained": true
+      }
+    },
+    {
+      "name": "cache miss refuses incompatible network bytes with 503",
+      "milliseconds": 54,
+      "evidence": {
+        "status": 503,
+        "incompatibleBytesNotReturned": true,
+        "correctDigestRecovered": true
+      }
+    },
+    {
+      "name": "coherent offline reload retains original checkpoint journey",
+      "milliseconds": 540,
+      "evidence": {
+        "networkDisabled": true,
+        "validVersion": 3,
+        "originalBytesRetained": true,
+        "independentCompleteInstall": true
+      }
+    },
+    {
+      "name": "partial failed install cannot activate or leave its cache behind",
+      "milliseconds": 7153,
+      "evidence": {
+        "installState": "redundant",
+        "noWaitingWorker": true,
+        "oldActiveRetained": true,
+        "noPartialCacheResidue": true
+      }
+    },
+    {
+      "name": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+      "milliseconds": 2438,
+      "evidence": {
+        "historicalWorkerActual": true,
+        "defaultRollbackProduct": "Lumenblade (historical fixture only)",
+        "legacyEmberwakeV3Valid": true,
+        "originalSaveBytesRetained": true
+      }
+    }
+  ],
+  "failures": [],
+  "oldCommit": "6c266e9d0d8eaf8ceb73f298b9cf76174fe25290",
+  "currentSourceHashes": {
+    "index.html": "e24cacedca561120f1564c6b336ee1771790bde892ac7acc2c46ba66a2f3c2f7",
+    "sw.js": "76ab498d3cab52587a1a79257e19d006e4f70a73ef8fa69dc774e4d18dff6470",
+    "assets/scripts/client.js": "0bb2b6480f5eeb00439ece144a8f922cea19a5d9c5dd29c14e815e9cb640eca8",
+    "assets/scripts/controls-v11.js": "d9fdad13cac437ecd152eac812a564e389b05bbc75248b311ffd2ff8119e43e8",
+    "assets/scripts/core-v11.js": "823ab267aa5bbbbeae7d8c0ae16e05e1387f79119844679105756cc92a1d16e8",
+    "assets/scripts/encounters-v12.js": "0a6e03cdfb352be8b5c0e6ccaf8417db6d59cc1616e9b59acfb5fd2e5bba5abe",
+    "assets/scripts/engine.js": "764ef82fbd44f57256fbb748b5bfed1636939ae2fc2bb9af2a4660b8c47d6b8a",
+    "assets/scripts/journal-v12.js": "b04990a098cc2a8a9af1bb457c4a1804b37710e27ab02036f8338556dc1b711f",
+    "assets/scripts/journey-v11.js": "99cc751ab85c5c5f8931ddf8996ee17463ce2921a0710274a4ccd49493c7fc00",
+    "assets/scripts/presentation-v12.js": "010e8fffe68d0cc9a43821d6203198d320cafce9baa0803b07392634a0b32461",
+    "assets/scripts/realm-v11.js": "90686783ab8193e66f7423c199be7220b258995d35cd1fa993e9355560402b4e",
+    "assets/scripts/worlds.js": "32eb12c3920fc8c5ab00e6f9accd3e909fb504605573c880067232383fc4ca9a",
+    "assets/styles/sequel-v12.css": "a65ad19eb20957cc9830bbd69d9a39966c10c0b4a875c13e2c4c318c176a1d2a"
+  },
+  "oldWorkerSHA256": "0dff1449b6dca02b90b3578cd3c6ef901cf8f583ea723ab100e1d5ce86246825",
+  "declaredAssets": 17,
+  "browser": "153.0.8010.12",
+  "fixtureOrigin": "http://127.0.0.1:33825",
+  "foreignFixtureOrigin": "http://127.0.0.1:40397",
+  "controlledRetryFixture": true,
+  "scope": "Independent dynamic loopback HTTP snapshots; actual historical Lumen worker/root/assets, current generated Emberwake worker, checkpoint-save fixture, waiting/activation, digest refusal, failed-install cleanup, offline and rollback. Synthetic save/controlled network/cache faults; not human gameplay, public deployment, physical devices, browser campaign or certification.",
+  "diagnostics": {
+    "requests": [
+      {
+        "file": "index.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.194Z",
+        "referer": null,
+        "destination": "document"
+      },
+      {
+        "file": "assets/lumen/game.css",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.234Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "style"
+      },
+      {
+        "file": "assets/lumen/game.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.235Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "sw.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.829Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "serviceworker"
+      },
+      {
+        "file": "index.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.842Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "index.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.848Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/game.css",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.850Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/game.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.861Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon.svg",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.865Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon-192.png",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.865Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon-512.png",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.872Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/manifest.webmanifest",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:10.873Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon.svg",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:11.422Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/legacy.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:11.685Z",
+        "referer": null,
+        "destination": "document"
+      },
+      {
+        "file": "assets/scripts/worlds.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:11.694Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/engine.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:11.699Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/core-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:11.707Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/client.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:11.712Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/controls-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:11.720Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/journey-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:11.721Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/realm-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:11.727Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/images/emberwake_panorama.png",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:11.774Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "image"
+      },
+      {
+        "file": "assets/images/moonroot_hd.webp",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:13.484Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "image"
+      },
+      {
+        "file": "assets/images/cinderworks_hd.webp",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:13.487Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "image"
+      },
+      {
+        "file": "assets/images/hollowspire_hd.webp",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:13.488Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "image"
+      },
+      {
+        "file": "index.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:14.711Z",
+        "referer": null,
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/game.css",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:14.730Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/game.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:14.734Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon.svg",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:17.095Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "empty"
+      },
+      {
+        "file": "sw.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.323Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "serviceworker"
+      },
+      {
+        "file": "index.html",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.359Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "index.html",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.362Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/styles/sequel-v12.css",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.362Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/worlds.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.369Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/engine.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.373Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/core-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.373Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/encounters-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.378Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/journal-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.385Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/client.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.385Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/controls-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.385Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/journey-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.393Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/realm-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.398Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/presentation-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.400Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/emberwake_panorama.png",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.411Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/moonroot_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.416Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/cinderworks_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.416Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/hollowspire_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.444Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "sw.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+        "utc": "2026-10-13T20:38:21.521Z",
+        "referer": "http://127.0.0.1:33825/__observer.html",
+        "destination": "serviceworker"
+      },
+      {
+        "file": "assets/scripts/client.js",
+        "historical": false,
+        "corrupt": true,
+        "scenario": "cache miss refuses incompatible network bytes with 503",
+        "utc": "2026-10-13T20:38:22.821Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/client.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "cache miss refuses incompatible network bytes with 503",
+        "utc": "2026-10-13T20:38:22.838Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "index.html",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.007Z",
+        "referer": null,
+        "destination": "document"
+      },
+      {
+        "file": "assets/styles/sequel-v12.css",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.074Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "style"
+      },
+      {
+        "file": "assets/scripts/worlds.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.085Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/engine.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.085Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/core-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.085Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/encounters-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.085Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/journal-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.086Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/client.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.086Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/controls-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.093Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/journey-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.093Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/realm-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.093Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/presentation-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.094Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "sw.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.117Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "serviceworker"
+      },
+      {
+        "file": "index.html",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.134Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "index.html",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.134Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/styles/sequel-v12.css",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.134Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/worlds.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.141Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/engine.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.141Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/core-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.143Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/encounters-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.149Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/journal-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.150Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/client.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.153Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/controls-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.155Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/journey-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.156Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/realm-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.171Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/presentation-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.171Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/emberwake_panorama.png",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.171Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/moonroot_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.186Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/cinderworks_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.187Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/hollowspire_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.213Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/emberwake_panorama.png",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "coherent offline reload retains original checkpoint journey",
+        "utc": "2026-10-13T20:38:23.222Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "image"
+      },
+      {
+        "file": "index.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:23.770Z",
+        "referer": null,
+        "destination": "document"
+      },
+      {
+        "file": "assets/lumen/game.css",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:23.795Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "style"
+      },
+      {
+        "file": "assets/lumen/game.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:23.795Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "script"
+      },
+      {
+        "file": "sw.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:24.654Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "serviceworker"
+      },
+      {
+        "file": "index.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:24.673Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "index.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:24.675Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/game.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:24.678Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/game.css",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:24.682Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon.svg",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:24.682Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon-192.png",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:24.683Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon-512.png",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:24.687Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/manifest.webmanifest",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:24.687Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "sw.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:26.733Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "serviceworker"
+      },
+      {
+        "file": "index.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:26.759Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "index.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:26.760Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/game.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:26.769Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/game.css",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:26.771Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon.svg",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:26.771Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon-192.png",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:26.773Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon-512.png",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:26.777Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/manifest.webmanifest",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:26.779Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon.svg",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:27.966Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/legacy.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.282Z",
+        "referer": null,
+        "destination": "document"
+      },
+      {
+        "file": "assets/scripts/worlds.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.293Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/engine.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.294Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/core-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.306Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/client.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.309Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/controls-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.312Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/journey-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.318Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/realm-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.319Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/images/emberwake_panorama.png",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.375Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "image"
+      },
+      {
+        "file": "sw.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.439Z",
+        "referer": "http://127.0.0.1:33825/__observer.html",
+        "destination": "serviceworker"
+      },
+      {
+        "file": "index.html",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.459Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "index.html",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.462Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/styles/sequel-v12.css",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.462Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/worlds.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.471Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/engine.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.480Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/core-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.481Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/encounters-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.481Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/journal-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.485Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/client.js",
+        "historical": false,
+        "corrupt": true,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.486Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/controls-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.486Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/journey-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.494Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/realm-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.494Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/presentation-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.500Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/emberwake_panorama.png",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.505Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/moonroot_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.511Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/cinderworks_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.513Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/hollowspire_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.532Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "sw.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.960Z",
+        "referer": "http://127.0.0.1:33825/__observer.html",
+        "destination": "serviceworker"
+      },
+      {
+        "file": "index.html",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.984Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "index.html",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.984Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/styles/sequel-v12.css",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.984Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/worlds.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.994Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/engine.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.994Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/core-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.994Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/encounters-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.996Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/journal-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.999Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/client.js",
+        "historical": false,
+        "corrupt": true,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:28.999Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/controls-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:29.000Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/journey-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:29.013Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/realm-v11.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:29.013Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/scripts/presentation-v12.js",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:29.019Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/emberwake_panorama.png",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:29.019Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/moonroot_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:29.029Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/cinderworks_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:29.045Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/images/hollowspire_hd.webp",
+        "historical": false,
+        "corrupt": false,
+        "scenario": "partial failed install cannot activate or leave its cache behind",
+        "utc": "2026-10-13T20:38:29.050Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/sw.js",
+        "destination": "empty"
+      },
+      {
+        "file": "sw.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:30.806Z",
+        "referer": "http://127.0.0.1:33825/__observer.html",
+        "destination": "serviceworker"
+      },
+      {
+        "file": "index.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:31.866Z",
+        "referer": null,
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/game.css",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:31.873Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/game.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:31.878Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/lumen/icon.svg",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:32.676Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/",
+        "destination": "empty"
+      },
+      {
+        "file": "assets/legacy.html",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:32.830Z",
+        "referer": null,
+        "destination": "document"
+      },
+      {
+        "file": "assets/scripts/worlds.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:32.842Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/engine.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:32.846Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/core-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:32.851Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/client.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:32.851Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/controls-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:32.852Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/journey-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:32.857Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/scripts/realm-v11.js",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:32.860Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "script"
+      },
+      {
+        "file": "assets/images/emberwake_panorama.png",
+        "historical": true,
+        "corrupt": false,
+        "scenario": "actual historical-worker rollback retains a valid Emberwake journey via old legacy entry",
+        "utc": "2026-10-13T20:38:32.908Z",
+        "referer": "http://127.0.0.1:33825/Swordigo-V2/assets/legacy.html",
+        "destination": "image"
+      }
+    ],
+    "pageErrors": [],
+    "consoleErrors": [
+      {
+        "url": "http://127.0.0.1:33825/__observer.html",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "url": "http://127.0.0.1:40397/__observer.html",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "url": "http://127.0.0.1:33825/Swordigo-V2/",
+        "message": "Failed to load resource: the server responded with a status of 503 ()"
+      }
+    ],
+    "partialInstall": [
+      {
+        "stage": "first-redundant",
+        "before": [
+          "lumen-b44af77e82af"
+        ],
+        "inventory": {
+          "lumen-b44af77e82af": [
+            "http://127.0.0.1:33825/Swordigo-V2/",
+            "http://127.0.0.1:33825/Swordigo-V2/index.html",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/game.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/game.css",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon.svg",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon-192.png",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon-512.png",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/manifest.webmanifest"
+          ]
+        },
+        "registration": {
+          "active": "activated",
+          "history": [
+            {
+              "id": 1,
+              "utc": "2026-10-13T20:38:28.453Z",
+              "states": [
+                {
+                  "state": "installing",
+                  "utc": "2026-10-13T20:38:28.453Z"
+                },
+                {
+                  "state": "redundant",
+                  "utc": "2026-10-13T20:38:28.602Z"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "late-settle",
+        "inventory": {
+          "lumen-b44af77e82af": [
+            "http://127.0.0.1:33825/Swordigo-V2/",
+            "http://127.0.0.1:33825/Swordigo-V2/index.html",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/game.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/game.css",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon.svg",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon-192.png",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon-512.png",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/manifest.webmanifest"
+          ],
+          "emberwake-scope-%2FSwordigo-V2%2F-emberwake-2a098eafab34": [
+            "http://127.0.0.1:33825/Swordigo-V2/",
+            "http://127.0.0.1:33825/Swordigo-V2/index.html",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/styles/sequel-v12.css",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/worlds.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/engine.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/core-v11.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/encounters-v12.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/journal-v12.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/controls-v11.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/journey-v11.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/realm-v11.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/presentation-v12.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/images/moonroot_hd.webp",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/images/cinderworks_hd.webp",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/images/hollowspire_hd.webp",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/images/emberwake_panorama.png"
+          ]
+        },
+        "registration": {
+          "active": "activated",
+          "installing": "installing",
+          "history": [
+            {
+              "id": 1,
+              "utc": "2026-10-13T20:38:28.453Z",
+              "states": [
+                {
+                  "state": "installing",
+                  "utc": "2026-10-13T20:38:28.453Z"
+                },
+                {
+                  "state": "redundant",
+                  "utc": "2026-10-13T20:38:28.602Z"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "utc": "2026-10-13T20:38:28.978Z",
+              "states": [
+                {
+                  "state": "installing",
+                  "utc": "2026-10-13T20:38:28.978Z"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "quiescence-check",
+        "inventory": {
+          "lumen-b44af77e82af": [
+            "http://127.0.0.1:33825/Swordigo-V2/",
+            "http://127.0.0.1:33825/Swordigo-V2/index.html",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/game.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/game.css",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon.svg",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon-192.png",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon-512.png",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/manifest.webmanifest"
+          ],
+          "emberwake-scope-%2FSwordigo-V2%2F-emberwake-2a098eafab34": [
+            "http://127.0.0.1:33825/Swordigo-V2/",
+            "http://127.0.0.1:33825/Swordigo-V2/index.html",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/styles/sequel-v12.css",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/worlds.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/engine.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/core-v11.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/encounters-v12.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/journal-v12.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/controls-v11.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/journey-v11.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/realm-v11.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/scripts/presentation-v12.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/images/moonroot_hd.webp",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/images/cinderworks_hd.webp",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/images/hollowspire_hd.webp",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/images/emberwake_panorama.png"
+          ]
+        },
+        "registration": {
+          "active": "activated",
+          "previous": "activated",
+          "installing": "installing",
+          "history": [
+            {
+              "id": 1,
+              "utc": "2026-10-13T20:38:28.453Z",
+              "states": [
+                {
+                  "state": "installing",
+                  "utc": "2026-10-13T20:38:28.453Z"
+                },
+                {
+                  "state": "redundant",
+                  "utc": "2026-10-13T20:38:28.602Z"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "utc": "2026-10-13T20:38:28.978Z",
+              "states": [
+                {
+                  "state": "installing",
+                  "utc": "2026-10-13T20:38:28.978Z"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "quiescence-check",
+        "inventory": {
+          "lumen-b44af77e82af": [
+            "http://127.0.0.1:33825/Swordigo-V2/",
+            "http://127.0.0.1:33825/Swordigo-V2/index.html",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/game.js",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/game.css",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon.svg",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon-192.png",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/icon-512.png",
+            "http://127.0.0.1:33825/Swordigo-V2/assets/lumen/manifest.webmanifest"
+          ]
+        },
+        "registration": {
+          "active": "activated",
+          "previous": "activated",
+          "history": [
+            {
+              "id": 1,
+              "utc": "2026-10-13T20:38:28.453Z",
+              "states": [
+                {
+                  "state": "installing",
+                  "utc": "2026-10-13T20:38:28.453Z"
+                },
+                {
+                  "state": "redundant",
+                  "utc": "2026-10-13T20:38:28.602Z"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "utc": "2026-10-13T20:38:28.978Z",
+              "states": [
+                {
+                  "state": "installing",
+                  "utc": "2026-10-13T20:38:28.978Z"
+                },
+                {
+                  "state": "redundant",
+                  "utc": "2026-10-13T20:38:30.505Z"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

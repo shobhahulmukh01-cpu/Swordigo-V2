@@ -5,7 +5,7 @@ Run: python3 tests/browser-smoke.py --root dist --output qa/browser
 Optional --base-url checks a running production server instead of a test server.
 This suite is not a full playthrough, cross-browser, physical-controller or accessibility certification.
 """
-import argparse,base64,functools,http.server,json,os,shutil,socket,struct,subprocess,threading,time,urllib.request,urllib.parse,mimetypes,selectors
+import argparse,base64,functools,http.server,json,os,shutil,socket,struct,subprocess,threading,time,urllib.request,urllib.parse,mimetypes,selectors,tempfile
 from pathlib import Path
 
 class WebSocket:
@@ -110,7 +110,7 @@ class CDP:
         data=self.call('Page.captureScreenshot',{'format':'png','captureBeyondViewport':False})['data'];Path(path).write_bytes(base64.b64decode(data))
 
 def run(args):
-    out=Path(args.output);out.mkdir(parents=True,exist_ok=True);work=Path('scratch')/('browser-'+str(time.time_ns()));work.mkdir(parents=True,exist_ok=True)
+    out=Path(args.output);out.mkdir(parents=True,exist_ok=True);work=Path(tempfile.mkdtemp(prefix='emberwake-browser-'))
     binary=shutil.which(os.environ.get('CHROME_BIN','')) or shutil.which(os.environ.get('CHROME_PATH','')) or shutil.which('chromium') or shutil.which('chromium-browser') or shutil.which('google-chrome') or shutil.which('google-chrome-stable')
     if not binary:raise RuntimeError('Chromium executable is required')
     server=None
@@ -137,7 +137,7 @@ def run(args):
         c.call('Emulation.setDeviceMetricsOverride',{'width':1440,'height':980,'deviceScaleFactor':1,'mobile':False})
         downloads=work/'downloads';downloads.mkdir(exist_ok=True)
         c.call('Browser.setDownloadBehavior',{'behavior':'allow','downloadPath':str(downloads.resolve())})
-        c.call('Page.navigate',{'url':base+'assets/legacy.html'});c.wait('Boolean(window.emberwake&&window.EW_V11)')
+        c.call('Page.navigate',{'url':base});c.wait('Boolean(window.emberwake&&window.EW_V11)')
         c.wait('window.emberwake.renderer.realmImages&&window.emberwake.renderer.realmImages.every(i=>i.complete&&i.naturalWidth>0)')
         check('desktop boot with all three realm artworks',c.evaluate("!document.getElementById('fatal').hidden===false && !document.getElementById('title-screen').hidden"))
         check('boot is idempotent',c.evaluate('EWClient.boot()===window.emberwake'))
@@ -156,10 +156,10 @@ def run(args):
         check('pause freezes simulation',abs(c.evaluate('emberwake.game.progress.stats.time')-t)<.0001)
         c.click('#modal-content [data-act="map"]');check('map renders current realm',c.evaluate("emberwake.modalKind==='map'&&!!document.querySelector('.mapgraphic')"));c.click('#modal-content [data-act="close"]')
         c.tap('KeyI');check('journal includes local milestones',c.evaluate("document.getElementById('modal-content').textContent.includes('Courier milestones')"));c.tap('Escape')
-        c.click('.topactions [data-act="settings"]');c.evaluate("document.getElementById('set-minimap').focus()");c.tap('Tab')
+        c.tap('Escape');c.click('#modal-content [data-act="settings"]');c.evaluate("document.getElementById('set-minimap').focus()");c.tap('Tab')
         check('settings inputs obey modal focus trap',c.evaluate("document.getElementById('modal').contains(document.activeElement)"))
         c.evaluate("document.getElementById('set-volume').focus()");c.tap('Escape');check('Escape closes settings while input focused',c.evaluate('emberwake.modalKind===null&&!emberwake.paused'))
-        c.click('.topactions [data-act="settings"]');c.click('[data-act="bindings"]');c.click('[data-bind="parry"]');c.tap('KeyU')
+        c.tap('Escape');c.click('#modal-content [data-act="settings"]');c.click('[data-act="bindings"]');c.click('[data-bind="parry"]');c.tap('KeyU')
         check('keyboard remap is persisted',c.evaluate("emberwake.bindings.parry==='KeyU'&&JSON.parse(localStorage.getItem('EW_BINDINGS_V1')).parry==='KeyU'"))
         c.click('#modal-content [data-act="close"]');time.sleep(.7);c.tap('KeyU');check('remapped guard works',c.evaluate('emberwake.game.p.parryCD')>0)
         c.tap('Escape');c.click('[data-act="export"]');end=time.monotonic()+5
@@ -187,7 +187,7 @@ def run(args):
         c.click('[data-act="continue"]');check('continue restores playable journey',c.evaluate("emberwake.game.status==='playing'&&!emberwake.paused"))
         c.call('Emulation.setDeviceMetricsOverride',{'width':390,'height':844,'deviceScaleFactor':2,'mobile':True});c.call('Emulation.setTouchEmulationEnabled',{'enabled':True,'maxTouchPoints':5});time.sleep(.15)
         if not c.evaluate("document.body.classList.contains('touch-on')"):
-            c.click('.topactions [data-act="settings"]');c.click('[data-act="touch"]');c.click('#modal-content [data-act="close"]')
+            c.tap('Escape');c.click('#modal-content [data-act="settings"]');c.click('[data-act="touch"]');c.click('#modal-content [data-act="close"]')
         check('portrait has no horizontal overflow',c.evaluate('document.documentElement.scrollWidth<=window.innerWidth+1'))
         check('all portrait touch buttons fit viewport',c.evaluate("Array.from(document.querySelectorAll('[data-touch]')).every(e=>{const r=e.getBoundingClientRect();return r.width>0&&r.left>=0&&r.right<=innerWidth+1})"))
         points=c.evaluate("['right','jump'].map((k,i)=>{const r=document.querySelector('[data-touch='+k+']').getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2,id:i+1}})")
@@ -217,7 +217,7 @@ def run(args):
         check('controller can select the map action',c.evaluate("document.activeElement.dataset.act==='map'"));pad_press(0);c.wait("emberwake.modalKind==='map'")
         check('controller A activates focused modal action',c.evaluate("emberwake.modalKind==='map'"));pad_press(1)
         check('controller B returns from a soft modal',c.evaluate('emberwake.modalKind===null&&!emberwake.paused'))
-        c.click('.topactions [data-act="settings"]');old_map=c.evaluate('emberwake.miniMap');c.click('#set-minimap')
+        c.tap('Escape');c.click('#modal-content [data-act="settings"]');old_map=c.evaluate('emberwake.miniMap');c.click('#set-minimap')
         check('mini-map preference toggles and persists',c.evaluate("emberwake.miniMap!=="+str(old_map).lower()+"&&localStorage.getItem('EW_MINIMAP_V1')===String(emberwake.miniMap)"));c.click('#modal-content [data-act="close"]')
         proof_path=Path(args.completed_proof)
         if not proof_path.is_file():raise RuntimeError('Run the input-only campaign suite first; --completed-proof must contain its earned final save')
@@ -241,7 +241,7 @@ def run(args):
         check('keyboard remap survives actual page reload',c.evaluate("emberwake.bindings.parry==='KeyU'"))
         check('mini-map preference survives actual page reload',c.evaluate("emberwake.miniMap===JSON.parse(localStorage.getItem('EW_MINIMAP_V1'))"))
         c.call('Page.addScriptToEvaluateOnNewDocument',{'source':"Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Storage denied for privacy test','SecurityError')}});"})
-        c.call('Page.navigate',{'url':base+'assets/legacy.html'});c.wait('Boolean(window.emberwake)');c.click('[data-act="new"]');c.click('[data-act="launch"]')
+        c.call('Page.navigate',{'url':base});c.wait('Boolean(window.emberwake)');c.click('[data-act="new"]');c.click('[data-act="launch"]')
         check('privacy mode remains playable with denied storage',c.evaluate("emberwake.game.status==='playing'&&emberwake.storageWarned===true&&emberwake.storage===null"))
         check('no browser runtime exceptions',not c.exceptions,c.exceptions);check('no missing game asset responses',not c.failures,c.failures)
     except Exception as e:
@@ -257,6 +257,7 @@ def run(args):
         try:chrome.wait(timeout=5)
         except subprocess.TimeoutExpired:chrome.kill();chrome.wait()
         log.close()
+        shutil.rmtree(work,ignore_errors=True)
         if server:server.shutdown();server.server_close()
     report={'passed':sum(t['passed'] for t in results),'failed':sum(not t['passed'] for t in results),'checks':results,'browser':subprocess.check_output([binary,'--version'],text=True).strip(),'scope':'Actual Chromium DOM/Canvas, native keyboard/multi-touch/mouse, download/file input, Web Audio user-gesture activation, save confirmation/backup/async cancellation, earned ending restore and reload/privacy checks. Controller poller uses a standards-shaped synthetic navigator gamepad, not physical hardware. Assets served by CDP request fulfillment when --base-url is omitted. Not a public deployment, full browser campaign, cross-browser/device or accessibility certification.','browserSandbox':'explicit --no-sandbox in isolated test container' if args.no_sandbox else 'Chromium default sandbox','assetTransport':'local CDP Fetch fulfillment' if local_root else 'requested HTTP server','fulfilledAssets':c.fulfilled if c else [],'runtimeExceptions':c.exceptions if c else [],'missingAssets':c.failures if c else []}
     (out/'browser-results.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2));return 0 if not report['failed'] else 1

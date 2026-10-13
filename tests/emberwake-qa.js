@@ -5,15 +5,17 @@
    Controller receives JSON-cloned observations, never the live Game instance.
    Runner calls newRun, step, and only a choice-event-authorized finish. */
 const fs=require('fs'), path=require('path'), crypto=require('crypto');
-const dir=path.resolve(process.env.EW_SOURCE_DIR||process.argv[2]||path.join(__dirname,'..','assets','scripts'));
+const sourceArg=process.argv.slice(2).find(a=>!a.startsWith('--'));
+const dir=path.resolve(process.env.EW_SOURCE_DIR||sourceArg||path.join(__dirname,'..','assets','scripts'));
 const reportDir=path.resolve(process.env.EW_QA_OUTPUT||'qa');
 const EW=require(path.join(dir,'engine.js'));
 const LEVELS=require(path.join(dir,'worlds.js'));
 require(path.join(dir,'core-v11.js'));
+require(path.join(dir,'encounters-v12.js'));
 const clone=x=>JSON.parse(JSON.stringify(x));
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
-const hashes=Object.fromEntries(['engine.js','worlds.js','core-v11.js'].map(n=>[n,crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,n))).digest('hex')]));
-function route(l){
+const hashes=Object.fromEntries(['engine.js','worlds.js','core-v11.js','encounters-v12.js'].map(n=>[n,crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,n))).digest('hex')]));
+function route(l,routeMode='original'){
  const r=[], point=(x,foot=590)=>r.push({kind:'point',x:x-14,foot});
  const rest=i=>r.push({kind:'rest',x:l.checkpoints[i].x-14,foot:590});
  const shrine=i=>r.push({kind:'shrine',x:l.shrines[i].x-14,foot:590});
@@ -30,10 +32,19 @@ function route(l){
  }else{
   fight(0);fight(1);rune(0);fight(2);fight(3);rest(1);fight(4);rune(1);fight(5);fight(6);shrine(1);fight(7);fight(8);rest(2);
  }
+ if(routeMode==='optional'){
+  for(const branch of l.routes||[]){
+   const at=r.findIndex(w=>w.kind==='rune'&&w.id===l.sigils[1].id)+1;
+   if(at<=0)throw Error('Optional branch needs the second-rune approach');
+   const platform=id=>{const p=l.solids.find(s=>s.id===id);if(!p)throw Error('Unknown route platform '+id);return{kind:'routePoint',id,routeId:branch.id,x:(p.oneWay?p.x+p.w/2:Math.min(p.x+p.w/2,l.boss.arena[0]-100))-14,foot:p.y};};
+   const cache=l.chests.find(c=>c.id===branch.cacheId);if(!cache)throw Error('Missing route cache');
+   r.splice(at,0,...branch.path.map(platform),{kind:'chest',id:cache.id,x:cache.x-14,foot:cache.y},...branch.returnPath.map(platform));
+  }
+ }
  r.push({kind:'boss'});r.push({kind:'exit',x:l.exit.x-14,foot:590});return r;
 }
 class Controller{
- constructor(levels,mode){this.levels=clone(levels);this.mode=mode;this.level=-1;this.ix=0;this.age=0;this.choices=0;}
+ constructor(levels,mode,routeMode='original'){this.levels=clone(levels);this.mode=mode;this.routeMode=routeMode;this.routeVisits=[];this.level=-1;this.ix=0;this.age=0;this.choices=0;}
  nav(s,x,foot,input){
   const p=s.p, f=p.y+p.h, dx=x-p.x;
   input.axis=clamp(dx/24,-1,1);input.jumpHeld=true;
@@ -42,11 +53,13 @@ class Controller{
   if(p.grounded&&onWay&&foot>f+45)input.drop=true;
   const floors=solids.filter(q=>!q.oneWay&&q.y===590).sort((a,b)=>a.x-b.x);
   const floor=floors.find(q=>p.x+14>=q.x&&p.x+14<=q.x+q.w);
-  const next=floor&&floors.find(q=>q.x>floor.x);
-  const gapJump=this.mode!=='rush'&&dx>30&&p.grounded&&f>575&&floor&&next&&next.x>floor.x+floor.w&&floor.x+floor.w-(p.x+p.w)<55;
+  const next=floor&&(dx>0?floors.find(q=>q.x>floor.x):floors.filter(q=>q.x<floor.x).at(-1));
+  const gapAhead=floor&&next&&(dx>0?next.x>floor.x+floor.w:next.x+next.w<floor.x);
+  const edgeDistance=floor&&(dx>0?floor.x+floor.w-(p.x+p.w):p.x-floor.x);
+  const gapJump=this.mode!=='rush'&&Math.abs(dx)>30&&p.grounded&&f>575&&gapAhead&&edgeDistance<55;
   const up=foot<f-24&&Math.abs(dx)<235;
   if(p.grounded&&(up||gapJump))input.jumpPressed=true;
-  else if(!p.grounded&&p.jumps<2&&p.vy>-65&&((foot<f-8&&Math.abs(dx)<240)||(!floor&&dx>35)))input.jumpPressed=true;
+  else if(!p.grounded&&p.jumps<2&&p.vy>-65&&((foot<f-8&&Math.abs(dx)<240)||(!floor&&Math.abs(dx)>35)))input.jumpPressed=true;
   return Math.abs(dx)<7&&Math.abs(f-foot)<3&&p.grounded;
  }
  defense(s,input,target){
@@ -61,7 +74,7 @@ class Controller{
  }
  tick(s){
   if(s.status!=='playing')throw Error('Controller stopped: '+s.status);
-  if(s.level!==this.level){this.level=s.level;this.ix=0;this.age=0;const l=this.levels[s.level];this.route=this.mode==='rush'?[{kind:'boss'},{kind:'exit',x:1686,foot:590}]:route(l);}
+  if(s.level!==this.level){this.level=s.level;this.ix=0;this.age=0;const l=this.levels[s.level];this.route=this.mode==='rush'?[{kind:'boss'},{kind:'exit',x:1686,foot:590}]:route(l,this.routeMode);}
   const w=this.route[this.ix];if(!w)throw Error('Route exhausted at '+s.level);
   if(++this.age>7000)throw Error('Waypoint timeout '+JSON.stringify(w)+' '+JSON.stringify({p:s.p,boss:s.boss,sigils:s.sigils}));
   const input={axis:0,jumpHeld:true}, l=this.levels[s.level];let advance=false,target;
@@ -102,7 +115,8 @@ class Controller{
    if(s.choice){this.choices++;return{input,choice:'mercy'};}
   }else if(w.kind==='chest'&&s.chests.includes(w.id))advance=true;
   else if(this.nav(s,w.x,w.foot,input)){
-   if(w.kind!=='point')input.interactPressed=true;
+   if(w.kind==='routePoint')this.routeVisits.push({frame:s.frame,level:s.level,routeId:w.routeId,platformId:w.id,x:s.p.x,foot:s.p.y+s.p.h});
+   if(w.kind!=='point'&&w.kind!=='routePoint')input.interactPressed=true;
    advance=true;
   }
   this.defense(s,input,target);
@@ -110,22 +124,24 @@ class Controller{
   return {input};
  }
 }
-function observe(g,choice){return clone({level:g.progress.level,status:g.status,p:g.p,maxHP:g.maxHP,maxMP:g.maxMP,enemies:g.enemies,boss:g.boss,bossActive:g.bossActive,shots:g.shots,near:g.near,runes:g.progress.flags.runes,sigils:g.progress.flags.sigils,chests:g.progress.flags.chests,choice});}
-function play(mode,dt=1/120,limit=80000,difficulty='story',ending=mode==='rush'?'rekindle':'mercy'){
+function observe(g,choice,frame=0){return clone({frame,level:g.progress.level,status:g.status,p:g.p,maxHP:g.maxHP,maxMP:g.maxMP,enemies:g.enemies,boss:g.boss,bossActive:g.bossActive,shots:g.shots,telegraphs:g.bossTelegraphs,near:g.near,runes:g.progress.flags.runes,sigils:g.progress.flags.sigils,chests:g.progress.flags.chests,choice});}
+function fingerprint(g){return crypto.createHash('sha256').update(JSON.stringify({progress:g.progress,p:g.p,status:g.status,enemies:g.enemies,boss:g.boss,shots:g.shots,telegraphs:g.bossTelegraphs,clock:g.clock,attackID:g.attackID,bossActive:g.bossActive})).digest('hex');}
+function play(mode,dt=1/120,limit=80000,difficulty='story',ending=mode==='rush'?'rekindle':'mercy',routeMode='original'){
  const before=JSON.stringify(LEVELS),g=new EW.Game(LEVELS);g.newRun(difficulty,mode);
- const c=new Controller(LEVELS,mode),seen=new WeakSet(),counts={},milestones=[],inputRuns=[];let choice=false,frames=0;
+ const c=new Controller(LEVELS,mode,routeMode),seen=new WeakSet(),counts={},milestones=[],inputRuns=[],stateHashes=[];let choice=false,frames=0;
  const drain=()=>{for(const e of g.events){if(seen.has(e))continue;seen.add(e);counts[e.type]=(counts[e.type]||0)+1;if(e.type==='choice')choice=true;if(e.type==='realm')choice=false;if(['realm','rune','sigil','defeat','bossIntro','checkpoint','choice','ending','death','respawn'].includes(e.type))milestones.push({frame:frames,level:g.progress.level,...clone(e)});}};
  let error=null;
  try{
   drain();
   for(;frames<limit&&g.status!=='won';frames++){
-   const action=c.tick(observe(g,choice));if(action.choice)action.choice=ending;
+   const action=c.tick(observe(g,choice,frames));if(action.choice)action.choice=ending;
    const key=JSON.stringify(action);
    if(inputRuns.length&&inputRuns[inputRuns.length-1].key===key)inputRuns[inputRuns.length-1].frames++;
    else inputRuns.push({key,frames:1});
    if(action.choice){if(!choice)throw Error('Unprompted final choice');if(!g.finish(action.choice))throw Error('Legitimate choice rejected');}
    else g.step(dt,action.input);
    drain();
+   if((frames+1)%240===0||g.status==='won')stateHashes.push({frame:frames+1,sha256:fingerprint(g)});
   }
   if(g.status!=='won')throw Error('Frame budget exhausted');
   if(JSON.stringify(LEVELS)!==before)throw Error('World mutation detected');
@@ -133,8 +149,9 @@ function play(mode,dt=1/120,limit=80000,difficulty='story',ending=mode==='rush'?
   if(expected.some(id=>!g.has('defeated',id)))throw Error('Missing required defeats');
   if(LEVELS.some(l=>l.sigils.some(sig=>!g.has('sigils',sig.id)||!g.has('runes',sig.id))))throw Error('Missing sigil');
   if(!EW.validateSave(g.snapshot(),LEVELS))throw Error('Completed save invalid');
+  if(routeMode==='optional'&&mode==='story')for(const [level,l] of LEVELS.entries())for(const branch of l.routes||[])for(const platformId of [...branch.path,...branch.returnPath])if(!c.routeVisits.some(v=>v.level===level&&v.routeId===branch.id&&v.platformId===platformId))throw Error('Missing optional route landing '+platformId);
  }catch(e){error=e.message;}
- return {pass:!error,mode,difficulty,dt,frames,error,counts,milestones,final:g.snapshot(),last:{p:clone(g.p),boss:clone(g.boss),waypoint:c.route?.[c.ix]},inputs:inputRuns.map(r=>({frames:r.frames,...JSON.parse(r.key)}))};
+ return {pass:!error,mode,difficulty,dt,routeMode,routeVisits:c.routeVisits,stateHashes,frames,error,counts,milestones,final:g.snapshot(),last:{p:clone(g.p),boss:clone(g.boss),waypoint:c.route?.[c.ix]},inputs:inputRuns.map(r=>({frames:r.frames,...JSON.parse(r.key)}))};
 }
 
 /* REGRESSION FIXTURES BELOW MAY MUTATE THEIR OWN ISOLATED GAME INSTANCES.
@@ -221,22 +238,25 @@ function runRegressions(runs){
  return tests;
 }
 function replay(record){
- const before=JSON.stringify(LEVELS),g=new EW.Game(LEVELS).newRun(record.difficulty,record.mode);let choice=false;const seen=new WeakSet();let frames=0;
+ const before=JSON.stringify(LEVELS),g=new EW.Game(LEVELS).newRun(record.difficulty,record.mode);let choice=false;const seen=new WeakSet();let frames=0;const stateHashes=[],visitsAt=new Map();
+ for(const v of record.routeVisits||[]){if(!visitsAt.has(v.frame))visitsAt.set(v.frame,[]);visitsAt.get(v.frame).push(v);}
  const drain=()=>{for(const e of g.events){if(seen.has(e))continue;seen.add(e);if(e.type==='realm')choice=false;if(e.type==='choice')choice=true;}};drain();
  for(const a of record.inputs)for(let i=0;i<a.frames;i++){
+  for(const v of visitsAt.get(frames)||[]){assert.equal(g.progress.level,v.level);assert(g.p.grounded,'route landing must be grounded');assert.equal(g.p.x,v.x);assert.equal(g.p.y+g.p.h,v.foot);const platform=LEVELS[v.level].solids.find(p=>p.id===v.platformId);assert(platform);assert.equal(v.foot,platform.y);assert(g.p.x<platform.x+platform.w&&g.p.x+g.p.w>platform.x,'land on the declared platform');}
   if(a.choice){assert(choice,'replay ending must follow actual exit prompt');assert(g.finish(a.choice));}
   else g.step(record.dt,a.input);
-  frames++;drain();
+  frames++;drain();if(frames%240===0||g.status==='won')stateHashes.push({frame:frames,sha256:fingerprint(g)});
  }
- assert.equal(frames,record.frames);assert.equal(g.status,'won');assert.deepEqual(g.snapshot(),record.final);assert.equal(JSON.stringify(LEVELS),before);return {pass:true,mode:record.mode,dt:record.dt,frames};
+ if(record.stateHashes)assert.deepEqual(stateHashes,record.stateHashes);
+ assert.equal(frames,record.frames);assert.equal(g.status,'won');assert.deepEqual(g.snapshot(),record.final);assert.equal(JSON.stringify(LEVELS),before);return {pass:true,mode:record.mode,dt:record.dt,routeMode:record.routeMode,routeLandings:(record.routeVisits||[]).length,stateChecks:stateHashes.length,frames};
 }
 function main(){
  const runs=[play('story',1/120),play('rush',1/120),play('story',1/60),play('rush',1/60)];
  const tests=runRegressions(runs),replays=[];
  for(const r of runs){try{replays.push(replay(r));}catch(e){replays.push({pass:false,mode:r.mode,dt:r.dt,error:e.message});}}
- let deterministic;try{const repeat=play('story',1/120);assert(repeat.pass);assert.deepEqual(repeat.inputs,runs[0].inputs);assert.deepEqual(repeat.final,runs[0].final);assert.deepEqual(repeat.counts,runs[0].counts);deterministic={pass:true,frames:repeat.frames};}catch(e){deterministic={pass:false,error:e.message};}
- const summarize=r=>({pass:r.pass,mode:r.mode,difficulty:r.difficulty,dt:r.dt,frames:r.frames,seconds:r.final.stats.time,kills:r.final.stats.kills,deaths:r.final.stats.deaths,ending:r.final.ending,runes:r.final.flags.runes.length,sigils:r.final.flags.sigils.length,counts:r.counts,error:r.error,last:r.pass?undefined:r.last});
- const result={version:EW.version,hashes,scope:'Exact exported engine simulation only; story difficulty. No browser/render/input-mapping coverage.',completionRuns:runs.map(summarize),replays,deterministic,regressions:{total:tests.length,passed:tests.filter(t=>t.pass).length,failed:tests.filter(t=>!t.pass).length,tests}};
+ let deterministic;try{const repeat=play('story',1/120);assert(repeat.pass);assert.deepEqual(repeat.inputs,runs[0].inputs);assert.deepEqual(repeat.final,runs[0].final);assert.deepEqual(repeat.counts,runs[0].counts);assert.deepEqual(repeat.stateHashes,runs[0].stateHashes);deterministic={pass:true,frames:repeat.frames};}catch(e){deterministic={pass:false,error:e.message};}
+ const summarize=r=>({pass:r.pass,mode:r.mode,difficulty:r.difficulty,dt:r.dt,frames:r.frames,seconds:r.final.stats.time,kills:r.final.stats.kills,deaths:r.final.stats.deaths,ending:r.final.ending,routeMode:r.routeMode,routeLandings:r.routeVisits.length,stateChecks:r.stateHashes.length,runes:r.final.flags.runes.length,sigils:r.final.flags.sigils.length,counts:r.counts,error:r.error,last:r.pass?undefined:r.last});
+ const result={version:EW.version,hashes,encounterVersion:EW.Encounters.version,scope:'Current engine/world/core/encounters simulation; story difficulty. Completion runs use ordinary inputs; regressions use separate isolated fixtures. No browser/render/input-mapping coverage.',completionRuns:runs.map(summarize),replays,deterministic,regressions:{total:tests.length,passed:tests.filter(t=>t.pass).length,failed:tests.filter(t=>!t.pass).length,tests}};
  fs.mkdirSync(reportDir,{recursive:true});fs.writeFileSync(path.join(reportDir,'emberwake-qa-results.json'),JSON.stringify(result,null,2));
  fs.writeFileSync(path.join(reportDir,'emberwake-input-proof.json'),JSON.stringify({version:EW.version,hashes,runs},null,2));
  console.log(JSON.stringify({runs:result.completionRuns,replays,deterministic,regressions:{total:result.regressions.total,passed:result.regressions.passed,failed:result.regressions.failed,failures:tests.filter(t=>!t.pass).map(t=>({name:t.name,error:t.error.slice(0,260)}))}},null,2));

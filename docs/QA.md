@@ -1,43 +1,50 @@
-# Lumenblade release-candidate QA
+# Emberwake 1.2.0-alpha.1 — validation and limits
 
-## Measured evidence
-- 48 passing Node tests: movement/collision, buffered/variable/double jumps, spell energy/gates, dash cooldown, combo/reflection, guardian progression, recovery, travel restrictions, final phases/ending choice, save slots/backup/import validation, denied storage, deterministic replay and inherited release-builder/server security contracts.
-- Input-only new-game campaign: 22 rooms, six shards and final guardian reached through ordinary movement/combat/spell inputs, with only earned point allocation; both ending choices accepted. See `qa/lumen/campaign.json`. This optimized bot is not a human play-time estimate and does not cover every secret.
-- Preserved Emberwake campaign/difficulty/replay proofs run without modifying its game source. Original browser suite passes 53 checks. HTTP/project-prefix compatibility is verified separately.
-- New Chromium browser suite covers full-viewport WebGL2, keyboard movement/jump/combat/magic, pause/focus, slots/reload/export/import, settings, locked portals, both ending UI branches, resource disposal, offline shell, 390px multi-touch, landscape layout and synthetic standard gamepad movement/menu confirmation. Exact passing count and scope: `qa/lumen/browser/report.json`.
-- Screenshots cover desktop/mobile title, HUD, map, pause, settings, character, endings, combat and all seven biome fixtures, plus dialogue/shop/journal/guardian/death menus. Fixtures never count as campaign progression proof.
-- New-game JS/CSS are approximately 610 KB uncompressed combined; runtime has no external downloads/CDN. Legacy image assets are separately retained, not requested by the new game.
-- `npm audit` reports no known dependency vulnerabilities at the tested lockfile versions. Custom repository/runtime secret scans pass. This is not a full penetration test or exhaustive secret-scanner certification.
+## Current local acceptance evidence
 
-## Validation loops and fixes
-1. Added real traversal obstacles after the first flat-route campaign proof; reran the entire campaign.
-2. Differentiated guardian patterns: vines, ground waves, mist, ice volleys, furnace bombs, telegraphed storm strikes and the final shadow duel.
-3. Fixed renderer disposal during repeated travel.
-4. Added gamepad menu navigation and reset disconnected stick state.
-5. Locked death/guardian/ending-confirmation dialogs against menu-hotkey bypasses.
-6. Fixed local server CSP to permit same-origin service workers and the legacy base path; hashes cover trusted inline scripts in shipped HTML only.
-7. Reduced menu rendering to lower idle GPU work; separated browser contexts during software rendering.
-8. Improved HUD contrast over snow, fixed missing touch-cycle glyph with a plain label, made touch onboarding device-appropriate, and restricted flashing to actual damage rather than newly spawned invulnerability.
-9. Browser-test failures from hidden/behind-overlay duplicate selectors were corrected by selecting the visible dialog controls and awaiting actual state changes rather than fixed sleeps.
+`qa/correction/validation.json` binds the tested runtime to exact source/build hashes, environment, original-image equality, commands' result totals and limitations. Its base commit identifies the branch ancestor; the pre-commit runtime hashes identify the actual tested changes. `EW.version` remains the retained 1.1.0-rc.3 engine label; package/release identity is 1.2.0-alpha.1. Save format remains V3.
 
-10. Final portrait screenshot review found the title camera lingering east of the new-game spawn. Snap the camera on start/room transitions so the hero is immediately in frame; added a mobile assertion.
+| Gate | Actual local result | Scope |
+| --- | --- | --- |
+| Unit / contract / route / encounter / journal | 159 passed, 0 failed/skipped | Node 24; release contracts, authority, save fixtures, route physics and encounter timing fixtures |
+| Retained simulation regressions | 116 passed, 0 failed | Existing regression assertions retained |
+| Campaign completion / exact replay | 20 completed and exactly replayed; zero deaths | Ordinary input controller receives cloned observations; three difficulties, 60/120 Hz, both endings and rush cases; 12 cases use optional routes. Not every possible cross-product or a human/browser playthrough |
+| Retained browser over real HTTP | 53 passed, 0 failed | Native keys/multitouch/remaps/audio/file/download, confirmation/backup/races, synthetic controller; earned completed-save restoration |
+| Upgrade browser | 13 passed, 0 failed | Canonical prefix, viewport/touch/pause/journal/map/quality/offline; guardian screenshots use valid explicitly positioned encounter fixtures |
+| Persistence browser | 17 passed, 0 failed | Injected denied/quota/backup/primary failures, native confirmations/downloads, delayed-read ownership, lifecycle fixtures and held-remapped-key quarantine |
+| Historical-worker/update browser | 5 passed, 0 failed | Actual historical worker, old open tabs/waiting, V3 byte retention, mismatched cache-miss 503, failed-install cleanup, offline, rollback and cache ownership |
+| Forced install-retry stress | 5 passed, 0 failed | Two failed attempts; wait for bounded quiescence, then exact no-residue assertion |
+| Build / source integrity | 28 runtime files verified | All four supplied painted images byte-identical to the isolated supplied ZIP extraction |
+| Secret pattern scan | No recognized findings | Limited scan, not exhaustive security clearance |
 
-## Scope adjustments from the plan
-- Compact 22-room campaign, not the brainstorm's 26+ rooms.
-- Four shared regular enemy behavior archetypes with biome variants, plus seven distinct guardian patterns; not 14 fully independent enemy species.
-- Armor/sword upgrades implemented; extra charm inventory and optional gauntlet remain in the legacy game, not the new campaign.
-- Frost lowers/freezes blue seals into stepping stones and freezes foes; arbitrary water-surface freezing is deferred.
-- Emissive effects, fog, dynamic hero light and high-quality shadows implemented; post-process bloom and custom character asset production are deferred.
-- Hand-defined platform data replaces the proposed ASCII map authoring format.
-- Original procedural geometry/audio are appropriate for this compact candidate; they do not establish AAA or commercial 2026 visual-quality parity.
+Evidence: `qa/emberwake-qa-results.json`, `qa/extended-difficulty-results.json`, their replay/input proofs, and `qa/correction/{browser,retained-browser,persistence,update,update-debug-settled}/`. Source/runtime hash equality was independently recomputed before this ledger. Remote CI and public deployment are separate evidence: see the PR/workflow results rather than inferring them from local passes.
 
-## Still required before commercial-production certification
-- Real Android/iOS GPU, battery/thermal, touch ergonomics, memory and stable-FPS profiling (60 fps is a target, not a measured phone result).
-- Safari/Firefox compatibility and offline update behavior across real browsers.
-- Physical controllers and controller remapping/alternate layouts.
-- Human difficulty, pacing, content-variety and long-session playtests. The input bot optimizes encounters; its short completion time is not an advertised campaign duration.
-- Independent accessibility review (canvas gameplay is not screen-reader playable), font/HUD preferences and additional assist options.
-- Trademark/name and inherited-asset rights clearance by the owner.
-- Optional independent security/code review and automated CodeQL/gitleaks scans.
+## Failures found and corrected
 
-Parallel-agent unavailability and canceled Lore installation are disclosed rather than presented as completed multi-agent work. No quantified "100x better" claim is made.
+The first journal extension wrongly treated the inherited milestone entry as a fourth realm; repaired with a bounded lookup and browser rerun. Fullscreen UI exposed an inherited harness assumption that Settings remained in the gameplay topbar; it now navigates native Pause → Settings. The scanner correctly rejected old temporary-browser symlinks; profiles moved outside the repository and the harness now uses cleaned system temporary directories. A missing favicon was supplied inline.
+
+The worker harness initially omitted observer scope arguments. A later fixed-500-ms sample caught a second install while it was still legitimately writing, not settled residue. Explicit per-attempt states, bounded quiescence and a controlled 1.5-second retry reproduce and resolve that timing premise without skipping cleanup assertions. Historical failed records are not passing acceptance; final current evidence supersedes them. See `docs/correction/UPDATE-TESTS.md`.
+
+Independent risk findings led to digest-verified cache-miss fallback, failed-install cleanup after all requests settle, scope-specific cache ownership, lifecycle-wide import invalidation, staged save-verified replacement, conditional backup wording, keyboard repeat ownership and expiry-before-projectile-collision checks. The source review is not itself certification.
+
+## Reproduce
+
+```sh
+npm ci
+npm test
+npm run check:secrets
+npm run test:campaign
+npm run build
+npm start -- --port 4173 --base /Swordigo-V2/
+# another terminal; select an installed Chrome/Chromium with CHROME_BIN
+python3 tests/browser-smoke.py --base-url http://127.0.0.1:4173/Swordigo-V2/ --output /tmp/emberwake-http-qa
+npm run test:upgrade:browser
+npm run test:persistence:browser
+npm run test:update:browser
+```
+
+Restart the preview after rebuilding; it serves a validated snapshot. Update harness reads historical Git commit `6c266e9` without mutation; CI fetches history. Chromium defaults to its sandbox in the retained/persistence/update harnesses. Isolated-container flags are test-only, never a recommendation for normal play. SwiftShader historical-WebGL rendering is not GPU qualification.
+
+## Still unqualified
+
+Physical Android/iOS/controller devices, Safari/Firefox, frame-time/memory/thermal/battery measurements, first-time/returning human pacing, independent accessibility and owner artwork/trademark/licensing review remain outstanding. Viewport simulation and simulation Hz are not phone FPS. Runtime hashes provide consistency, not authenticated release signatures. No numerical “100x,” official Swordigo sequel, completed deferred post-ending chapter, exhaustive security audit or broad production certification is claimed.

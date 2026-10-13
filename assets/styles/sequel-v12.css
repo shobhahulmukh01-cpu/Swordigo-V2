@@ -1,0 +1,87 @@
+/* Full-viewport upgrade of the supplied Emberwake interface, not a replacement UI. */
+html:has(body.ew-sequel),body.ew-sequel{width:100%;height:100%;overflow:hidden;background:#07161c}
+body.ew-sequel{font-size:16px;--sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body.ew-sequel .site{position:fixed;inset:0;max-width:none;padding:0;margin:0}
+body.ew-sequel .shell,body.ew-sequel .frame{width:100%;height:100dvh;min-height:0;max-height:none;aspect-ratio:auto;border:0;box-shadow:none}
+body.ew-sequel .frame:before,body.ew-sequel .frame:after,body.ew-sequel .footerline{display:none}
+body.ew-sequel .topbar{position:fixed;top:20px;left:5%;right:5%;height:44px;margin:0;border:0;z-index:12}
+body.ew-sequel.ew-playing .topbar{display:none}
+body.ew-sequel .brand{font-size:16px;letter-spacing:.14em}
+body.ew-sequel .topnote{font-size:12px}
+body.ew-sequel button{min-height:44px}
+body.ew-sequel .iconbtn,body.ew-sequel .hudtools .iconbtn{width:44px;height:44px}
+body.ew-sequel .textbtn,body.ew-sequel .primary,body.ew-sequel .secondary{font-size:14px}
+body.ew-sequel .title-screen{padding:92px 6% 96px;background:linear-gradient(90deg,#07161af2,#0b1a1bc4 32%,#0b1a1b12 76%),linear-gradient(0deg,#07161c99,transparent 25%)}
+body.ew-sequel .title-screen h1{font-size:clamp(64px,7.5vw,110px)}
+body.ew-sequel .eyebrow{font-size:12px;letter-spacing:.2em}
+body.ew-sequel .subtitle{font-size:14px}
+body.ew-sequel .blurb{font-size:16px;line-height:1.65;max-width:420px}
+body.ew-sequel .tagline{font-size:25px}
+body.ew-sequel .linkbtn,body.ew-sequel .save-hint{font-size:14px;line-height:1.6}
+body.ew-sequel .menu-stamp{top:102px;font-size:12px}
+body.ew-sequel .menu-stamp strong{font-size:16px}
+body.ew-sequel .realm-ribbon{bottom:44px;gap:24px}
+body.ew-sequel .realm-ribbon small{font-size:12px}
+body.ew-sequel .realm-ribbon span{font-size:16px}
+body.ew-sequel .hud{background:linear-gradient(#07161c88,transparent 190px),linear-gradient(0deg,#07161c99,transparent 155px);padding:24px}
+body.ew-sequel .resources{width:238px;padding:14px 16px}
+body.ew-sequel .resource-title,body.ew-sequel .resource-label,body.ew-sequel .resource-label b,body.ew-sequel .wallet{font-size:12px}
+body.ew-sequel .bar{height:8px}
+body.ew-sequel .hud-realm{top:28px}
+body.ew-sequel .hud-realm small,body.ew-sequel .hud-realm span{font-size:12px}
+body.ew-sequel .hud-realm strong{font-size:21px}
+body.ew-sequel .objective{top:105px;right:28px;font-size:14px;max-width:280px}
+body.ew-sequel .objective small{font-size:12px}
+body.ew-sequel .ability,body.ew-sequel .ability span,body.ew-sequel .guide,body.ew-sequel .context-prompt{font-size:14px}
+body.ew-sequel .boss-hud strong,body.ew-sequel .boss-hud small{font-size:14px}
+body.ew-sequel .touchdock{position:fixed;left:max(16px,env(safe-area-inset-left));right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:8;padding:0;pointer-events:none}
+body.ew-sequel .touchdock button{pointer-events:auto;background:#112d37dc;width:56px;height:56px;border:1px solid #90ada480}
+body.ew-sequel .touchdock small{font-size:11px;letter-spacing:0}
+body.ew-sequel:not(.ew-playing) .touchdock{display:none}
+body.ew-sequel.touch-on .context-prompt{bottom:145px}
+body.ew-sequel.touch-on .boss-hud{bottom:135px}
+body.ew-sequel .modalbox{font-size:16px}
+body.ew-sequel .modal .fine,body.ew-sequel .optionrow small,body.ew-sequel .worldrow small{font-size:14px}
+@media(max-width:650px){
+body.ew-sequel .topbar{top:16px;left:20px;right:20px}.topbar .brand-rune{display:none}
+body.ew-sequel .brand{font-size:14px}.topactions .textbtn{display:none}
+body.ew-sequel .title-screen{padding:88px 24px 56px;background:linear-gradient(90deg,#07161af0,#0b1a1bb0 65%,#0b1a1b40)}
+body.ew-sequel .title-screen h1{font-size:58px;line-height:.98}body.ew-sequel .title-screen h1 span{display:block}
+body.ew-sequel .eyebrow{font-size:11px;letter-spacing:.12em}body.ew-sequel .subtitle{font-size:12px;letter-spacing:.2em;margin:16px 0}
+body.ew-sequel .blurb{display:block;font-size:14px;margin:0 0 20px}body.ew-sequel .tagline{font-size:22px}
+body.ew-sequel .save-hint{max-width:300px;font-size:13px}body.ew-sequel .menu-stamp,body.ew-sequel .realm-ribbon{display:none}
+body.ew-sequel .hud{padding:16px}body.ew-sequel .resources{width:168px;padding:10px 12px}
+body.ew-sequel .resource-title,body.ew-sequel .resource-label,body.ew-sequel .resource-label b,body.ew-sequel .wallet{font-size:11px;letter-spacing:0}
+body.ew-sequel .hudtools{top:16px;right:16px}.hudtools .iconbtn:nth-child(2){display:none}
+body.ew-sequel .hud-realm{top:138px;left:16px;right:16px;text-align:center;transform:none}
+body.ew-sequel .hud-realm strong{font-size:18px}body.ew-sequel .hud-realm small,body.ew-sequel .hud-realm span{font-size:11px}
+body.ew-sequel .objective{top:auto;bottom:156px;right:16px;font-size:12px;max-width:190px}
+body.ew-sequel .objective small{font-size:11px}body.ew-sequel .rune-indicators{margin-top:6px}
+body.ew-sequel .actionpad{display:grid;grid-template-columns:repeat(3,48px);gap:6px}.directionpad{gap:6px}
+body.ew-sequel .touchdock button{width:48px;height:52px}.touchdock small{font-size:10px!important}
+body.ew-sequel .context-prompt{left:16px!important;right:auto!important;transform:none!important;bottom:152px!important;max-width:150px;font-size:12px;padding:10px}
+body.ew-sequel .boss-hud{bottom:143px;width:calc(100% - 32px)}
+body.ew-sequel .toast{top:230px;font-size:14px;max-width:calc(100% - 40px)}
+}
+@media(max-height:540px) and (orientation:landscape){
+body.ew-sequel .topbar{top:12px}.topbar .brand{font-size:14px}body.ew-sequel .title-screen{padding:68px 5% 24px}
+body.ew-sequel .title-screen h1{font-size:49px;line-height:.9}body.ew-sequel .blurb,body.ew-sequel .title-screen .eyebrow,body.ew-sequel .save-hint,body.ew-sequel .menu-stamp,body.ew-sequel .realm-ribbon{display:none}
+body.ew-sequel .subtitle{font-size:11px;margin:12px 0}body.ew-sequel .tagline{font-size:20px}
+body.ew-sequel .hud-realm{top:18px}.hud-realm span{display:none}body.ew-sequel .resources{width:180px;padding:9px 12px}
+body.ew-sequel .objective{top:90px;right:20px;font-size:12px}.objective small{font-size:11px!important}
+body.ew-sequel .touchdock button{height:48px;width:48px}body.ew-sequel .context-prompt{bottom:82px!important}.guide{display:none}
+body.ew-sequel .boss-hud{bottom:80px}body.ew-sequel .toast{top:135px;font-size:14px}
+}
+/* Original controls module sets a top anchor; never stretch between two anchors. */
+body.ew-sequel .context-prompt{top:auto!important;bottom:100px!important;height:auto;max-height:72px;white-space:normal}
+body.ew-sequel .route-note{color:#a8c5bd;font-size:14px;line-height:1.6}
+body.ew-sequel .quest-status{color:#edc38a;font-size:13px;letter-spacing:.06em}
+body.ew-sequel .codexentry h3{font-size:20px}
+
+@media(max-width:650px){body.ew-sequel .context-prompt{bottom:152px!important}}
+@media(max-height:540px) and (orientation:landscape){body.ew-sequel .context-prompt{bottom:82px!important}}
+/* Interaction hints must not obscure Lyra or a ground hazard. */
+body.ew-sequel .context-prompt{bottom:100px!important}
+@media(max-width:650px){body.ew-sequel .context-prompt{top:230px!important;bottom:auto!important;left:16px!important;right:16px!important;max-width:none;max-height:72px}}
+@media(max-height:540px) and (orientation:landscape){body.ew-sequel .context-prompt{top:110px!important;bottom:auto!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important;max-width:230px}}
+body.ew-sequel .brand-rune{font-size:0;width:15px;height:15px;border:1px solid #e6b570;transform:rotate(45deg);background:#e6b57018}

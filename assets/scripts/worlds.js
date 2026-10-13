@@ -49,5 +49,36 @@ const EW_LEVELS=[
  enemies:[{id:'h-e0',x:570,y:532,type:'sentinel',patrol:[520,645]},{id:'h-e1',x:930,y:556,type:'crawler',patrol:[880,1000]},{id:'h-e2',x:1600,y:305,type:'wisp',patrol:[1600,1600]},{id:'h-e3',x:1720,y:532,type:'sentinel',patrol:[1660,1765]},{id:'h-e4',x:2190,y:532,type:'sentinel',patrol:[2150,2260]},{id:'h-e5',x:2880,y:335,type:'wisp',patrol:[2880,2880]},{id:'h-e6',x:3070,y:556,type:'crawler',patrol:[3000,3100]},{id:'h-e7',x:3650,y:532,type:'sentinel',patrol:[3570,3730]},{id:'h-e8',x:4240,y:532,type:'sentinel',patrol:[4190,4290]}],
  boss:{id:'h-boss',x:5000,y:450,name:'Veyr, the Hollow Regent',type:'regent',hp:440,arena:[4540,5380]},bossIntro:['Veyr: I took tomorrow so no one would have to say goodbye.','Lyra: You took every hello that had not happened yet.','Aster: When the crown lifts, falling light marks the ground. Move away, then return to strike.'],victory:['The Dawnheart breaks its silence. Three stolen futures become one rising sun.','Veyr kneels beside the broken crown. Your letter now has room for a final line.'],exit:{x:5480,y:590}
 }
-];root.EW_LEVELS=EW_LEVELS;if(typeof module!=='undefined'&&module.exports)module.exports=EW_LEVELS;
+];
+/* Optional static routes: no persisted IDs, rewards, gates or campaign-order changes.
+   Existing shelves remain the entry/cache/return anchors. Landmarks are descriptive
+   metadata for maps/presentation; collisions come only from the solids below. */
+const EW_ROUTES={
+ moonroot:{
+  platforms:[{id:'m-route-bough',x:2480,y:300,w:160,h:18,oneWay:true},{id:'m-route-crown',x:2700,y:260,w:160,h:18,oneWay:true},{id:'m-route-nest',x:2910,y:290,w:170,h:18,oneWay:true}],
+  route:{id:'moonroot-canopy',name:'The Springward Canopy',kind:'canopy',optional:true,cacheId:'m-ch1',
+   approach:['m-g2','m-b0','m-b1'],path:['m-b1','m-route-bough','m-route-crown','m-route-nest','m-c1'],returnPath:['m-c1','m-c0','m-g3'],
+   lowerPath:['m-g2','m-g3','m-c0','m-c1'],
+   instruction:'From the second rune, double-jump east along the high boughs to the garden letter. Drop to the low branch to rejoin the road.',
+   landmarks:[{id:'m-landmark-bough',name:'Bent Lantern Bough',x:2560,y:300,description:'The first high branch east of the second rune.'},{id:'m-landmark-crown',name:'Springward Crown',x:2780,y:260,description:'The highest canopy shelf spans the thorn hollow.'},{id:'m-landmark-nest',name:'Letterkeeper’s Nest',x:2995,y:290,description:'A descending branch points toward the existing garden cache.'}]}
+ },
+ cinderworks:{
+  platforms:[{id:'c-route-chain',x:2910,y:320,w:150,h:20,oneWay:true},{id:'c-route-service',x:3110,y:420,w:160,h:20,oneWay:true},{id:'c-route-span',x:3330,y:300,w:170,h:20,oneWay:true},{id:'c-route-anvil',x:3540,y:320,w:150,h:20,oneWay:true}],
+  route:{id:'cinderworks-gantry',name:'The Cold Service Gantry',kind:'gantry',optional:true,cacheId:'c-ch1',
+   approach:['c-g2','c-b0','c-b1'],path:['c-b1','c-route-chain','c-route-service','c-route-span','c-route-anvil','c-c0','c-c1'],returnPath:['c-c1','c-g3'],
+   lowerPath:['c-g2','c-gap1','c-g3','c-c0','c-c1'],
+   instruction:'Take the high gantry east of the furnace rune, descend to the service deck, then double-jump onto the cold span above the molten gap. The tool cache reconnects to the road.',
+   landmarks:[{id:'c-landmark-service',name:'Low Maintenance Deck',x:3190,y:420,description:'A sheltered dip between two high work spans.'},{id:'c-landmark-span',name:'Cold Chain Span',x:3415,y:300,description:'A static overhead crossing, not a moving chain or lava immunity.'},{id:'c-landmark-anvil',name:'Anvil Lookout',x:3615,y:320,description:'The last gantry leads down to the old cache stairs.'}]}
+ },
+ hollowspire:{
+  platforms:[{id:'h-route-chart',x:2830,y:300,w:160,h:18,oneWay:true},{id:'h-route-lens',x:3060,y:235,w:160,h:18,oneWay:true},{id:'h-route-arch',x:3290,y:290,w:180,h:18,oneWay:true},{id:'h-route-meridian',x:3540,y:240,w:170,h:18,oneWay:true},{id:'h-route-balcony',x:3760,y:300,w:170,h:18,oneWay:true}],
+  route:{id:'hollowspire-observatory',name:'The Unwritten Observatory',kind:'observatory',optional:true,cacheId:'h-ch1',
+   approach:['h-g2','h-b0','h-b1'],path:['h-b1','h-route-chart','h-route-lens','h-route-arch','h-route-meridian','h-route-balcony','h-c1'],returnPath:['h-c1','h-c0','h-g3'],
+   lowerPath:['h-g2','h-g3','h-c0','h-c1'],
+   instruction:'Climb east from the second crown rune through the lens terraces. The broken arch crosses the void; the final balcony descends to Veyr’s unsent letter and the old stairs.',
+   landmarks:[{id:'h-landmark-lens',name:'The Empty Lens',x:3140,y:235,description:'A high observatory perch within the existing camera height.'},{id:'h-landmark-arch',name:'Unwritten Arch',x:3380,y:290,description:'A safe static terrace above the broken floor.'},{id:'h-landmark-meridian',name:'Tomorrow’s Meridian',x:3625,y:240,description:'A second crest gives the observatory a different rhythm from the canopy.'}]}
+ }
+};
+for(const level of EW_LEVELS){const extension=EW_ROUTES[level.id];level.solids.push(...extension.platforms);level.routes=[extension.route];}
+root.EW_LEVELS=EW_LEVELS;if(typeof module!=='undefined'&&module.exports)module.exports=EW_LEVELS;
 })(typeof window!=='undefined'?window:globalThis);

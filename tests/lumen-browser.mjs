@@ -1,5 +1,5 @@
 import {chromium} from '@playwright/test';import assert from 'node:assert/strict';import fs from 'node:fs';
-const base=process.env.LUMEN_URL||'http://127.0.0.1:4173/Swordigo-V2/';
+const base=process.env.LUMEN_URL||'http://127.0.0.1:4173/Swordigo-V2/assets/lumen-preview.html';
 const bin=process.env.CHROME_BIN||'/usr/local/bin/chromium';
 fs.mkdirSync('qa/lumen/browser',{recursive:true});let failures=[],errors=[],checks=[];
 const browser=await chromium.launch({executablePath:bin,headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader','--ignore-gpu-blocklist']});
@@ -24,7 +24,8 @@ try{
  await check('fixture final encounter rendering and both ending UI branches',async()=>{await page.evaluate(()=>{lumen.game.progress.ending=null;lumen.ui.endingChoice()});await page.screenshot({path:'qa/lumen/browser/ending-choice.png'});await page.click('[data-action="ending"][data-value="bind"]');assert.ok(await page.locator('#dialog-title').textContent()==='The last keeper');await page.click('[data-action="close"]:visible')});
  await page.evaluate(()=>{lumen.game.progress.ending=null;lumen.game.load(21,17);lumen.game.progress.defeated=lumen.game.progress.defeated.filter(x=>x!=='hollow-2-boss');lumen.game.load(21,17)});await page.waitForTimeout(1200);await page.screenshot({path:'qa/lumen/browser/hollow-combat.png'});await page.keyboard.press('Escape');
  await check('repeated travel disposes geometries (fixture-only render traversal)',async()=>{const counts=await page.evaluate(()=>{let a=[];for(let n=0;n<15;n++){lumen.game.load(n%3?1:0,3);lumen.view.frame(lumen.game,.016);a.push(lumen.view.stats().geometries)}return a;});assert.ok(Math.max(...counts)-Math.min(...counts)<100);assert.ok(counts.at(-1)<350)});
- await check('offline shell after service-worker activation',async()=>{await page.evaluate(async()=>{await Promise.race([navigator.serviceWorker.ready,new Promise((_,reject)=>setTimeout(()=>reject(Error('Offline worker did not activate')),15000))])});await page.reload();await page.waitForFunction(()=>window.lumen?.ready);await page.context().setOffline(true);await page.reload();await page.waitForFunction(()=>window.lumen?.ready);await page.context().setOffline(false)});
+ // Archived prototype is intentionally excluded from the canonical Emberwake offline cache.
+
  await page.close();
  const mobile=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});mobile.on('pageerror',e=>errors.push(e.message));await ready(mobile);await mobile.screenshot({path:'qa/lumen/browser/title-mobile.png'});await mobile.click('[data-action="slots"]');await mobile.click('[data-action="new"][data-value="2"]');await mobile.waitForTimeout(200);await mobile.screenshot({path:'qa/lumen/browser/hub-mobile.png'});
  await check('390px touch layout and independent multi-pointer controls',async()=>{assert.equal(await mobile.locator('#touch').isVisible(),true);assert.ok(await mobile.evaluate(()=>Math.abs(lumen.view.camX-lumen.game.p.x)<lumen.view.camera.right-.3));const client=await mobile.context().newCDPSession(mobile);const r=await mobile.locator('[data-control="right"]').boundingBox(),j=await mobile.locator('[data-control="jump"]').boundingBox();let x=await mobile.evaluate(()=>lumen.game.p.x);await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:r.x+r.width/2,y:r.y+r.height/2,id:1},{x:j.x+j.width/2,y:j.y+j.height/2,id:2}]});await mobile.waitForFunction(x=>lumen.game.p.x>x+.5&&lumen.game.p.y>.3,x);await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await mobile.waitForTimeout(100);assert.equal(await mobile.evaluate(()=>lumen.input.pointers.size),0);assert.equal(await mobile.evaluate(()=>document.documentElement.scrollWidth),390)});
@@ -33,6 +34,6 @@ try{
  await mobile.close();
 
  assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);checks.push('zero runtime exceptions or missing assets');
- fs.writeFileSync('qa/lumen/browser/report.json',JSON.stringify({passed:checks.length,checks,errors,failures,scope:'Actual Chromium SwiftShader, project-prefix HTTP, DOM keyboard/touch/file/download and offline shell. Completed-save import and render traversal are fixtures, not browser campaign proof. Gamepad is synthetic, not hardware certification. No real-phone FPS/Safari/accessibility certification.'},null,2));
+ fs.writeFileSync('qa/lumen/browser/report.json',JSON.stringify({passed:checks.length,checks,errors,failures,scope:'Actual Chromium SwiftShader, project-prefix HTTP, DOM keyboard/touch/file/download ; the archived prototype has no supported offline shell. Completed-save import and render traversal are fixtures, not browser campaign proof. Gamepad is synthetic, not hardware certification. No real-phone FPS/Safari/accessibility certification.'},null,2));
  console.log(JSON.stringify({passed:checks.length,errors:errors.length}));
 }finally{await browser.close()}

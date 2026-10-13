@@ -177,18 +177,19 @@ class Game{
   if(!oldGround&&p.grounded)this.emit('land',{x:p.x+14,y:p.y+54});
   if(p.y>790){this.hurt(25,p.x,true);if(this.status==='playing')this.respawn();return;}
   for(const h of this.current.hazards)if(overlaps(p,h)){this.hurt(h.type==='lava'?28:16,h.x+h.w/2);if(h.type==='lava'&&this.status==='playing'){const cp=this.current.checkpoints.find(c=>c.id===this.progress.checkpoint);p.x=cp.x;p.y=cp.y-54;p.vy=0;p.vx=0;}break;}
+  if(this.status!=='playing')return;
   if(p.attack>0){
    const box={x:p.face>0?p.x+10:p.x-99,y:p.y-14,w:117,h:80};const dmg=Math.round((16+this.progress.upgrades.blade*7+(this.progress.rank-1)*2)*(p.combo===3?1.65:1));
    for(const e of [...this.enemies,...(this.bossActive&&this.boss?[this.boss]:[])])if(e.hp>0&&e.hitID!==this.attackID&&overlaps(box,e)){e.hitID=this.attackID;this.damageEnemy(e,dmg);}
   }
-  for(const e of this.enemies)this.updateEnemy(e,dt);this.updateBoss(dt);
+  for(const e of this.enemies){this.updateEnemy(e,dt);if(this.status!=='playing')return;}this.updateBoss(dt);if(this.status!=='playing')return;
   for(const s of this.shots){
-   if(s.life<=0)continue;s.life-=dt;s.x+=s.vx*dt;s.y+=s.vy*dt;
+   if(s.life<=0)continue;s.life-=dt;if(s.life<=0)continue;s.x+=s.vx*dt;s.y+=s.vy*dt;
    const box={x:s.x-s.r,y:s.y-s.r,w:s.r*2,h:s.r*2};
    if(s.owner==='hero'){
     for(const sig of this.current.sigils)if(!this.has('runes',sig.id)&&Math.hypot(s.x-sig.x,s.y-(sig.y-40))<36){this.flag('runes',sig.id);s.life=0;this.emit('rune',{x:sig.x,y:sig.y-40});this.emit('note',{text:'World-rune released. Touch its light.'});this.emit('save');break;}
     for(const e of [...this.enemies,...(this.bossActive&&this.boss?[this.boss]:[])])if(s.life>0&&e.hp>0&&overlaps(box,e)){this.damageEnemy(e,s.dmg,'lumen');s.life=0;break;}
-   }else if(overlaps(box,p)){this.hurt(s.dmg,s.x);s.life=0;}
+   }else if(overlaps(box,p)){this.hurt(s.dmg,s.x);s.life=0;if(this.status!=='playing')return;}
    if(s.life>0&&!s.wave&&this.current.solids.some(q=>!q.oneWay&&overlaps(box,q)))s.life=0;
   }
   this.shots=this.shots.filter(s=>s.life>0&&s.x>-100&&s.x<this.current.width+100);if(this.shots.length>160)this.shots=this.shots.slice(-160);

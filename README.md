@@ -1,71 +1,66 @@
-# LUMENBLADE — Second Dawn
+# EMBERWAKE — The Hollow Crown
 
-An original, complete, compact sword-and-spell browser adventure: **22 connected rooms, seven regions, six Dawn Shards, seven guardians, four spells and two endings**. Full-viewport WebGL2 2.5D landscapes, articulated low-poly characters, responsive platforming, equipment and level choices, shrines, discoverable caches, portals and a synthesized original soundtrack.
+## In-place upgrade: 1.2.0-alpha.1
 
-This is a **playable release candidate**, not a claim of commercial-production certification or AAA/2026 visual parity. It is a fan-made spiritual-sequel interpretation inspired by Swordigo's genre and feel, **not an official Swordigo sequel and not affiliated with Touch Foo**. All Lumenblade story, world names, geometry and audio are original. The owner's repository name is not the in-game brand.
+This branch evolves the supplied **Emberwake 1.1.0-rc.3**, rather than replacing it. The original Canvas 2D campaign, Lyra and Aster, Moonroot Vale/Cinderworks/Hollow Spire, painted realm plates, six world-runes, three guardians, mercy/rekindle endings and Echo Gauntlet remain the foundation. `Swordigo-V2` is the repository name, not an official Swordigo sequel or a claim of affiliation with Touch Foo.
 
-The complete Emberwake 1.1.0-rc.3 baseline is retained in Git history and remains playable at `assets/legacy.html`, including its original regression suites.
+**Playable upgrade alpha, not release certification.** This is an incremental continuation of the supplied engine—not a separate game. Changes include:
 
-## Play / build
+- Full-viewport desktop/portrait/landscape presentation using the supplied painted artwork and character renderer.
+- Twelve optional platforms forming distinct canopy, service-gantry and observatory loops; existing rune/cache routes remain valid.
+- Three differentiated guardian patterns: root lanes/locked charge, staged forge waves, and marked light, with shape/label/countdown warnings and recovery windows.
+- A derived courier journal, optional-route directions, returning NPC testimony and restored-world details driven by existing V3 discoveries.
+- Simulation-owned travel, death-terminal handling, combined-action priorities, expired-projectile authority and hardened persistence/offline update handling.
 
-Requires a modern WebGL2 browser. No account, ads, telemetry, runtime CDN or game server. Saves are local to your browser; export a copy before clearing storage.
+Both original endings and the Echo Gauntlet remain playable. Nested side rooms, new persistent inventory/rewards, optional heart abilities and a post-ending chapter are **not implemented**; they require the compatibility work defined in [correction decisions](docs/correction/DECISIONS.md). See [QA evidence and remaining gates](docs/QA.md). No numerical “100x” or official Swordigo affiliation is claimed.
+
+## Build and preview
+
+Requires Node >=22 for repository tooling (CI configuration selects Node 24) and a modern JavaScript/Canvas/Web Audio browser for play. Emberwake does not require WebGL2, an account or a runtime CDN. Commands below are instructions, not a claim they were executed for this documentation update:
 
 ```sh
 npm ci
 npm test
 npm run check:secrets
+npm run test:campaign
 npm run build
 npm start -- --port 4173 --base /Swordigo-V2/
 ```
 
-Open `http://127.0.0.1:4173/Swordigo-V2/`. Node 24 is the CI version. Build bundles pinned Three.js with esbuild, then uses the integrity-manifest release builder. Only built runtime files are deployed. Offline shell installs after an online visit and service-worker activation; updates apply after old tabs close/reload. Install support varies by browser.
+Open `http://127.0.0.1:4173/Swordigo-V2/`. The build prepares an Emberwake-specific service worker then runs the integrity-manifest builder. Restart the preview after rebuilding; it serves a validated snapshot. Root and project-prefix boot, CSP, complete asset loading and offline/update behavior must pass the gates in [DEPLOYMENT.md](DEPLOYMENT.md). Offline availability depends on successful complete installation; do not assume a first-ever offline visit works.
 
 ## Controls
 
+Defaults from the existing Emberwake controls; primary keyboard bindings can be remapped in Settings.
+
 | Action | Keyboard | Standard gamepad |
-|---|---|---|
-| Move | A/D or arrows | Left stick / D-pad |
-| Jump / unlocked double jump | Space/W/up | A |
-| Sword / hold-release spin | J | X |
-| Aerial downward strike | S + J | Down + X |
-| Cast | K | B |
-| Select spell | 1–4 / Q | LT cycles |
-| Unlocked dash | Shift | RB |
-| Rest / speak | E | Y |
-| Healing flask | H | LB |
-| Map / pause | M / Escape | Back / Start |
-| Character | I | Pause menu |
-| Menu navigation | Tab / Enter | D-pad up/down, A confirm, B back |
+| --- | --- | --- |
+| Move | A/D; left/right arrows | Stick / D-pad |
+| Jump / double jump | Space; W/up arrow | A |
+| Sword combo | J (X shortcut) | X |
+| Lumen bolt | K (C shortcut) | Y |
+| Dash | Shift (L shortcut) | B |
+| Precision guard | Q | LT |
+| Healing flask | R | LB |
+| Interact / rest | E | RB |
+| Drop through platform | S/down arrow | See in-game prompts |
+| Map / journal / pause / fullscreen | M / I / Escape / F | See in-game menu prompts |
 
-Touch controls appear automatically on touch devices and support independent simultaneous pointers. In Thistlebrook, rest at the glowing shrine and speak to Sela. Follow the eastern paths; amber, blue and violet seals respond to different guardian gifts. Shrines restore health/energy/flasks and establish a checkpoint. Energy regenerates for free. Keep earned level points allocated through Character.
+Touch controls retain simultaneous-pointer input. Double jump, dash and guard are existing moves, not newly earned Lumenblade abilities. Physical controller and real-device qualification remain pending.
 
-## Saves
+## V3 journeys and recovery
 
-Three independent versioned slots, validation, last-readable-save backup, export/import with explicit confirmation, and storage-denied warnings. A new journey asks before replacing a populated slot. Reload restores progress to the current room's safe entrance or its checkpoint, with replenished health; exact position/combat-state snapshots are intentionally not supported. Back up valuable saves outside the browser.
+The original version-3 journey format and `EW_STORY_V3` / `EW_RUSH_V3` storage keys remain. Each has one rolling `.backup`; preferences, bindings and milestones retain separate existing keys. No V4 migration or three-slot Lumenblade serializer is introduced.
 
-## Verification
+Export valuable journeys outside the browser. Imports/replacements require the existing confirmation and stale-read safeguards. Resume reconstructs at a checkpoint with replenished resources, not an exact position/fight snapshot. A rolling backup is one prior valid write, not a permanent archive. Storage-denied play must warn; an in-memory journey is not a confirmed durable save. Clearing browser data can lose local progress. Cache repair must never clear journey storage.
 
-```sh
-npm test                       # simulation/save + original release contracts
-npm run test:lumen:campaign     # input-only complete new campaign
-npm run test:campaign           # preserved Emberwake proofs
-npm run build
-# Start the HTTP preview in another terminal first:
-CHROME_BIN=/path/to/chromium npm run test:lumen:browser
-CHROME_BIN=/path/to/chromium npm run test:browser -- --no-sandbox
-```
+## Architecture and archived experiment
 
-`--no-sandbox` is used only for the isolated test container; do not disable a browser sandbox for normal play. New browser tests target the project-prefix HTTP URL by default (`LUMEN_URL` overrides). Legacy browser tests select the preserved legacy entry. `qa/lumen/` contains the campaign proof, completed-save fixture and browser evidence. The completed-save import and visual-fixture traversal are explicitly **not** browser campaign completion proofs. See [QA scope and remaining release gates](docs/QA.md).
+- `assets/scripts/worlds.js`, `engine.js`, `core-v11.js`: original campaign, simulation, V3 validation and hardening.
+- `client.js`, `controls-v11.js`, `journey-v11.js`, `realm-v11.js`: Canvas/audio/UI, input, persistence/recovery and realm presentation.
+- `encounters-v12.js`, `journal-v12.js`, `presentation-v12.js` and `assets/styles/sequel-v12.css`: guardian, derived-story and in-place presentation extensions.
+- `docs/correction/`: independent council reviews, decisions and [tool evidence](docs/correction/TOOL-EVIDENCE.md).
 
-## Architecture / planning
+Lumenblade is an **optional archived experiment** at `assets/lumen-preview.html`, with source under `src/` and separate `test:lumen:*` commands. It is not the default game, an Emberwake save migration or evidence that Emberwake passes. Three.js/esbuild/Playwright remain development dependencies in the current manifest; Emberwake's primary build does not bundle the Lumenblade runtime. `build:prototype` rewrites prototype outputs and `sw.js`; do not run it as part of an Emberwake release.
 
-- `src/sim`: fixed-60-Hz authoritative game state, no DOM or WebGL.
-- `src/content`: connected campaign, enemy types, spell and story definitions.
-- `src/render`: Three.js environments, rigs, effects and resource disposal.
-- `src/input`, `src/ui`, `src/audio`, `src/save`: separate device/UI/audio/storage layers.
-- `docs/plan/`: sourced research, creative bible, systems, architecture, premortem and council decisions.
-- `THIRD_PARTY_NOTICES.md`: rendering/build/test dependency licenses.
-
-Parallel subagent startup failed; council roles were reviewed sequentially by one agent. Lore installation was canceled; Git/GitHub remained the source of truth. The supplied technology list is archived as a reference; irrelevant orchestration stacks were not installed.
-
-Owner source remains UNLICENSED. Rights/trademark review, real mobile hardware, Safari, physical controllers, longer-play balance and accessibility review are required before representing this candidate as a commercial production release.
+Owner content remains UNLICENSED pending owner rights/license decisions. See `ASSETS.md` and `THIRD_PARTY_NOTICES.md`; asset provenance, trademark, accessibility, device and human-play reviews are not certified by this alpha.

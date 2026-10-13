@@ -3,7 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const levels = require('../assets/scripts/worlds.js');
-const baseline = require('../../provided-emberwake/assets/scripts/worlds.js');
+const baseline = require('./fixtures/emberwake-worlds-rc3.cjs');
 const EW = require('../assets/scripts/engine.js');
 require('../assets/scripts/core-v11.js'); // Include the shipped strict v3 journey validator.
 const clamp = (n,a,b) => Math.max(a,Math.min(b,n));

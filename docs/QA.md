@@ -48,3 +48,5 @@ Restart the preview after rebuilding; it serves a validated snapshot. Update har
 ## Still unqualified
 
 Physical Android/iOS/controller devices, Safari/Firefox, frame-time/memory/thermal/battery measurements, first-time/returning human pacing, independent accessibility and owner artwork/trademark/licensing review remain outstanding. Viewport simulation and simulation Hz are not phone FPS. Runtime hashes provide consistency, not authenticated release signatures. No numerical “100x,” official Swordigo sequel, completed deferred post-ending chapter, exhaustive security audit or broad production certification is claimed.
+
+Remote PR CI initially failed because the route-comparison baseline was referenced outside the checkout. The original world data was copied byte-identically into a test-only repository fixture and the full 159-test local suite passed again. Remote acceptance requires the rerun for that follow-up commit; a prior failed run is not counted as a pass.

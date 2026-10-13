@@ -92,3 +92,6 @@ Node v24.14.1. SHA-256 at final targeted run:
 - `assets/scripts/core-v11.js`: `c7cc221aff922f8f9159a0796e87db983a9e49cd71718ca0312d41e0eff8642b`
 - `tests/emberwake-routes.test.cjs`: `0037dba0f6897f90c98a8ef1d996ce72e52f8c33b5b0a87484b5e84fdda22b1d`
 - `/data/work/provided-emberwake/assets/scripts/worlds.js`: `11be3617782e2db4abb5d6efa996f667837374237d3956c1f4d9a90b68c4789f`
+
+## Portable baseline fixture
+The first remote CI run exposed a VM-only relative path to the isolated supplied extraction. The exact original `worlds.js` bytes now live in `tests/fixtures/emberwake-worlds-rc3.cjs`; the comparison suite imports that repository-local fixture. It is test-only and excluded from shipped assets. Assertions/route physics are unchanged; no test was skipped. The independent extraction remains useful provenance, not a runtime or CI dependency.

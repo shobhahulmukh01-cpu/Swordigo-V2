@@ -1,6 +1,6 @@
 {
   "name": "emberwake-sequel-upgrade",
-  "version": "1.2.0-alpha.1",
+  "version": "1.2.0-alpha.3",
   "private": true,
   "license": "UNLICENSED",
   "engines": {
@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node scripts/prepare-emberwake.mjs && node scripts/build.mjs",
     "start": "node scripts/serve.mjs",
-    "test": "node --test tests/release.test.mjs tests/emberwake-upgrade.test.cjs tests/emberwake-routes.test.cjs tests/emberwake-encounters.test.cjs tests/emberwake-journal.test.cjs",
+    "test": "node --test tests/release.test.mjs tests/emberwake-*.test.cjs tests/emberwake-update-reliability.test.mjs tests/emberwake-update-experiment.test.mjs",
     "test:campaign": "node tests/emberwake-qa.js && node tests/difficulty-matrix.cjs",
     "test:browser": "python3 tests/browser-smoke.py",
     "check:secrets": "node scripts/check-secrets.mjs",
@@ -20,7 +20,12 @@
     "test:prototype": "node --test tests/lumen.test.mjs",
     "test:upgrade:browser": "node tests/emberwake-upgrade-browser.mjs",
     "test:persistence:browser": "node tests/emberwake-persistence-browser.mjs",
-    "test:update:browser": "node tests/emberwake-update-browser.mjs"
+    "test:update:browser": "node tests/emberwake-update-browser.mjs",
+    "test:firstload:browser": "node tests/emberwake-firstload-browser.mjs",
+    "test:chapter:browser": "node tests/emberwake-chapter-browser.mjs",
+    "test:chapter:earned": "node tests/emberwake-chapter-earned.cjs",
+    "test:chapter:visual": "node tests/emberwake-chapter-visual.mjs",
+    "test:update:experiment": "node tests/emberwake-update-experiment.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.58.2",

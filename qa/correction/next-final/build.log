@@ -1,0 +1,6 @@
+
+> emberwake-sequel-upgrade@1.2.0-alpha.3 build
+> node scripts/prepare-emberwake.mjs && node scripts/build.mjs
+
+Prepared the Emberwake offline shell: emberwake-8cf6212487b4
+Built 31 runtime files

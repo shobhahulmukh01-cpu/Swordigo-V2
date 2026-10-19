@@ -7,22 +7,33 @@
 <meta name="theme-color" content="#0c191d">
 <meta name="application-name" content="EMBERWAKE: The Hollow Crown">
 <meta name="description" content="An original sword-and-magic web adventure. Three stolen world-hearts. One courier. A future you get to write. Keyboard, touch, and controller support; local journey saves.">
-<link rel="stylesheet" href="assets/styles/sequel-v12.css">
+<script>
+(function(){
+ 'use strict';window.EW_BOOT_FAILED=false;
+ document.addEventListener('load',function(e){if(e.target.matches?.('script[src],link[rel="stylesheet"]'))e.target.dataset.loaded='true';},true);
+ window.addEventListener('error',function(e){if(e.filename||e.target.matches?.('script[src],link[rel="stylesheet"]'))window.EW_BOOT_FAILED=true;},true);
+})();
+</script>
+<link rel="stylesheet" href="assets/styles/sequel-v12.css?v=b4e3237cf318" integrity="sha384-mofHvAczy9CB7wHYOu910tZoawmyIeOu73eRHXNR6fUABqkPbgaoM4V5eekR4ucw">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c191d'/%3E%3Cpath d='M32 6L17 32l15 26 15-26z' fill='%23e6b570'/%3E%3C/svg%3E">
 <title>EMBERWAKE — The Hollow Crown</title>
 <style data-section-id="01a112a3-c127-7aee-99ec-4c105bffe418">
 html,body{margin:0;min-height:100%;background:#0c191d;color:#f2e9d4;font-family:Georgia,serif}#loading{min-height:70vh;display:grid;place-content:center;text-align:center;padding:40px}#loading h1{font-weight:400;letter-spacing:.14em;font-size:34px;margin:0 0 16px}#loading p{font:12px 'Trebuchet MS',sans-serif;letter-spacing:.1em;color:#a8c6b4}noscript{display:block;padding:32px;line-height:1.8;color:#e8d2ae}
 </style>
-<script src="assets/scripts/worlds.js" defer data-section-id="01a112a6-42b1-7a13-b3a8-802f14ad9b8e"></script>
-<script src="assets/scripts/engine.js" defer data-section-id="01a112a6-42b1-7a52-a999-eceec00d63b2"></script>
-<script src="assets/scripts/core-v11.js" defer data-section-id="01a112c3-46f3-7c6a-9b0e-ed57f144038e"></script>
-<script src="assets/scripts/encounters-v12.js" defer></script>
-<script src="assets/scripts/journal-v12.js" defer></script>
-<script src="assets/scripts/client.js" defer data-section-id="01a112a6-42b1-7a77-a298-82a6684eafbf"></script>
-<script src="assets/scripts/controls-v11.js" defer data-section-id="01a112c4-eff0-7a9f-b45f-b4cf413c1ae2"></script>
-<script src="assets/scripts/journey-v11.js" defer data-section-id="01a112c7-e0b0-74c3-abcf-dfca5e9e1124"></script>
-<script src="assets/scripts/realm-v11.js" defer data-section-id="01a112c7-e0b0-74e7-8bad-1dc3cec5d6c1"></script>
-<script src="assets/scripts/presentation-v12.js" defer></script>
+
+<script src="assets/scripts/worlds.js?v=32eb12c3920f" defer data-section-id="01a112a6-42b1-7a13-b3a8-802f14ad9b8e" integrity="sha384-wa4LxyxE+XVhW7ZMFUtvlAHAMoLjYxzgohMKv8vldOq72SJeuAgr7TlkYju+z4O/"></script>
+<script src="assets/scripts/engine.js?v=e1d4977781af" defer data-section-id="01a112a6-42b1-7a52-a999-eceec00d63b2" integrity="sha384-M7tOiC5Evti3ycs3vnmpA/LkJDa5hxpSJL3YgUEXU9LSc2JSC2ehjecZSoN0GHTf"></script>
+<script src="assets/scripts/core-v11.js?v=50f39aeb9bce" defer data-section-id="01a112c3-46f3-7c6a-9b0e-ed57f144038e" integrity="sha384-oRiHiwnUpI7gDRHQM1ZLvzu+EeZx1ZeFeko/GIWglvjhC/5h/uZ9iHPmxFIZbgz5"></script>
+<script src="assets/scripts/encounters-v12.js?v=0a6e03cdfb35" defer integrity="sha384-rY4+Y4Ei5w9GBX6elPLgNQxxg+XugE1fs+z2yQK9z1v+2zrjd5uVsa1eDnPPr4Uu"></script>
+<script src="assets/scripts/chapter-data.js?v=9ce9fd2431bb" defer integrity="sha384-QfYWVN4kh8FJh9HDu54ry7jcd2SBDIoDiTaPnzsUQFeoai/P6hC7+/rb7d4L7W4W"></script>
+<script src="assets/scripts/chapter-save.js?v=35e6099582e3" defer integrity="sha384-NaKpu4D4a4Cks0Y3mKxz7oc4+DoqeXMarZl6HXmea1NRp6ZkK62laHNcs3Qpl0Iz"></script>
+<script src="assets/scripts/chapter-runtime.js?v=ede2ece91743" defer integrity="sha384-/4YShjE/f23a5Jgc/g+Lb0ox7peYTuv2/AlEwZQXf75q7HgN7PU0RgoyRe8xT4EJ"></script>
+<script src="assets/scripts/journal-v12.js?v=297fdd10d6ef" defer integrity="sha384-zouJm4K7/RCpkkBJoTZad2GkwLxfTu9ZRcBSp6iJk6O1OdrT5hCRYSkx5WeRt5Oh"></script>
+<script src="assets/scripts/client.js?v=7b2e97cc9c9d" defer data-section-id="01a112a6-42b1-7a77-a298-82a6684eafbf" integrity="sha384-496dviBrJ1uQY/oFJSEYPhGBakJhNk0nT3NKnzwl5j5fyu3IOqQtXh10xvLSmjCi"></script>
+<script src="assets/scripts/controls-v11.js?v=d9fdad13cac4" defer data-section-id="01a112c4-eff0-7a9f-b45f-b4cf413c1ae2" integrity="sha384-h5kChS/BFNl7k5G9IgeMKQeGhlOl6mP4yIub2V3dGoIKfe+AtsPV5S7Pa6MS0UYz"></script>
+<script src="assets/scripts/journey-v11.js?v=74b21176361e" defer data-section-id="01a112c7-e0b0-74c3-abcf-dfca5e9e1124" integrity="sha384-rfufC0E0rTC4ZA3RYF2rFU5hzIuJvCBDFoDYgThJeCn4Xt1DYDpQFLWn2YFuP1gd"></script>
+<script src="assets/scripts/realm-v11.js?v=49d1acc8ce98" defer data-section-id="01a112c7-e0b0-74e7-8bad-1dc3cec5d6c1" integrity="sha384-TNTq4tPzfR3ztPTNZ7yFRLZOnRQPlGLq506wqs30DYCeR1qLPjcrDCQsCr82pfpy"></script>
+<script src="assets/scripts/presentation-v12.js?v=faecfd3ccae1" defer integrity="sha384-+EsWm44tnv10CVmNG0nN7o3BcP5GKoQACL7dI7+icGxvplkzqKAgRjGXfwWmn9Hq"></script>
 </head>
 <body>
 <div id="ember-root"><div id="loading"><h1 data-section-id="01a112a3-c127-7b41-96a2-119c622345ef">EMBERWAKE</h1><p data-section-id="01a112a3-c127-7b48-b8f2-99187f1ad0d1">A letter to tomorrow is opening…</p></div></div>
@@ -31,7 +42,7 @@ html,body{margin:0;min-height:100%;background:#0c191d;color:#f2e9d4;font-family:
 (function(){
 'use strict';
 document.addEventListener('DOMContentLoaded',function(){
- if(!window.EWClient||!window.EW||!window.EW_LEVELS||!window.EW_V11){
+ if(window.EW_BOOT_FAILED||Array.from(document.querySelectorAll('script[src],link[rel="stylesheet"]')).some(function(e){return e.dataset.loaded!=='true';})||!window.EWClient||!window.EW||!window.EW_LEVELS||!window.EW_V11){
   var loading=document.getElementById('loading');
   if(loading)loading.textContent='One of the game files could not load. Refresh the page, or open the complete game package rather than the HTML file alone.';
   return;

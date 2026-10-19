@@ -1,0 +1,57 @@
+{
+  "status": "chapter alpha, not production certification",
+  "nodeTests": {
+    "passed": 206,
+    "failed": 0,
+    "chapterContracts": 46,
+    "isolatedClientChecksWithinOneFile": 15
+  },
+  "firstload": {
+    "passed": 41,
+    "failed": 0
+  },
+  "browser": {
+    "persistencePassed": 19,
+    "upgradePassed": 13
+  },
+  "campaignMatrix": {
+    "passed": 16,
+    "allExactReplays": true
+  },
+  "nativeChapter": {
+    "earnedWaterDelivery": true,
+    "goldBefore": 38,
+    "goldAfter": 98,
+    "postEndingNativeRouteFixtures": 2,
+    "fixturesAreNotEarnedCampaigns": true
+  },
+  "visual": {
+    "inspectedFixtures": 8,
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "fixed": [
+      "minimap overlap",
+      "portrait objectives over hero",
+      "clipped/overlapping chapter labels",
+      "false optional Archive rune seal"
+    ]
+  },
+  "workerUpdate": {
+    "passed": 5,
+    "failed": 0,
+    "repeatabilityCaveat": "One earlier concurrent historical rollback attempt timed out. Diagnostic rerun passed unchanged runtime bytes; root cause not established. Earlier failure preserved."
+  },
+  "remotePublication": {
+    "pushed": false,
+    "reason": "No authenticated GitHub credentials. Noninteractive push dry-run refused Username."
+  },
+  "remaining": [
+    "physical devices/controllers/Safari/Firefox",
+    "human pacing/objective-discovery/accessibility review",
+    "asset-rights/license/trademark approval",
+    "exact-commit remote CI/deployment checks"
+  ],
+  "runtimeIntegritySHA256": "b5ef9db9eab2675dbbf39d63c3952acf429c47bf86bc61f8904b99b54d0500ea"
+}

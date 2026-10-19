@@ -57,9 +57,9 @@ class Game{
  get maxHP(){return 100+this.progress.upgrades.heart*30+(this.progress.rank-1)*6;}
  get maxMP(){return 100+this.progress.upgrades.focus*20;}
  newRun(difficulty='adventure',mode='story'){
-  this.progress={version:3,level:0,mode,difficulty,gold:0,xp:0,rank:1,upgrades:mode==='rush'?{blade:1,heart:1,focus:1}:{blade:0,heart:0,focus:0},flags:blankFlags(),checkpoint:this.levels[0].checkpoints[0].id,stats:{time:0,kills:0,deaths:0},completed:false,ending:null};this.loadLevel(0);this.emit('intro',{lines:mode==='rush'?['Three hearts. Three guardians. One uninterrupted run.','Your time is recorded locally. All abilities are ready.']:this.current.intro});return this;
+  if(this.resetChapter)this.resetChapter();this.progress={version:3,level:0,mode,difficulty,gold:0,xp:0,rank:1,upgrades:mode==='rush'?{blade:1,heart:1,focus:1}:{blade:0,heart:0,focus:0},flags:blankFlags(),checkpoint:this.levels[0].checkpoints[0].id,stats:{time:0,kills:0,deaths:0},completed:false,ending:null};this.loadLevel(0);this.emit('intro',{lines:mode==='rush'?['Three hearts. Three guardians. One uninterrupted run.','Your time is recorded locally. All abilities are ready.']:this.current.intro});return this;
  }
- resume(raw){const s=validateSave(raw,this.levels);if(!s)return false;this.progress=s;this.loadLevel(s.level,s.checkpoint);if(s.completed)this.status='won';return true;}
+ resume(raw){const s=validateSave(raw,this.levels);if(!s)return false;if(this.resetChapter)this.resetChapter();this.progress=s;this.loadLevel(s.level,s.checkpoint);if(s.completed)this.status='won';return true;}
  snapshot(){return JSON.parse(JSON.stringify(this.progress));}
  loadLevel(index,cpID){
   this.progress.level=index;let l=this.levels[index];
@@ -67,15 +67,15 @@ class Game{
    l={...l,width:1800,spawn:{x:130,y:590},solids:[{id:'rush-ground',x:0,y:590,w:1800,h:170}],hazards:[],enemies:[],chests:[],npc:null,shrines:[],checkpoints:[{id:l.checkpoints[0].id,x:130,y:590,name:'The Echo Beacon'}],sigils:l.sigils.map((s,i)=>({...s,x:230+i*85,y:590})),exit:{x:1700,y:590},boss:{...l.boss,x:1190,y:450,arena:[500,1640]}};
    l.sigils.forEach(s=>{this.flag('sigils',s.id);this.flag('runes',s.id);});
   }
-  this.current=l;this.flag('seen',l.id);const cp=l.checkpoints.find(c=>c.id===cpID)||l.checkpoints[0];this.progress.checkpoint=cp.id;
+  if(this.syncCampaignScene)this.syncCampaignScene(index);this.current=l;this.flag('seen',l.id);const cp=l.checkpoints.find(c=>c.id===cpID)||l.checkpoints[0];this.progress.checkpoint=cp.id;
   this.p={x:cp.x,y:cp.y-54,w:28,h:54,vx:0,vy:0,grounded:true,jumps:0,coyote:.11,jumpBuffer:0,face:1,hp:this.maxHP,mp:this.maxMP,flasks:3,inv:1,attack:0,attackCD:0,spellCD:0,dash:0,dashCD:0,combo:0,comboAge:5,anim:0};
   this.enemies=l.enemies.filter(e=>!this.has('defeated',e.id)).map(e=>({...e,...TYPES[e.type],baseY:e.y,homeX:e.x,face:-1,t:1+(.13*(e.x%9)),state:'patrol',flash:0,hitID:-1,phase:0}));
   if(!this.has('defeated',l.boss.id))this.boss={...l.boss,w:96,h:140,baseY:l.boss.y,maxHp:l.boss.hp,face:-1,t:1.7,state:'idle',flash:0,hitID:-1,phase:0,attackIx:0,isBoss:true};else this.boss=null;
   this.bossActive=false;this.shots=[];this.status='playing';this.clock=0;this.camera=clamp(this.p.x-360,0,l.width-1280);this.near=null;this.emit('realm',{name:l.name,index});this.emit('save');
  }
  getSolids(){
-  let ss=this.current.solids;
-  const arena=this.current.boss.arena;
+  if(this.inChapterRoom)return this.chapterSolids();let ss=this.current.solids;
+  const arena=this.current.boss?.arena;if(!arena)return ss;
   if(this.boss&&this.sigilCount<2)ss=ss.concat([{id:'sigil-gate',x:arena[0],y:100,w:22,h:550}]);
   if(this.bossActive)ss=ss.concat([{id:'arena-back',x:arena[0]-20,y:100,w:20,h:600},{id:'arena-front',x:arena[1],y:100,w:20,h:600}]);
   return ss;
@@ -85,7 +85,7 @@ class Game{
  }
  damageEnemy(e,n,kind='sword'){
   if(!e||e.hp<=0)return;e.hp-=n;e.flash=.13;this.emit('hit',{x:e.x+e.w/2,y:e.y+e.h/2,n,kind,boss:!!e.isBoss});
-  if(e.hp<=0){e.hp=0;this.flag('defeated',e.id);this.progress.stats.kills++;this.progress.gold+=e.gold??(160+this.progress.level*70);this.addXP(e.xp??110);this.emit('defeat',{x:e.x+e.w/2,y:e.y+e.h/2,boss:!!e.isBoss,gold:e.gold??(160+this.progress.level*70)});
+  if(e.hp<=0){e.hp=0;if(this.inChapterRoom)this.chapterFlag('defeated',e.id);else this.flag('defeated',e.id);(this.progress.completed?this.chapter.stats:this.progress.stats).kills++;this.progress.gold=Math.min(999999,this.progress.gold+(e.gold??(160+this.progress.level*70)));this.addXP(e.xp??110);this.emit('defeat',{x:e.x+e.w/2,y:e.y+e.h/2,boss:!!e.isBoss,gold:e.gold??(160+this.progress.level*70)});
    if(e.isBoss){this.bossActive=false;this.shots=this.shots.filter(s=>s.owner==='hero');this.p.hp=this.maxHP;this.p.mp=this.maxMP;this.p.flasks=3;this.emit('bossVictory',{lines:this.current.victory||['The world-heart remembers its pulse. The gate is open.']});}
    this.emit('save');
   }
@@ -93,10 +93,10 @@ class Game{
  hurt(n,x,fall=false){
   const p=this.p;if(this.status!=='playing'||(!fall&&(p.inv>0||p.dash>0)))return;
   const mul={story:.5,adventure:1,veteran:1.35}[this.progress.difficulty];const dmg=Math.max(1,Math.round(n*mul));p.hp=Math.max(0,p.hp-dmg);p.inv=1;p.vy=-230;if(!p.dash)p.vx=(p.x+14<x?-1:1)*220;
-  this.emit('hurt',{n:dmg,x:p.x+14,y:p.y+20});if(p.hp===0){this.status='dead';this.progress.stats.deaths++;this.emit('death');this.emit('save');}
+  this.emit('hurt',{n:dmg,x:p.x+14,y:p.y+20});if(p.hp===0){this.status='dead';(this.progress.completed?this.chapter.stats:this.progress.stats).deaths++;this.emit('death');this.emit('save');}
  }
  respawn(countDeath=false){
-  if(countDeath)this.progress.stats.deaths++;const cp=this.current.checkpoints.find(c=>c.id===this.progress.checkpoint)||this.current.checkpoints[0];
+  if(countDeath)(this.progress.completed?this.chapter.stats:this.progress.stats).deaths++;if(this.chapter?.active&&this.chapter.anchor&&this.resumeAtAnchor())return;const cp=this.current.checkpoints.find(c=>c.id===this.progress.checkpoint)||this.current.checkpoints[0];
   const oldTime=this.progress.stats.time;this.loadLevel(this.progress.level,cp.id);this.progress.stats.time=oldTime;this.emit('respawn');
  }
  upgrade(kind){
@@ -108,9 +108,9 @@ class Game{
  slash(){
   const p=this.p;if(p.attackCD>0||p.dash>0)return false;p.combo=p.comboAge<.62?(p.combo%3)+1:1;p.comboAge=0;p.attack=.26;p.attackCD=p.combo===3?.34:.22;this.attackID++;this.emit('slash',{combo:p.combo});return true;
  }
- triggerBoss(){if(!this.boss||this.boss.hp<=0||this.bossActive)return;if(this.sigilCount<2){this.emit('note',{text:'Release both world-runes with your lumen bolt.'});return;}this.bossActive=true;this.boss.state='idle';this.boss.t=1.6;this.emit('bossIntro',{name:this.boss.name,lines:this.current.bossIntro||['The guardian wakes. Watch the wind-up. Dash through danger.']});}
+ triggerBoss(){if(!this.boss||this.boss.hp<=0||this.bossActive)return;if(!this.inChapterRoom&&this.sigilCount<2){this.emit('note',{text:'Release both world-runes with your lumen bolt.'});return;}this.bossActive=true;this.boss.state='idle';this.boss.t=1.6;this.emit('bossIntro',{name:this.boss.name,lines:this.current.bossIntro||['The guardian wakes. Watch the wind-up. Dash through danger.']});}
  findNearby(){
-  const p=this.p,foot=p.y+p.h;const near=(o,r=78)=>o&&Math.abs(p.x+14-o.x)<r&&Math.abs(foot-o.y)<95;
+  const chapterNear=this.findChapterNearby?.();if(chapterNear)return chapterNear;const p=this.p,foot=p.y+p.h;const near=(o,r=78)=>o&&Math.abs(p.x+14-o.x)<r&&Math.abs(foot-o.y)<95;
   if(near(this.current.exit,95))return {type:'exit',item:this.current.exit,label:this.boss&&this.boss.hp>0?'The guardian holds this gate':'E · Enter the world-gate'};
   for(const c of this.current.chests)if(!this.has('chests',c.id)&&near(c,65))return {type:'chest',item:c,label:'E · Open forgotten cache'};
   for(const s of this.current.shrines)if(near(s,68))return {type:'shrine',item:s,label:'E · Attune at the shrine'};
@@ -118,8 +118,8 @@ class Game{
   return null;
  }
  interact(){
-  if(this.status!=='playing')return;const n=this.findNearby();if(!n)return;const item=n.item;
-  if(n.type==='npc')this.emit('dialogue',{speaker:item.name,lines:item.lines});
+  if(this.status!=='playing')return;const n=this.findNearby();if(!n)return;const item=n.item;if(n.type==='chapterDoor'){if(!this.enterDoor(item.id))this.emit('note',{text:'Finish nearby danger before taking this path.'});return;}if(n.type==='chapterInteraction'){this.chapterInteract(item.id);return;}
+  if(n.type==='exit'&&this.progress.completed){this.emit('note',{text:'Your ending is already written. The optional deliveries remain open.'});return;}if(n.type==='npc')this.emit('dialogue',{speaker:item.name,lines:item.lines});
   else if(n.type==='shrine')this.emit('shrine');
   else if(n.type==='chest'){this.flag('chests',item.id);this.progress.gold+=item.gold;this.addXP(12);this.emit('chest',{gold:item.gold,x:item.x,y:item.y-25});if(item.lore)this.emit('dialogue',{speaker:'A forgotten letter',lines:[item.lore]});this.emit('save');}
   else if(n.type==='exit'){
@@ -129,7 +129,7 @@ class Game{
    else this.emit('choice');
   }
  }
- finish(choice){if(!['mercy','rekindle'].includes(choice))return;this.progress.completed=true;this.progress.ending=choice;this.status='won';this.emit('ending',{choice,mode:this.progress.mode});this.emit('save');}
+ finish(choice){if(this.progress.completed)return false;if(!['mercy','rekindle'].includes(choice))return;this.progress.completed=true;this.progress.ending=choice;this.status='won';this.emit('ending',{choice,mode:this.progress.mode});this.emit('save');}
  enemyShot(e,x,y,speed=290,r=7,dmg=13){const px=this.p.x+14,py=this.p.y+25,dx=px-x,dy=py-y,len=Math.hypot(dx,dy)||1;this.shots.push({owner:'enemy',x,y,vx:dx/len*speed,vy:dy/len*speed,r,life:4,dmg});}
  updateEnemy(e,dt){
   if(e.hp<=0)return;e.flash=Math.max(0,e.flash-dt);e.t-=dt;const p=this.p,dist=p.x-e.x;
@@ -169,14 +169,14 @@ class Game{
  }
  step(dt,input={}){
   if(this.status!=='playing'||!this.p||!finite(dt,0,1))return;dt=Math.min(dt,1/60);if(!dt)return;
-  this.clock+=dt;this.progress.stats.time+=dt;const p=this.p;p.anim+=dt;p.inv=Math.max(0,p.inv-dt);p.attack=Math.max(0,p.attack-dt);p.attackCD=Math.max(0,p.attackCD-dt);p.spellCD=Math.max(0,p.spellCD-dt);p.dash=Math.max(0,p.dash-dt);p.dashCD=Math.max(0,p.dashCD-dt);p.comboAge+=dt;p.mp=Math.min(this.maxMP,p.mp+(12+this.progress.upgrades.focus*3)*dt);
+  this.clock+=dt;(this.progress.completed?this.chapter.stats:this.progress.stats).time+=dt;const p=this.p;p.anim+=dt;p.inv=Math.max(0,p.inv-dt);p.attack=Math.max(0,p.attack-dt);p.attackCD=Math.max(0,p.attackCD-dt);p.spellCD=Math.max(0,p.spellCD-dt);p.dash=Math.max(0,p.dash-dt);p.dashCD=Math.max(0,p.dashCD-dt);p.comboAge+=dt;p.mp=Math.min(this.maxMP,p.mp+(12+this.progress.upgrades.focus*3)*dt);
   if(input.attackPressed)this.slash();if(input.spellPressed)this.cast();if(input.healPressed)this.heal();
   if(input.dashPressed&&p.dashCD===0){p.dash=.17;p.dashCD=.88;p.inv=Math.max(p.inv,.22);if(input.axis)p.face=input.axis<0?-1:1;p.vx=p.face*850;this.emit('dash',{x:p.x+14,y:p.y+27});}
   const oldY=p.y,oldGround=p.grounded;Physics.step(p,dt,this.getSolids(),input,{speed:300,doubleJump:true,maxX:this.current.width,lockX:p.dash>0,gravity:p.dash>0?220:1750});
   if(p.y<oldY-1&&input.jumpPressed)this.emit('jump',{x:p.x+14,y:p.y+54,air:!oldGround});
   if(!oldGround&&p.grounded)this.emit('land',{x:p.x+14,y:p.y+54});
   if(p.y>790){this.hurt(25,p.x,true);if(this.status==='playing')this.respawn();return;}
-  for(const h of this.current.hazards)if(overlaps(p,h)){this.hurt(h.type==='lava'?28:16,h.x+h.w/2);if(h.type==='lava'&&this.status==='playing'){const cp=this.current.checkpoints.find(c=>c.id===this.progress.checkpoint);p.x=cp.x;p.y=cp.y-54;p.vy=0;p.vx=0;}break;}
+  for(const h of this.current.hazards)if(overlaps(p,h)&&!(this.inChapterRoom&&h.ventId&&this.chapterHas('mechanisms',h.ventId))){this.hurt(h.type==='lava'?28:16,h.x+h.w/2);if(h.type==='lava'&&this.status==='playing'){const a=this.chapter?.active&&this.chapter.anchor?root.EW.ChapterData?.anchors[this.chapter.anchor.anchorId]:null;const cp=a||this.current.checkpoints.find(c=>c.id===this.progress.checkpoint)||this.current.checkpoints[0];if(cp){p.x=cp.x;p.y=cp.y-54;}p.vy=0;p.vx=0;}break;}
   if(this.status!=='playing')return;
   if(p.attack>0){
    const box={x:p.face>0?p.x+10:p.x-99,y:p.y-14,w:117,h:80};const dmg=Math.round((16+this.progress.upgrades.blade*7+(this.progress.rank-1)*2)*(p.combo===3?1.65:1));
@@ -194,8 +194,8 @@ class Game{
   }
   this.shots=this.shots.filter(s=>s.life>0&&s.x>-100&&s.x<this.current.width+100);if(this.shots.length>160)this.shots=this.shots.slice(-160);
   for(const s of this.current.sigils)if(this.has('runes',s.id)&&!this.has('sigils',s.id)&&Math.abs(p.x+14-s.x)<45&&Math.abs(p.y+27-(s.y-40))<65){this.flag('sigils',s.id);this.progress.gold+=25;this.addXP(20);this.emit('sigil',{x:s.x,y:s.y-40,count:this.sigilCount});this.emit('save');}
-  if(!this.bossActive)for(const cp of this.current.checkpoints)if(cp.id!==this.progress.checkpoint&&Math.abs(p.x+14-cp.x)<48&&Math.abs(p.y+54-cp.y)<70){this.progress.checkpoint=cp.id;p.hp=this.maxHP;p.mp=this.maxMP;p.flasks=3;this.emit('checkpoint',{name:cp.name,x:cp.x,y:cp.y-30});this.emit('save');break;}
-  if(this.boss&&this.boss.hp>0&&!this.bossActive&&this.sigilCount===2&&p.x>this.boss.arena[0]+25&&p.x<this.boss.arena[1])this.triggerBoss();
+  if(!this.progress.completed&&!this.inChapterRoom&&!this.bossActive)for(const cp of this.current.checkpoints)if(cp.id!==this.progress.checkpoint&&Math.abs(p.x+14-cp.x)<48&&Math.abs(p.y+54-cp.y)<70){this.progress.checkpoint=cp.id;p.hp=this.maxHP;p.mp=this.maxMP;p.flasks=3;this.emit('checkpoint',{name:cp.name,x:cp.x,y:cp.y-30});this.emit('save');break;}
+  if(this.boss&&this.boss.hp>0&&!this.bossActive&&((this.inChapterRoom&&!this.current.boss?.optIn)||(!this.inChapterRoom&&this.sigilCount===2))&&p.x>this.boss.arena[0]+25&&p.x<this.boss.arena[1])this.triggerBoss();
   this.near=this.findNearby();if(input.interactPressed)this.interact();this.camera+=((clamp(p.x-460+p.face*60,0,this.current.width-1280))-this.camera)*Math.min(1,dt*6);
  }
 }

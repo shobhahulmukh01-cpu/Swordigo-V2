@@ -1,0 +1,134 @@
+{
+  "utc": "2026-10-19T20:28:01.639622+00:00",
+  "version": "1.2.0-alpha.3",
+  "status": "Playable in-place chapter alpha; functional gates passed, repeatability hold; not production certification",
+  "runtimeCache": "emberwake-8cf6212487b4",
+  "nodeTests": {
+    "passed": 232,
+    "failed": 0
+  },
+  "originalCampaign": {
+    "baselineCompletions": 4,
+    "baselineRegressionsPassed": 116,
+    "extendedMatrixPassed": 16,
+    "extendedExactReplays": true
+  },
+  "earnedFullChapter": {
+    "cases": 4,
+    "passed": 4,
+    "exactReplays": 4,
+    "endings": [
+      "mercy",
+      "rekindle"
+    ],
+    "hz": [
+      60,
+      120
+    ],
+    "scope": "Ordinary-input earned simulation, not browser/human pacing proof. Both original endings earned independently. Explicit UI continuation/travel/respawn and validated earned save restore. No fact/pose/resource/enemy injection.",
+    "allRoomsDeliveriesItemsThreeSealsEngineFinish": true,
+    "authoredFallDeathRecoveryAndEarnedSaveRestore": true,
+    "originalEndingCheckpointAndCampaignStatsPreserved": true
+  },
+  "browser": {
+    "retainedNativeSmokePassed": 54,
+    "firstloadPassed": 41,
+    "persistencePassed": 19,
+    "upgradePassed": 13,
+    "nativeEarnedWater": true,
+    "waterReward": 60,
+    "nativeNonGrantingAdvice": true,
+    "endingImportUIFixtures": 2,
+    "endingFixturesAreNotEarnedCampaigns": true,
+    "defaultWorkerChecksPassed": 7,
+    "failed": 0
+  },
+  "visual": {
+    "injectedFixtures": 28,
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "individualReviewCompleted": true,
+    "requiredReplacementReviewCompleted": true,
+    "fixed": [
+      "portrait boss HUD covered hero/floor warnings",
+      "adjacent nameplate collisions at portrait and desktop"
+    ],
+    "scope": "Render fixtures, not earned gameplay or device qualification"
+  },
+  "runtimeIntegrity": {
+    "sourceDistServedFiles": 31,
+    "firstLoadScriptsAndStyles": 14,
+    "workerDeclaredEntries": 20,
+    "allSRIAndDigestURLsValid": true,
+    "simulationEvidenceSourceHashesMatch": true
+  },
+  "repeatability": {
+    "status": "stopped-first-failure",
+    "planned": 12,
+    "started": 9,
+    "passed": 8,
+    "failed": 1,
+    "notRun": [
+      10,
+      11,
+      12
+    ],
+    "noRetries": true,
+    "cleared": false,
+    "sourceStableDuringExperiment": true,
+    "failure": {
+      "trial": 9,
+      "arm": "full",
+      "competing": true,
+      "check": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "V4 initial fixture visibility immediately after observer seeding, before V4 update/offline/rollback actions",
+      "observation": "All five expected localStorage keys were null when read in the historical game page after seeding them in the outside-scope observer page.",
+      "keys": [
+        "EW_STORY_V4",
+        "EW_STORY_V3",
+        "EW_STORY_V3.backup",
+        "EW_RUSH_V3",
+        "EW_RUSH_V3.backup"
+      ],
+      "stackLocation": "tests/emberwake-update-browser.mjs:333 (initial assertFixture)",
+      "originalFiveChecksInSameTrialPassed": true,
+      "cause": "Unestablished; this is not evidence that V4 was lost during an update or rollback, since those V4 actions had not begun.",
+      "workloadLaunch": "successful, not setup-blocked",
+      "rawReport": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/09-full-competing/report.json"
+    },
+    "historicalTimeoutStillUnexplained": true
+  },
+  "remotePublication": {
+    "pushed": false,
+    "authenticated": false,
+    "reason": "GitHub device authorization expired without approval; no pasted credential stored or used",
+    "remoteCIAndDeploymentVerified": false
+  },
+  "remainingReleaseHolds": [
+    "Investigate initial V4 cross-page fixture visibility under competing workload; no 12-trial clearance",
+    "Historical rollback timeout root cause unresolved",
+    "Physical devices/controllers, Safari/Firefox/iOS/Android and low-end performance",
+    "Human objective discovery, combat/backtracking pacing and accessibility review",
+    "Owner rights/license/trademark/asset-provenance decisions",
+    "Secure GitHub authorization, exact-commit remote CI and deployed headers/cache behavior"
+  ],
+  "evidenceSHA256": {
+    "runtime-integrity.json": "f91b31da35b70a979fd67cfcc4c3cbb74cb3a63b61db1b2be4c598c6c0c87761",
+    "node-tests.log": "18b4533ac4967a524162c3a60d553bc44c57431c8a8831888c1160b937fca12d",
+    "firstload.json": "5c660eb484fe3869ad6e7b47fa3c2d5599d9fa429c89f90c1fc19acd166cb9a4",
+    "persistence.json": "b855535d927d0ce17a275b4a70b3db4732f3495b8d26bcc320f708ff16138762",
+    "upgrade.json": "57ca68c00fd9fd1a9fd1fd2117704e8d83e362d32a308c643cf50cae5bf75a23",
+    "campaign-matrix.json": "e4dcef062be94c8f5024657d48831d64266c93cab448e18866991a889b02294b",
+    "campaign-baseline.json": "32bdad7444be289a553500fe4fa320de84ba424c24eb1405c6bdd5fd27252f02",
+    "earned/input-proof.json": "4a27c18f5371e4ce4125425449ce9a1c28ca40414d877f4da87e8beb4bddd6ba",
+    "native-chapter/report.json": "11d3fd26f0c4d44560a4a8a3e5802fac4af7ee3b066310aa82cafbed1c082393",
+    "retained-browser/browser-results.json": "b09ad22e200a22150b8deea415e37d3f1da844543a2547da45ad9a399d0deda7",
+    "worker-update/report.json": "d142999e7be73f24a34742f503e6e9bdd14490ae54e1909fa18e524a062c6266",
+    "update-experiment-summary.json": "bc92655a2cc2ce26cbc043e1de3aca56db05c5675ad3fa4d0a9c529b72330f9e",
+    "visual/report.json": "ff3c5e763e8361c228842ab1251c0d988242965c4fc2316879e8929d8644ab0d",
+    "visual-inspection.md": "ae51342d2762ff9e56204ea1d5225ee5bc30cc6e82fe47ad97b9210268c213ee",
+    "REPEATABILITY-HOLD.md": "e68dcf9e3df4d1d837bfb2571f69ec06fbe4524330ba4d18a58b150d4da3cb8a"
+  }
+}

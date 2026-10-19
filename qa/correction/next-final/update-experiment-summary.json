@@ -1,0 +1,223 @@
+{
+  "status": "stopped-first-failure",
+  "runId": "2026-10-19T20-19-55-674Z-c5b1962b",
+  "startedUTC": "2026-10-19T20:19:55.697Z",
+  "finishedUTC": "2026-10-19T20:24:07.910Z",
+  "elapsedMs": 252236,
+  "elapsedSeconds": 252.236,
+  "workerIdentity": "8cf6212487b4",
+  "browser": "153.0.8010.12",
+  "bounds": {
+    "totalMs": 1800000,
+    "externalMs": 175000,
+    "internalMs": 150000,
+    "predicateMs": 45000
+  },
+  "plannedTrials": 12,
+  "startedTrials": 9,
+  "passedTrials": 8,
+  "failedTrials": 1,
+  "notRunTrials": [
+    10,
+    11,
+    12
+  ],
+  "harnessChecksObserved": {
+    "passed": 37,
+    "failed": 1
+  },
+  "trialResults": [
+    {
+      "number": 1,
+      "arm": "full",
+      "competing": false,
+      "status": "passed",
+      "harnessPassed": 7,
+      "harnessFailed": 0,
+      "harnessElapsedMs": 41422,
+      "contexts": 5,
+      "pages": 24,
+      "sourceChanges": [],
+      "report": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/01-full/report.json"
+    },
+    {
+      "number": 2,
+      "arm": "full",
+      "competing": false,
+      "status": "passed",
+      "harnessPassed": 7,
+      "harnessFailed": 0,
+      "harnessElapsedMs": 44421,
+      "contexts": 5,
+      "pages": 24,
+      "sourceChanges": [],
+      "report": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/02-full/report.json"
+    },
+    {
+      "number": 3,
+      "arm": "full",
+      "competing": false,
+      "status": "passed",
+      "harnessPassed": 7,
+      "harnessFailed": 0,
+      "harnessElapsedMs": 44901,
+      "contexts": 5,
+      "pages": 24,
+      "sourceChanges": [],
+      "report": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/03-full/report.json"
+    },
+    {
+      "number": 4,
+      "arm": "full",
+      "competing": false,
+      "status": "passed",
+      "harnessPassed": 7,
+      "harnessFailed": 0,
+      "harnessElapsedMs": 47258,
+      "contexts": 5,
+      "pages": 24,
+      "sourceChanges": [],
+      "report": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/04-full/report.json"
+    },
+    {
+      "number": 5,
+      "arm": "rollback-only",
+      "competing": false,
+      "status": "passed",
+      "harnessPassed": 1,
+      "harnessFailed": 0,
+      "harnessElapsedMs": 6566,
+      "contexts": 1,
+      "pages": 4,
+      "sourceChanges": [],
+      "report": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/05-rollback-only/report.json"
+    },
+    {
+      "number": 6,
+      "arm": "rollback-only",
+      "competing": false,
+      "status": "passed",
+      "harnessPassed": 1,
+      "harnessFailed": 0,
+      "harnessElapsedMs": 6402,
+      "contexts": 1,
+      "pages": 4,
+      "sourceChanges": [],
+      "report": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/06-rollback-only/report.json"
+    },
+    {
+      "number": 7,
+      "arm": "rollback-only",
+      "competing": false,
+      "status": "passed",
+      "harnessPassed": 1,
+      "harnessFailed": 0,
+      "harnessElapsedMs": 6492,
+      "contexts": 1,
+      "pages": 4,
+      "sourceChanges": [],
+      "report": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/07-rollback-only/report.json"
+    },
+    {
+      "number": 8,
+      "arm": "rollback-only",
+      "competing": false,
+      "status": "passed",
+      "harnessPassed": 1,
+      "harnessFailed": 0,
+      "harnessElapsedMs": 6363,
+      "contexts": 1,
+      "pages": 4,
+      "sourceChanges": [],
+      "report": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/08-rollback-only/report.json"
+    },
+    {
+      "number": 9,
+      "arm": "full",
+      "competing": true,
+      "status": "failed",
+      "harnessPassed": 5,
+      "harnessFailed": 1,
+      "harnessElapsedMs": 46447,
+      "contexts": 4,
+      "pages": 14,
+      "sourceChanges": [],
+      "report": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/09-full-competing/report.json"
+    }
+  ],
+  "firstFailure": {
+    "trial": 9,
+    "arm": "full",
+    "competing": true,
+    "check": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+    "stage": "V4 initial fixture visibility immediately after observer seeding, before V4 update/offline/rollback actions",
+    "observation": "All five expected localStorage keys were null when read in the historical game page after seeding them in the outside-scope observer page.",
+    "keys": [
+      "EW_STORY_V4",
+      "EW_STORY_V3",
+      "EW_STORY_V3.backup",
+      "EW_RUSH_V3",
+      "EW_RUSH_V3.backup"
+    ],
+    "stackLocation": "tests/emberwake-update-browser.mjs:333 (initial assertFixture)",
+    "originalFiveChecksInSameTrialPassed": true,
+    "cause": "Unestablished; this is not evidence that V4 was lost during an update or rollback, since those V4 actions had not begun.",
+    "workloadLaunch": "successful, not setup-blocked",
+    "rawReport": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/09-full-competing/report.json"
+  },
+  "competingWorkload": {
+    "browser": "153.0.8010.12",
+    "contexts": 2,
+    "pages": 2,
+    "config": {
+      "contexts": 2,
+      "pagesPerContext": 1,
+      "width": 960,
+      "height": 540,
+      "rectanglesPerFrame": 512,
+      "linesPerFrame": 64,
+      "sampleMs": 1000,
+      "minimumFrames": 2
+    },
+    "samples": 47,
+    "errorsRecorded": [],
+    "measuredPages": [
+      {
+        "pageId": 1,
+        "framesStart": 4,
+        "framesEnd": 150,
+        "framesDelta": 146,
+        "measuredElapsedMs": 46027.8,
+        "drawMsDelta": 71.6
+      },
+      {
+        "pageId": 2,
+        "framesStart": 2,
+        "framesEnd": 148,
+        "framesDelta": 146,
+        "measuredElapsedMs": 46026.3,
+        "drawMsDelta": 70.0
+      }
+    ],
+    "cleanup": "Workload forcibly terminated on first failure; workload.json stopped=false is expected for this cleanup, not a workload-launch failure.",
+    "telemetry": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/09-full-competing/workload.json"
+  },
+  "sourceConsistency": {
+    "baselineSHA256": "a109398388f9b4e1fddce86e6bc40852c23fe32cb42954869e9966529ae14029",
+    "finalSHA256": "a109398388f9b4e1fddce86e6bc40852c23fe32cb42954869e9966529ae14029",
+    "changedFiles": [],
+    "allTrialPrePostSourceStable": true,
+    "runtimeWorkerSHA256": "906ee8901ee1f39af4c43456b118b8640360ecc2888cfd47cdd08df1d832a104",
+    "runtimeIndexSHA256": "9ec2bd67187ad4ff2d59c924ce8869a1083cb462330410f92b784b944071f31d"
+  },
+  "externalEvidenceDirectory": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b",
+  "externalManifest": "/data/work/plan/next-update-experiment/2026-10-19T20-19-55-674Z-c5b1962b/experiment.json",
+  "externalManifestSHA256": "2b508047cede4d0444b8deab284265264962fe45060cc54ff4f1471e201e8f41",
+  "detailedEvidenceLayout": "Each trial directory retains report.json, harness-inventory.json, trial.json, source-pre.json, source-post.json and stdout/stderr logs; trial 9 also retains workload.json and failure screenshots.",
+  "automaticRetries": 0,
+  "additionalTrialsAfterFirstFailure": 0,
+  "experimentComplete": false,
+  "repeatabilityClearance": false,
+  "historicalCaveat": "The earlier historical rollback window.lumen timeout remains unexplained. Even 12/12 passes establish only bounded observations under recorded conditions, not root-cause resolution or production rollback robustness.",
+  "conclusion": "Eight unloaded trials passed; the first competing trial stopped on an initial V4 fixture-visibility assertion. The planned 12 trials did not complete. No retry or production robustness claim."
+}

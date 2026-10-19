@@ -1,6 +1,6 @@
 # EMBERWAKE — The Hollow Crown
 
-## In-place upgrade: 1.2.0-alpha.1
+## In-place upgrade: 1.2.0-alpha.3
 
 This branch evolves the supplied **Emberwake 1.1.0-rc.3**, rather than replacing it. The original Canvas 2D campaign, Lyra and Aster, Moonroot Vale/Cinderworks/Hollow Spire, painted realm plates, six world-runes, three guardians, mercy/rekindle endings and Echo Gauntlet remain the foundation. `Swordigo-V2` is the repository name, not an official Swordigo sequel or a claim of affiliation with Touch Foo.
 
@@ -12,7 +12,11 @@ This branch evolves the supplied **Emberwake 1.1.0-rc.3**, rather than replacing
 - A derived courier journal, optional-route directions, returning NPC testimony and restored-world details driven by existing V3 discoveries.
 - Simulation-owned travel, death-terminal handling, combined-action priorities, expired-projectile authority and hardened persistence/offline update handling.
 
-Both original endings and the Echo Gauntlet remain playable. Nested side rooms, new persistent inventory/rewards, optional heart abilities and a post-ending chapter are **not implemented**; they require the compatibility work defined in [correction decisions](docs/correction/DECISIONS.md). See [QA evidence and remaining gates](docs/QA.md). No numerical “100x” or official Swordigo affiliation is claimed.
+Both original endings and the Echo Gauntlet remain playable. **The First Unwritten Day** adds four optional rooms—Millpond Irrigation Terraces, Cooling Gallery, Rootcellar Charter Desk and Star Archive—through five bidirectional links. Water Remembers and Summer Coal pay 60/80 embers once per saved journey; Charter/testimony remain optional. Rootbinding, marked-vent Cinderseal and same-scene Dawnstep derive from existing restored-heart facts; basic campaign moves remain available. After either original ending, choose **Continue deliveries** explicitly; the opt-in Archivist Engine and chapter completion never rewrite that ending or its recorded time/deaths.
+
+**Alpha.3 followthrough:** NPCs and Archive records distinguish actual deliveries, read testimony and published Charter, with separate responses to both endings. Optional **Ask Aster for advice** follows the current journey. Valves, vents, desks and archive consoles have functional silhouettes; the Rootcellar is enclosed and the Archivist is a nonhuman device. Committed repairs leave visible planter/hearth/Charter details. Portrait boss information now replaces the objective panel rather than covering Lyra and floor warnings. Saved post-ending continuation returns to its certified chapter anchor; revisiting roads no longer overwrites the original checkpoint or automatically refills vitals.
+
+This is a bounded chapter alpha, not the council's larger ten-room proposal or a measured 20–35-minute expansion. See [chapter acceptance and limitations](docs/correction/CHAPTER-ACCEPTANCE.md). See [QA evidence and remaining gates](docs/QA.md). No numerical “100x” or official Swordigo affiliation is claimed.
 
 ## Build and preview
 
@@ -23,6 +27,7 @@ npm ci
 npm test
 npm run check:secrets
 npm run test:campaign
+npm run test:chapter:earned
 npm run build
 npm start -- --port 4173 --base /Swordigo-V2/
 ```
@@ -48,16 +53,19 @@ Defaults from the existing Emberwake controls; primary keyboard bindings can be 
 
 Touch controls retain simultaneous-pointer input. Double jump, dash and guard are existing moves, not newly earned Lumenblade abilities. Physical controller and real-device qualification remain pending.
 
-## V3 journeys and recovery
+## V3 compatibility, V4 journeys and recovery
 
-The original version-3 journey format and `EW_STORY_V3` / `EW_RUSH_V3` storage keys remain. Each has one rolling `.backup`; preferences, bindings and milestones retain separate existing keys. No V4 migration or three-slot Lumenblade serializer is introduced.
+Validated story V3 saves migrate deterministically to an `EW_STORY_V4` single-key envelope containing current journey, one previous journey and a revision. `EW_STORY_V3` and its `.backup` are **frozen fallback bytes**, not actively mirrored; chapter rewards never leak into a legacy save without their delivery facts. Rush remains `EW_RUSH_V3` with its existing backup. Preferences/bindings/browser milestones remain separate.
 
-Export valuable journeys outside the browser. Imports/replacements require the existing confirmation and stale-read safeguards. Resume reconstructs at a checkpoint with replenished resources, not an exact position/fight snapshot. A rolling backup is one prior valid write, not a permanent archive. Storage-denied play must warn; an in-memory journey is not a confirmed durable save. Clearing browser data can lose local progress. Cache repair must never clear journey storage.
+Exports contain the portable campaign+chapter payload, not an exact fight cache or recursive backups. Imports accept legacy story/rush V3 or the portable chapter payload; unsupported future envelopes fail visibly. Resume restores at a certified room anchor or original beacon. Completed saves open their ending first, never silently start the epilogue. Explicit **Continue deliveries** restores the saved certified chapter anchor when present; a first continuation begins in Moonroot. Door crossings preserve health/magic/flasks and encounter state; only explicit recovery/rest restores resources. A failed delivery write grants neither the reward nor its delivery fact, permitting retry/export. A fresh story can still start when browser storage is completely unavailable, with a visible export warning; no existing live journey may be replaced through that path, and delivery rewards still require a successful save.
+
+Export valuable journeys outside the browser. Imports/new-run replacement first preserve the current journey, validate an isolated Game, write the target, then swap. Conflicting stored revisions fail closed. A corrupt current with a validated previous can be restored only after confirmation bound to the observed stored bytes; cancellation overwrites nothing. A previous save is one rolling recovery point, not an archive. Local JSON backups can intentionally rewind progress and are not anti-cheat provenance. Single-key storage provides atomic visibility, not guaranteed disk durability or a cross-tab compare-and-swap lock. Clearing browser data loses saves; cache repair must never clear journey storage.
 
 ## Architecture and archived experiment
 
 - `assets/scripts/worlds.js`, `engine.js`, `core-v11.js`: original campaign, simulation, V3 validation and hardening.
 - `client.js`, `controls-v11.js`, `journey-v11.js`, `realm-v11.js`: Canvas/audio/UI, input, persistence/recovery and realm presentation.
+- `chapter-data.js`, `chapter-save.js`, `chapter-runtime.js`: optional authored scenes, bounded facts/rewards, V4 envelope and Game-owned scene authority/cache.
 - `encounters-v12.js`, `journal-v12.js`, `presentation-v12.js` and `assets/styles/sequel-v12.css`: guardian, derived-story and in-place presentation extensions.
 - `docs/correction/`: independent council reviews, decisions and [tool evidence](docs/correction/TOOL-EVIDENCE.md).
 

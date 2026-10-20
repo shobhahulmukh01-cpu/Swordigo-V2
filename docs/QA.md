@@ -50,3 +50,12 @@ Restart the preview after rebuilding; it serves a validated snapshot. Update har
 Physical Android/iOS/controller devices, Safari/Firefox, frame-time/memory/thermal/battery measurements, first-time/returning human pacing, independent accessibility and owner artwork/trademark/licensing review remain outstanding. Viewport simulation and simulation Hz are not phone FPS. Runtime hashes provide consistency, not authenticated release signatures. No numerical “100x,” official Swordigo sequel, completed deferred post-ending chapter, exhaustive security audit or broad production certification is claimed.
 
 Remote PR CI initially failed because the route-comparison baseline was referenced outside the checkout. The original world data was copied byte-identically into a test-only repository fixture and the full 159-test local suite passed again. Remote acceptance requires the rerun for that follow-up commit; a prior failed run is not counted as a pass.
+
+
+## Alpha.3 — consequence and earned chapter followthrough
+
+See `docs/correction/ALPHA3-DECISIONS.md` for council decisions/premortem and `qa/correction/next-final/validation.json` for current exact-build results. Earlier chapter-final and correction reports remain historical. `npm run test:chapter:earned` writes portable, ordinary-input action traces/replay hashes; `npm run test:chapter:visual` creates explicitly seeded render fixtures, not earned gameplay. Current native chapter harness separately proves Water Remembers, optional advice and both ending-import UI continuity. V4 update lifecycle fixtures test storage behavior, not campaign completion. A discovered portrait boss-HUD occlusion was corrected in alpha.3; the visual harness asserts the actual boss panel clears Lyra and floor warnings.
+
+Do not infer production readiness, rights clearance, human pacing, physical-device/browser-matrix qualification or public deployment from these local tests. Historical rollback timeout root cause remains unresolved; any bounded follow-up experiment has its own stated conditions and first-failure stop.
+
+The retained smoke harness now validates portable V4 plus its canonical V3 base/current/previous, while retaining byte-exact legacy-primary/backup checks and the non-chapter V3 path. It also covers fresh denied-storage play; this does not authorize replacement of an existing journey without a successful save.

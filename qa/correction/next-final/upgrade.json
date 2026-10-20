@@ -1,0 +1,21 @@
+{
+  "passed": 13,
+  "checks": [
+    "primary entry is supplied Emberwake, full viewport and no replacement runtime",
+    "native keyboard moves Lyra and ordinary double jump remains available",
+    "pause stops simulation and offers export",
+    "derived journal contains optional route and original letter states",
+    "unseen travel remains disabled and discovered travel is engine-owned",
+    "low quality applies immediately",
+    "V4 authoritative journey continuity, frozen V3 fallback and coherent offline release",
+    "guardian render fixtures show locked telegraphs and truthful HUD labels",
+    "mobile viewport, usable touch targets and bounded interaction prompt",
+    "mobile native touch movement releases cleanly",
+    "landscape viewport, usable touch targets and bounded interaction prompt",
+    "landscape native touch movement releases cleanly",
+    "zero missing assets and runtime exceptions"
+  ],
+  "errors": [],
+  "failures": [],
+  "scope": "Local Chromium HTTP project prefix; actual DOM keyboard/touch/download/offline. Guardian screenshots use explicitly positioned encounter fixtures, not campaign proof. No physical phone/controller/Safari/FPS or accessibility certification."
+}

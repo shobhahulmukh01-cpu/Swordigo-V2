@@ -12,9 +12,10 @@ const EW=require(path.join(dir,'engine.js'));
 const LEVELS=require(path.join(dir,'worlds.js'));
 require(path.join(dir,'core-v11.js'));
 require(path.join(dir,'encounters-v12.js'));
+for(const n of ['chapter-data.js','chapter-save.js','chapter-runtime.js'])if(fs.existsSync(path.join(dir,n)))require(path.join(dir,n));
 const clone=x=>JSON.parse(JSON.stringify(x));
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
-const hashes=Object.fromEntries(['engine.js','worlds.js','core-v11.js','encounters-v12.js'].map(n=>[n,crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,n))).digest('hex')]));
+const hashes=Object.fromEntries(['engine.js','worlds.js','core-v11.js','encounters-v12.js',...['chapter-data.js','chapter-save.js','chapter-runtime.js'].filter(n=>fs.existsSync(path.join(dir,n)))].map(n=>[n,crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,n))).digest('hex')]));
 function route(l,routeMode='original'){
  const r=[], point=(x,foot=590)=>r.push({kind:'point',x:x-14,foot});
  const rest=i=>r.push({kind:'rest',x:l.checkpoints[i].x-14,foot:590});

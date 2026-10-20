@@ -1,0 +1,354 @@
+{
+  "scope": "local Chromium precheck, not production acceptance",
+  "utc": "2026-10-13T22:11:29.926Z",
+  "frozenDistHTML": "bb0b35ed9ca8e275fd19ccca8c078a74caa5fca8d499c9dfcb6348540f2035ad",
+  "passed": 41,
+  "failed": 0,
+  "notes": [],
+  "results": [
+    {
+      "name": "existing dist script/style URLs match their content digests",
+      "pass": true,
+      "detail": {
+        "assetCount": 14,
+        "htmlSHA256": "bb0b35ed9ca8e275fd19ccca8c078a74caa5fca8d499c9dfcb6348540f2035ad"
+      }
+    },
+    {
+      "name": "all prepared script/style SHA-384 integrity values match frozen bytes",
+      "pass": true,
+      "detail": {
+        "assetCount": 14
+      }
+    },
+    {
+      "name": "current source and frozen dist first-load bytes agree",
+      "pass": true
+    },
+    {
+      "name": "wrong same-key 200 bytes blocked by SRI /assets/scripts/client.js",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "url": "assets/scripts/client.js?v=d35b0f5d1c54",
+        "integrityBlocked": true
+      }
+    },
+    {
+      "name": "wrong same-key 200 bytes blocked by SRI /assets/styles/sequel-v12.css",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "url": "assets/styles/sequel-v12.css?v=cc86baa7e158",
+        "integrityBlocked": true
+      }
+    },
+    {
+      "name": "cold complete uncontrolled boot /",
+      "pass": true,
+      "detail": {
+        "workerPolicy": "blocked",
+        "identities": {
+          "core": true,
+          "encounters": true,
+          "journal": true,
+          "persistence": "transactional-v1",
+          "presentation": true,
+          "chapter": true
+        }
+      }
+    },
+    {
+      "name": "real HTTP cached stale script/style keys bypassed /",
+      "pass": true,
+      "detail": {
+        "cacheHits": 22,
+        "newAddressRequests": 14,
+        "workerPolicy": "blocked",
+        "staleFixture": "synthetic same-release bytes + execution/CSS markers"
+      }
+    },
+    {
+      "name": "registration refusal still permits coherent boot /",
+      "pass": true,
+      "detail": {
+        "registration": "explicitly refused fixture"
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/scripts/chapter-data.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/scripts/chapter-save.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/scripts/chapter-runtime.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/scripts/core-v11.js",
+      "pass": true,
+      "detail": {
+        "errors": [
+          "Cannot set properties of undefined (setting 'chapterRuntime')"
+        ]
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/scripts/encounters-v12.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/scripts/journal-v12.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/scripts/controls-v11.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/scripts/journey-v11.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/scripts/realm-v11.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/scripts/presentation-v12.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /assets/styles/sequel-v12.css",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "wrong same-key 200 bytes blocked by SRI /Swordigo-V2/assets/scripts/client.js",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "url": "assets/scripts/client.js?v=d35b0f5d1c54",
+        "integrityBlocked": true
+      }
+    },
+    {
+      "name": "wrong same-key 200 bytes blocked by SRI /Swordigo-V2/assets/styles/sequel-v12.css",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "url": "assets/styles/sequel-v12.css?v=cc86baa7e158",
+        "integrityBlocked": true
+      }
+    },
+    {
+      "name": "cold complete uncontrolled boot /Swordigo-V2/",
+      "pass": true,
+      "detail": {
+        "workerPolicy": "blocked",
+        "identities": {
+          "core": true,
+          "encounters": true,
+          "journal": true,
+          "persistence": "transactional-v1",
+          "presentation": true,
+          "chapter": true
+        }
+      }
+    },
+    {
+      "name": "real HTTP cached stale script/style keys bypassed /Swordigo-V2/",
+      "pass": true,
+      "detail": {
+        "cacheHits": 22,
+        "newAddressRequests": 14,
+        "workerPolicy": "blocked",
+        "staleFixture": "synthetic same-release bytes + execution/CSS markers"
+      }
+    },
+    {
+      "name": "registration refusal still permits coherent boot /Swordigo-V2/",
+      "pass": true,
+      "detail": {
+        "registration": "explicitly refused fixture"
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/scripts/chapter-data.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/scripts/chapter-save.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/scripts/chapter-runtime.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/scripts/core-v11.js",
+      "pass": true,
+      "detail": {
+        "errors": [
+          "Cannot set properties of undefined (setting 'chapterRuntime')"
+        ]
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/scripts/encounters-v12.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/scripts/journal-v12.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/scripts/controls-v11.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/scripts/journey-v11.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/scripts/realm-v11.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/scripts/presentation-v12.js",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "extension/style 404 must fail closed /Swordigo-V2/assets/styles/sequel-v12.css",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "cold worker activation and first claimed reload /Swordigo-V2/",
+      "pass": true,
+      "detail": {
+        "controller": "http://127.0.0.1:41753/Swordigo-V2/sw.js"
+      }
+    },
+    {
+      "name": "running preview HTML equals frozen dist",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:4173/Swordigo-V2/",
+        "cacheControl": "no-store"
+      }
+    },
+    {
+      "name": "native failed Save & return retains live journey and exports denied (existing preview)",
+      "pass": true,
+      "detail": {
+        "fault": "denied",
+        "authoritativeKey": "EW_STORY_V4",
+        "downloadGold": 333,
+        "fullPayloadEqual": true,
+        "legacyFrozen": true,
+        "writeAttempts": []
+      }
+    },
+    {
+      "name": "native failed Save & return retains live journey and exports write-denied (existing preview)",
+      "pass": true,
+      "detail": {
+        "fault": "write-denied",
+        "authoritativeKey": "EW_STORY_V4",
+        "downloadGold": 333,
+        "fullPayloadEqual": true,
+        "legacyFrozen": true,
+        "writeAttempts": [
+          "EW_STORY_V4"
+        ]
+      }
+    },
+    {
+      "name": "native failed Save & return retains live journey and exports primary-quota (existing preview)",
+      "pass": true,
+      "detail": {
+        "fault": "primary-quota",
+        "authoritativeKey": "EW_STORY_V4",
+        "downloadGold": 333,
+        "fullPayloadEqual": true,
+        "legacyFrozen": true,
+        "writeAttempts": [
+          "EW_STORY_V4"
+        ]
+      }
+    },
+    {
+      "name": "native failed Save & return retains live journey and exports revision-conflict (existing preview)",
+      "pass": true,
+      "detail": {
+        "fault": "revision-conflict",
+        "authoritativeKey": "EW_STORY_V4",
+        "downloadGold": 333,
+        "fullPayloadEqual": true,
+        "legacyFrozen": true,
+        "writeAttempts": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,1041 @@
+{
+  "scope": "Explicitly injected render fixtures, not gameplay; individual visual inspection required separately.",
+  "shots": [
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "millpond-valve-desktop.png",
+      "state": {
+        "scene": "ch1:room:millpond",
+        "kind": "valve",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:millpond"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:millpond",
+            "anchorId": "ch1:anchor:millpond-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "b80674d8cd25daf6d720be47d7ac843dd01899eb2490e3d0c65587c0b74e3f0b"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "millpond-water-desk-desktop.png",
+      "state": {
+        "scene": "ch1:room:millpond",
+        "kind": "water-desk",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:millpond"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:millpond",
+            "anchorId": "ch1:anchor:millpond-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "7eac937c54330ce17ec8715316955e7f846e66c07463a3c9893054c126829aae"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "cooling-gallery-vent-desktop.png",
+      "state": {
+        "scene": "ch1:room:cooling-gallery",
+        "kind": "vent",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:cooling-gallery"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:cooling-gallery",
+            "anchorId": "ch1:anchor:gallery-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "4d36e6b42cca8621028e3ab2fc5417375201cebfa87b35898b13806c7e1355b0"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "cooling-gallery-coal-desktop.png",
+      "state": {
+        "scene": "ch1:room:cooling-gallery",
+        "kind": "coal",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:cooling-gallery"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:cooling-gallery",
+            "anchorId": "ch1:anchor:gallery-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "c10c9df52674fd38a3a9aa0c36f6c8ab8e928d0faea5f8acaeaef5cf3a8f40b4"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "rootcellar-desk-desktop.png",
+      "state": {
+        "scene": "ch1:room:rootcellar",
+        "kind": "desk",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:rootcellar"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:rootcellar",
+            "anchorId": "ch1:anchor:rootcellar-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "3a3d5933ec5c0f69d95bd6e70d4185c8add628e7fe629f455617c8aa41f41774"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "rootcellar-charter-desktop.png",
+      "state": {
+        "scene": "ch1:room:rootcellar",
+        "kind": "charter",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:rootcellar"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:rootcellar",
+            "anchorId": "ch1:anchor:rootcellar-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "41dfa3efc29377a66dcf23fd2e23a9015d65b8e36768a56257be4273f35a9877"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "star-archive-records-desktop.png",
+      "state": {
+        "scene": "ch1:room:star-archive",
+        "kind": "records",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:star-archive"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:star-archive",
+            "anchorId": "ch1:anchor:archive-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "34cba23c0f3fdfbe2ecc00cbfc156f237aac0a786521b0ee2b50f93557b52cef"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "star-archive-engine-warning-desktop.png",
+      "state": {
+        "scene": "ch1:room:star-archive",
+        "kind": "engine-warning",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:star-archive"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:star-archive",
+            "anchorId": "ch1:anchor:archive-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "8760902b7399c8c73a7b1614c325b73c318e757e773b31d57a5dd2bd03977605"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "moonroot-delivery-absent-desktop.png",
+      "state": {
+        "scene": "ch1:main:moonroot",
+        "kind": "delivery-absent",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:moonroot",
+            "anchorId": "ch1:anchor:moonroot-mill"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "3ab88be32aaf274984ef2fc5d0d22ab976a6d99c546bdc0e39f028c0d1bd8966"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "moonroot-delivery-present-desktop.png",
+      "state": {
+        "scene": "ch1:main:moonroot",
+        "kind": "delivery-present",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [
+            "ch1:delivery:water-remembers",
+            "ch1:delivery:summer-coal",
+            "ch1:delivery:charter"
+          ],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:moonroot",
+            "anchorId": "ch1:anchor:moonroot-mill"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "0ca9292ac3a6ca457f38dd0c68dae094aabc45fbe327c8ad214564f11d33bd7e"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "cinderworks-delivery-absent-desktop.png",
+      "state": {
+        "scene": "ch1:main:cinderworks",
+        "kind": "delivery-absent",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:main:cinderworks"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:cinderworks",
+            "anchorId": "ch1:anchor:cinderworks-gallery"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "4514d9c7d89d3f9688813f6d40fd97e5539fc20b713da27f655112da58338c9e"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "cinderworks-delivery-present-desktop.png",
+      "state": {
+        "scene": "ch1:main:cinderworks",
+        "kind": "delivery-present",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:main:cinderworks"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [
+            "ch1:delivery:water-remembers",
+            "ch1:delivery:summer-coal",
+            "ch1:delivery:charter"
+          ],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:cinderworks",
+            "anchorId": "ch1:anchor:cinderworks-gallery"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "996f352283d499d97c39400e180c41b9b1755784a4351b4ac90f5252b023d581"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "hollowspire-delivery-absent-desktop.png",
+      "state": {
+        "scene": "ch1:main:hollowspire",
+        "kind": "delivery-absent",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:main:hollowspire"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:hollowspire",
+            "anchorId": "ch1:anchor:hollowspire-archive"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "fdf244101621d3c157adbb15bf89d9c3576c5032554f5804408dbc772b0a9b92"
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "filename": "hollowspire-delivery-present-desktop.png",
+      "state": {
+        "scene": "ch1:main:hollowspire",
+        "kind": "delivery-present",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:main:hollowspire"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [
+            "ch1:delivery:water-remembers",
+            "ch1:delivery:summer-coal",
+            "ch1:delivery:charter"
+          ],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:hollowspire",
+            "anchorId": "ch1:anchor:hollowspire-archive"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 1037,
+          "height": 720
+        }
+      },
+      "sha256": "f636e5cf5e1f939d5059e9ce096bc2a209f651afcab5725410af5e5c0409e5f5"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "millpond-valve-portrait.png",
+      "state": {
+        "scene": "ch1:room:millpond",
+        "kind": "valve",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:millpond"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:millpond",
+            "anchorId": "ch1:anchor:millpond-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "0add3c00a445a59011c1c3fe64a783d14f14228ef8554825ee991e3341b4a2a3"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "millpond-water-desk-portrait.png",
+      "state": {
+        "scene": "ch1:room:millpond",
+        "kind": "water-desk",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:millpond"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:millpond",
+            "anchorId": "ch1:anchor:millpond-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "f57525985fcfbf7af5bfba298dc40aabfadd955955d74a356714fab4393ab8ad"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "cooling-gallery-vent-portrait.png",
+      "state": {
+        "scene": "ch1:room:cooling-gallery",
+        "kind": "vent",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:cooling-gallery"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:cooling-gallery",
+            "anchorId": "ch1:anchor:gallery-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "3977dc5815854a7b6f2c12b98f00fb747a577a92f57f3d6cc1b1f12476f6b7c6"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "cooling-gallery-coal-portrait.png",
+      "state": {
+        "scene": "ch1:room:cooling-gallery",
+        "kind": "coal",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:cooling-gallery"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:cooling-gallery",
+            "anchorId": "ch1:anchor:gallery-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "8d4fbd1f59fb4812ff15e7882e5eecc81d2b059948ccfa83632d87458c0dc4fe"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "rootcellar-desk-portrait.png",
+      "state": {
+        "scene": "ch1:room:rootcellar",
+        "kind": "desk",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:rootcellar"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:rootcellar",
+            "anchorId": "ch1:anchor:rootcellar-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "2025e2706f9bf3ccff2d856bf7e4240c90e15fbafbcdd145c04b49dfd9d87adf"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "rootcellar-charter-portrait.png",
+      "state": {
+        "scene": "ch1:room:rootcellar",
+        "kind": "charter",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:rootcellar"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:rootcellar",
+            "anchorId": "ch1:anchor:rootcellar-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "025db4ad004fde7913b40258eb8f5e90c4d69442ad0a4589614ff6cd258e2560"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "star-archive-records-portrait.png",
+      "state": {
+        "scene": "ch1:room:star-archive",
+        "kind": "records",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:star-archive"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:star-archive",
+            "anchorId": "ch1:anchor:archive-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "2c4402647df1294819ad78ece0082b5a0611ff73708a98955c7fce0b3ea84135"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "star-archive-engine-warning-portrait.png",
+      "state": {
+        "scene": "ch1:room:star-archive",
+        "kind": "engine-warning",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:room:star-archive"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:room:star-archive",
+            "anchorId": "ch1:anchor:archive-entry"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        },
+        "combatLayout": {
+          "hudBottom": 302,
+          "heroTop": 628.3111111111112,
+          "feet": 691.6111111111112,
+          "warningCount": 2,
+          "objectiveVisible": false
+        }
+      },
+      "sha256": "d418c36a5cfd2fd33e14a0de83e65d69c5cdb33e3e3add74c13bfb99301c0c82"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "moonroot-delivery-absent-portrait.png",
+      "state": {
+        "scene": "ch1:main:moonroot",
+        "kind": "delivery-absent",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:moonroot",
+            "anchorId": "ch1:anchor:moonroot-mill"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "54aad892822ee66bf1a52729611040339b686af2ed3661e36166e49895e19c19"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "moonroot-delivery-present-portrait.png",
+      "state": {
+        "scene": "ch1:main:moonroot",
+        "kind": "delivery-present",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [
+            "ch1:delivery:water-remembers",
+            "ch1:delivery:summer-coal",
+            "ch1:delivery:charter"
+          ],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:moonroot",
+            "anchorId": "ch1:anchor:moonroot-mill"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "87206af5c3c35ea4222ccd7eeee4e75a55335331e4c11b2af4c4b9698e4d9efb"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "cinderworks-delivery-absent-portrait.png",
+      "state": {
+        "scene": "ch1:main:cinderworks",
+        "kind": "delivery-absent",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:main:cinderworks"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:cinderworks",
+            "anchorId": "ch1:anchor:cinderworks-gallery"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "e2427c1cd80e06d969ef1bd75b84a28187bdf7e169ce62742b919602e5ff2a5a"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "cinderworks-delivery-present-portrait.png",
+      "state": {
+        "scene": "ch1:main:cinderworks",
+        "kind": "delivery-present",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:main:cinderworks"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [
+            "ch1:delivery:water-remembers",
+            "ch1:delivery:summer-coal",
+            "ch1:delivery:charter"
+          ],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:cinderworks",
+            "anchorId": "ch1:anchor:cinderworks-gallery"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "8866d640b1a63bd0f7fb6aa8dcc4f0132c891cb9011f0a535dd524e37ced6dd6"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "hollowspire-delivery-absent-portrait.png",
+      "state": {
+        "scene": "ch1:main:hollowspire",
+        "kind": "delivery-absent",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:main:hollowspire"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:hollowspire",
+            "anchorId": "ch1:anchor:hollowspire-archive"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "17312a3aa5f456ad8428df5f8be3ac8ecdac2cb1fff884277f653d6257785c62"
+    },
+    {
+      "viewport": "portrait",
+      "width": 390,
+      "height": 844,
+      "filename": "hollowspire-delivery-present-portrait.png",
+      "state": {
+        "scene": "ch1:main:hollowspire",
+        "kind": "delivery-present",
+        "chapter": {
+          "active": true,
+          "complete": false,
+          "discovered": [
+            "ch1:main:moonroot",
+            "ch1:main:hollowspire"
+          ],
+          "mechanisms": [],
+          "items": [],
+          "deliveries": [
+            "ch1:delivery:water-remembers",
+            "ch1:delivery:summer-coal",
+            "ch1:delivery:charter"
+          ],
+          "defeated": [],
+          "anchor": {
+            "sceneId": "ch1:main:hollowspire",
+            "anchorId": "ch1:anchor:hollowspire-archive"
+          },
+          "stats": {
+            "time": 0,
+            "kills": 0,
+            "deaths": 0
+          }
+        },
+        "canvas": {
+          "width": 333,
+          "height": 720
+        }
+      },
+      "sha256": "bfd1871456998ab24c8f0bfdd4f74902a4c03df6ba23a8c9575ed0943d32775b"
+    }
+  ],
+  "errors": []
+}

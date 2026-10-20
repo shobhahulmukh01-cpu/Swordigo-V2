@@ -1,0 +1,8 @@
+
+> emberwake-sequel-upgrade@1.2.0-alpha.3 test:chapter:earned
+> node tests/emberwake-chapter-earned.cjs
+
+{"ending":"mercy","dt":0.008333333333333333,"pass":true,"frames":20961,"error":null,"replay":{"pass":true,"frames":20961,"stateChecks":87}}
+{"ending":"mercy","dt":0.016666666666666666,"pass":true,"frames":10509,"error":null,"replay":{"pass":true,"frames":10509,"stateChecks":43}}
+{"ending":"rekindle","dt":0.008333333333333333,"pass":true,"frames":20961,"error":null,"replay":{"pass":true,"frames":20961,"stateChecks":87}}
+{"ending":"rekindle","dt":0.016666666666666666,"pass":true,"frames":10509,"error":null,"replay":{"pass":true,"frames":10509,"stateChecks":43}}

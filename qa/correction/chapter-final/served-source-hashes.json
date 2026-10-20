@@ -1,0 +1,86 @@
+{
+  "base": "http://127.0.0.1:4173/Swordigo-V2/",
+  "verifiedServedAgainstDist": true,
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "bb0b35ed9ca8e275fd19ccca8c078a74caa5fca8d499c9dfcb6348540f2035ad",
+      "sourceSha256": "bb0b35ed9ca8e275fd19ccca8c078a74caa5fca8d499c9dfcb6348540f2035ad"
+    },
+    {
+      "path": "sw.js",
+      "sha256": "151e2749379935b6517fda2e359a37cf3defb48976613693b6588ca663b4a6af",
+      "sourceSha256": "151e2749379935b6517fda2e359a37cf3defb48976613693b6588ca663b4a6af"
+    },
+    {
+      "path": "assets/scripts/chapter-data.js",
+      "sha256": "97b0edd56c6e79812170b14086f94f9cb542aa5d2d808d4959a24ad2506a03cf",
+      "sourceSha256": "97b0edd56c6e79812170b14086f94f9cb542aa5d2d808d4959a24ad2506a03cf"
+    },
+    {
+      "path": "assets/scripts/chapter-runtime.js",
+      "sha256": "4e19b59e1703b50d2a0806bcd31d00296e4a17f6fb146d416101b7cf93a58002",
+      "sourceSha256": "4e19b59e1703b50d2a0806bcd31d00296e4a17f6fb146d416101b7cf93a58002"
+    },
+    {
+      "path": "assets/scripts/chapter-save.js",
+      "sha256": "35e6099582e3a55b219adc369b5e108596f5d1a0b19ab5f175b8efb4cf9f357b",
+      "sourceSha256": "35e6099582e3a55b219adc369b5e108596f5d1a0b19ab5f175b8efb4cf9f357b"
+    },
+    {
+      "path": "assets/scripts/client.js",
+      "sha256": "d35b0f5d1c547c08aa5a4688df8f972a2596604a97d9f5e4d5557c96f35f94a1",
+      "sourceSha256": "d35b0f5d1c547c08aa5a4688df8f972a2596604a97d9f5e4d5557c96f35f94a1"
+    },
+    {
+      "path": "assets/scripts/controls-v11.js",
+      "sha256": "d9fdad13cac437ecd152eac812a564e389b05bbc75248b311ffd2ff8119e43e8",
+      "sourceSha256": "d9fdad13cac437ecd152eac812a564e389b05bbc75248b311ffd2ff8119e43e8"
+    },
+    {
+      "path": "assets/scripts/core-v11.js",
+      "sha256": "50f39aeb9bceaa2f5eff825c0b89a0005ea7c3e1242cf7e6df41f4ca443daa31",
+      "sourceSha256": "50f39aeb9bceaa2f5eff825c0b89a0005ea7c3e1242cf7e6df41f4ca443daa31"
+    },
+    {
+      "path": "assets/scripts/encounters-v12.js",
+      "sha256": "0a6e03cdfb352be8b5c0e6ccaf8417db6d59cc1616e9b59acfb5fd2e5bba5abe",
+      "sourceSha256": "0a6e03cdfb352be8b5c0e6ccaf8417db6d59cc1616e9b59acfb5fd2e5bba5abe"
+    },
+    {
+      "path": "assets/scripts/engine.js",
+      "sha256": "b3bffa7d71a8425aca5cc9d19968da58fdcc1a0f145107e9f128de0d602946a6",
+      "sourceSha256": "b3bffa7d71a8425aca5cc9d19968da58fdcc1a0f145107e9f128de0d602946a6"
+    },
+    {
+      "path": "assets/scripts/journal-v12.js",
+      "sha256": "92196e103b40a7018f50d682f5bc1c673439134b8d509888786cb13a839347d5",
+      "sourceSha256": "92196e103b40a7018f50d682f5bc1c673439134b8d509888786cb13a839347d5"
+    },
+    {
+      "path": "assets/scripts/journey-v11.js",
+      "sha256": "58f41216c18e61e6b5347c4a063951865094d002a39286826cd184193e941fc5",
+      "sourceSha256": "58f41216c18e61e6b5347c4a063951865094d002a39286826cd184193e941fc5"
+    },
+    {
+      "path": "assets/scripts/presentation-v12.js",
+      "sha256": "33d149e90701bd706a4e62b1cfe8d9ae36bb66d783e849da08c6d82a35ab95e2",
+      "sourceSha256": "33d149e90701bd706a4e62b1cfe8d9ae36bb66d783e849da08c6d82a35ab95e2"
+    },
+    {
+      "path": "assets/scripts/realm-v11.js",
+      "sha256": "3907d77b800b99d3c58fd2306240e8e4f232a75f9a053cee8e40dc226063fb9d",
+      "sourceSha256": "3907d77b800b99d3c58fd2306240e8e4f232a75f9a053cee8e40dc226063fb9d"
+    },
+    {
+      "path": "assets/scripts/worlds.js",
+      "sha256": "32eb12c3920fc8c5ab00e6f9accd3e909fb504605573c880067232383fc4ca9a",
+      "sourceSha256": "32eb12c3920fc8c5ab00e6f9accd3e909fb504605573c880067232383fc4ca9a"
+    },
+    {
+      "path": "assets/styles/sequel-v12.css",
+      "sha256": "cc86baa7e1586b4ea5275880042cc0026b6f56b1442cc6ed2f6998e6ccc159dd",
+      "sourceSha256": "cc86baa7e1586b4ea5275880042cc0026b6f56b1442cc6ed2f6998e6ccc159dd"
+    }
+  ]
+}

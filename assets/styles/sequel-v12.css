@@ -85,3 +85,18 @@ body.ew-sequel .context-prompt{bottom:100px!important}
 @media(max-width:650px){body.ew-sequel .context-prompt{top:230px!important;bottom:auto!important;left:16px!important;right:16px!important;max-width:none;max-height:72px}}
 @media(max-height:540px) and (orientation:landscape){body.ew-sequel .context-prompt{top:110px!important;bottom:auto!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important;max-width:230px}}
 body.ew-sequel .brand-rune{font-size:0;width:15px;height:15px;border:1px solid #e6b570;transform:rotate(45deg);background:#e6b57018}
+
+/* Keep chapter directions above the portrait combat lane. Scene name is already
+   present in the HUD, so suppress its duplicate entry banner on narrow screens. */
+@media(max-width:650px){
+ body.chapter-view #chapter{display:none!important}
+ body.chapter-view .hud .objective{top:220px!important;bottom:auto!important;left:16px!important;right:16px!important;max-width:none!important;text-align:center!important;background:#081719dc;padding:10px 12px;border:1px solid #a6b99b55}
+ body.chapter-view #toast{top:312px!important;bottom:auto!important}
+}
+/* Portrait combat reserves the objective lane for the boss readout.
+   The old bottom placement obscured Lyra and floor telegraphs above touch controls. */
+@media(max-width:650px) and (orientation:portrait){
+ body.ew-sequel .hud:has(#boss-hud:not([hidden])) .objective{display:none!important}
+ body.ew-sequel .hud:has(#boss-hud:not([hidden])) #boss-hud{top:220px!important;bottom:auto!important;width:calc(100% - 32px)}
+ body.ew-sequel .hud:has(#boss-hud:not([hidden])) .context-prompt{display:none!important}
+}

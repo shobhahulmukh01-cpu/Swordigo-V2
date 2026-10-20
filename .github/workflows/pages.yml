@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '24'
       - run: npm ci
-      - run: npm test && npm run check:secrets && npm run build && npm run test:campaign
+      - run: npm test && npm run check:secrets && npm run build && npm run test:campaign && npm run test:chapter:earned
       - name: Required browser harness
         shell: bash
         run: |
@@ -36,6 +36,8 @@ jobs:
           trap 'kill "$server"' EXIT
           for n in $(seq 1 30); do curl -sf http://127.0.0.1:4173/Swordigo-V2/ > /dev/null && break; sleep 1; done
           python3 tests/browser-smoke.py --base-url http://127.0.0.1:4173/Swordigo-V2/ --output /tmp/emberwake-http-qa
+          npm run test:firstload:browser
+          npm run test:chapter:browser
           npm run test:upgrade:browser
           npm run test:persistence:browser
           npm run test:update:browser

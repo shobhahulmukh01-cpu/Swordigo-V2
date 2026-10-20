@@ -1,0 +1,60 @@
+{
+  "kind": "Native keyboard room-delivery traversal, fresh new journey, no game/position/fact injections",
+  "pass": true,
+  "nativeAdvice": true,
+  "roomEntered": true,
+  "beforeGold": 38,
+  "afterGold": 98,
+  "chapter": {
+    "active": true,
+    "complete": false,
+    "discovered": [
+      "ch1:main:moonroot",
+      "ch1:room:millpond"
+    ],
+    "mechanisms": [
+      "ch1:mechanism:valve-east",
+      "ch1:mechanism:valve-west"
+    ],
+    "items": [
+      "ch1:item:water-letter"
+    ],
+    "deliveries": [
+      "ch1:delivery:water-remembers"
+    ],
+    "defeated": [
+      "ch1:enemy:millpond-01",
+      "ch1:enemy:millpond-02",
+      "ch1:enemy:millpond-03"
+    ],
+    "anchor": {
+      "sceneId": "ch1:main:moonroot",
+      "anchorId": "ch1:anchor:moonroot-mill"
+    },
+    "stats": {
+      "time": 0,
+      "kills": 0,
+      "deaths": 0
+    }
+  },
+  "postEndingUI": [
+    {
+      "ending": "mercy",
+      "pass": true,
+      "savedAnchor": {
+        "sceneId": "ch1:main:hollowspire",
+        "anchorId": "ch1:anchor:hollowspire-archive"
+      },
+      "scope": "completed-import fixture; native map travel through three main realms, Archive door round trip, reload ending and explicit saved-anchor continuation"
+    },
+    {
+      "ending": "rekindle",
+      "pass": true,
+      "savedAnchor": {
+        "sceneId": "ch1:main:hollowspire",
+        "anchorId": "ch1:anchor:hollowspire-archive"
+      },
+      "scope": "completed-import fixture; native map travel through three main realms, Archive door round trip, reload ending and explicit saved-anchor continuation"
+    }
+  ]
+}

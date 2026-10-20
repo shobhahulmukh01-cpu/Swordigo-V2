@@ -8,3 +8,6 @@ node_modules/
 .DS_Store
 .chrome-profile/
 scratch/
+
+__pycache__/
+*.pyc

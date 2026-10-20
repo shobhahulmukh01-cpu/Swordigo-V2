@@ -1,0 +1,7 @@
+# Bounded screen, historical holds retained
+
+One preregistered four-cell screen ran against the final source/browser freeze: rollback-only/unloaded, full/unloaded, rollback-only/competing, full/competing. All four cells and sixteen checks passed in 123.163 seconds. Before/after source and executable identities matched; continuously measured competing workloads and cleanup checks passed; diagnostic drops/write errors were zero. See screen-summary.json and cleanup-verification.json. Detailed raw observations remain in the external evidence directory named in the summary, not duplicated into the repository.
+
+This is **non-reproduction under those recorded conditions**, not historical root-cause closure or production repeatability clearance. The alpha.2 historical window.lumen timeout remains unexplained. The earlier twelve-trial experiment stopped at trial nine on initial fixture visibility before V4 actions; trials ten–twelve remain unrun. The separate initial alpha.3 publication CI observed missing sentinels at an undetermined lifecycle stage. These original reports remain retained; they have not been pooled with this new screen or reclassified as passing.
+
+No automatic retry, post-action reseeding, widened predicate or skipped equality assertion was used. Four successful screening cells do not certify arbitrary devices, future browser releases, process termination durability, simultaneous player-tab writes or authentic release provenance. The game remains a playable alpha.

@@ -1,0 +1,89 @@
+{
+  "kind": "Native keyboard room-delivery traversal, fresh new journey, no game/position/fact injections",
+  "pass": false,
+  "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Millpond|irrigation/. Input:\n\n'Paths and nearby work↔ Irrigation terraces lead — Approach the marked doorway↔ Public letter desk lead — Approach the marked doorwayGold point: Deliver Water Remembers to Mara — Requirements missingThese are labels, not travel buttons. Doors do not refill flasks.'\n\n    at file:///data/work/Swordigo-V2/tests/emberwake-chapter-browser.mjs:24:9",
+  "observation": {
+    "x": 150,
+    "y": 536,
+    "hp": 100,
+    "mp": 100,
+    "scene": "ch1:main:moonroot",
+    "status": "playing",
+    "modal": "map",
+    "near": {
+      "type": "beacon",
+      "item": {
+        "id": "m-cp0",
+        "x": 150,
+        "y": 590,
+        "name": "Courier’s Landing"
+      },
+      "label": "E · Rest at Courier’s Landing"
+    },
+    "playing": false,
+    "enemies": [
+      {
+        "id": "m-e0",
+        "x": 632.3499999999992,
+        "y": 556,
+        "hp": 40,
+        "type": "crawler"
+      },
+      {
+        "id": "m-e1",
+        "x": 955.0416666666673,
+        "y": 532,
+        "hp": 66,
+        "type": "sentinel"
+      },
+      {
+        "id": "m-e2",
+        "x": 1460,
+        "y": 341.6859324302089,
+        "hp": 34,
+        "type": "wisp"
+      },
+      {
+        "id": "m-e3",
+        "x": 1832.3499999999992,
+        "y": 556,
+        "hp": 40,
+        "type": "crawler"
+      },
+      {
+        "id": "m-e4",
+        "x": 2475.0416666666692,
+        "y": 532,
+        "hp": 66,
+        "type": "sentinel"
+      },
+      {
+        "id": "m-e5",
+        "x": 2890,
+        "y": 394.2222147614681,
+        "hp": 34,
+        "type": "wisp"
+      },
+      {
+        "id": "m-e6",
+        "x": 3372.350000000003,
+        "y": 556,
+        "hp": 40,
+        "type": "crawler"
+      },
+      {
+        "id": "m-e7",
+        "x": 3465.0416666666692,
+        "y": 532,
+        "hp": 66,
+        "type": "sentinel"
+      }
+    ],
+    "items": [],
+    "mechs": [],
+    "deliveries": [],
+    "gold": 0,
+    "held": [],
+    "physical": []
+  }
+}

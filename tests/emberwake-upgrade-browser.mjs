@@ -1,5 +1,5 @@
 import {chromium} from '@playwright/test';import assert from 'node:assert/strict';import fs from 'node:fs';
-const base=process.env.EW_URL||'http://127.0.0.1:4173/Swordigo-V2/',out='qa/correction/browser';fs.mkdirSync(out,{recursive:true});let checks=[],errors=[],failures=[];
+const base=process.env.EW_URL||'http://127.0.0.1:4173/Swordigo-V2/',out=process.env.EW_UPGRADE_OUTPUT||'qa/correction/browser';fs.mkdirSync(out,{recursive:true});let checks=[],errors=[],failures=[];
 const browser=await chromium.launch({executablePath:process.env.CHROME_BIN||'/usr/local/bin/chromium',headless:true,args:['--no-sandbox']});
 async function check(name,fn){await fn();checks.push(name);console.log('PASS '+name)}
 async function ready(p){p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)failures.push(r.url())});await p.goto(base);await p.waitForFunction(()=>window.emberwake&&window.EW_SEQUEL_PRESENTATION);}

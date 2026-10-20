@@ -47,6 +47,20 @@ function validateSave(raw,levels){
   const completed=!!s.completed;return {version:3,level:s.level,mode:s.mode,difficulty:s.difficulty,gold:Math.floor(s.gold),xp:s.xp,rank:s.rank,upgrades:ups,flags,checkpoint:cp.id,stats,completed,ending:['mercy','rekindle'].includes(s.ending)?s.ending:null};
  }catch(_){return null;}
 }
+// Read-only projection for the retained engine + core-v11 combat formulas.
+// No Game construction, purchases, events, storage or writes to the supplied journey.
+function upgradePreview(progress,kind){
+ if(!progress||!['blade','heart','focus'].includes(kind))return null;
+ const stats=upgrades=>{const rank=progress.rank-1,sword=16+upgrades.blade*7+rank*2;return {
+  maxHP:100+upgrades.heart*30+rank*6,maxMP:100+upgrades.focus*20,
+  swordDamage:Math.round(sword),thirdStrikeDamage:Math.round(sword*1.65),
+  boltDamage:25+upgrades.focus*10+rank*2,lumenPerSecond:12+upgrades.focus*3,
+  reflectedBoltDamage:28+upgrades.focus*7};};
+ const level=progress.upgrades[kind],capped=level>=3,cost=capped?null:[90,160,250][level];
+ return {kind,level,nextLevel:capped?null:level+1,cost,affordable:!capped&&progress.gold>=cost,capped,
+  goldAfter:capped?progress.gold:progress.gold-cost,current:stats(progress.upgrades),
+  next:capped?null:stats({...progress.upgrades,[kind]:level+1}),refill:{hp:true,mp:true,flasks:false}};
+}
 class Game{
  constructor(levels){this.levels=levels;this.events=[];this.progress=null;this.p=null;this.enemies=[];this.shots=[];this.status='menu';this.clock=0;this.attackID=0;this.near=null;this.bossActive=false;this.deadTimer=0;this.camera=0;}
  emit(type,data={}){this.events.push({type,...data});if(this.events.length>80)this.events.shift();}
@@ -99,6 +113,7 @@ class Game{
   if(countDeath)(this.progress.completed?this.chapter.stats:this.progress.stats).deaths++;if(this.chapter?.active&&this.chapter.anchor&&this.resumeAtAnchor())return;const cp=this.current.checkpoints.find(c=>c.id===this.progress.checkpoint)||this.current.checkpoints[0];
   const oldTime=this.progress.stats.time;this.loadLevel(this.progress.level,cp.id);this.progress.stats.time=oldTime;this.emit('respawn');
  }
+ upgradePreview(kind){return upgradePreview(this.progress,kind);}
  upgrade(kind){
   if(!['blade','heart','focus'].includes(kind))return {ok:false,reason:'Unknown attunement.'};const level=this.progress.upgrades[kind];if(level>=3)return {ok:false,reason:'Fully attuned.'};
   const cost=[90,160,250][level];if(this.progress.gold<cost)return {ok:false,reason:'Gather more embers.'};this.progress.gold-=cost;this.progress.upgrades[kind]++;this.p.hp=this.maxHP;this.p.mp=this.maxMP;this.emit('upgrade',{kind});this.emit('save');return {ok:true,cost};
@@ -200,5 +215,5 @@ class Game{
  }
 }
 const Save={read(storage,key,levels){try{for(const k of [key,key+'.backup']){const s=validateSave(storage.getItem(k),levels);if(s)return s;}}catch(_){}return null;},write(storage,key,s,levels){try{const text=JSON.stringify(s);if(!validateSave(text,levels))return {ok:false,error:'Save validation failed.'};const prev=storage.getItem(key);if(validateSave(prev,levels))storage.setItem(key+'.backup',prev);storage.setItem(key,text);return {ok:true};}catch(_){return {ok:false,error:'Browser storage is unavailable. Export your journey before closing.'};}}};
-const api={Game,Physics,validateSave,Save,version:'1.0.0',clamp};root.EW=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
+const api={Game,Physics,validateSave,Save,upgradePreview,version:'1.0.0',clamp};root.EW=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

@@ -100,3 +100,42 @@ body.ew-sequel .brand-rune{font-size:0;width:15px;height:15px;border:1px solid #
  body.ew-sequel .hud:has(#boss-hud:not([hidden])) #boss-hud{top:220px!important;bottom:auto!important;width:calc(100% - 32px)}
  body.ew-sequel .hud:has(#boss-hud:not([hidden])) .context-prompt{display:none!important}
 }
+
+/* Alpha.4: one readable journey track, descriptive routes, informed attunement. */
+body.ew-sequel .journey-guidance{margin:16px 0;padding:16px 18px;border-left:2px solid #d7ba86;background:#12292ddd;font-size:16px;line-height:1.55;color:#f2e9d4;overflow-wrap:anywhere}
+body.ew-sequel .journey-track{display:block;margin:0 0 6px;color:#b7d4c9;font:600 14px/1.4 'Trebuchet MS',sans-serif;letter-spacing:.06em}
+body.ew-sequel .delivery-follow{margin:12px 0;padding:14px 0;border-top:1px solid #8fa79c44;font-size:16px;line-height:1.55;overflow-wrap:anywhere}
+body.ew-sequel .delivery-follow button{min-height:44px;max-width:100%;margin-top:8px;white-space:normal}
+body.ew-sequel .map-paths{margin:18px 0;padding:0;list-style:none;color:#d7e4d8;font-size:14px;line-height:1.65}
+body.ew-sequel .map-paths p,body.ew-sequel .map-paths li{padding:9px 0;margin:0;border-bottom:1px solid #8fa79c33;overflow-wrap:anywhere}
+body.ew-sequel .upgrade-preview{color:#d7e4d8;font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+body.ew-sequel .upgrade-preview strong{color:#f2d49a;font-weight:600}
+body.ew-sequel #continue-chapter{min-height:44px;white-space:normal}
+@media(max-width:650px) and (orientation:portrait){
+ body.ew-sequel .hud .objective{top:220px;bottom:auto;left:16px;right:16px;max-width:none;padding:10px 12px;background:#081719ee;border:1px solid #a6b99b55;text-align:center;font-size:14px;line-height:1.5}
+ body.ew-sequel .hud .objective small{font-size:14px}
+ body.ew-sequel .toast{top:312px}
+ body.ew-sequel .journey-guidance{padding:14px;margin:14px 0}
+}
+/* Retained-campaign review: nearby interaction does not replace journey direction.
+   Portrait reserves separate upper lanes; none occupies the actor/floor band. */
+@media(max-width:650px) and (orientation:portrait){
+ body.ew-sequel #chapter{display:none!important}
+ body.ew-sequel .hud .context-prompt{top:360px!important;bottom:auto!important;left:16px!important;right:16px!important;max-width:none;max-height:72px;transform:none!important;font-size:14px}
+ body.ew-sequel #toast{top:440px!important;bottom:auto!important;max-width:calc(100% - 32px);font-size:14px;line-height:1.5}
+}
+/* A short returning-session notification must not cover the center interaction. */
+@media(max-height:540px) and (orientation:landscape){
+ body.ew-sequel #chapter{display:none!important}
+ body.ew-sequel #toast{top:190px!important;bottom:auto!important;width:max-content;max-width:calc(100% - 32px);font-size:14px;line-height:1.4}
+ body.ew-sequel:not(.ew-playing) .topactions{background:#0b2027f2;border:1px solid #90ada480;padding:0 4px}
+}
+@media(prefers-reduced-motion:reduce){body.ew-sequel .journey-guidance,body.ew-sequel .delivery-follow{animation:none;transition:none}}
+/* Short landscape: use the former objective lane, not the actor/floor band. */
+@media(max-height:540px) and (orientation:landscape){
+ body.ew-sequel .hud:has(#boss-hud:not([hidden])) .objective,
+ body.ew-sequel .hud:has(#boss-hud:not([hidden])) .context-prompt{display:none!important}
+ body.ew-sequel .hud #boss-hud{top:80px!important;bottom:auto!important;left:auto!important;right:16px!important;transform:none!important;width:min(360px,calc(100% - 240px));padding:10px 14px}
+ body.ew-sequel .hud #boss-hud strong{font-size:16px}
+ body.ew-sequel .hud #boss-state{font-size:14px;line-height:1.4}
+}

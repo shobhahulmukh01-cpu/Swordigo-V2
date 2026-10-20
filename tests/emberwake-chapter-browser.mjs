@@ -15,7 +15,19 @@ try{
  await page.goto(process.env.EW_URL||'http://127.0.0.1:4173/Swordigo-V2/');await page.waitForFunction(()=>!!window.emberwake);await page.locator('#begin').click();await page.locator('[data-act="launch"]').click();await dialogs();
  // Optional advice is a native, non-granting journal action for this journey.
  await page.keyboard.press('KeyI');await page.locator('[data-act="aster-advice"]').click();
- assert.match(await page.locator('#aster-advice-text').textContent(),/Millpond door|irrigation valves/);
+ assert.match(await page.locator('#aster-advice-text').textContent(),/world-rune|lumen|unseal/i);
+ assert.equal(await page.evaluate(()=>emberwake.nextAction().track),'campaign');
+ await page.locator('[data-act="advice-journal"]').click();
+ await page.locator('[data-act="follow-delivery"][data-delivery="ch1:delivery:water-remembers"]').click();
+ assert.equal(await page.evaluate(()=>emberwake.followDeliveryId),'ch1:delivery:water-remembers');
+ await page.locator('[data-act="close"]').last().click();await page.keyboard.press('KeyM');
+ assert.match(await page.locator('.map-paths').textContent(),/Irrigation terraces lead — Approach the marked doorway/);
+ assert.equal(await page.locator('[data-travel="1"]').isEnabled(),false,'Following must not unlock a world-gate');
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:output+'/native-follow-map-portrait.png'});
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ await page.setViewportSize({width:1440,height:1000});await page.locator('[data-act="close"]').last().click();
+ await page.keyboard.press('KeyI');await page.locator('[data-act="aster-advice"]').click();
+ assert.match(await page.locator('#aster-advice-text').textContent(),/Millpond|irrigation/i);report.nativeFollowedDelivery=true;
  const adviceFacts=await page.evaluate(()=>JSON.stringify({chapter:emberwake.game.chapter,gold:emberwake.game.progress.gold}));
  await page.locator('[data-act="advice-journal"]').click();await page.locator('[data-act="aster-advice"]').click();
  assert.equal(await page.evaluate(()=>JSON.stringify({chapter:emberwake.game.chapter,gold:emberwake.game.progress.gold})),adviceFacts);
@@ -24,6 +36,31 @@ try{
  await move(386);await interactFact('mechanisms','ch1:mechanism:valve-west');await move(1536);await interactFact('mechanisms','ch1:mechanism:valve-east');await move(1696);await interactFact('items','ch1:item:water-letter');assert.ok((await observe()).items.includes('ch1:item:water-letter'));
  await page.screenshot({path:output+'/earned-millpond-desktop.png'});
  await move(130);await page.keyboard.press('KeyE');await page.waitForFunction(()=>emberwake.game.scene.id==='ch1:main:moonroot');await move(261);const before=(await observe()).gold;await page.keyboard.press('KeyE');await page.waitForTimeout(250);const after=await observe();assert.ok(after.deliveries.includes('ch1:delivery:water-remembers'));assert.equal(after.gold,before+60);const durable=await page.evaluate(()=>JSON.parse(localStorage.getItem('EW_STORY_V4')).current);assert.ok(durable.chapter.deliveries.includes('ch1:delivery:water-remembers'));assert.equal(durable.base.gold,after.gold);assert.deepEqual(errors,[]);report={...report,pass:true,beforeGold:before,afterGold:after.gold,chapter:durable.chapter};
+ // Native shrine preview/purchase reached using the same earned fresh journey.
+ await dialogs();await move(405);
+ // At this approach the nearby forgotten cache has interaction priority. Open
+ // and read it through native input before requesting the adjacent shrine.
+ if((await observe()).near?.type==='chest'){await page.keyboard.press('KeyE');await dialogs();}
+ // The long-distance controller permits ±32px arrival plus coasting. Opening
+ // the cache can therefore leave Lyra just outside the adjacent shrine range.
+ // Correct with bounded, released native pulses and re-observe after settling;
+ // never assign position/velocity, force a shop, or skip the proximity assertion.
+ const approachStarted=Date.now();
+ while(Date.now()-approachStarted<5000){
+  await axis(null);await page.waitForTimeout(200);
+  const o=await observe();if(o.near?.type==='shrine')break;
+  await axis(o.x+14<405?'KeyD':'KeyA');await page.waitForTimeout(60);await axis(null);
+ }
+ assert.equal((await observe()).near?.type,'shrine','Native approach must actually target the shrine');
+ await page.keyboard.press('KeyE');await page.waitForFunction(()=>emberwake.modalKind==='shop');
+ const preview=await page.evaluate(()=>({preview:emberwake.game.upgradePreview('blade'),flasks:emberwake.game.p.flasks}));
+ assert.equal(preview.preview.affordable,true);assert.match(await page.locator('.upgrade-preview').first().textContent(),new RegExp('Sword: '+preview.preview.current.swordDamage+' → '+preview.preview.next.swordDamage));
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:output+'/native-upgrade-preview-portrait.png'});
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ await page.locator('[data-upgrade="blade"]').click();
+ assert.deepEqual(await page.evaluate(()=>({level:emberwake.game.progress.upgrades.blade,gold:emberwake.game.progress.gold,flasks:emberwake.game.p.flasks})),{level:preview.preview.nextLevel,gold:preview.preview.goldAfter,flasks:preview.flasks});
+ report.nativeUpgradePreview={pass:true,cost:preview.preview.cost,current:preview.preview.current.swordDamage,next:preview.preview.next.swordDamage};
+ await page.setViewportSize({width:1440,height:1000});await page.locator('[data-act="close"]').last().click();
  // The following completed-import cases are explicit UI fixtures, not earned
  // original campaigns. They prove both native post-ending route connections.
  report.postEndingUI=[];
@@ -45,7 +82,13 @@ try{
   await page.locator('#continue').click();await page.waitForFunction(()=>emberwake.game.status==='won');
   await page.locator('[data-act="continue-deliveries"]').click();await page.waitForFunction(()=>emberwake.game.scene.id==='ch1:main:hollowspire'&&!emberwake.paused);
   assert.equal(await page.evaluate(()=>emberwake.game.chapter.anchor.anchorId),savedAnchor.anchorId);
-  report.postEndingUI.push({ending,pass:true,savedAnchor,scope:'completed-import fixture; native map travel through three main realms, Archive door round trip, reload ending and explicit saved-anchor continuation'});
+  await page.reload();await page.waitForFunction(()=>window.emberwake);
+  assert.match(await page.locator('#continue').textContent(),/Revisit your ending/);assert.equal(await page.locator('#continue-chapter').isVisible(),true);
+  await page.locator('#continue-chapter').click();await page.waitForFunction(()=>emberwake.game.scene.id==='ch1:main:hollowspire'&&!emberwake.paused);
+  assert.equal(await page.evaluate(()=>emberwake.followDeliveryId),null,'Session tracking must clear on resumed ownership');
+  assert.equal(await page.evaluate(()=>emberwake.game.progress.ending),ending);
+  assert.equal(await page.evaluate(()=>JSON.stringify(emberwake.game.progress.stats)),beforeStats);
+  report.postEndingUI.push({ending,pass:true,directTitleContinuation:true,savedAnchor,scope:'completed-import fixture; native map travel through three main realms, Archive door round trip, reload ending and explicit saved-anchor continuation'});
  }
  assert.deepEqual(errors,[]);
 

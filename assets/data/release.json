@@ -1,54 +1,31 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "game": "EMBERWAKE: The Hollow Crown",
-  "engineVersion": "1.1.0-rc3",
-  "repositoryPackageVersion": "1.1.0-rc.3",
-  "status": "tested-release-candidate",
+  "engineCompatibilityVersion": "1.1.0-rc3",
+  "repositoryPackageVersion": "1.2.0-alpha.4",
+  "status": "playable-alpha",
+  "affiliation": "Original adventure; not an official Swordigo sequel or Touch Foo product.",
   "features": [
-    "Three original realms, three guardians and six rune sigils",
-    "Observed-input-completable story with mercy and rekindle endings",
-    "Unlockable Echo Gauntlet",
-    "Sword, spells, double jump, dash and short-window frontal guard/projectile reflection",
-    "Keyboard remapping, multi-touch controls and standard-layout controller menus",
-    "Original HD realm plates, compact-scene-aware mini-map and local journal milestones",
-    "Validated portable journey saves, replacement/restore confirmation, rolling backup and stale-read cancellation",
-    "Session-only play when browser storage is denied"
+    "Existing three-realm campaign, cast, six runes, guardians, both endings and Echo Gauntlet retained",
+    "Four optional authored rooms with committed delivery rewards and V4 safe-anchor continuation",
+    "Journey-aware next actions, optional task following and descriptive map paths",
+    "Read-only current-to-next shrine stat previews and earned post-Engine return lamp",
+    "Original optional-room paintings with coherent offline digests and readable motion-reduced state cues"
   ],
-  "verification": {
-    "engineRegressions": {"passed": 116, "total": 116, "failed": 0},
-    "inputProof": {"completedRuns": 8, "exactReplays": 8, "repeatDeterminism": true, "simulationStepsHz": [60,120], "includesAdventureAndVeteran": true, "includesBothStoryEndings": true, "directLiveStatsPositionOrWinEdits": false},
-    "browser": {"passed": 53, "total": 53, "failed": 0, "runtimeExceptions": 0, "missingAssets": 0, "transport": "Local CDP Fetch serves exact exported bytes", "keyboardTouchMouseFileAndDownload": "Actual Chromium input and DOM APIs", "audio": "Web Audio running after real user gesture", "controller": "Standards-shaped synthetic navigator gamepad exercises actual poller; not physical hardware", "endingRestore": "Native file import of an input-earned completed campaign save", "sandbox": "Explicit no-sandbox opt-in in isolated test container"},
-    "buildServerSecurity": {"passed": 32, "total": 32, "failed": 0, "skipped": 0, "includesRealHTTPOverAFUNIX": true, "recognizedSecretFindings": 0, "deterministicRebuild": true, "byteExactRuntimeCopy": true},
-    "visualReview": {"portraitPromptAndSixActions": "Clear, separated and within viewport", "compactLandscape": "Clear prompt and controls; mini-map hidden"},
-    "executedNode": "26.10.0",
-    "configuredCINode": "24; not executed here"
-  },
-  "runtimeScriptSHA256": {
-    "engine.js": "687f8ed258fe56a7547bf221a95eadba3656a370980c63c9c2d40aaee4b0b4d2",
-    "worlds.js": "11be3617782e2db4abb5d6efa996f667837374237d3956c1f4d9a90b68c4789f",
-    "client.js": "4af52ca554f70971b70fb39db72f4f67fba75dbb7ee4937b3651c09d1992fbc7",
-    "core-v11.js": "ab2982d747e072e8c12704be19eca158a5ed0c9650bf8c749ed4c34e2e7547d6",
-    "controls-v11.js": "a4bb090df0e1095579c2fbb36d3191b001914c8c45c369aeaf0845bbcf4120d5",
-    "journey-v11.js": "5adac3b3dc4374b98e5151455c125b5497c326ba2e65f580875d972899edf209",
-    "realm-v11.js": "932b7b421984795cefaf5aa8ecc2ce1fa363224b06abaa7491e19032a985dc7d"
-  },
-  "releaseGates": {
-    "githubPushed": false,
-    "pullRequestCreated": false,
-    "ciExecuted": false,
-    "publicDeploymentVerified": false,
-    "physicalMobileControllerAndCrossBrowserCertified": false,
-    "rendererFPSAndLowEndHardwarePerformanceCertified": false,
-    "formalSecurityAndAccessibilityCertified": false,
+  "qualification": {
+    "currentEvidence": "See repository qa/correction/next2-final/validation.json for source-bound results and their scope; publication verification is recorded separately after deployment.",
+    "historicalEvidence": "Prior release evidence retained under qa/correction; previous numerical pass counts are not current-runtime certification.",
+    "repeatabilityClearance": false,
+    "productionCertified": false,
+    "physicalDeviceControllerAndCrossBrowserCertified": false,
+    "formalSecurityAccessibilityCertified": false,
     "ownerLicenseDecision": "UNLICENSED pending owner review"
   },
-  "notes": [
-    "Input-proof simulation rates are not renderer FPS or human play-time measurements.",
-    "Edge-case regression fixtures are isolated from the ordinary-input completion proofs.",
-    "A recognized-secret scan is not proof that all secret forms or binary embeddings are absent.",
-    "The local server headers are not inherited by GitHub Pages.",
-    "An offscreen Settings click in the expanded test helper was diagnosed and fixed with scroll-into-view and actual hit-target checking; final browser suite passes.",
-    "Revoke the credential exposed in chat; no credential belongs in source or release artifacts.",
-    "This is an original Emberwake game for the requested repository, not an official Swordigo product."
+  "knownLimits": [
+    "Historical rollback timeout and incomplete prior twelve-trial experiment remain unresolved; a new four-cell screen is not root-cause closure.",
+    "Simulation steps per second are not renderer FPS or human pacing proof. Synthetic fixtures are not earned journeys.",
+    "Local server security headers do not transfer to GitHub Pages.",
+    "Browser storage is local and cannot guarantee disk durability or atomic cross-tab compare-and-swap; export important journeys.",
+    "No proprietary Swordigo assets, maps, music or code are included."
   ]
 }

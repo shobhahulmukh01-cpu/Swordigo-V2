@@ -1,0 +1,2286 @@
+{
+  "fixtureStages": [
+    {
+      "utc": "2026-10-20T18:44:21.949Z",
+      "elapsedMs": 29650,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "writer-start",
+      "role": "writer",
+      "expected": true,
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      },
+      "ending": "mercy",
+      "writer": {
+        "pageId": 13,
+        "contextId": 4,
+        "frame": {
+          "frameId": 13,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 14,
+        "contextId": 4,
+        "frame": {
+          "frameId": 14,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:21.956Z",
+      "elapsedMs": 29656,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "writer-readback",
+      "role": "writer",
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      },
+      "ending": "mercy",
+      "writer": {
+        "pageId": 13,
+        "contextId": 4,
+        "frame": {
+          "frameId": 13,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 14,
+        "contextId": 4,
+        "frame": {
+          "frameId": 14,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:21.965Z",
+      "elapsedMs": 29666,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "observer-initial",
+      "role": "observer",
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      },
+      "ending": "mercy",
+      "writer": {
+        "pageId": 13,
+        "contextId": 4,
+        "frame": {
+          "frameId": 13,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 14,
+        "contextId": 4,
+        "frame": {
+          "frameId": 14,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:21.965Z",
+      "elapsedMs": 29666,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "observer-barrier",
+      "role": "observer",
+      "status": "started",
+      "timeoutMs": 45000,
+      "ending": "mercy",
+      "writer": {
+        "pageId": 13,
+        "contextId": 4,
+        "frame": {
+          "frameId": 13,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 14,
+        "contextId": 4,
+        "frame": {
+          "frameId": 14,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:21.999Z",
+      "elapsedMs": 29700,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "observer-barrier",
+      "role": "observer",
+      "status": "completed",
+      "ending": "mercy",
+      "writer": {
+        "pageId": 13,
+        "contextId": 4,
+        "frame": {
+          "frameId": 13,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 14,
+        "contextId": 4,
+        "frame": {
+          "frameId": 14,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:22.001Z",
+      "elapsedMs": 29702,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "observer-synchronized",
+      "role": "observer",
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      },
+      "ending": "mercy",
+      "writer": {
+        "pageId": 13,
+        "contextId": 4,
+        "frame": {
+          "frameId": 13,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 14,
+        "contextId": 4,
+        "frame": {
+          "frameId": 14,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:22.001Z",
+      "elapsedMs": 29702,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "fixture-ready",
+      "status": "completed",
+      "ending": "mercy",
+      "writer": {
+        "pageId": 13,
+        "contextId": 4,
+        "frame": {
+          "frameId": 13,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 14,
+        "contextId": 4,
+        "frame": {
+          "frameId": 14,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:22.003Z",
+      "elapsedMs": 29704,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 1,
+      "ending": "mercy",
+      "pageId": 13,
+      "contextId": 4,
+      "frame": {
+        "frameId": 13,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:23.002Z",
+      "elapsedMs": 30702,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 2,
+      "ending": "mercy",
+      "pageId": 13,
+      "contextId": 4,
+      "frame": {
+        "frameId": 13,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:23.090Z",
+      "elapsedMs": 30791,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 3,
+      "ending": "mercy",
+      "pageId": 13,
+      "contextId": 4,
+      "frame": {
+        "frameId": 13,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:24.458Z",
+      "elapsedMs": 32159,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 4,
+      "ending": "mercy",
+      "pageId": 15,
+      "contextId": 4,
+      "frame": {
+        "frameId": 15,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:24.729Z",
+      "elapsedMs": 32430,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 5,
+      "ending": "mercy",
+      "pageId": 15,
+      "contextId": 4,
+      "frame": {
+        "frameId": 15,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:24.879Z",
+      "elapsedMs": 32579,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 6,
+      "ending": "mercy",
+      "pageId": 15,
+      "contextId": 4,
+      "frame": {
+        "frameId": 15,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:26.690Z",
+      "elapsedMs": 34391,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 7,
+      "ending": "mercy",
+      "pageId": 16,
+      "contextId": 4,
+      "frame": {
+        "frameId": 16,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:26.934Z",
+      "elapsedMs": 34635,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 8,
+      "ending": "mercy",
+      "pageId": 17,
+      "contextId": 4,
+      "frame": {
+        "frameId": 17,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/assets/legacy.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:27.089Z",
+      "elapsedMs": 34790,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 9,
+      "ending": "mercy",
+      "pageId": 16,
+      "contextId": 4,
+      "frame": {
+        "frameId": 16,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:28.457Z",
+      "elapsedMs": 36158,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 10,
+      "ending": "mercy",
+      "pageId": 18,
+      "contextId": 4,
+      "frame": {
+        "frameId": 18,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:28.508Z",
+      "elapsedMs": 36208,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 11,
+      "ending": "mercy",
+      "pageId": 18,
+      "contextId": 4,
+      "frame": {
+        "frameId": 18,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.294Z",
+      "elapsedMs": 37995,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "writer-start",
+      "role": "writer",
+      "expected": true,
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      },
+      "ending": "rekindle",
+      "writer": {
+        "pageId": 19,
+        "contextId": 5,
+        "frame": {
+          "frameId": 19,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 20,
+        "contextId": 5,
+        "frame": {
+          "frameId": 20,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.298Z",
+      "elapsedMs": 37999,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "writer-readback",
+      "role": "writer",
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      },
+      "ending": "rekindle",
+      "writer": {
+        "pageId": 19,
+        "contextId": 5,
+        "frame": {
+          "frameId": 19,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 20,
+        "contextId": 5,
+        "frame": {
+          "frameId": 20,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.304Z",
+      "elapsedMs": 38005,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "observer-initial",
+      "role": "observer",
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      },
+      "ending": "rekindle",
+      "writer": {
+        "pageId": 19,
+        "contextId": 5,
+        "frame": {
+          "frameId": 19,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 20,
+        "contextId": 5,
+        "frame": {
+          "frameId": 20,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.304Z",
+      "elapsedMs": 38005,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "observer-barrier",
+      "role": "observer",
+      "status": "started",
+      "timeoutMs": 45000,
+      "ending": "rekindle",
+      "writer": {
+        "pageId": 19,
+        "contextId": 5,
+        "frame": {
+          "frameId": 19,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 20,
+        "contextId": 5,
+        "frame": {
+          "frameId": 20,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.335Z",
+      "elapsedMs": 38035,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "observer-barrier",
+      "role": "observer",
+      "status": "completed",
+      "ending": "rekindle",
+      "writer": {
+        "pageId": 19,
+        "contextId": 5,
+        "frame": {
+          "frameId": 19,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 20,
+        "contextId": 5,
+        "frame": {
+          "frameId": 20,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.336Z",
+      "elapsedMs": 38037,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "observer-synchronized",
+      "role": "observer",
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      },
+      "ending": "rekindle",
+      "writer": {
+        "pageId": 19,
+        "contextId": 5,
+        "frame": {
+          "frameId": 19,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 20,
+        "contextId": 5,
+        "frame": {
+          "frameId": 20,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.337Z",
+      "elapsedMs": 38037,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "fixture-ready",
+      "status": "completed",
+      "ending": "rekindle",
+      "writer": {
+        "pageId": 19,
+        "contextId": 5,
+        "frame": {
+          "frameId": 19,
+          "url": "http://127.0.0.1:42705/Swordigo-V2/",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      },
+      "observer": {
+        "pageId": 20,
+        "contextId": 5,
+        "frame": {
+          "frameId": 20,
+          "url": "http://127.0.0.1:42705/__observer.html",
+          "origin": "http://127.0.0.1:42705",
+          "name": "",
+          "parentFrameId": null
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.342Z",
+      "elapsedMs": 38043,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 12,
+      "ending": "rekindle",
+      "pageId": 19,
+      "contextId": 5,
+      "frame": {
+        "frameId": 19,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:31.380Z",
+      "elapsedMs": 39081,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 13,
+      "ending": "rekindle",
+      "pageId": 19,
+      "contextId": 5,
+      "frame": {
+        "frameId": 19,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:31.514Z",
+      "elapsedMs": 39215,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 14,
+      "ending": "rekindle",
+      "pageId": 19,
+      "contextId": 5,
+      "frame": {
+        "frameId": 19,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:34.045Z",
+      "elapsedMs": 41746,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 15,
+      "ending": "rekindle",
+      "pageId": 21,
+      "contextId": 5,
+      "frame": {
+        "frameId": 21,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:34.238Z",
+      "elapsedMs": 41939,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 16,
+      "ending": "rekindle",
+      "pageId": 21,
+      "contextId": 5,
+      "frame": {
+        "frameId": 21,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:34.350Z",
+      "elapsedMs": 42051,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 17,
+      "ending": "rekindle",
+      "pageId": 21,
+      "contextId": 5,
+      "frame": {
+        "frameId": 21,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:36.302Z",
+      "elapsedMs": 44003,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 18,
+      "ending": "rekindle",
+      "pageId": 22,
+      "contextId": 5,
+      "frame": {
+        "frameId": 22,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:36.578Z",
+      "elapsedMs": 44279,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 19,
+      "ending": "rekindle",
+      "pageId": 23,
+      "contextId": 5,
+      "frame": {
+        "frameId": 23,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/assets/legacy.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:36.738Z",
+      "elapsedMs": 44439,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 20,
+      "ending": "rekindle",
+      "pageId": 22,
+      "contextId": 5,
+      "frame": {
+        "frameId": 22,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:38.058Z",
+      "elapsedMs": 45758,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 21,
+      "ending": "rekindle",
+      "pageId": 24,
+      "contextId": 5,
+      "frame": {
+        "frameId": 24,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:38.141Z",
+      "elapsedMs": 45842,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "stage": "immediate-equality",
+      "checkNumber": 22,
+      "ending": "rekindle",
+      "pageId": 24,
+      "contextId": 5,
+      "frame": {
+        "frameId": 24,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "keys": {
+        "EW_STORY_V4": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        },
+        "EW_STORY_V3": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_STORY_V3.backup": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        },
+        "EW_RUSH_V3": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        },
+        "EW_RUSH_V3.backup": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    }
+  ],
+  "storageEvents": [
+    {
+      "utc": "2026-10-20T18:43:54.892Z",
+      "elapsedMs": 2593,
+      "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+      "contextId": 1,
+      "pageId": 1,
+      "frame": {
+        "frameId": 1,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 2169.9000000001397,
+        "documentId": "b3519189-f9e8-4acd-8c2a-bb8a713ea4a1",
+        "sequence": 1,
+        "eventPageTime": 2169.600000000093,
+        "documentURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/assets/legacy.html",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 303,
+          "sha256": "41b948a56a7165ffa1b95acc5ea4210e08a751cc3ed325f14ba316b4117f91c9"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:43:54.893Z",
+      "elapsedMs": 2593,
+      "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+      "contextId": 1,
+      "pageId": 2,
+      "frame": {
+        "frameId": 2,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 729.1000000000931,
+        "documentId": "c0a6413c-309a-4dc8-8ef6-51834d0134b3",
+        "sequence": 1,
+        "eventPageTime": 728.5,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/assets/legacy.html",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 303,
+          "sha256": "41b948a56a7165ffa1b95acc5ea4210e08a751cc3ed325f14ba316b4117f91c9"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:43:54.897Z",
+      "elapsedMs": 2598,
+      "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+      "contextId": 1,
+      "pageId": 1,
+      "frame": {
+        "frameId": 1,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 2176.5,
+        "documentId": "b3519189-f9e8-4acd-8c2a-bb8a713ea4a1",
+        "sequence": 2,
+        "eventPageTime": 2176.4000000001397,
+        "documentURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3.backup",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/assets/legacy.html",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 303,
+          "sha256": "41b948a56a7165ffa1b95acc5ea4210e08a751cc3ed325f14ba316b4117f91c9"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:43:54.917Z",
+      "elapsedMs": 2617,
+      "scenario": "actual historical worker waits with old clients; new root retains V3 and other cache ownership",
+      "contextId": 1,
+      "pageId": 2,
+      "frame": {
+        "frameId": 2,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 736.6000000000931,
+        "documentId": "c0a6413c-309a-4dc8-8ef6-51834d0134b3",
+        "sequence": 2,
+        "eventPageTime": 736.5,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3.backup",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/assets/legacy.html",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 303,
+          "sha256": "41b948a56a7165ffa1b95acc5ea4210e08a751cc3ed325f14ba316b4117f91c9"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:16.166Z",
+      "elapsedMs": 23866,
+      "scenario": "partial failed install cannot activate or leave its cache behind",
+      "contextId": 3,
+      "pageId": 9,
+      "frame": {
+        "frameId": 9,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 368.69999999995343,
+        "documentId": "908ae2c6-4428-480a-91d1-d7f4f47e38af",
+        "sequence": 1,
+        "eventPageTime": 368.10000000009313,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/assets/legacy.html",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 303,
+          "sha256": "41b948a56a7165ffa1b95acc5ea4210e08a751cc3ed325f14ba316b4117f91c9"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:16.181Z",
+      "elapsedMs": 23882,
+      "scenario": "partial failed install cannot activate or leave its cache behind",
+      "contextId": 3,
+      "pageId": 9,
+      "frame": {
+        "frameId": 9,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 379.69999999995343,
+        "documentId": "908ae2c6-4428-480a-91d1-d7f4f47e38af",
+        "sequence": 2,
+        "eventPageTime": 374.19999999995343,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3.backup",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/assets/legacy.html",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 303,
+          "sha256": "41b948a56a7165ffa1b95acc5ea4210e08a751cc3ed325f14ba316b4117f91c9"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:17.281Z",
+      "elapsedMs": 24982,
+      "scenario": "partial failed install cannot activate or leave its cache behind",
+      "contextId": 3,
+      "pageId": 8,
+      "frame": {
+        "frameId": 8,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 4078.6999999999534,
+        "documentId": "26f8cd9d-d24b-487d-aac4-1cb547a5694b",
+        "sequence": 1,
+        "eventPageTime": 4078.5,
+        "documentURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/assets/legacy.html",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 303,
+          "sha256": "41b948a56a7165ffa1b95acc5ea4210e08a751cc3ed325f14ba316b4117f91c9"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:17.297Z",
+      "elapsedMs": 24997,
+      "scenario": "partial failed install cannot activate or leave its cache behind",
+      "contextId": 3,
+      "pageId": 8,
+      "frame": {
+        "frameId": 8,
+        "url": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 4094.5999999998603,
+        "documentId": "26f8cd9d-d24b-487d-aac4-1cb547a5694b",
+        "sequence": 2,
+        "eventPageTime": 4094.5,
+        "documentURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3.backup",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/assets/legacy.html",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 303,
+          "sha256": "41b948a56a7165ffa1b95acc5ea4210e08a751cc3ed325f14ba316b4117f91c9"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:21.958Z",
+      "elapsedMs": 29659,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "contextId": 4,
+      "pageId": 14,
+      "frame": {
+        "frameId": 14,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 36.699999999953434,
+        "documentId": "eb3165a1-59dc-4ec7-a94b-be9eb655f902",
+        "sequence": 1,
+        "eventPageTime": 36.199999999953434,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V4",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 1800,
+          "sha256": "c21d2e06c4aa2c7af65934b16500cd5adc637271a88a878dce0385c26576984e"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:21.959Z",
+      "elapsedMs": 29659,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "contextId": 4,
+      "pageId": 14,
+      "frame": {
+        "frameId": 14,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 36.89999999990687,
+        "documentId": "eb3165a1-59dc-4ec7-a94b-be9eb655f902",
+        "sequence": 2,
+        "eventPageTime": 36.89999999990687,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:21.961Z",
+      "elapsedMs": 29662,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "contextId": 4,
+      "pageId": 14,
+      "frame": {
+        "frameId": 14,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 37.0999999998603,
+        "documentId": "eb3165a1-59dc-4ec7-a94b-be9eb655f902",
+        "sequence": 3,
+        "eventPageTime": 37,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3.backup",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 459,
+          "sha256": "74805666f3a37a3a559694aca12a45e639534c9c7bd9e8e927345ba47d093aff"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:21.961Z",
+      "elapsedMs": 29662,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "contextId": 4,
+      "pageId": 14,
+      "frame": {
+        "frameId": 14,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 37.199999999953434,
+        "documentId": "eb3165a1-59dc-4ec7-a94b-be9eb655f902",
+        "sequence": 4,
+        "eventPageTime": 37.0999999998603,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_RUSH_V3",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:21.962Z",
+      "elapsedMs": 29662,
+      "scenario": "V4 mercy: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "contextId": 4,
+      "pageId": 14,
+      "frame": {
+        "frameId": 14,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 37.299999999813735,
+        "documentId": "eb3165a1-59dc-4ec7-a94b-be9eb655f902",
+        "sequence": 5,
+        "eventPageTime": 37.299999999813735,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_RUSH_V3.backup",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.300Z",
+      "elapsedMs": 38001,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "contextId": 5,
+      "pageId": 20,
+      "frame": {
+        "frameId": 20,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 34.9000000001397,
+        "documentId": "ba8765bb-77d6-4275-aa0c-a4aa3691e063",
+        "sequence": 1,
+        "eventPageTime": 34.199999999953434,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V4",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 1806,
+          "sha256": "6f06958f391082e8742959c5a60aca61265600452aa7f89bd529a685e6a2e2d6"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.301Z",
+      "elapsedMs": 38001,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "contextId": 5,
+      "pageId": 20,
+      "frame": {
+        "frameId": 20,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 35.300000000046566,
+        "documentId": "ba8765bb-77d6-4275-aa0c-a4aa3691e063",
+        "sequence": 2,
+        "eventPageTime": 35.199999999953434,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.301Z",
+      "elapsedMs": 38002,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "contextId": 5,
+      "pageId": 20,
+      "frame": {
+        "frameId": 20,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 35.4000000001397,
+        "documentId": "ba8765bb-77d6-4275-aa0c-a4aa3691e063",
+        "sequence": 3,
+        "eventPageTime": 35.300000000046566,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_STORY_V3.backup",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 462,
+          "sha256": "fd5ee4b3f129df7fba840027138d5546d78cb283f4ebd580f588e9c82a4a0706"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.301Z",
+      "elapsedMs": 38002,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "contextId": 5,
+      "pageId": 20,
+      "frame": {
+        "frameId": 20,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 35.9000000001397,
+        "documentId": "ba8765bb-77d6-4275-aa0c-a4aa3691e063",
+        "sequence": 4,
+        "eventPageTime": 35.800000000046566,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_RUSH_V3",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    },
+    {
+      "utc": "2026-10-20T18:44:30.303Z",
+      "elapsedMs": 38004,
+      "scenario": "V4 rekindle: failed install, activation, offline, historical rollback and re-upgrade preserve paid journey",
+      "contextId": 5,
+      "pageId": 20,
+      "frame": {
+        "frameId": 20,
+        "url": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "name": "",
+        "parentFrameId": null
+      },
+      "event": {
+        "kind": "fixture-storage",
+        "pageTime": 36.300000000046566,
+        "documentId": "ba8765bb-77d6-4275-aa0c-a4aa3691e063",
+        "sequence": 5,
+        "eventPageTime": 36.10000000009313,
+        "documentURL": "http://127.0.0.1:42705/__observer.html",
+        "origin": "http://127.0.0.1:42705",
+        "isTopFrame": true,
+        "key": "EW_RUSH_V3.backup",
+        "sourceURL": "http://127.0.0.1:42705/Swordigo-V2/",
+        "area": "localStorage",
+        "oldValue": {
+          "present": false,
+          "bytes": 0,
+          "sha256": null
+        },
+        "newValue": {
+          "present": true,
+          "bytes": 332,
+          "sha256": "616a0e95ac1b031abdb9f06b9ea219914309fbe64e7cffdf0a8a4b9c647ff7d7"
+        }
+      }
+    }
+  ],
+  "dropped": {},
+  "writeErrors": 0
+}

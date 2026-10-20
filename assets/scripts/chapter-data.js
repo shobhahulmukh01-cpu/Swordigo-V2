@@ -140,6 +140,9 @@ interaction('ch1:interaction:archive-finish',R.archive,'complete',2030,590,{labe
 interaction('ch1:interaction:dawnstep',R.archive,'ability',370,590,{label:'Dawnstep between the archive lamps',
  requirements:[req('ability','dawnstep')],ability:'dawnstep',fromAnchor:A.archiveCellar,toAnchor:A.archive,
  sameSceneOnly:true,requireNoCombat:true,waitIfOccupied:true});
+interaction('ch1:interaction:dawnstep-return',R.archive,'ability',1950,590,{label:'Dawnstep back to the entry lamp',
+ requirements:[req('ability','dawnstep'),req('defeated',engineId)],ability:'dawnstep',fromAnchor:A.archiveRecovery,toAnchor:A.archive,
+ sameSceneOnly:true,requireNoCombat:true,waitIfOccupied:true});
 const abilities={
  rootbinding:{id:'rootbinding',requirements:[req('campaignDefeated','m-boss'),req('campaignRunes','m-si0'),req('campaignRunes','m-si1')],optional:true},
  cinderseal:{id:'cinderseal',requirements:[req('campaignDefeated','c-boss'),req('campaignRunes','c-si0'),req('campaignRunes','c-si1')],optional:true},
@@ -255,6 +258,61 @@ function validateData(levels=root.EW_LEVELS){
  }
  return {valid:errors.length===0,errors};
 }
+// Read-only journey guidance. Targets describe authored places; they never authorize travel.
+const leads={
+ [R.mill]:'Irrigation terraces lead',[R.gallery]:'Cooling service passage lead',
+ [R.cellar]:'Public letter desk lead',[R.archive]:'Archive records lead'
+};
+function doorLabel(door,facts={}){
+ const room=rooms[door.destScene];
+ return !room?'Return to '+({[M.moon]:'Moonroot road',[M.cinder]:'Cinderworks road',[M.spire]:'Hollow Spire road'}[door.destScene]||'the main road'):
+  facts.discovered?.includes(room.id)?room.name:leads[room.id];
+}
+function deriveNextAction(base={},facts={},context={}){
+ const scene=context.sceneId||Object.keys(mainScenes).find(id=>mainScenes[id]===(base.level||0)),levels=context.levels||root.EW_LEVELS||[];
+ const has=(k,id)=>Array.isArray(facts[k])&&facts[k].includes(id),flag=(k,id)=>Array.isArray(base.flags?.[k])&&base.flags[k].includes(id);
+ const result=(track,stage,text,target=null,reason='',action=null)=>({track,stage,text,target,reason,action});
+ if(base.mode!=='story')return result('echo','gauntlet','Overcome the three guardians. Your time stays on this browser.');
+ const local=rooms[scene];
+ if(local){
+  let target=null,action='interact',stage='explore';
+  if(scene===R.mill){target=!has('mechanisms',valveWest)?valveWest:!has('mechanisms',valveEast)?valveEast:!has('items',water)?water:!has('deliveries',waterDelivery)?'ch1:door:millpond-return':'ch1:door:millpond-rootcellar-enter';stage=target;}
+  if(scene===R.gallery){target=!has('items',coal)?coal:'ch1:door:cooling-gallery-return';stage=target;}
+  if(scene===R.cellar){target=base.completed&&facts.complete?letter:!has('items',charter)?charter:!has('deliveries',charterDelivery)?'ch1:door:rootcellar-return':!has('items',letter)?letter:'ch1:door:rootcellar-return';stage=target;}
+  if(scene===R.archive){target=facts.complete?'ch1:door:star-archive-return':has('defeated',engineId)?'ch1:interaction:archive-finish':'ch1:interaction:archive-opt-in';stage=target;if(context.bossActive){action=context.bossState==='recover'?'attack':null;return result('optional','engine-combat',context.bossState==='recover'?'The Engine is recovering. Strike now.':'Leave marked falling light; strike when the Engine recovers.',engineId,'Optional encounter',action);}}
+  let text=selectStory(base,facts,{type:'advice',sceneId:scene}).lines.join(' ');
+  if(scene===R.cellar&&base.completed&&facts.complete)text='Return to Lyra’s open letter at the western desk. Read what this journey has made possible.';
+  if(scene===R.archive&&facts.complete)text='The hours are released. Return by either door; Lyra’s open letter in the Rootcellar has a new last page.';
+  return result('optional',stage,text,target,'Optional room; your original ending is unchanged.',action);
+ }
+ const i=mainScenes[scene]??base.level??0,l=levels[i],following=deliveries[context.followDeliveryId];
+ if(!base.completed&&(!following||has('deliveries',following.id))){
+  if(!l)return result('campaign','seek-heart','Explore this realm. Restore its two world-runes, then face its guardian.');
+  const missing=(l.sigils||[]).filter(r=>!flag('sigils',r.id)),released=missing.find(r=>flag('runes',r.id)),sealed=missing.find(r=>!flag('runes',r.id));
+  if(released)return result('campaign','collect-'+released.id,'The rune is unsealed. Climb to its freed light and touch it.',released.id,'Released is not collected.','jump');
+  if(sealed)return result('campaign','release-'+sealed.id,'Climb toward the '+(sealed===l.sigils[0]?'first':'second')+' '+['canopy','gantry','hall'][i]+' rune and cast lumen at its seal.',sealed.id,'Collect both freed lights to open the guardian’s arena.','spell');
+  if(l.boss&&!flag('defeated',l.boss.id))return result('campaign',context.bossActive?'guardian-combat':'guardian',context.bossActive?(context.bossState==='recover'?'The guardian is recovering. Strike now.':'Watch the warning; move clear, then strike during recovery.'):'Both runes are collected. Approach the eastern guardian.',l.boss.id,'The guardian holds the world-gate.',context.bossActive&&context.bossState==='recover'?'attack':null);
+  return result('campaign','gate',i===2?'Enter the eastern world-gate to write your original ending.':'The heart is restored. Enter the eastern world-gate.',l.exit?.id||null,'Optional deliveries never gate this journey.','interact');
+ }
+ let delivery=following&&!has('deliveries',following.id)?following:null;
+ if(!delivery){const pending=Object.values(deliveries).filter(d=>!has('deliveries',d.id));delivery=pending.find(d=>has('items',d.itemId))||pending.find(d=>d.sceneId===scene)||pending[0];}
+ let dest,target,text,stage;
+ if(delivery){const carried=has('items',delivery.itemId),item=items[delivery.itemId];dest=carried?delivery.sceneId:item.sceneId;target=carried?delivery.id:item.id;stage=(carried?'deliver-':'find-')+delivery.id;text=carried?delivery.label+'.':'Find '+item.label+'; then '+delivery.label.charAt(0).toLowerCase()+delivery.label.slice(1)+'.';}
+ else if(!facts.complete){dest=R.archive;target=has('defeated',engineId)?'ch1:interaction:archive-finish':'ch1:interaction:archive-opt-in';stage='archive';text=has('defeated',engineId)?'Return to the Archive’s eastern desk to release the hours.':'Visit the Star Archive on the Hollow Spire road. Challenge its Engine only if you wish.';}
+ else{dest=R.cellar;target=letter;stage='coda';text='Return to Lyra’s open letter in the Rootcellar for this journey’s last page.';}
+ if(scene===dest)return result('optional',stage,text,target,'Followed task; change it in the journal.','interact');
+ // Door graph has no teleport edges. Unknown leads remain descriptions, not discoveries.
+ const queue=[[scene,[]]],seen=new Set([scene]);let route=null;
+ while(queue.length){const [at,path]=queue.shift();if(at===dest){route=path;break;}for(const d of Object.values(doors)){if(d.sourceScene!==at||seen.has(d.destScene)||d.requirements.completed&&!base.completed)continue;seen.add(d.destScene);queue.push([d.destScene,[...path,d]]);}}
+ if(route?.length){const door=route[0];return result('optional',stage,'Take the '+doorLabel(door,facts)+'. '+text,door.id,'Walk to the marked door; nearby danger may block passage.','interact');}
+ const destinationRealm=rooms[dest]?.realmIndex??mainScenes[dest],realm=levels[destinationRealm];
+ if(Number.isInteger(destinationRealm)&&destinationRealm!==i){
+  const canTravel=context.travelableRealms?.includes(destinationRealm);
+  return result('optional',stage,(canTravel?'Use Map to revisit ':'Continue the original adventure toward ')+(realm?.name||'the recipient’s realm')+'. '+text,canTravel?'realm:'+destinationRealm:dest,canTravel?'Map travel remains subject to its normal safety checks.':'This lead does not unlock a realm or bypass a guardian.');
+ }
+ return result('optional',stage,text,target,'Optional; no deliveries or testimony gate the original ending.','interact');
+}
+
 // Authored chapter dialogue: practical repairs, not another stolen world-heart.
 const story={
  'ch1:mechanism:valve-west':['Mara marked this valve with a seed. The crown conduit has been drinking the garden’s water.', 'Lyra: I can change a channel without commanding the river.'],
@@ -310,6 +368,7 @@ function selectStory(base={},facts={},context={}){
   [ventWest]:['The west marked vent is banked. Only this marked channel is cooled; other lava still burns.','The west marked channel remains cooled. No other lava has changed.'],
   [ventEast]:['The east vent releases steam only. It does not cool the channel or create a shortcut.','The east vent is already banked. Its steam has changed, not the lava.']
  };
+ if(id==='ch1:interaction:dawnstep-return')return response([context.phase==='locked'?'This return lamp needs Dawnstep and the Archivist Engine’s defeat in this journey.':facts.complete?'Dawnstep returns to the entry lamp only. The archived hours are already released; no resources are restored.':'Dawnstep returns to the entry lamp only. You may leave now, but the archived hours remain unfinished at the eastern desk. No resources are restored.']);
  if(context.phase==='locked'){
   const text=m.ability==='rootbinding'?'Rootbinding needs the Rootheart guardian and both Moonroot runes. You can cross with ordinary jumps.':m.ability==='cinderseal'?'Cinderseal needs the Forgeheart guardian and both Cinderworks runes. Use the service shelves; other lava remains dangerous.':m.ability==='dawnstep'?'Dawnstep needs the Dawnheart guardian, both Spire runes and an original ending. It links only these archive lamps.':id===water?'Inspect both the west and east irrigation valves before collecting Water Remembers.':m.type==='complete'?'Defeat the optional Archivist Engine before releasing its hours. Testimony is not required.':m.type==='encounter'?'The Archive encounter is available after either original ending, without deliveries or testimony.':m.type==='delivery'?'Carry the named item to its recipient before delivering it.':'This optional interaction is not ready. Check the current room in Aster’s advice.';
   return response([text]);
@@ -320,6 +379,14 @@ function selectStory(base={},facts={},context={}){
  if(id==='ch1:mechanism:seal-summer')return response([state.summerDelivered?'Tovan’s recorded repair: Summer Coal has been delivered. The hearth can rest without burning another person’s years.':'Tovan’s proposed pledge: warmth without stolen years. Summer Coal has not been delivered in this journey.',...(repeat?['You have already read this seal. Reading is not a delivery.']:[])]);
  if(id==='ch1:mechanism:seal-charter')return response([state.charterPublished?'The Common Hearth Charter is published beside the crown’s orders.':'The Charter is a proposed public promise; it has not been published in this journey.',state.signedTestimony?'Orin’s signed testimony has been read. His part in those orders remains named.':'Orin’s signed testimony has not been read in this journey.',...(endingLine?[endingLine]:[])]);
  if(m.type==='delivery')return selectStory(base,facts,{type:'npc',realmId:m.sceneId===M.moon?'moonroot':m.sceneId===M.cinder?'cinderworks':'hollowspire'});
+ if(id===letter&&facts.complete===true&&state.ending)return response([
+  'Lyra: The hearts are free, and the archived hours belong to their keepers. This is the page we write afterward.',
+  state.waterDelivered?'Mara’s terraces have their measured share.':'Mara’s measurements can still be brought home; freedom is not the same as finished repair.',
+  state.summerDelivered?'Tovan’s banked hearth warms a home without stolen years.':'Tovan’s hearth is still waiting for Summer Coal.',
+  state.charterPublished?'The Common Hearth Charter stands in the public record.':'The Charter is not yet published. That work remains ours to choose.',
+  state.signedTestimony?'Orin’s signed testimony remains named beside his part in the orders.':'Orin’s signed testimony is still there to read.',
+  endingLine,'Lyra: No new crown. No perfect tomorrow. Just people who can choose what comes next.'
+ ],'');
  if(id==='ch1:interaction:archive-finish')return response([...(repeat?['The archived hours are already released.']:story[id]),...(endingLine?[endingLine]:[]),'Lyra: '+(state.charterPublished?'The published Charter belongs to its keepers.':'The Charter can still be published. This release does not publish it for us.')],'');
  if(id==='ch1:interaction:dawnstep')return response(['Dawnstep links the two lamps in this room only. It never refills resources.']);
  if(id==='ch1:interaction:archive-opt-in')return response(['Challenge the Engine only if you wish. Neither deliveries nor testimony are required. Leave marked light; strike during recovery.']);
@@ -334,7 +401,7 @@ for(const m of Object.values(interactions)){
 }
 function freeze(value){if(value&&typeof value==='object'&&!Object.isFrozen(value)){Object.values(value).forEach(freeze);Object.freeze(value);}return value;}
 const data=freeze({version:1,campaignId:'hollow-crown-v3',coordinateSystem:'player-left/feet',rooms,sceneIds,mainScenes,doors,anchors,interactions,
- registry,rosters,roster:rosters,requirements,completeRequires,mechanisms,items,deliveries,defeated,abilities,deriveAbilities,deriveObjectives,selectStory,safeAnchor,validateData,
+ registry,rosters,roster:rosters,requirements,completeRequires,mechanisms,items,deliveries,defeated,abilities,deriveAbilities,deriveObjectives,deriveNextAction,doorLabel,selectStory,safeAnchor,validateData,
  recoveryAnchor:A.mill,continueAnchor:A.moon,limits:{scenes:7,mechanisms:8,items:5,deliveries:3,defeated:13,anchors:15},
  invariants:{optional:true,changesCampaign:false,requiresNewMoves:false,doorRestoresVitals:false,archiveTestimonyRequired:false}});
 root.EW=root.EW||{};root.EW.ChapterData=data;

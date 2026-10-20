@@ -37,5 +37,6 @@ jobs:
           npm run test:firstload:browser
           npm run test:chapter:browser
           npm run test:upgrade:browser
+          npm run test:hud:browser
           npm run test:persistence:browser
           npm run test:update:browser

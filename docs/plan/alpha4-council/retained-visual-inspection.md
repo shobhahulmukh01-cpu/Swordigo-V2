@@ -139,3 +139,61 @@ No new blocking defect was found in this nine-image replacement scope. Minor des
 | `title-desktop.png` | 1440×900 | `f68b5bcb8d068163b1aea2e53d67a89de5ebeb4e0d558bffada87950208f018b` |
 | `title-landscape.png` | 844×390 | `ba21fd7b7d834361ca2206bca698870eb6a834f7083127416ee8228db7d2071f` |
 | `title-portrait.png` | 390×844 | `d543d67d6740c173d46c3285e3b3050dc5c7f11b4f92d3a78a9ce40e30396599` |
+
+
+## Additional mobile guardian fixtures — six images only
+
+Individually inspected the six new `guardian-{1,2,3}-{portrait,landscape}.png` images in `/data/work/plan/next2/final-hud-plus-guardian/`. Did not reinspect the other nine images, run tests, launch a browser, inspect source or invoke Git. Parent reports six positive native-browser fixture tests and a passing 15-case suite; those are supplied test results, not newly executed/verified here.
+
+**Scoped result: all six PASS boss-HUD versus hero/floor/control separation. Rendered ground-warning visibility is NOT CLEARED by these six stills.** None contains clearly discernible ROOT/WAVE/LIGHT ground marks and labels comparable to the original three desktop warning screenshots. Positive simulation telegraph count does not alone establish that an in-viewport mark is visibly painted at screenshot time. This is a capture/coverage shortfall, not an established runtime rendering failure; cause (timing, camera, in-viewport placement or another condition) was not investigated under read-only image scope.
+
+| Additional fixture | Individual visual finding |
+| --- | --- |
+| `guardian-1-landscape.png` | **PASS HUD clearance; warning visibility unproven.** Thorn Warden name/bar/ROOT LANES instruction is above Lyra and the floor; ordinary objective is hidden, full touch row visible. No distinct ROOT circle/label can be identified on the visible floor. Warden upper antler tips meet the HUD's lower edge, separate from the hero-clearance requirement. |
+| `guardian-1-portrait.png` | **PASS HUD clearance; limited encounter framing.** HUD sits below realm subtitle and well above Lyra; touch grid and floor remain clear. Warden is offscreen, and no visible ROOT warning geometry/label appears. Thus this does not establish portrait actor-plus-warning readability. |
+| `guardian-2-landscape.png` | **PASS HUD clearance; warning visibility unproven.** Hour-Eater body, Lyra, floor and all touch actions are distinguishable; boss panel remains high. STAGED WAVES instruction is readable, but no distinct WAVE corridor outline/arrows/labels are discernible on the floor. |
+| `guardian-2-portrait.png` | **PASS HUD clearance; limited encounter framing.** High boss panel does not cover Lyra/floor/buttons. Most of Hour-Eater is beyond the right viewport; only a bottom-right foot fragment is visible. No visible WAVE corridor/label. |
+| `guardian-3-landscape.png` | **PASS hero/floor clearance; warning visibility unproven.** Regent name/bar/MARKED LIGHT instruction is readable high-right, objective hidden and touch row clear. Panel masks the upper crown/head region of Veyr slightly; Lyra remains clear. No distinct LIGHT circle/dashed marker/label is discernible on the visible floor. |
+| `guardian-3-portrait.png` | **PASS HUD clearance; limited encounter framing.** Regent panel sits above a large clear play region and Lyra; controls are unobscured. Veyr is offscreen, and no visible LIGHT circle/label appears. |
+
+The previously open mobile **boss-panel clearance** gap is now narrowed by these synthetic captured layouts. Mobile **painted hazard-warning readability** remains a separate uncovered requirement. For a later parent-authorized replacement, capture an actual warning phase with a mark positively inside the camera viewport, then inspect both visible warning shape/text and separation from hero/controls. Do not relax assertions or substitute injected decoration. These are synthetic encounter/render fixtures, not input-earned campaigns, real-device testing, human combat pacing or controller qualification. Earlier final-nine title/fresh/return clearance remains unchanged.
+
+### Additional guardian byte inventory
+
+| Additional fixture | Pixel dimensions | SHA-256 |
+| --- | --- | --- |
+| `guardian-1-landscape.png` | 844×390 | `eca795fca21b005f35c3f4a552f3a1eff696915077814fc88432fd182276d3c2` |
+| `guardian-1-portrait.png` | 390×844 | `d866ee3de3c7598414371e2065a4045a286481149f5e33b38ac6d65f545b298a` |
+| `guardian-2-landscape.png` | 844×390 | `ceea236cf8b1a1e72b44743581b10a1e6ab7e49140a40fbaed2af8234e8dc774` |
+| `guardian-2-portrait.png` | 390×844 | `5910f60c25114360eeba8dd4592e215db7ad8968c8e8ea36f3398cec920a43c2` |
+| `guardian-3-landscape.png` | 844×390 | `a930067261617586cd98618514bc5fe602f1d52d969947b47052408e51bb19cf` |
+| `guardian-3-portrait.png` | 390×844 | `ee0d8edd64c435c1a3cfe0bb7ec7c9ce53673de5df577a27306b6720d88215d9` |
+
+
+## FINAL guardian R2 replacement review — rendered mobile warnings visible
+
+**Six of six R2 guardian images individually inspected: PASS for synthetic mobile guardian framing, painted-warning visibility and HUD/hero/floor/control separation.** Only these six images were opened; the other nine fixtures were not reinspected. Read R2 `report.json` summary (status pass, captures 15, errors empty); no suite was rerun here. No browser/source/test/Git action was taken.
+
+Parent's diagnosed fixture cause: the earlier capture used `a.paused=true`, suppressing the renderer's warning overlay. Parent corrected tests only to `a.running=false, a.paused=false`, adjusted encounter camera/hero framing and added visible-warning/onscreen-boss assertions. This diagnosis and unchanged-runtime statement are parent supplied. The visual difference is independently confirmed below. The earlier six remain evidence of a **fixture coverage gap, not a proven runtime failure**.
+
+| R2 replacement | Exact individual inspection |
+| --- | --- |
+| `guardian-1-portrait.png` | **PASS.** Thorn Warden silhouette (antlers/head/body/feet) and Lyra are in frame. Two ROOT labels and two complete green marked circles with root strokes are visibly painted at floor level. High boss panel is separated from hero, rings and lower touch grid; ordinary objective is absent. |
+| `guardian-1-landscape.png` | **PASS.** Complete Warden silhouette and Lyra are visible, with two ROOT labels/green circles on the floor between/around them. Boss panel stays upper-right; warning shapes and full touch row are unobscured. No prior bare-floor ambiguity remains. |
+| `guardian-2-portrait.png` | **PASS to the stated at-least-one-complete-warning scope.** Full Hour-Eater silhouette and Lyra are visible. Right-hand amber WAVE corridor, arrow and WAVE label are complete and clear; the additional left corridor continues beyond the left viewport and its label is outside the frame. This is disclosed, not a claim that both corridors are fully visible in portrait. Boss HUD and touch grid do not hide the complete warning or actor. |
+| `guardian-2-landscape.png` | **PASS.** Full Hour-Eater and Lyra are visible together with both complete amber WAVE corridors, directional arrows and both labels. High boss panel is separate from floor/warnings; touch buttons remain below the action. |
+| `guardian-3-portrait.png` | **PASS.** Full Regent crown/head/staff/body/feet and Lyra are visible. Both LIGHT labels, dashed vertical markers and complete pale floor rings are visible. Boss panel is well above the actors/rings, not across them; controls remain below. |
+| `guardian-3-landscape.png` | **PASS.** Full Regent and Lyra are visible, with both LIGHT labels, dashed markers and rings clear on the floor. Upper-right boss panel does not conceal Regent crown/head in this corrected framing. Full touch row remains distinct. |
+
+**Final scoped disposition:** the previously unclosed mobile painted-warning visibility requirement is now supported for these six actual rendered synthetic warning frames (three campaign guardians × portrait/landscape), together with the already-cleared final-nine title/fresh/return states. This does not imply every possible camera position, warning phase, attack, cooldown/recovery state, optional Engine encounter or viewport is visually certified. It does not establish input-earned victory, phone/controller behavior, human combat pacing, numerical contrast, reduced-motion dynamics or production readiness. No new blocking defect found within this R2 screenshot scope.
+
+### R2 final guardian byte inventory
+
+| R2 replacement | Pixel dimensions | SHA-256 |
+| --- | --- | --- |
+| `guardian-1-landscape.png` | 844×390 | `17cf3113256819d8bf9951a0009e447199e419e83fcfb881d44d17b8a3cf1a8d` |
+| `guardian-1-portrait.png` | 390×844 | `43871dac84744352b450e5e373b2236b0885afe1cba72bb6d889e939e69740fe` |
+| `guardian-2-landscape.png` | 844×390 | `90feee288db7183e5fb2e5d060d280a3553a07338a548098aadb4330adb0b96f` |
+| `guardian-2-portrait.png` | 390×844 | `a60e64e041e2b0f1dfb146557fd735170983aad46b396fe4c9abc4fed6902b5a` |
+| `guardian-3-landscape.png` | 844×390 | `61189131198011530bd2545028ac2f23520f56ac50d2df0e0b317c2a030de384` |
+| `guardian-3-portrait.png` | 390×844 | `39a179107c6d431c08783f9b22360d287aa0134cd8a19e35d60debd64434ae1f` |

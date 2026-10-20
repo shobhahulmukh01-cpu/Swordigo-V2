@@ -1,5 +1,5 @@
 {
-  "status": "functional-validation-passed-awaiting-final47-image-review",
+  "status": "local-alpha-acceptance-passed-with-documented-polish-and-qualification-limits",
   "version": "1.2.0-alpha.4",
   "runtimeWorker": "emberwake-3f5eb6774739",
   "nodeTests": {
@@ -602,7 +602,9 @@
       "captures": 9,
       "errors": [],
       "report": "post-hud/hud-browser/report.json",
-      "individualReview": "docs/plan/alpha4-council/retained-visual-inspection.md"
+      "individualReview": "docs/plan/alpha4-council/retained-visual-inspection.md",
+      "expandedSuiteCaptures": 15,
+      "guardianReport": "post-hud/guardian-browser/report.json"
     }
   },
   "runtimeIntegrity": {
@@ -614,7 +616,45 @@
     "simulationProofSourceHashesMatch": true,
     "allMatch": true
   },
-  "visualReview": "Pre-correction47 individually reviewed; final HUD9 individually reviewed and passed; final corrected47 captured with zero page errors, individual final-byte review in progress.",
+  "visualReview": {
+    "ordinaryHud": {
+      "individuallyInspected": 9,
+      "passed": 9,
+      "report": "docs/plan/alpha4-council/retained-visual-inspection.md",
+      "scope": "Final title/fresh/return captures, desktop/portrait/landscape; minor nonblocking desktop transition subtitle overlap disclosed."
+    },
+    "originalGuardianTouch": {
+      "individuallyInspected": 6,
+      "passed": 6,
+      "report": "docs/plan/alpha4-council/retained-visual-inspection.md",
+      "scope": "Synthetic render fixtures show full guardians, hero, visible labeled warnings and clear HUD/touch controls. Portrait forge shows one full WAVE corridor; the second is partially offscreen, not both fully qualified."
+    },
+    "optionalChapter": {
+      "captures": 47,
+      "pageErrors": 0,
+      "individualInspection": "All47 final corrected captures individually inspected across split reviewers. No new playfield-blocking HUD/touch defect found; nonzero cosmetic/label caveats retained. Not blanket visual, device or production clearance.",
+      "partA": {
+        "individuallyInspected": 24,
+        "confirmedBlockingDefects": 0,
+        "shotIndices": "0..23",
+        "report": "docs/plan/alpha4-council/final-visual-review-A.md"
+      },
+      "partB": {
+        "individuallyInspected": 23,
+        "confirmedPlayfieldBlockingDefects": 0,
+        "framePasses": 19,
+        "passesWithLocalCaveats": 4,
+        "shotIndices": "24..46",
+        "report": "docs/plan/alpha4-council/final-visual-review-B.md"
+      },
+      "documentedPolish": [
+        "Telegraph LIGHT tag can cross hero head; second attack LIGHT label not discernible over actor cluster, while rings and main warning remain visible.",
+        "Raised blade can cross valve caption; follow-through blade touches GUARD border but not its label.",
+        "Landscape Rootcellar MAIN ROAD caption faint/partly behind vitality panel; return arch and alternate guidance remain visible.",
+        "Dense recipient labels and cosmetic desktop guard/boss-border intersection remain disclosed."
+      ]
+    }
+  },
   "causalScreen": {
     "status": "passed-screen4-non-reproduction",
     "experimentComplete": true,
@@ -734,7 +774,18 @@
   },
   "release": {
     "remotePublicationVerified": false,
-    "githubAuthorization": "Fresh device authorization expired without approval. No use of exposed chat token; no push or publication for alpha.4 yet."
+    "githubAuthorization": "Fresh secure device flow requested; awaiting user approval. Exposed chat token not used.",
+    "implementationCommit": "ed1443f",
+    "preflight": {
+      "confirmedLocalBlockers": 0,
+      "report": "docs/plan/alpha4-council/release-preflight.md",
+      "outstandingGates": [
+        "Secure GitHub authorization",
+        "Exact-head required remote CI",
+        "Authorized main deployment",
+        "Public-byte verification"
+      ]
+    }
   },
   "limitations": [
     "Playable original adventure alpha, not official Swordigo sequel or production certification.",

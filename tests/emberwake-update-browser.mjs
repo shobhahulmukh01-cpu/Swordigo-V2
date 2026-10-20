@@ -9,7 +9,7 @@ import http from 'node:http';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
-import { makeV4Fixture, boundedObservation } from './helpers/emberwake-update-reliability.mjs';
+import { makeV4Fixture, boundedObservation, seedFixture } from './helpers/emberwake-update-reliability.mjs';
 
 const root = process.cwd();
 const oldRef = process.env.EW_OLD_REF || '6c266e9';
@@ -152,7 +152,7 @@ async function milestone(stage, o) {
   await Promise.all(contexts.flatMap(c => c.serviceWorkers()).slice(-8).map(async w => {
     const value = await boundedObservation(() => w.evaluate(async () => ({
       scope: self.registration.scope,
-      clients: (await self.clients.matchAll({ type: 'window', includeUncontrolled: true })).map(c => ({ id: c.id, url: c.url(), visibilityState: c.visibilityState }))
+      clients: (await self.clients.matchAll({ type: 'window', includeUncontrolled: true })).map(c => ({ id: c.id, url: c.url, visibilityState: c.visibilityState }))
     })));
     record('observations', { stage, workerId: workerIds.get(w), url: w.url(), value }, 200);
   }));
@@ -329,7 +329,8 @@ async function assertFixture(p, fixture, validateV4 = false) {
 async function v4Lifecycle(ending) {
   const fixture = makeV4Fixture(currentSnapshot, ending);
   const c = await context(), { p: historical, o } = await oldBoot(c);
-  await o.evaluate(keys => { for (const [k, v] of Object.entries(keys)) localStorage.setItem(k, v); }, fixture.keys);
+  const seeded = await seedFixture(historical, o, fixture.keys, timeout);
+  record('observations', { stage: 'v4-fixture-setup', ending, ...seeded }, 200);
   await assertFixture(historical, fixture);
   // Deterministic incompatible current asset while the actual old worker owns
   // the scope. No weakened assertion or retry-to-success loop.

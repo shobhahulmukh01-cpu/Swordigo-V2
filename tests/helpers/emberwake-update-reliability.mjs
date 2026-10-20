@@ -1,6 +1,27 @@
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
 
+// Establish the synthetic fixture in the page being tested, then explicitly
+// synchronize the other renderer before any worker lifecycle action. This is a
+// setup barrier only: preservation assertions after actions remain immediate,
+// byte-exact reads and never reseed or retry.
+export async function seedFixture(writer, observer, keys, timeout) {
+  const written = await writer.evaluate(values => {
+    for (const [key, value] of Object.entries(values)) localStorage.setItem(key, value);
+    return Object.fromEntries(Object.keys(values).map(key => [key, localStorage.getItem(key)]));
+  }, keys);
+  assert.deepEqual(written, keys, 'Fixture writer must immediately read back every seeded byte');
+  const initial = await observer.evaluate(values =>
+    Object.fromEntries(Object.keys(values).map(key => [key, localStorage.getItem(key)])), keys);
+  await observer.waitForFunction(values =>
+    Object.entries(values).every(([key, value]) => localStorage.getItem(key) === value),
+  keys, { timeout });
+  const synchronized = await observer.evaluate(values =>
+    Object.fromEntries(Object.keys(values).map(key => [key, localStorage.getItem(key)])), keys);
+  assert.deepEqual(synchronized, keys, 'Fixture observer must see every seeded byte before lifecycle actions');
+  return { written, initial, synchronized };
+}
+
 // Synthetic completed-schema journey, NOT input-earned gameplay. Evaluate exactly
 // the supplied runtime bytes; never import a mutable second copy of the release.
 export function makeV4Fixture(snapshot, ending) {

@@ -1,0 +1,84 @@
+{
+  "url": "http://127.0.0.1:4188/Swordigo-V2/",
+  "scope": "Native browser import/confirmation/download/key input plus explicit isolated storage/delayed-read/lifecycle fixtures; not campaign, device or release certification.",
+  "passed": 19,
+  "failed": 0,
+  "results": [
+    {
+      "name": "native confirmed import aborts safely: denied",
+      "pass": true
+    },
+    {
+      "name": "native confirmed import aborts safely: preserve-quota",
+      "pass": true
+    },
+    {
+      "name": "native confirmed import aborts safely: target-quota",
+      "pass": true
+    },
+    {
+      "name": "native confirmed import aborts safely: revision-conflict",
+      "pass": true
+    },
+    {
+      "name": "successful native restore preserves unsaved current journey as rolling backup",
+      "pass": true
+    },
+    {
+      "name": "native new-journey confirmation aborts safely: denied",
+      "pass": true
+    },
+    {
+      "name": "native new-journey confirmation aborts safely: preserve-quota",
+      "pass": true
+    },
+    {
+      "name": "native new-journey confirmation aborts safely: new-target",
+      "pass": true
+    },
+    {
+      "name": "native new-journey confirmation aborts safely: revision-conflict",
+      "pass": true
+    },
+    {
+      "name": "successful confirmed new journey does not immediately overwrite retained backup",
+      "pass": true
+    },
+    {
+      "name": "native title and Continue invalidate delayed file reads",
+      "pass": true
+    },
+    {
+      "name": "isolated delayed-read lifecycle boundary: title",
+      "pass": true
+    },
+    {
+      "name": "isolated delayed-read lifecycle boundary: enterGame",
+      "pass": true
+    },
+    {
+      "name": "isolated delayed-read lifecycle boundary: start",
+      "pass": true
+    },
+    {
+      "name": "isolated delayed-read lifecycle boundary: continue",
+      "pass": true
+    },
+    {
+      "name": "isolated delayed-read lifecycle boundary: death",
+      "pass": true
+    },
+    {
+      "name": "overlapping native file selections respect latest read and cancel",
+      "pass": true
+    },
+    {
+      "name": "authored reward commit writes V4 atomically and keeps frozen V3 bytes",
+      "pass": true
+    },
+    {
+      "name": "remapped held key cannot reactivate by repeat across pause/close",
+      "pass": true
+    }
+  ]
+}

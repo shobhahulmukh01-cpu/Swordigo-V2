@@ -1,6 +1,18 @@
-# Emberwake 1.2.0-alpha.1 — validation and limits
+# Emberwake — validation ledger and limits
 
-## Current local acceptance evidence
+## Alpha.4 — current player-journey milestone
+
+Current source-bound results live in `qa/correction/next2-final/validation.json` (evidence locations and external capture digests are indexed in `EVIDENCE.md`); runtime/build/served equality and all first-load/offline asset digests are recorded in `runtime-integrity.json`. This milestone extends the existing engine/campaign, not the archived Lumenblade prototype. Product identity is **1.2.0-alpha.4**; retained engine/save compatibility identifiers are intentionally unchanged. The game footer reads the product-version meta field.
+
+Four councils and their implementation handoffs are retained under `docs/plan/alpha4-council/`; decisions and premortem are in `docs/plan/ALPHA4-PLAYER-JOURNEY.md`. The new native journey test separately exercises campaign-first advice, optional following, a paid delivery, real shrine preview/purchase and both ending-import title continuations. It does not claim a full browser-earned original campaign. The ordinary-input simulation proof earns both endings and the whole optional chapter at 60/120 steps/sec, including the new post-Engine return, and exactly replays each trace.
+
+Visual captures are synthetic render fixtures. Individual review and native interaction are separate evidence; neither certifies real device performance or human discovery. All four new optional-room paintings are members of the digest-verified offline shell. All four inherited/main image files remain byte-identical to published alpha.3/main. Original failed observations and initial native test-route errors are preserved, not counted as passes. The four-cell causal screen is distinct from the old incomplete twelve-trial experiment and cannot establish historical root cause or production repeatability even if it passes.
+
+Final retained-image review found and corrected portrait direction suppression, transient prompt/toast overlap and stale key wording, a minimap/helper collision and weak landscape title utility separation. The native HUD suite now runs in both PR CI and the manual Pages release. See `qa/correction/next2-final/post-hud/CORRECTIONS.md`. The four-cell screen predates these presentation corrections: it remains historical bounded non-reproduction, not final-byte repeatability certification.
+
+The earlier sections below are historical release ledgers, not current-runtime counts. Remote CI/public bytes must be checked for the eventual publication commit. Production certification, physical hardware/controller/browser matrix, independent accessibility/security, concurrent-write durability and owner rights/license reviews remain open until separately qualified.
+
+## Historical alpha.1 local acceptance evidence
 
 `qa/correction/validation.json` binds the tested runtime to exact source/build hashes, environment, original-image equality, commands' result totals and limitations. Its base commit identifies the branch ancestor; the pre-commit runtime hashes identify the actual tested changes. `EW.version` remains the retained 1.1.0-rc.3 engine label; package/release identity is 1.2.0-alpha.1. Save format remains V3.
 

@@ -39,6 +39,7 @@ jobs:
           npm run test:firstload:browser
           npm run test:chapter:browser
           npm run test:upgrade:browser
+          npm run test:hud:browser
           npm run test:persistence:browser
           npm run test:update:browser
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0

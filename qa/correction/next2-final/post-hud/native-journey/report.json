@@ -1,0 +1,110 @@
+{
+  "kind": "Native keyboard room-delivery traversal, fresh new journey, no game/position/fact injections",
+  "pass": false,
+  "nativeFollowedDelivery": true,
+  "nativeAdvice": true,
+  "roomEntered": true,
+  "beforeGold": 38,
+  "afterGold": 98,
+  "chapter": {
+    "active": true,
+    "complete": false,
+    "discovered": [
+      "ch1:main:moonroot",
+      "ch1:room:millpond"
+    ],
+    "mechanisms": [
+      "ch1:mechanism:valve-east",
+      "ch1:mechanism:valve-west"
+    ],
+    "items": [
+      "ch1:item:water-letter"
+    ],
+    "deliveries": [
+      "ch1:delivery:water-remembers"
+    ],
+    "defeated": [
+      "ch1:enemy:millpond-01",
+      "ch1:enemy:millpond-02",
+      "ch1:enemy:millpond-03"
+    ],
+    "anchor": {
+      "sceneId": "ch1:main:moonroot",
+      "anchorId": "ch1:anchor:moonroot-mill"
+    },
+    "stats": {
+      "time": 0,
+      "kills": 0,
+      "deaths": 0
+    }
+  },
+  "error": "AssertionError [ERR_ASSERTION]: Native approach must actually target the shrine\n+ actual - expected\n\n+ undefined\n- 'shrine'\n\n    at file:///data/work/Swordigo-V2/tests/emberwake-chapter-browser.mjs:44:9",
+  "observation": {
+    "x": 460.25,
+    "y": 536,
+    "hp": 85,
+    "mp": 12.399999999999569,
+    "scene": "ch1:main:moonroot",
+    "status": "playing",
+    "modal": null,
+    "near": null,
+    "playing": true,
+    "enemies": [
+      {
+        "id": "m-e2",
+        "x": 1460,
+        "y": 330.7939201452978,
+        "hp": 34,
+        "type": "wisp"
+      },
+      {
+        "id": "m-e3",
+        "x": 1851.0500000000031,
+        "y": 556,
+        "hp": 40,
+        "type": "crawler"
+      },
+      {
+        "id": "m-e4",
+        "x": 2474.458333333318,
+        "y": 532,
+        "hp": 66,
+        "type": "sentinel"
+      },
+      {
+        "id": "m-e5",
+        "x": 2890,
+        "y": 390.00785038998885,
+        "hp": 34,
+        "type": "wisp"
+      },
+      {
+        "id": "m-e6",
+        "x": 3407.850000000005,
+        "y": 556,
+        "hp": 40,
+        "type": "crawler"
+      },
+      {
+        "id": "m-e7",
+        "x": 3474.7083333333153,
+        "y": 532,
+        "hp": 66,
+        "type": "sentinel"
+      }
+    ],
+    "items": [
+      "ch1:item:water-letter"
+    ],
+    "mechs": [
+      "ch1:mechanism:valve-east",
+      "ch1:mechanism:valve-west"
+    ],
+    "deliveries": [
+      "ch1:delivery:water-remembers"
+    ],
+    "gold": 158,
+    "held": [],
+    "physical": []
+  }
+}

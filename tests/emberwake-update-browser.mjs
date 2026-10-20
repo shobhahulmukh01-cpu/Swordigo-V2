@@ -9,7 +9,7 @@ import http from 'node:http';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
-import { makeV4Fixture, boundedObservation, seedFixture } from './helpers/emberwake-update-reliability.mjs';
+import { makeV4Fixture, boundedObservation, seedFixture, fixtureSummary } from './helpers/emberwake-update-reliability.mjs';
 
 const root = process.cwd();
 const oldRef = process.env.EW_OLD_REF || '6c266e9';
@@ -24,13 +24,40 @@ assert.ok(Number.isFinite(trialMs) && trialMs > 0 && trialMs <= 150000, 'Trial b
 assert.ok(Number.isFinite(timeout) && timeout > 0 && timeout <= 45000, 'Predicate timeout must be 1..45000 ms; do not widen acceptance');
 const sha = b => createHash('sha256').update(b).digest('hex');
 const checks = [], failures = [], contexts = [];
-const diagnostics = { requests: [], pageErrors: [], consoleErrors: [], partialInstall: [], events: [], milestones: [], observations: [], dropped: {} };
-const startedAt = performance.now(), pageIds = new WeakMap(), contextIds = new WeakMap(), workerIds = new WeakMap();
-let pageCount = 0, requestCount = 0, workerCount = 0;
+const diagnostics = { requests: [], pageErrors: [], consoleErrors: [], partialInstall: [], events: [], milestones: [], observations: [], fixtureStages: [], storageEvents: [], dropped: {} };
+const startedAt = performance.now(), pageIds = new WeakMap(), contextIds = new WeakMap(), workerIds = new WeakMap(), frameIds = new WeakMap();
+let pageCount = 0, requestCount = 0, workerCount = 0, frameCount = 0, fixtureCheckCount = 0;
 const stamp = () => ({ utc: new Date().toISOString(), elapsedMs: Math.round(performance.now() - startedAt), scenario: currentScenario });
 function record(key, value, cap = 2000) {
   if (diagnostics[key].length < cap) diagnostics[key].push({ ...stamp(), ...value });
   else diagnostics.dropped[key] = (diagnostics.dropped[key] || 0) + 1;
+}
+// Separate small progressive artifact survives setup failure/process shutdown;
+// never serialize the raw fixture returned for the acceptance assertions.
+let fixtureDiagnosticWriteErrors = 0;
+function persistFixtureDiagnostics() {
+  try {
+    const file = path.join(output, 'fixture-stages.json'), temp = file + '.tmp';
+    fs.writeFileSync(temp, JSON.stringify({ fixtureStages: diagnostics.fixtureStages,
+      storageEvents: diagnostics.storageEvents, dropped: diagnostics.dropped,
+      writeErrors: fixtureDiagnosticWriteErrors }, null, 2));
+    fs.renameSync(temp, file);
+  } catch { fixtureDiagnosticWriteErrors++; }
+}
+function frameIdentity(frame) {
+  if (!frame) return null;
+  if (!frameIds.has(frame)) frameIds.set(frame, ++frameCount);
+  const href = frame.url();
+  let frameOrigin = null; try { frameOrigin = new URL(href).origin; } catch {}
+  return { frameId: frameIds.get(frame), url: href, origin: frameOrigin,
+    name: frame.name(), parentFrameId: frame.parentFrame() ? frameIdentity(frame.parentFrame()).frameId : null };
+}
+function pageIdentity(page) {
+  return { pageId: pageIds.get(page), contextId: contextIds.get(page.context()), frame: frameIdentity(page.mainFrame()) };
+}
+function fixtureStage(value) {
+  record('fixtureStages', value, 96);
+  persistFixtureDiagnostics();
 }
 let currentScenario = 'setup';
 const gitRead = (...args) => execFileSync('git', args, { cwd: root, timeout: 10000, maxBuffer: 64 * 1024 * 1024 });
@@ -134,7 +161,7 @@ function report() {
     browser: browser?.version(), fixtureOrigin: origin, foreignFixtureOrigin: foreignOrigin, controlledRetryFixture: debugRetry,
     repeatabilityCaveat: 'Earlier concurrent historical rollback window.lumen timeout remains unexplained; neither a diagnostic pass nor this run establishes its cause or production robustness.',
     scope: 'Selected independent loopback arm; approved historical worker/root/assets, current generated worker, synthetic V3/V4 fixtures. full preserves all five original checks and adds V4; rollback-only isolates the original rollback; v4 isolates its V4 lifecycle. Not human gameplay, public deployment, devices or certification.',
-    diagnostics
+    fixtureDiagnosticWriteErrors, diagnostics
   }, null, 2));
 }
 async function check(name, fn) {
@@ -199,10 +226,34 @@ async function context() {
   const c = await browser.newContext({ serviceWorkers: 'allow' }); contexts.push(c);
   contextIds.set(c, contexts.length);
   c.setDefaultTimeout(timeout); c.setDefaultNavigationTimeout(timeout);
-  await c.exposeBinding('__ewReliabilityEvent', ({ page }, event) => record('events', { kind: 'page-lifecycle', contextId: contextIds.get(c), pageId: pageIds.get(page), event }));
+  await c.exposeBinding('__ewReliabilityEvent', ({ page, frame }, event) => {
+    const identity = { contextId: contextIds.get(c), pageId: pageIds.get(page), frame: frameIdentity(frame) };
+    if (event.kind === 'fixture-storage') {
+      record('storageEvents', { ...identity, event }, 256); persistFixtureDiagnostics();
+    } else record('events', { kind: 'page-lifecycle', ...identity, event });
+  });
   await c.addInitScript(() => {
     const emit = (kind, extra = {}) => window.__ewReliabilityEvent({ kind, pageTime: performance.now(), ...extra }).catch(() => {});
     for (const name of ['webglcontextlost', 'webglcontextrestored']) document.addEventListener(name, e => emit(name, { statusMessage: e.statusMessage }), true);
+    const fixtureKeys = new Set(['EW_STORY_V4', 'EW_STORY_V3', 'EW_STORY_V3.backup', 'EW_RUSH_V3', 'EW_RUSH_V3.backup']);
+    const documentId = crypto.randomUUID();
+    let storageCount = 0;
+    const summary = async value => ({ present: value !== null,
+      bytes: value === null ? 0 : new TextEncoder().encode(value).length,
+      sha256: value === null ? null : [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value)))].map(v => v.toString(16).padStart(2, '0')).join('') });
+    addEventListener('storage', event => {
+      if (event.key !== null && !fixtureKeys.has(event.key)) return;
+      if (++storageCount > 128) {
+        if (storageCount === 129) emit('fixture-storage', { documentId, status: 'document-cap-reached', droppedAtLeast: 1 });
+        return;
+      }
+      const identity = { documentId, sequence: storageCount, eventPageTime: performance.now(),
+        documentURL: location.href, origin: location.origin, isTopFrame: window === top,
+        key: event.key, sourceURL: event.url, area: event.storageArea === localStorage ? 'localStorage' : 'other' };
+      Promise.all([summary(event.oldValue), summary(event.newValue)]).then(([oldValue, newValue]) =>
+        emit('fixture-storage', { ...identity, oldValue, newValue })).catch(() =>
+        emit('fixture-storage', { ...identity, status: 'summary-unavailable' }));
+    });
     if (!navigator.serviceWorker) return;
     const seen = new WeakSet();
     const watch = r => {
@@ -225,6 +276,7 @@ async function context() {
   });
   c.on('page', p => {
     const pageId = ++pageCount; pageIds.set(p, pageId);
+    p.on('framenavigated', frame => record('events', { kind: 'frame-navigation', pageId, contextId: contextIds.get(c), frame: frameIdentity(frame) }));
     p.on('crash', () => record('events', { kind: 'page-crash', pageId }));
     p.on('close', () => record('events', { kind: 'page-close', pageId }));
     p.on('requestfailed', r => record('events', { kind: 'requestfailed', pageId, url: r.url(), error: r.failure()?.errorText }));
@@ -240,6 +292,8 @@ async function context() {
     p.on('console', m => { if (m.type() === 'error') diagnostics.consoleErrors.push({ url: p.url(), message: m.text() }); });
     boundedObservation(async () => {
       const session = await c.newCDPSession(p);
+      const targetInfo = await session.send('Target.getTargetInfo');
+      record('events', { kind: 'page-target', ...pageIdentity(p), target: targetInfo.targetInfo });
       session.on('ServiceWorker.workerVersionUpdated', e => record('events', { kind: 'worker-versions', pageId, versions: e.versions }));
       session.on('ServiceWorker.workerRegistrationUpdated', e => record('events', { kind: 'worker-registrations', pageId, registrations: e.registrations }));
       session.on('Debugger.scriptParsed', e => { if (e.url.startsWith(origin + prefix)) record('events', { kind: 'script-parsed', pageId, url: e.url, scriptId: e.scriptId, hash: e.hash }); });
@@ -305,6 +359,7 @@ async function cacheInventory(o) {
 }
 async function assertFixture(p, fixture, validateV4 = false) {
   const actual = await p.evaluate(keys => Object.fromEntries(keys.map(k => [k, localStorage.getItem(k)])), Object.keys(fixture.keys));
+  fixtureStage({ stage: 'immediate-equality', checkNumber: ++fixtureCheckCount, ending: fixture.ending, ...pageIdentity(p), keys: fixtureSummary(actual) });
   assert.deepEqual(actual, fixture.keys, 'V4 current/previous/revision, V3 and rush keys must remain byte-exact');
   if (validateV4) {
     const evidence = await p.evaluate(() => {
@@ -329,8 +384,9 @@ async function assertFixture(p, fixture, validateV4 = false) {
 async function v4Lifecycle(ending) {
   const fixture = makeV4Fixture(currentSnapshot, ending);
   const c = await context(), { p: historical, o } = await oldBoot(c);
-  const seeded = await seedFixture(historical, o, fixture.keys, timeout);
-  record('observations', { stage: 'v4-fixture-setup', ending, ...seeded }, 200);
+  await seedFixture(historical, o, fixture.keys, timeout, event => fixtureStage({
+    ...event, ending, writer: pageIdentity(historical), observer: pageIdentity(o)
+  }));
   await assertFixture(historical, fixture);
   // Deterministic incompatible current asset while the actual old worker owns
   // the scope. No weakened assertion or retry-to-success loop.

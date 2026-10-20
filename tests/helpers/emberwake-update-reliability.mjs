@@ -1,25 +1,73 @@
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
+import { createHash } from 'node:crypto';
 
 // Establish the synthetic fixture in the page being tested, then explicitly
 // synchronize the other renderer before any worker lifecycle action. This is a
 // setup barrier only: preservation assertions after actions remain immediate,
 // byte-exact reads and never reseed or retry.
-export async function seedFixture(writer, observer, keys, timeout) {
-  const written = await writer.evaluate(values => {
-    for (const [key, value] of Object.entries(values)) localStorage.setItem(key, value);
-    return Object.fromEntries(Object.keys(values).map(key => [key, localStorage.getItem(key)]));
-  }, keys);
-  assert.deepEqual(written, keys, 'Fixture writer must immediately read back every seeded byte');
-  const initial = await observer.evaluate(values =>
+// Never put save contents in diagnostic artifacts. Even absent/mismatched keys
+// get an explicit presence entry; summaries cannot accidentally satisfy equality.
+export function fixtureSummary(values) {
+  return Object.fromEntries(Object.entries(values).slice(0, 16).map(([key, value]) => [key.slice(0, 100), {
+    present: typeof value === 'string',
+    bytes: typeof value === 'string' ? Buffer.byteLength(value) : 0,
+    sha256: typeof value === 'string' ? createHash('sha256').update(value).digest('hex') : null
+  }]));
+}
+
+// Synchronous, capped emission: persist each stage before the next acceptance
+// operation. A diagnostic sink failure must never replace an acceptance error.
+export function fixtureRecorder(emit = () => {}, cap = 24) {
+  const state = { emitted: 0, dropped: 0, sinkErrors: 0 };
+  return { state, record(stage, values, extra = {}) {
+    if (state.emitted >= cap) { state.dropped++; return; }
+    state.emitted++;
+    try { emit({ stage, ...extra, ...(values ? { keys: fixtureSummary(values) } : {}) }); }
+    catch { state.sinkErrors++; }
+  } };
+}
+
+export async function seedFixture(writer, observer, keys, timeout, onStage = () => {}) {
+  const trace = fixtureRecorder(onStage);
+  const read = page => page.evaluate(values =>
     Object.fromEntries(Object.keys(values).map(key => [key, localStorage.getItem(key)])), keys);
-  await observer.waitForFunction(values =>
-    Object.entries(values).every(([key, value]) => localStorage.getItem(key) === value),
-  keys, { timeout });
-  const synchronized = await observer.evaluate(values =>
-    Object.fromEntries(Object.keys(values).map(key => [key, localStorage.getItem(key)])), keys);
-  assert.deepEqual(synchronized, keys, 'Fixture observer must see every seeded byte before lifecycle actions');
-  return { written, initial, synchronized };
+  let stage = 'writer-start';
+  trace.record(stage, keys, { role: 'writer', expected: true });
+  try {
+    const written = await writer.evaluate(values => {
+      for (const [key, value] of Object.entries(values)) localStorage.setItem(key, value);
+      return Object.fromEntries(Object.keys(values).map(key => [key, localStorage.getItem(key)]));
+    }, keys);
+    stage = 'writer-readback';
+    trace.record(stage, written, { role: 'writer' });
+    assert.deepEqual(written, keys, 'Fixture writer must immediately read back every seeded byte');
+    stage = 'observer-initial';
+    const initial = await read(observer);
+    trace.record(stage, initial, { role: 'observer' });
+    stage = 'observer-barrier';
+    trace.record(stage, null, { role: 'observer', status: 'started', timeoutMs: timeout });
+    await observer.waitForFunction(values =>
+      Object.entries(values).every(([key, value]) => localStorage.getItem(key) === value),
+    keys, { timeout });
+    trace.record(stage, null, { role: 'observer', status: 'completed' });
+    stage = 'observer-synchronized';
+    const synchronized = await read(observer);
+    trace.record(stage, synchronized, { role: 'observer' });
+    assert.deepEqual(synchronized, keys, 'Fixture observer must see every seeded byte before lifecycle actions');
+    trace.record('fixture-ready', null, { status: 'completed' });
+    return { written, initial, synchronized };
+  } catch (error) {
+    trace.record('fixture-failed', null, { failedStage: stage, errorName: error.name });
+    // A writer can throw after a partial setItem sequence. Read-only failure
+    // evidence is bounded, never reseeds, and never replaces the original error.
+    if (stage !== 'writer-readback') {
+      const probe = await boundedObservation(() => read(stage === 'writer-start' ? writer : observer), 250);
+      if (probe?.diagnosticError) trace.record('failure-readback', null, { failedStage: stage, status: 'unavailable' });
+      else trace.record('failure-readback', probe, { failedStage: stage });
+    }
+    throw error;
+  }
 }
 
 // Synthetic completed-schema journey, NOT input-earned gameplay. Evaluate exactly

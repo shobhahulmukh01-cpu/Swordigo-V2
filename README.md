@@ -1,6 +1,6 @@
 # EMBERWAKE — The Hollow Crown
 
-## In-place upgrade: 1.2.0-alpha.3
+## In-place upgrade: 1.2.0-alpha.4
 
 This branch evolves the supplied **Emberwake 1.1.0-rc.3**, rather than replacing it. The original Canvas 2D campaign, Lyra and Aster, Moonroot Vale/Cinderworks/Hollow Spire, painted realm plates, six world-runes, three guardians, mercy/rekindle endings and Echo Gauntlet remain the foundation. `Swordigo-V2` is the repository name, not an official Swordigo sequel or a claim of affiliation with Touch Foo.
 
@@ -13,6 +13,8 @@ This branch evolves the supplied **Emberwake 1.1.0-rc.3**, rather than replacing
 - Simulation-owned travel, death-terminal handling, combined-action priorities, expired-projectile authority and hardened persistence/offline update handling.
 
 Both original endings and the Echo Gauntlet remain playable. **The First Unwritten Day** adds four optional rooms—Millpond Irrigation Terraces, Cooling Gallery, Rootcellar Charter Desk and Star Archive—through five bidirectional links. Water Remembers and Summer Coal pay 60/80 embers once per saved journey; Charter/testimony remain optional. Rootbinding, marked-vent Cinderseal and same-scene Dawnstep derive from existing restored-heart facts; basic campaign moves remain available. After either original ending, choose **Continue deliveries** explicitly; the opt-in Archivist Engine and chapter completion never rewrite that ending or its recorded time/deaths.
+
+**Alpha.4 player journey:** one contextual next action follows the current journey, with explicit optional delivery tracking and descriptive door/map leads. Shrine purchases preview their real current/next stats. After earning the Archivist victory, a return lamp provides a useful safe shortcut without healing or changing the original ending. Four original optional-room paintings distinguish the mill terraces, cooling chamber, cellar and Archive while all three main-world paintings remain intact. Completed saves offer explicit continuation; the open letter acknowledges only actual repairs. Existing save authority and rewards remain unchanged. See `docs/plan/ALPHA4-PLAYER-JOURNEY.md` for the council decisions and retained qualification boundaries.
 
 **Alpha.3 followthrough:** NPCs and Archive records distinguish actual deliveries, read testimony and published Charter, with separate responses to both endings. Optional **Ask Aster for advice** follows the current journey. Valves, vents, desks and archive consoles have functional silhouettes; the Rootcellar is enclosed and the Archivist is a nonhuman device. Committed repairs leave visible planter/hearth/Charter details. Portrait boss information now replaces the objective panel rather than covering Lyra and floor warnings. Saved post-ending continuation returns to its certified chapter anchor; revisiting roads no longer overwrites the original checkpoint or automatically refills vitals.
 

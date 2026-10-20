@@ -1,0 +1,689 @@
+{
+  "version": "1.1.0-rc.3",
+  "hashes": {
+    "engine.js": "c780eaf19f759eb1ce53b582d1e1df647356f6029103ada69a929ef23269a2dd",
+    "worlds.js": "32eb12c3920fc8c5ab00e6f9accd3e909fb504605573c880067232383fc4ca9a",
+    "core-v11.js": "50f39aeb9bceaa2f5eff825c0b89a0005ea7c3e1242cf7e6df41f4ca443daa31",
+    "encounters-v12.js": "0a6e03cdfb352be8b5c0e6ccaf8417db6d59cc1616e9b59acfb5fd2e5bba5abe",
+    "chapter-data.js": "cab3d4328dab188682ea78624e83ca51fe04b33d23b50a90a4a39ba39a3b2216",
+    "chapter-save.js": "35e6099582e3a55b219adc369b5e108596f5d1a0b19ab5f175b8efb4cf9f357b",
+    "chapter-runtime.js": "2cefaa3968d72cfed56ecb4655f61e85bda3b6b86c6feef9828fb23184015ada"
+  },
+  "encounterVersion": "1.2.0-encounters.1",
+  "scope": "Current engine/world/core/encounters simulation; story difficulty. Completion runs use ordinary inputs; regressions use separate isolated fixtures. No browser/render/input-mapping coverage.",
+  "completionRuns": [
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "story",
+      "dt": 0.008333333333333333,
+      "frames": 7600,
+      "seconds": 63.32499999999705,
+      "kills": 29,
+      "deaths": 0,
+      "ending": "mercy",
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 32,
+      "runes": 6,
+      "sigils": 6,
+      "counts": {
+        "realm": 3,
+        "save": 62,
+        "intro": 3,
+        "checkpoint": 15,
+        "shrine": 6,
+        "chest": 2,
+        "dialogue": 2,
+        "slash": 126,
+        "spell": 83,
+        "hit": 99,
+        "defeat": 29,
+        "jump": 33,
+        "rune": 6,
+        "note": 492,
+        "guard": 33,
+        "hurt": 3,
+        "parry": 11,
+        "land": 33,
+        "rank": 5,
+        "sigil": 6,
+        "bossIntro": 3,
+        "warning": 3,
+        "bossVictory": 3,
+        "guardianAttack": 1,
+        "slam": 1,
+        "choice": 1,
+        "ending": 1
+      },
+      "error": null
+    },
+    {
+      "pass": true,
+      "mode": "rush",
+      "difficulty": "story",
+      "dt": 0.008333333333333333,
+      "frames": 2052,
+      "seconds": 17.09999999999967,
+      "kills": 3,
+      "deaths": 0,
+      "ending": "rekindle",
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 9,
+      "runes": 6,
+      "sigils": 6,
+      "counts": {
+        "realm": 3,
+        "save": 7,
+        "intro": 3,
+        "slash": 50,
+        "bossIntro": 3,
+        "spell": 21,
+        "hit": 33,
+        "warning": 3,
+        "guard": 5,
+        "rank": 2,
+        "defeat": 3,
+        "bossVictory": 3,
+        "guardianAttack": 2,
+        "slam": 2,
+        "ending": 1
+      },
+      "error": null
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "difficulty": "story",
+      "dt": 0.016666666666666666,
+      "frames": 3821,
+      "seconds": 63.666666666664334,
+      "kills": 29,
+      "deaths": 0,
+      "ending": "mercy",
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 16,
+      "runes": 6,
+      "sigils": 6,
+      "counts": {
+        "realm": 3,
+        "save": 62,
+        "intro": 3,
+        "checkpoint": 15,
+        "shrine": 6,
+        "chest": 2,
+        "dialogue": 2,
+        "slash": 128,
+        "spell": 88,
+        "hit": 101,
+        "defeat": 29,
+        "jump": 33,
+        "rune": 6,
+        "note": 171,
+        "guard": 29,
+        "hurt": 1,
+        "land": 31,
+        "rank": 5,
+        "sigil": 6,
+        "parry": 8,
+        "bossIntro": 3,
+        "warning": 3,
+        "bossVictory": 3,
+        "guardianAttack": 1,
+        "slam": 1,
+        "choice": 1,
+        "ending": 1
+      },
+      "error": null
+    },
+    {
+      "pass": true,
+      "mode": "rush",
+      "difficulty": "story",
+      "dt": 0.016666666666666666,
+      "frames": 1024,
+      "seconds": 17.06666666666698,
+      "kills": 3,
+      "deaths": 0,
+      "ending": "rekindle",
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 5,
+      "runes": 6,
+      "sigils": 6,
+      "counts": {
+        "realm": 3,
+        "save": 7,
+        "intro": 3,
+        "slash": 48,
+        "bossIntro": 3,
+        "spell": 20,
+        "hit": 31,
+        "warning": 3,
+        "guard": 5,
+        "rank": 2,
+        "defeat": 3,
+        "bossVictory": 3,
+        "guardianAttack": 1,
+        "slam": 1,
+        "ending": 1
+      },
+      "error": null
+    }
+  ],
+  "replays": [
+    {
+      "pass": true,
+      "mode": "story",
+      "dt": 0.008333333333333333,
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 32,
+      "frames": 7600
+    },
+    {
+      "pass": true,
+      "mode": "rush",
+      "dt": 0.008333333333333333,
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 9,
+      "frames": 2052
+    },
+    {
+      "pass": true,
+      "mode": "story",
+      "dt": 0.016666666666666666,
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 16,
+      "frames": 3821
+    },
+    {
+      "pass": true,
+      "mode": "rush",
+      "dt": 0.016666666666666666,
+      "routeMode": "original",
+      "routeLandings": 0,
+      "stateChecks": 5,
+      "frames": 1024
+    }
+  ],
+  "deterministic": {
+    "pass": true,
+    "frames": 7600
+  },
+  "regressions": {
+    "total": 116,
+    "passed": 116,
+    "failed": 0,
+    "tests": [
+      {
+        "name": "version and feature flags",
+        "pass": true
+      },
+      {
+        "name": "fresh save round trip",
+        "pass": true
+      },
+      {
+        "name": "completed story save and resume round trip",
+        "pass": true
+      },
+      {
+        "name": "completed rush save round trip",
+        "pass": true
+      },
+      {
+        "name": "reject malformed/nonjourney {",
+        "pass": true
+      },
+      {
+        "name": "reject malformed/nonjourney null",
+        "pass": true
+      },
+      {
+        "name": "reject malformed/nonjourney []",
+        "pass": true
+      },
+      {
+        "name": "reject malformed/nonjourney true",
+        "pass": true
+      },
+      {
+        "name": "reject malformed/nonjourney \"text\"",
+        "pass": true
+      },
+      {
+        "name": "reject unknown ID in chests",
+        "pass": true
+      },
+      {
+        "name": "reject unknown ID in runes",
+        "pass": true
+      },
+      {
+        "name": "reject unknown ID in sigils",
+        "pass": true
+      },
+      {
+        "name": "reject unknown ID in defeated",
+        "pass": true
+      },
+      {
+        "name": "reject unknown ID in seen",
+        "pass": true
+      },
+      {
+        "name": "reject misplaced ID in chests",
+        "pass": true
+      },
+      {
+        "name": "reject misplaced ID in runes",
+        "pass": true
+      },
+      {
+        "name": "reject misplaced ID in sigils",
+        "pass": true
+      },
+      {
+        "name": "reject misplaced ID in defeated",
+        "pass": true
+      },
+      {
+        "name": "reject misplaced ID in seen",
+        "pass": true
+      },
+      {
+        "name": "reject sigil without released rune",
+        "pass": true
+      },
+      {
+        "name": "reject unseen current realm",
+        "pass": true
+      },
+      {
+        "name": "reject invalid counter gold=1.5",
+        "pass": true
+      },
+      {
+        "name": "reject invalid counter gold=-1",
+        "pass": true
+      },
+      {
+        "name": "reject invalid counter kills=0.5",
+        "pass": true
+      },
+      {
+        "name": "reject invalid counter kills=-1",
+        "pass": true
+      },
+      {
+        "name": "reject invalid counter deaths=0.5",
+        "pass": true
+      },
+      {
+        "name": "reject invalid counter deaths=-1",
+        "pass": true
+      },
+      {
+        "name": "reject nonboolean completed undefined",
+        "pass": true
+      },
+      {
+        "name": "reject nonboolean completed null",
+        "pass": true
+      },
+      {
+        "name": "reject nonboolean completed 0",
+        "pass": true
+      },
+      {
+        "name": "reject nonboolean completed false",
+        "pass": true
+      },
+      {
+        "name": "reject invalid level",
+        "pass": true
+      },
+      {
+        "name": "reject invalid level",
+        "pass": true
+      },
+      {
+        "name": "reject invalid rank",
+        "pass": true
+      },
+      {
+        "name": "reject invalid mode",
+        "pass": true
+      },
+      {
+        "name": "reject invalid difficulty",
+        "pass": true
+      },
+      {
+        "name": "reject invalid upgrade -1",
+        "pass": true
+      },
+      {
+        "name": "reject invalid upgrade 4",
+        "pass": true
+      },
+      {
+        "name": "reject invalid upgrade 0.5",
+        "pass": true
+      },
+      {
+        "name": "reject missing upgrades",
+        "pass": true
+      },
+      {
+        "name": "reject incomplete save with ending",
+        "pass": true
+      },
+      {
+        "name": "reject inconsistent completed ending",
+        "pass": true
+      },
+      {
+        "name": "reject inconsistent completed historical sigil",
+        "pass": true
+      },
+      {
+        "name": "reject inconsistent completed boss",
+        "pass": true
+      },
+      {
+        "name": "reject inconsistent completed level",
+        "pass": true
+      },
+      {
+        "name": "deduplicate valid flags",
+        "pass": true
+      },
+      {
+        "name": "normalize unrecognized checkpoint to current first beacon",
+        "pass": true
+      },
+      {
+        "name": "save backup fallback on invalid primary",
+        "pass": true
+      },
+      {
+        "name": "save backup fallback when primary read throws",
+        "pass": true
+      },
+      {
+        "name": "save write preserves prior valid backup",
+        "pass": true
+      },
+      {
+        "name": "invalid save write leaves storage untouched",
+        "pass": true
+      },
+      {
+        "name": "unavailable storage reports read/write failure",
+        "pass": true
+      },
+      {
+        "name": "reject advanced story save without prior realm completion",
+        "pass": true
+      },
+      {
+        "name": "raw JSON 150000-byte safety limit remains enforced",
+        "pass": true
+      },
+      {
+        "name": "finish rejected from menu",
+        "pass": true
+      },
+      {
+        "name": "finish rejected early, without mutation",
+        "pass": true
+      },
+      {
+        "name": "finish rejects a missing historical boss after valid resume",
+        "pass": true
+      },
+      {
+        "name": "finish requires final sigils",
+        "pass": true
+      },
+      {
+        "name": "finish requires final boss",
+        "pass": true
+      },
+      {
+        "name": "finish rejects invalid ending",
+        "pass": true
+      },
+      {
+        "name": "completed finish cannot be repeated",
+        "pass": true
+      },
+      {
+        "name": "successful finish must produce a valid completed save",
+        "pass": true
+      },
+      {
+        "name": "invalid step dt 0 is inert",
+        "pass": true
+      },
+      {
+        "name": "invalid step dt -1 is inert",
+        "pass": true
+      },
+      {
+        "name": "invalid step dt NaN is inert",
+        "pass": true
+      },
+      {
+        "name": "invalid step dt Infinity is inert",
+        "pass": true
+      },
+      {
+        "name": "out-of-range step dt 2 is inert including guard",
+        "pass": true
+      },
+      {
+        "name": "nonlethal void rescue preserves damaged vitals story",
+        "pass": true
+      },
+      {
+        "name": "nonlethal void rescue preserves damaged vitals adventure",
+        "pass": true
+      },
+      {
+        "name": "nonlethal void rescue preserves damaged vitals veteran",
+        "pass": true
+      },
+      {
+        "name": "void damage cannot be parried",
+        "pass": true
+      },
+      {
+        "name": "lethal void increments death once without free rescue",
+        "pass": true
+      },
+      {
+        "name": "lava rescue preserves loss and flask count",
+        "pass": true
+      },
+      {
+        "name": "standing at same beacon does not silently rest",
+        "pass": true
+      },
+      {
+        "name": "E explicitly rests at same beacon",
+        "pass": true
+      },
+      {
+        "name": "rest interaction is disabled during active boss",
+        "pass": true
+      },
+      {
+        "name": "normal heal input consumes one flask and restores 55 percent",
+        "pass": true
+      },
+      {
+        "name": "heal at full health consumes nothing",
+        "pass": true
+      },
+      {
+        "name": "heal with no flask restores nothing",
+        "pass": true
+      },
+      {
+        "name": "parry input starts window and cooldown",
+        "pass": true
+      },
+      {
+        "name": "held parry cannot retrigger before cooldown",
+        "pass": true
+      },
+      {
+        "name": "parry window expires and rear attacks still hurt",
+        "pass": true
+      },
+      {
+        "name": "front parry consumes window and rewards mana",
+        "pass": true
+      },
+      {
+        "name": "parry cannot activate while already dashing",
+        "pass": true
+      },
+      {
+        "name": "parry cooldown permits next timed activation",
+        "pass": true
+      },
+      {
+        "name": "front projectile reflects with hero ownership face -1",
+        "pass": true
+      },
+      {
+        "name": "front projectile reflects with hero ownership face 1",
+        "pass": true
+      },
+      {
+        "name": "rear projectile is not reflected",
+        "pass": true
+      },
+      {
+        "name": "expired projectile cannot reflect",
+        "pass": true
+      },
+      {
+        "name": "single guard reflects at most one projectile",
+        "pass": true
+      },
+      {
+        "name": "reflection damage scales with focus",
+        "pass": true
+      },
+      {
+        "name": "reflected projectile actually damages ordinary enemy through simulation",
+        "pass": true
+      },
+      {
+        "name": "parry stun freezes enemy movement and attack timer",
+        "pass": true
+      },
+      {
+        "name": "sigil gate progression realm 0",
+        "pass": true
+      },
+      {
+        "name": "physical gate prevents arena entry realm 0",
+        "pass": true
+      },
+      {
+        "name": "collecting both opens boss and arena locks realm 0",
+        "pass": true
+      },
+      {
+        "name": "inactive boss cannot take sword/spell damage realm 0",
+        "pass": true
+      },
+      {
+        "name": "boss arena clamp left realm 0",
+        "pass": true
+      },
+      {
+        "name": "boss arena clamp right realm 0",
+        "pass": true
+      },
+      {
+        "name": "living boss prevents exit realm 0",
+        "pass": true
+      },
+      {
+        "name": "sigil gate progression realm 1",
+        "pass": true
+      },
+      {
+        "name": "physical gate prevents arena entry realm 1",
+        "pass": true
+      },
+      {
+        "name": "collecting both opens boss and arena locks realm 1",
+        "pass": true
+      },
+      {
+        "name": "inactive boss cannot take sword/spell damage realm 1",
+        "pass": true
+      },
+      {
+        "name": "boss arena clamp left realm 1",
+        "pass": true
+      },
+      {
+        "name": "boss arena clamp right realm 1",
+        "pass": true
+      },
+      {
+        "name": "living boss prevents exit realm 1",
+        "pass": true
+      },
+      {
+        "name": "sigil gate progression realm 2",
+        "pass": true
+      },
+      {
+        "name": "physical gate prevents arena entry realm 2",
+        "pass": true
+      },
+      {
+        "name": "collecting both opens boss and arena locks realm 2",
+        "pass": true
+      },
+      {
+        "name": "inactive boss cannot take sword/spell damage realm 2",
+        "pass": true
+      },
+      {
+        "name": "boss arena clamp left realm 2",
+        "pass": true
+      },
+      {
+        "name": "boss arena clamp right realm 2",
+        "pass": true
+      },
+      {
+        "name": "living boss prevents exit realm 2",
+        "pass": true
+      },
+      {
+        "name": "invalid level indices cannot mutate game",
+        "pass": true
+      },
+      {
+        "name": "normal replay evidence comes exclusively from allowed inputs",
+        "pass": true
+      }
+    ]
+  }
+}

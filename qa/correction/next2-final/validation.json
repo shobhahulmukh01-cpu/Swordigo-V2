@@ -1,0 +1,747 @@
+{
+  "status": "functional-validation-passed-awaiting-final47-image-review",
+  "version": "1.2.0-alpha.4",
+  "runtimeWorker": "emberwake-3f5eb6774739",
+  "nodeTests": {
+    "passed": 279,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Post-HUD final Node suite, plus source/dist/served integrity and unchanged simulation proof hashes checked independently"
+  },
+  "campaign": {
+    "completionRuns": 4,
+    "replays": 4,
+    "regressions": {
+      "total": 116,
+      "passed": 116,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "version and feature flags",
+          "pass": true
+        },
+        {
+          "name": "fresh save round trip",
+          "pass": true
+        },
+        {
+          "name": "completed story save and resume round trip",
+          "pass": true
+        },
+        {
+          "name": "completed rush save round trip",
+          "pass": true
+        },
+        {
+          "name": "reject malformed/nonjourney {",
+          "pass": true
+        },
+        {
+          "name": "reject malformed/nonjourney null",
+          "pass": true
+        },
+        {
+          "name": "reject malformed/nonjourney []",
+          "pass": true
+        },
+        {
+          "name": "reject malformed/nonjourney true",
+          "pass": true
+        },
+        {
+          "name": "reject malformed/nonjourney \"text\"",
+          "pass": true
+        },
+        {
+          "name": "reject unknown ID in chests",
+          "pass": true
+        },
+        {
+          "name": "reject unknown ID in runes",
+          "pass": true
+        },
+        {
+          "name": "reject unknown ID in sigils",
+          "pass": true
+        },
+        {
+          "name": "reject unknown ID in defeated",
+          "pass": true
+        },
+        {
+          "name": "reject unknown ID in seen",
+          "pass": true
+        },
+        {
+          "name": "reject misplaced ID in chests",
+          "pass": true
+        },
+        {
+          "name": "reject misplaced ID in runes",
+          "pass": true
+        },
+        {
+          "name": "reject misplaced ID in sigils",
+          "pass": true
+        },
+        {
+          "name": "reject misplaced ID in defeated",
+          "pass": true
+        },
+        {
+          "name": "reject misplaced ID in seen",
+          "pass": true
+        },
+        {
+          "name": "reject sigil without released rune",
+          "pass": true
+        },
+        {
+          "name": "reject unseen current realm",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter gold=1.5",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter gold=-1",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter kills=0.5",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter kills=-1",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter deaths=0.5",
+          "pass": true
+        },
+        {
+          "name": "reject invalid counter deaths=-1",
+          "pass": true
+        },
+        {
+          "name": "reject nonboolean completed undefined",
+          "pass": true
+        },
+        {
+          "name": "reject nonboolean completed null",
+          "pass": true
+        },
+        {
+          "name": "reject nonboolean completed 0",
+          "pass": true
+        },
+        {
+          "name": "reject nonboolean completed false",
+          "pass": true
+        },
+        {
+          "name": "reject invalid level",
+          "pass": true
+        },
+        {
+          "name": "reject invalid level",
+          "pass": true
+        },
+        {
+          "name": "reject invalid rank",
+          "pass": true
+        },
+        {
+          "name": "reject invalid mode",
+          "pass": true
+        },
+        {
+          "name": "reject invalid difficulty",
+          "pass": true
+        },
+        {
+          "name": "reject invalid upgrade -1",
+          "pass": true
+        },
+        {
+          "name": "reject invalid upgrade 4",
+          "pass": true
+        },
+        {
+          "name": "reject invalid upgrade 0.5",
+          "pass": true
+        },
+        {
+          "name": "reject missing upgrades",
+          "pass": true
+        },
+        {
+          "name": "reject incomplete save with ending",
+          "pass": true
+        },
+        {
+          "name": "reject inconsistent completed ending",
+          "pass": true
+        },
+        {
+          "name": "reject inconsistent completed historical sigil",
+          "pass": true
+        },
+        {
+          "name": "reject inconsistent completed boss",
+          "pass": true
+        },
+        {
+          "name": "reject inconsistent completed level",
+          "pass": true
+        },
+        {
+          "name": "deduplicate valid flags",
+          "pass": true
+        },
+        {
+          "name": "normalize unrecognized checkpoint to current first beacon",
+          "pass": true
+        },
+        {
+          "name": "save backup fallback on invalid primary",
+          "pass": true
+        },
+        {
+          "name": "save backup fallback when primary read throws",
+          "pass": true
+        },
+        {
+          "name": "save write preserves prior valid backup",
+          "pass": true
+        },
+        {
+          "name": "invalid save write leaves storage untouched",
+          "pass": true
+        },
+        {
+          "name": "unavailable storage reports read/write failure",
+          "pass": true
+        },
+        {
+          "name": "reject advanced story save without prior realm completion",
+          "pass": true
+        },
+        {
+          "name": "raw JSON 150000-byte safety limit remains enforced",
+          "pass": true
+        },
+        {
+          "name": "finish rejected from menu",
+          "pass": true
+        },
+        {
+          "name": "finish rejected early, without mutation",
+          "pass": true
+        },
+        {
+          "name": "finish rejects a missing historical boss after valid resume",
+          "pass": true
+        },
+        {
+          "name": "finish requires final sigils",
+          "pass": true
+        },
+        {
+          "name": "finish requires final boss",
+          "pass": true
+        },
+        {
+          "name": "finish rejects invalid ending",
+          "pass": true
+        },
+        {
+          "name": "completed finish cannot be repeated",
+          "pass": true
+        },
+        {
+          "name": "successful finish must produce a valid completed save",
+          "pass": true
+        },
+        {
+          "name": "invalid step dt 0 is inert",
+          "pass": true
+        },
+        {
+          "name": "invalid step dt -1 is inert",
+          "pass": true
+        },
+        {
+          "name": "invalid step dt NaN is inert",
+          "pass": true
+        },
+        {
+          "name": "invalid step dt Infinity is inert",
+          "pass": true
+        },
+        {
+          "name": "out-of-range step dt 2 is inert including guard",
+          "pass": true
+        },
+        {
+          "name": "nonlethal void rescue preserves damaged vitals story",
+          "pass": true
+        },
+        {
+          "name": "nonlethal void rescue preserves damaged vitals adventure",
+          "pass": true
+        },
+        {
+          "name": "nonlethal void rescue preserves damaged vitals veteran",
+          "pass": true
+        },
+        {
+          "name": "void damage cannot be parried",
+          "pass": true
+        },
+        {
+          "name": "lethal void increments death once without free rescue",
+          "pass": true
+        },
+        {
+          "name": "lava rescue preserves loss and flask count",
+          "pass": true
+        },
+        {
+          "name": "standing at same beacon does not silently rest",
+          "pass": true
+        },
+        {
+          "name": "E explicitly rests at same beacon",
+          "pass": true
+        },
+        {
+          "name": "rest interaction is disabled during active boss",
+          "pass": true
+        },
+        {
+          "name": "normal heal input consumes one flask and restores 55 percent",
+          "pass": true
+        },
+        {
+          "name": "heal at full health consumes nothing",
+          "pass": true
+        },
+        {
+          "name": "heal with no flask restores nothing",
+          "pass": true
+        },
+        {
+          "name": "parry input starts window and cooldown",
+          "pass": true
+        },
+        {
+          "name": "held parry cannot retrigger before cooldown",
+          "pass": true
+        },
+        {
+          "name": "parry window expires and rear attacks still hurt",
+          "pass": true
+        },
+        {
+          "name": "front parry consumes window and rewards mana",
+          "pass": true
+        },
+        {
+          "name": "parry cannot activate while already dashing",
+          "pass": true
+        },
+        {
+          "name": "parry cooldown permits next timed activation",
+          "pass": true
+        },
+        {
+          "name": "front projectile reflects with hero ownership face -1",
+          "pass": true
+        },
+        {
+          "name": "front projectile reflects with hero ownership face 1",
+          "pass": true
+        },
+        {
+          "name": "rear projectile is not reflected",
+          "pass": true
+        },
+        {
+          "name": "expired projectile cannot reflect",
+          "pass": true
+        },
+        {
+          "name": "single guard reflects at most one projectile",
+          "pass": true
+        },
+        {
+          "name": "reflection damage scales with focus",
+          "pass": true
+        },
+        {
+          "name": "reflected projectile actually damages ordinary enemy through simulation",
+          "pass": true
+        },
+        {
+          "name": "parry stun freezes enemy movement and attack timer",
+          "pass": true
+        },
+        {
+          "name": "sigil gate progression realm 0",
+          "pass": true
+        },
+        {
+          "name": "physical gate prevents arena entry realm 0",
+          "pass": true
+        },
+        {
+          "name": "collecting both opens boss and arena locks realm 0",
+          "pass": true
+        },
+        {
+          "name": "inactive boss cannot take sword/spell damage realm 0",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp left realm 0",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp right realm 0",
+          "pass": true
+        },
+        {
+          "name": "living boss prevents exit realm 0",
+          "pass": true
+        },
+        {
+          "name": "sigil gate progression realm 1",
+          "pass": true
+        },
+        {
+          "name": "physical gate prevents arena entry realm 1",
+          "pass": true
+        },
+        {
+          "name": "collecting both opens boss and arena locks realm 1",
+          "pass": true
+        },
+        {
+          "name": "inactive boss cannot take sword/spell damage realm 1",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp left realm 1",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp right realm 1",
+          "pass": true
+        },
+        {
+          "name": "living boss prevents exit realm 1",
+          "pass": true
+        },
+        {
+          "name": "sigil gate progression realm 2",
+          "pass": true
+        },
+        {
+          "name": "physical gate prevents arena entry realm 2",
+          "pass": true
+        },
+        {
+          "name": "collecting both opens boss and arena locks realm 2",
+          "pass": true
+        },
+        {
+          "name": "inactive boss cannot take sword/spell damage realm 2",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp left realm 2",
+          "pass": true
+        },
+        {
+          "name": "boss arena clamp right realm 2",
+          "pass": true
+        },
+        {
+          "name": "living boss prevents exit realm 2",
+          "pass": true
+        },
+        {
+          "name": "invalid level indices cannot mutate game",
+          "pass": true
+        },
+        {
+          "name": "normal replay evidence comes exclusively from allowed inputs",
+          "pass": true
+        }
+      ]
+    },
+    "extendedCases": 16,
+    "allExtendedPassAndReplay": true
+  },
+  "earnedChapter": {
+    "scope": "Ordinary-input earned simulation, not browser/human pacing proof. Both original endings earned independently. Explicit UI continuation/travel/respawn and validated earned save restore. No fact/pose/resource/enemy injection.",
+    "runs": [
+      {
+        "ending": "mercy",
+        "dt": 0.008333333333333333,
+        "pass": true,
+        "frames": 21691,
+        "replay": {
+          "pass": true,
+          "frames": 21691,
+          "stateChecks": 90
+        }
+      },
+      {
+        "ending": "mercy",
+        "dt": 0.016666666666666666,
+        "pass": true,
+        "frames": 10874,
+        "replay": {
+          "pass": true,
+          "frames": 10874,
+          "stateChecks": 45
+        }
+      },
+      {
+        "ending": "rekindle",
+        "dt": 0.008333333333333333,
+        "pass": true,
+        "frames": 21691,
+        "replay": {
+          "pass": true,
+          "frames": 21691,
+          "stateChecks": 90
+        }
+      },
+      {
+        "ending": "rekindle",
+        "dt": 0.016666666666666666,
+        "pass": true,
+        "frames": 10874,
+        "replay": {
+          "pass": true,
+          "frames": 10874,
+          "stateChecks": 45
+        }
+      }
+    ],
+    "simulationSourceHashesMatch": true
+  },
+  "nativeJourney": {
+    "pass": true,
+    "followedDelivery": true,
+    "advice": true,
+    "earnedWaterReward": 60,
+    "upgradePreviewPurchase": {
+      "pass": true,
+      "cost": 90,
+      "current": 16,
+      "next": 23
+    },
+    "postEndingUI": [
+      {
+        "ending": "mercy",
+        "pass": true,
+        "directTitleContinuation": true,
+        "savedAnchor": {
+          "sceneId": "ch1:main:hollowspire",
+          "anchorId": "ch1:anchor:hollowspire-archive"
+        },
+        "scope": "completed-import fixture; native map travel through three main realms, Archive door round trip, reload ending and explicit saved-anchor continuation"
+      },
+      {
+        "ending": "rekindle",
+        "pass": true,
+        "directTitleContinuation": true,
+        "savedAnchor": {
+          "sceneId": "ch1:main:hollowspire",
+          "anchorId": "ch1:anchor:hollowspire-archive"
+        },
+        "scope": "completed-import fixture; native map travel through three main realms, Archive door round trip, reload ending and explicit saved-anchor continuation"
+      }
+    ],
+    "report": "post-hud/native-journey-r2/report.json",
+    "scope": "Native keyboard room-delivery traversal, fresh new journey, no game/position/fact injections"
+  },
+  "browserGates": {
+    "retained": {
+      "passed": 54,
+      "failed": 0,
+      "report": "post-hud/baseline-browser/browser-results.json"
+    },
+    "firstload": {
+      "passed": 41,
+      "failed": 0,
+      "report": "post-hud/firstload-report.json"
+    },
+    "upgrade": {
+      "passed": 13,
+      "failed": 0,
+      "report": "post-hud/upgrade-browser/report.json"
+    },
+    "persistence": {
+      "passed": 19,
+      "failed": 0,
+      "report": "post-hud/persistence-report.json"
+    },
+    "defaultUpdate": {
+      "passed": 7,
+      "failed": 0,
+      "report": "post-hud/update-default/report.json"
+    },
+    "hud": {
+      "status": "pass",
+      "captures": 9,
+      "errors": [],
+      "report": "post-hud/hud-browser/report.json",
+      "individualReview": "docs/plan/alpha4-council/retained-visual-inspection.md"
+    }
+  },
+  "runtimeIntegrity": {
+    "workerCache": "emberwake-3f5eb6774739",
+    "sourceDistServedFiles": 35,
+    "firstLoadScriptsAndStyles": 14,
+    "workerDeclaredEntries": 24,
+    "allSRIAndDigestURLsValid": true,
+    "simulationProofSourceHashesMatch": true,
+    "allMatch": true
+  },
+  "visualReview": "Pre-correction47 individually reviewed; final HUD9 individually reviewed and passed; final corrected47 captured with zero page errors, individual final-byte review in progress.",
+  "causalScreen": {
+    "status": "passed-screen4-non-reproduction",
+    "experimentComplete": true,
+    "plannedCells": 4,
+    "passedCells": 4,
+    "unrunCells": [],
+    "checksPassed": 16,
+    "checksFailed": 0,
+    "elapsedMs": 123163,
+    "sourceSHA256": "9a93d9e77e2f3b5b3766dee7829411ecfc85e7f7746bddd4b7ae9db6eddd0bf9",
+    "workerSHA256": "76c5b624e7b7011e5336cf9e21c79f490163be46170f94d733d5e2405470d98b",
+    "browser": "153.0.8010.12",
+    "postRunFreezeErrors": [],
+    "sourceChanges": [],
+    "repeatabilityClearance": false,
+    "interpretation": "Four-cell causal SCREEN only: passes mean non-reproduction under recorded conditions, not cause closure, historical12 completion, repeatability clearance or production robustness.",
+    "evidenceDir": "/data/work/plan/next2-causal-screen/2026-10-20T18-46-16-537Z-cddb3412",
+    "trials": [
+      {
+        "number": 1,
+        "arm": "rollback-only",
+        "competing": false,
+        "status": "passed",
+        "checksPassed": 1,
+        "checksFailed": 0,
+        "harnessMs": 6406,
+        "sourceChanges": [],
+        "diagnosticDropped": {},
+        "fixtureDiagnosticWriteErrors": 0,
+        "contexts": 1,
+        "pages": 4
+      },
+      {
+        "number": 2,
+        "arm": "full",
+        "competing": false,
+        "status": "passed",
+        "checksPassed": 7,
+        "checksFailed": 0,
+        "harnessMs": 41766,
+        "sourceChanges": [],
+        "diagnosticDropped": {},
+        "fixtureDiagnosticWriteErrors": 0,
+        "contexts": 5,
+        "pages": 24
+      },
+      {
+        "number": 3,
+        "arm": "rollback-only",
+        "competing": true,
+        "status": "passed",
+        "checksPassed": 1,
+        "checksFailed": 0,
+        "harnessMs": 7651,
+        "sourceChanges": [],
+        "diagnosticDropped": {},
+        "fixtureDiagnosticWriteErrors": 0,
+        "contexts": 1,
+        "pages": 4,
+        "workloadProgress": {
+          "ok": true,
+          "continuousMeasuredProgress": true,
+          "deltas": [
+            {
+              "pageId": 1,
+              "frames": 39,
+              "elapsedMs": 7010.40000000014,
+              "drawMs": 24.800000000046566
+            },
+            {
+              "pageId": 2,
+              "frames": 39,
+              "elapsedMs": 7010.299999999814,
+              "drawMs": 19.800000000512227
+            }
+          ]
+        },
+        "workloadErrors": []
+      },
+      {
+        "number": 4,
+        "arm": "full",
+        "competing": true,
+        "status": "passed",
+        "checksPassed": 7,
+        "checksFailed": 0,
+        "harnessMs": 59889,
+        "sourceChanges": [],
+        "diagnosticDropped": {},
+        "fixtureDiagnosticWriteErrors": 0,
+        "contexts": 5,
+        "pages": 24,
+        "workloadProgress": {
+          "ok": true,
+          "continuousMeasuredProgress": true,
+          "deltas": [
+            {
+              "pageId": 1,
+              "frames": 196,
+              "elapsedMs": 59022.10000000009,
+              "drawMs": 97.00000000256114
+            },
+            {
+              "pageId": 2,
+              "frames": 197,
+              "elapsedMs": 59022,
+              "drawMs": 93.69999999878928
+            }
+          ]
+        },
+        "workloadErrors": []
+      }
+    ],
+    "cleanupVerified": true,
+    "currentRuntimeMatched": false,
+    "scopeNote": "This experiment passed before final CSS/client/renderer presentation fixes; no final-byte repeatability clearance follows."
+  },
+  "release": {
+    "remotePublicationVerified": false,
+    "githubAuthorization": "Fresh device authorization expired without approval. No use of exposed chat token; no push or publication for alpha.4 yet."
+  },
+  "limitations": [
+    "Playable original adventure alpha, not official Swordigo sequel or production certification.",
+    "Real hardware/controller/browser matrix, human pacing/discovery, independent accessibility/security and owner rights/license decisions remain unqualified.",
+    "Local storage is not guaranteed durable disk storage or atomic cross-tab compare-and-swap. Export important journeys.",
+    "Prior rollback timeout, incomplete twelve-trial experiment and initial alpha.3 CI failure remain preserved.",
+    "New native test attempts1/2 failed on test wording and adjacent authored chest priority; original reports preserved; corrected controller uses native input only.",
+    "Post-HUD native route initial failure was a coasting input-controller approach outside authored shrine proximity; released native pulses correct the route without changing simulation, forcing shop state or skipping the assertion. Original failed report retained."
+  ]
+}

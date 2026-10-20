@@ -1,6 +1,6 @@
 {
   "name": "emberwake-sequel-upgrade",
-  "version": "1.2.0-alpha.3",
+  "version": "1.2.0-alpha.4",
   "private": true,
   "license": "UNLICENSED",
   "engines": {
@@ -25,7 +25,8 @@
     "test:chapter:browser": "node tests/emberwake-chapter-browser.mjs",
     "test:chapter:earned": "node tests/emberwake-chapter-earned.cjs",
     "test:chapter:visual": "node tests/emberwake-chapter-visual.mjs",
-    "test:update:experiment": "node tests/emberwake-update-experiment.mjs"
+    "test:update:experiment": "node tests/emberwake-update-experiment.mjs",
+    "test:hud:browser": "node tests/emberwake-hud-browser.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.58.2",

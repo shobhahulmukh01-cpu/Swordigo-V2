@@ -1,0 +1,33 @@
+{
+  "cells": [
+    {
+      "cell": "01-rollback-only",
+      "browserDisconnected": true,
+      "allContextsClosed": true,
+      "allPagesClosed": true
+    },
+    {
+      "cell": "02-full",
+      "browserDisconnected": true,
+      "allContextsClosed": true,
+      "allPagesClosed": true
+    },
+    {
+      "cell": "03-rollback-only-competing",
+      "browserDisconnected": true,
+      "allContextsClosed": true,
+      "allPagesClosed": true,
+      "workloadStopped": true,
+      "workloadErrors": []
+    },
+    {
+      "cell": "04-full-competing",
+      "browserDisconnected": true,
+      "allContextsClosed": true,
+      "allPagesClosed": true,
+      "workloadStopped": true,
+      "workloadErrors": []
+    }
+  ],
+  "remainingScreenNodeProcesses": []
+}

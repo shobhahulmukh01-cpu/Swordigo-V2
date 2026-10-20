@@ -1,0 +1,258 @@
+{
+  "scope": "Redundant/historical alpha4 capture bytes retained outside repository to preserve scanner bounds; no evidence deleted. Final nine HUD and three native journey screenshots remain in repository. Reports retain original output paths; use this digest inventory to locate archived images.",
+  "archiveRoot": "/data/work/plan/next2/repository-render-evidence",
+  "files": [
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/native-journey/failure.png",
+      "archiveRelativePath": "native-journey/failure.png",
+      "bytes": 455479,
+      "sha256": "6855d1337a0a28cf1973c2e6c8e2515e07a61a38aba14ee26f0bcc0aa95750eb"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/native-journey-r2/native-follow-map-portrait.png",
+      "archiveRelativePath": "native-journey-r2/native-follow-map-portrait.png",
+      "bytes": 149425,
+      "sha256": "1f93094544e2e9ead03931f926cb59de32dfb73230d9834212e9a59c683191d0"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/native-journey-r2/earned-millpond-desktop.png",
+      "archiveRelativePath": "native-journey-r2/earned-millpond-desktop.png",
+      "bytes": 1377472,
+      "sha256": "45c55cdcf18f95b4177ae2d82a7d09cfaa1a4470d46b24ac99b4e425aa9cf5c4"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/native-journey-r2/failure.png",
+      "archiveRelativePath": "native-journey-r2/failure.png",
+      "bytes": 402908,
+      "sha256": "01e74f4402085a7c23f5884670a7b3cb518056a2c66183651c9e344482060332"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/native-journey-r3/native-follow-map-portrait.png",
+      "archiveRelativePath": "native-journey-r3/native-follow-map-portrait.png",
+      "bytes": 149343,
+      "sha256": "478bb2fa5f86e8c7cb1fe06cd27a5280e4b6a806c5fff0c90d21267fed474dd4"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/native-journey-r3/earned-millpond-desktop.png",
+      "archiveRelativePath": "native-journey-r3/earned-millpond-desktop.png",
+      "bytes": 1377405,
+      "sha256": "7354e07937b2e4d6f3c1a5283db3099dd4604c42546cc49f78b06b32b69de067"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/native-journey-r3/native-upgrade-preview-portrait.png",
+      "archiveRelativePath": "native-journey-r3/native-upgrade-preview-portrait.png",
+      "bytes": 152022,
+      "sha256": "1335c56bf366225b49c8122cc74ecd49450e19fa74b1d63c2289bcc75faf670c"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/baseline-browser/desktop-title.png",
+      "archiveRelativePath": "baseline-browser/desktop-title.png",
+      "bytes": 1997129,
+      "sha256": "50b483cddf83f3161bb65f68b4522eb54ead324fb23ceb8a2e42b072a87946fe"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/baseline-browser/portrait-game.png",
+      "archiveRelativePath": "baseline-browser/portrait-game.png",
+      "bytes": 1272664,
+      "sha256": "f194e2a2e0c37409677adf5f5cc8b43b29e20b4b3d84db98ffd67e5e1c04780c"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/baseline-browser/landscape-game.png",
+      "archiveRelativePath": "baseline-browser/landscape-game.png",
+      "bytes": 442473,
+      "sha256": "bf4e6e49971f791efd3bdcdb002ad6a3356c089370d2a3ffd5f06afdf6ab753f"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/title-desktop.png",
+      "archiveRelativePath": "upgrade-browser/title-desktop.png",
+      "bytes": 1868975,
+      "sha256": "78e17a7c4ae894f7ed7eb2b56ac17d5597c6d5e757e30e1938818550404d4e30"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/game-desktop.png",
+      "archiveRelativePath": "upgrade-browser/game-desktop.png",
+      "bytes": 1779228,
+      "sha256": "d34647197032b44b5c5ffe79d1265c39d163e60d14786508d367d1f21feb8126"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/pause-desktop.png",
+      "archiveRelativePath": "upgrade-browser/pause-desktop.png",
+      "bytes": 383383,
+      "sha256": "33ea593631670ba8fdf562ef68a906b83a3c0d6a89fc788531e25da6b4512ab2"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/journal-desktop.png",
+      "archiveRelativePath": "upgrade-browser/journal-desktop.png",
+      "bytes": 438244,
+      "sha256": "2c54e48c4f42cf2cc8a268685a7adae3ec1bf5a457622d11e939c8e7bb082c47"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/map-desktop.png",
+      "archiveRelativePath": "upgrade-browser/map-desktop.png",
+      "bytes": 410526,
+      "sha256": "0fe6bea30aae8364426efbcb3f41e941cf693ace1499f1dc64234e9ad5612ab3"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/settings-desktop.png",
+      "archiveRelativePath": "upgrade-browser/settings-desktop.png",
+      "bytes": 426837,
+      "sha256": "0b7e8fd1ee465a0169ed1d33fd9ef6b75f48658c4c6b84d327809ca11a7615ac"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/warden-warning.png",
+      "archiveRelativePath": "upgrade-browser/warden-warning.png",
+      "bytes": 1749540,
+      "sha256": "62f3d4eeb92abce4e703deb66068b5f9bd9ae9e04972215d34801280ded0cc66"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/forge-warning.png",
+      "archiveRelativePath": "upgrade-browser/forge-warning.png",
+      "bytes": 1649789,
+      "sha256": "7f458caa95eb9f880fa3f039853b8280a18c3e7b50983b4dd836d4a5570af6a8"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/regent-warning.png",
+      "archiveRelativePath": "upgrade-browser/regent-warning.png",
+      "bytes": 1808285,
+      "sha256": "0631c57396a1356b9e7025cd52cb1727682fb96a6ada633d9596c852ea64e022"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/title-mobile.png",
+      "archiveRelativePath": "upgrade-browser/title-mobile.png",
+      "bytes": 452328,
+      "sha256": "fcec47e25503d55061352ff9368270de44ba37129f40567ffc2ec5571aeb6c24"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/game-mobile.png",
+      "archiveRelativePath": "upgrade-browser/game-mobile.png",
+      "bytes": 416726,
+      "sha256": "9876068be26917651b9e796729ba2d772e29495fdb34fe1387cc51d691a20474"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/title-landscape.png",
+      "archiveRelativePath": "upgrade-browser/title-landscape.png",
+      "bytes": 565832,
+      "sha256": "c69a2fe9bd456e847a043aaf30718add8177349cc74c73f49c77892cc2f105f5"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/upgrade-browser/game-landscape.png",
+      "archiveRelativePath": "upgrade-browser/game-landscape.png",
+      "bytes": 458127,
+      "sha256": "b2a3fc0eabc0b08621e64da2759f8a66c78ee83f027c4f4cc45c7efc3c7fed58"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/baseline-browser/desktop-title.png",
+      "archiveRelativePath": "post-hud/baseline-browser/desktop-title.png",
+      "bytes": 1997140,
+      "sha256": "f91300d064e79b0b0916ff5d52e08951eecd62818ccca5a61f31d609d0857ad7"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/baseline-browser/portrait-game.png",
+      "archiveRelativePath": "post-hud/baseline-browser/portrait-game.png",
+      "bytes": 1179653,
+      "sha256": "5b27dbad22ff24985072a7870dd064ba836fb9640b91c794996e52669f962250"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/baseline-browser/landscape-game.png",
+      "archiveRelativePath": "post-hud/baseline-browser/landscape-game.png",
+      "bytes": 441560,
+      "sha256": "b2bc9d452bec696741f29219bb6b290f471375eac423e42d00a18e7173ad3c4c"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/native-journey/native-follow-map-portrait.png",
+      "archiveRelativePath": "post-hud/native-journey/native-follow-map-portrait.png",
+      "bytes": 149431,
+      "sha256": "de7e7a984e9e3cfb11b976baa92998f8ac1ff81685786b2cddab6a94af07f827"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/native-journey/earned-millpond-desktop.png",
+      "archiveRelativePath": "post-hud/native-journey/earned-millpond-desktop.png",
+      "bytes": 1377405,
+      "sha256": "d8b7e7657bd2ff9f0b5eceb35db6cf76da11bcf295b8987fd161f72d5b889fad"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/native-journey/failure.png",
+      "archiveRelativePath": "post-hud/native-journey/failure.png",
+      "bytes": 1941460,
+      "sha256": "b463c3a34f24baa82998e29991bcc5e23af5de30afca1b4f227ef81e6523e93e"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/title-desktop.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/title-desktop.png",
+      "bytes": 1868986,
+      "sha256": "5d2a615ffbb708d9bbef5771fdc166a145235100e0660134a999726e4da332d5"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/game-desktop.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/game-desktop.png",
+      "bytes": 1782292,
+      "sha256": "8f58accab22832b8bd14f309beec25ed8b4435f7032b54025e55dfb3c13bb1f1"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/pause-desktop.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/pause-desktop.png",
+      "bytes": 383058,
+      "sha256": "5692615e29756c52e1ccd5b9e53cce4be16bece2ce395ff8b2e754d39f66257a"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/journal-desktop.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/journal-desktop.png",
+      "bytes": 438113,
+      "sha256": "7959d2dd66950a0e0afb54aeb18d5f56af0ae938cee0aa08ca2c03a98aa246e4"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/map-desktop.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/map-desktop.png",
+      "bytes": 410686,
+      "sha256": "e556caa9c9e30a057f8f8ad237df845119227df27258adb62108dea993e6dff3"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/settings-desktop.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/settings-desktop.png",
+      "bytes": 427198,
+      "sha256": "290bdbf57b791599a408e5341aafb78536ddb7880c34a48a92fd2e6173de5340"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/warden-warning.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/warden-warning.png",
+      "bytes": 1749734,
+      "sha256": "9fd266e06753522ec199273cc53c6272838208eb2f7b333de411b5c43703096a"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/forge-warning.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/forge-warning.png",
+      "bytes": 1649418,
+      "sha256": "fefe6053ef7a854f0e02196831af4ab3f2b6680b71aaa7dbbd0b10b57a1258cc"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/regent-warning.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/regent-warning.png",
+      "bytes": 1808890,
+      "sha256": "bbae81cda1e6f9cd13c477eb22b9acf67136840ec9f7bc571d77e9816ab7a8b4"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/title-mobile.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/title-mobile.png",
+      "bytes": 452326,
+      "sha256": "e505e4ce344a27a584b84005103cd93fb994146d22b15fdf1a69c6b6144e30ce"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/game-mobile.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/game-mobile.png",
+      "bytes": 391610,
+      "sha256": "3c271f7546c1b6870dc572192102ab56a198ed9ce660e9c1106f3ef9301e2def"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/title-landscape.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/title-landscape.png",
+      "bytes": 555241,
+      "sha256": "ccb5bfd13af855395c3b6a8c0cb9dbb4a19d125b0a8d89880210d105d5947c10"
+    },
+    {
+      "originalRepositoryPath": "qa/correction/next2-final/post-hud/upgrade-browser/game-landscape.png",
+      "archiveRelativePath": "post-hud/upgrade-browser/game-landscape.png",
+      "bytes": 458113,
+      "sha256": "9ad7a90a44429375e99b7ac7d4d3388252f1b881949b97081ce4548971ddbe27"
+    }
+  ]
+}

@@ -19,6 +19,8 @@ const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const HISTORICAL_COMMIT = '6c266e9d0d8eaf8ceb73f298b9cf76174fe25290';
 const HISTORICAL_WORKER = '0dff1449b6dca02b90b3578cd3c6ef901cf8f583ea723ab100e1d5ce86246825';
 export const LIMITS = Object.freeze({ totalMs: 1800000, externalMs: 175000, internalMs: 150000, predicateMs: 45000 });
+export const SCREEN_LIMITS = Object.freeze({ totalMs: 720000, externalMs: 175000, internalMs: 150000, predicateMs: 45000 });
+export const SCREEN_CAVEAT = 'Four-cell causal SCREEN only: passes mean non-reproduction under recorded conditions, not cause closure, historical12 completion, repeatability clearance or production robustness.';
 export const CAVEAT = 'The earlier historical rollback window.lumen timeout remains unexplained. Even 12/12 passes establish only bounded observations under recorded conditions, not root-cause resolution or production rollback robustness.';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const now = () => new Date().toISOString();
@@ -34,6 +36,55 @@ export function trialPlan() {
     competing: i >= 8, expectedChecks: i >= 4 && i < 8 ? 1 : 7
   }));
 }
+export function experimentConfig(mode = 'historical12') {
+  if (mode === 'historical12') return { mode, limits: LIMITS, plan: trialPlan(), caveat: CAVEAT, passedStatus: 'passed-bounded-12-trials' };
+  if (mode !== 'screen4') throw Error('Unknown experiment plan');
+  return { mode, limits: SCREEN_LIMITS, plan: [
+    { number: 1, arm: 'rollback-only', competing: false, expectedChecks: 1 },
+    { number: 2, arm: 'full', competing: false, expectedChecks: 7 },
+    { number: 3, arm: 'rollback-only', competing: true, expectedChecks: 1 },
+    { number: 4, arm: 'full', competing: true, expectedChecks: 7 }
+  ], caveat: SCREEN_CAVEAT, passedStatus: 'passed-screen4-non-reproduction' };
+}
+export function parseExperimentArgs(args) {
+  const options = { mode: 'historical12' }, seen = new Set();
+  for (let i = 0; i < args.length; i += 2) {
+    const flag = args[i], value = args[i + 1];
+    if (!['--plan', '--output', '--freeze'].includes(flag) || !value || value.startsWith('--') || seen.has(flag))
+      throw Error('Usage: --plan historical12|screen4 --output DIRECTORY [--freeze JSON]');
+    seen.add(flag);
+    options[flag === '--plan' ? 'mode' : flag.slice(2)] = value;
+  }
+  experimentConfig(options.mode);
+  if (options.mode === 'screen4' && !options.freeze) throw Error('screen4 requires a parent-approved --freeze JSON');
+  if (options.mode !== 'screen4' && options.freeze) throw Error('--freeze is scoped to screen4');
+  return options;
+}
+export function validateFreeze(freeze, source, executableSHA256) {
+  const problems = [];
+  if (freeze?.sourceSHA256 !== source.sha256) problems.push('Frozen source inventory differs');
+  if (freeze?.workerSHA256 !== source.files['sw.js']?.sha256) problems.push('Frozen worker differs');
+  if (!freeze?.browserVersion || typeof freeze.browserVersion !== 'string') problems.push('Frozen browser version required');
+  if (!executableSHA256 || freeze?.browserExecutableSHA256 !== executableSHA256) problems.push('Frozen browser executable differs');
+  return problems;
+}
+export function validateScreenDiagnostics(report, trial) {
+  const problems = [], d = report.diagnostics;
+  if (!d || !Array.isArray(d.events) || !d.events.some(e => e.kind === 'page-target')) problems.push('Missing page/target identity diagnostics');
+  if (report.fixtureDiagnosticWriteErrors !== 0) problems.push('Fixture diagnostic persistence incomplete');
+  if (Object.values(d?.dropped || {}).some(n => n > 0) || d?.storageEvents?.some(e => e.event?.status === 'document-cap-reached')) problems.push('Capped diagnostics incomplete; screen interpretation blocked');
+  if (trial.arm === 'full') {
+    for (const ending of ['mercy', 'rekindle']) {
+      const stages = d?.fixtureStages?.filter(e => e.ending === ending) || [];
+      if (!['writer-readback', 'observer-initial', 'observer-synchronized', 'fixture-ready', 'immediate-equality'].every(stage => stages.some(e => e.stage === stage)))
+        problems.push(`Missing progressive fixture evidence: ${ending}`);
+      if (stages.filter(e => e.stage === 'writer-readback').some(e => !e.writer?.frame?.origin || !e.observer?.frame?.origin || !e.writer?.contextId))
+        problems.push(`Missing fixture frame/origin identities: ${ending}`);
+    }
+  }
+  return problems;
+}
+export function screenShouldStop(entry) { return entry.status !== 'passed'; }
 export function compareSources(before, after) {
   return [...new Set([...Object.keys(before.files), ...Object.keys(after.files)])].sort()
     .filter(file => before.files[file]?.sha256 !== after.files[file]?.sha256 ||
@@ -61,6 +112,7 @@ export function sourceSnapshot(root = ROOT) {
   for (const p of ['index.html', 'sw.js', 'assets', 'src', 'scripts', 'package.json', 'package-lock.json',
     'tests/emberwake-update-browser.mjs', 'tests/helpers/emberwake-update-reliability.mjs',
     'tests/emberwake-update-experiment.mjs']) walk(p);
+  for (const p of ['tests/emberwake-update-reliability.test.mjs', 'tests/emberwake-update-experiment.test.mjs']) walk(p, false);
   const sorted = Object.fromEntries(Object.entries(files).sort(([a], [b]) => a.localeCompare(b)));
   return { generatedUTC: now(), sha256: sha(JSON.stringify(sorted)), files: sorted };
 }
@@ -266,28 +318,40 @@ export function workloadProgress(state) {
     continuousMeasuredProgress: continuous, deltas };
 }
 
-async function runExperiment(outputBase) {
+async function runExperiment(outputBase, options = { mode: 'historical12' }) {
+  const config = experimentConfig(options.mode), limits = config.limits, screen = config.mode === 'screen4';
   const start = performance.now(), active = new Set();
   const runId = `${now().replace(/[:.]/g, '-')}-${randomUUID().slice(0, 8)}`;
   const output = path.resolve(outputBase, runId);
   fs.mkdirSync(output, { recursive: true });
-  const state = { runId, generatedUTC: now(), status: 'running', limits: LIMITS, plan: trialPlan(), trials: [],
-    historicalCaveat: CAVEAT, output, host: { platform: os.platform(), arch: os.arch(), release: os.release(),
+  const state = { runId, generatedUTC: now(), status: 'running', mode: config.mode, limits, plan: config.plan, trials: [],
+    repeatabilityClearance: false, experimentComplete: false,
+    historicalCaveat: CAVEAT, interpretationCaveat: config.caveat, output, host: { platform: os.platform(), arch: os.arch(), release: os.release(),
       logicalCPUs: os.cpus().length, cpuModel: os.cpus()[0]?.model, totalMemory: os.totalmem() },
+    launchPolicy: { executablePath: browserPath(), noSandbox: process.env.EW_UPDATE_NO_SANDBOX === '1' },
     workload: { ...WORKLOAD, documentSHA256: sha(CANVAS_HTML) }, sourceBaselineSHA256: null, browser: null, failure: null };
-  const flush = () => { state.generatedUTC = now(); state.elapsedMs = Math.round(performance.now() - start); save(path.join(output, 'experiment.json'), state); };
+  const flush = () => { state.generatedUTC = now(); state.elapsedMs = Math.round(performance.now() - start);
+    state.notRunTrials = state.plan.filter(p => !state.trials.some(t => t.number === p.number)).map(p => p.number);
+    state.completedTrials = state.trials.filter(t => t.status === 'passed').length;
+    state.experimentComplete = state.status === config.passedStatus;
+    save(path.join(output, 'experiment.json'), state); };
   console.log(`Experiment evidence: ${output}`);
   function halt(message, exitCode) {
     state.status = 'stopped-first-failure'; state.failure ||= message;
     for (const child of active) terminate(child);
+    const entry = state.trials.at(-1);
+    if (entry && !entry.finishedUTC) {
+      entry.status = 'failed'; entry.failure = message; entry.finishedUTC = now();
+      save(path.join(entry.output, 'trial.json'), entry);
+    }
     try {
       const final = sourceSnapshot(); save(path.join(output, 'source-final.json'), final);
       state.sourceChanges = baseline ? compareSources(baseline, final) : null;
     } catch (error) { state.sourceObservationError = error.message; }
     flush(); process.exit(exitCode);
   }
-  const globalTimer = setTimeout(() => halt('30-minute experiment ceiling exhausted; incomplete is not acceptance', 1),
-    Math.max(1, LIMITS.totalMs - (performance.now() - start)));
+  const globalTimer = setTimeout(() => halt(`${limits.totalMs} ms experiment ceiling exhausted; incomplete is not acceptance`, 1),
+    Math.max(1, limits.totalMs - (performance.now() - start)));
   const onINT = () => halt('Experiment interrupted; no automatic continuation', 130);
   const onTERM = () => halt('Experiment terminated; no automatic continuation', 143);
   process.once('SIGINT', onINT); process.once('SIGTERM', onTERM);
@@ -310,23 +374,40 @@ async function runExperiment(outputBase) {
   try {
     baseline = sourceSnapshot();
     save(path.join(output, 'source-baseline.json'), baseline);
-    state.sourceBaselineSHA256 = baseline.sha256; flush();
+    state.sourceBaselineSHA256 = baseline.sha256;
+    if (screen) {
+      const freeze = json(path.resolve(options.freeze));
+      const executable = browserPath();
+      const errors = validateFreeze(freeze, baseline, sha(fs.readFileSync(executable)));
+      if (errors.length) throw Error(errors.join('; '));
+      state.freeze = { ...freeze, executablePath: executable, freezeFile: path.resolve(options.freeze) };
+      state.browser = freeze.browserVersion;
+      save(path.join(output, 'parent-freeze.json'), state.freeze);
+    }
+    flush();
     for (const trial of state.plan) {
       const directory = path.join(output, `${String(trial.number).padStart(2, '0')}-${trial.arm}${trial.competing ? '-competing' : ''}`);
       fs.mkdirSync(directory);
+      const cellStarted = performance.now();
       const entry = { ...trial, startedUTC: now(), status: 'running', output: directory,
         hostBefore: { freeMemory: os.freemem(), loadAverage: os.loadavg() } };
       state.trials.push(entry); flush();
+      // SCREEN bounds the entire cell, not just the harness: setup, measured
+      // workload startup, validation and process-tree cleanup share 175 seconds.
+      // At 173.5s kill process trees; reserve the final 1.5s for artifact/exit.
+      const cellTimer = screen ? setTimeout(() => halt('Screen cell deadline exhausted including setup/cleanup; no continuation', 1), Math.max(1, limits.externalMs - 1500 - (performance.now() - cellStarted))) : null;
       let harness, load, externalTimer, workloadReady, workloadFailure, lastSample, firstSample, workloadBrowser;
+      const liveProgress = new Map();
       try {
         entry.phase = 'source-preflight';
         const before = sourceSnapshot();
         save(path.join(directory, 'source-pre.json'), before);
         const preChanges = compareSources(baseline, before);
         if (preChanges.length) throw Error(`Source changed before trial: ${preChanges.join(', ')}`);
+        if (screen && sha(fs.readFileSync(browserPath())) !== state.freeze.browserExecutableSHA256) throw Error('Frozen browser executable changed before cell');
         const env = { CHROME_BIN: browserPath(), EW_OLD_REF: HISTORICAL_COMMIT,
-          EW_UPDATE_DEBUG_RETRY: '0', EW_UPDATE_TIMEOUT_MS: String(LIMITS.predicateMs),
-          EW_UPDATE_TRIAL_MS: String(LIMITS.internalMs), EW_UPDATE_ARM: trial.arm,
+          EW_UPDATE_DEBUG_RETRY: '0', EW_UPDATE_TIMEOUT_MS: String(limits.predicateMs),
+          EW_UPDATE_TRIAL_MS: String(limits.internalMs), EW_UPDATE_ARM: trial.arm,
           EW_UPDATE_OUTPUT: directory, EW_UPDATE_EXPERIMENT_ROLE: 'inventory',
           EW_UPDATE_EXPERIMENT_TELEMETRY: path.join(directory, 'harness-inventory.json') };
         if (trial.competing) {
@@ -338,12 +419,21 @@ async function runExperiment(outputBase) {
             EW_UPDATE_EXPERIMENT_TELEMETRY: path.join(directory, 'workload.json') }, directory, 'workload', true);
           load.child.on('message', message => {
             if (message.type === 'ready') { workloadBrowser = message.browser; readyResolve(message); }
-            if (message.type === 'sample') { lastSample = message.sample; firstSample ||= message.sample; }
+            if (message.type === 'sample') {
+              lastSample = message.sample; firstSample ||= message.sample;
+              if (screen) for (const page of message.sample.pages) {
+                const previous = liveProgress.get(page.pageId);
+                if (previous && page.frames < previous.frames) failedResolve({ workloadFailure: 'Competing frame counter regressed' });
+                liveProgress.set(page.pageId, { frames: page.frames,
+                  lastAdvance: !previous || page.frames > previous.frames ? performance.now() : previous.lastAdvance });
+              }
+            }
             if (message.type === 'failure') failedResolve({ workloadFailure: message.message });
           });
           load.done.then(result => failedResolve({ workloadFailure: `Competing process ended: ${JSON.stringify(result)}` }));
           const ready = await deadline(() => Promise.race([workloadReady, workloadFailure]), 25000, 'Competing workload startup');
           if (ready.workloadFailure) throw Error(ready.workloadFailure);
+          if (screen && ready.browser !== state.browser) throw Error('Workload browser differs from parent freeze');
           entry.workloadReady = ready; flush();
         }
         entry.phase = 'harness';
@@ -351,13 +441,15 @@ async function runExperiment(outputBase) {
         entry.harnessStartedUTC = now();
         harness = launch(['--import', pathToFileURL(SELF).href, path.join(ROOT, 'tests/emberwake-update-browser.mjs')], env, directory, 'harness');
         const timedOut = new Promise(resolve => {
-          externalTimer = setTimeout(() => { terminate(harness.child); resolve({ externalTimeout: true }); }, LIMITS.externalMs);
+          externalTimer = setTimeout(() => { terminate(harness.child); resolve({ externalTimeout: true }); }, limits.externalMs);
         });
         let heartbeat;
         const stalledWorkload = new Promise(resolve => {
           if (!trial.competing) return;
           heartbeat = setInterval(() => {
             if (!lastSample || Date.now() - Date.parse(lastSample.utc) > 6000) resolve({ workloadFailure: 'Competing workload heartbeat stalled' });
+            if (screen && (liveProgress.size !== WORKLOAD.contexts || [...liveProgress.values()].some(p => performance.now() - p.lastAdvance > 6000)))
+              resolve({ workloadFailure: 'Competing workload page stopped advancing; no continuation' });
           }, 1000);
         });
         let result;
@@ -375,6 +467,7 @@ async function runExperiment(outputBase) {
         const report = json(path.join(directory, 'report.json'));
         entry.phase = 'validation';
         const errors = validateHarness(report, trial, baseline, state.browser);
+        if (screen) errors.push(...validateScreenDiagnostics(report, trial));
         const inventory = json(path.join(directory, 'harness-inventory.json'));
         errors.push(...validateInventory(inventory, report.browser));
         entry.browser = report.browser; state.browser ||= report.browser;
@@ -402,7 +495,7 @@ async function runExperiment(outputBase) {
         state.failure = `Trial ${trial.number}: ${error.message}`;
       } finally {
         clearTimeout(externalTimer);
-        if (harness && entry.status !== 'passed') terminate(harness.child);
+        if (harness && (screen || entry.status !== 'passed')) terminate(harness.child);
         if (load) terminate(load.child);
         try {
           const after = sourceSnapshot();
@@ -413,15 +506,29 @@ async function runExperiment(outputBase) {
             state.supersededReason = `Trial ${trial.number}: source changed; do not mix identities or count this as a runtime failure`;
           }
         } catch (error) { entry.status = 'failed'; state.status = 'stopped-first-failure'; state.failure ||= error.message; }
+        if (screen) await Promise.all([harness, load].filter(Boolean).map(child => deadline(() => child.done, 1500, 'Screen process cleanup').catch(error => {
+          entry.status = 'failed'; entry.failure ||= error.message; state.status = 'stopped-first-failure'; state.failure ||= error.message;
+        })));
         entry.finishedUTC = now();
         entry.hostAfter = { freeMemory: os.freemem(), loadAverage: os.loadavg() };
+        if (screen) {
+          try {
+            if (sha(fs.readFileSync(browserPath())) !== state.freeze.browserExecutableSHA256) {
+              entry.status = 'superseded-source'; state.status = 'superseded-source';
+              state.supersededReason = 'Frozen browser executable changed during cell';
+            }
+          } catch (error) { entry.status = 'failed'; state.status = 'stopped-first-failure'; state.failure ||= error.message; }
+        }
         save(path.join(directory, 'trial.json'), entry); flush();
+        clearTimeout(cellTimer);
       }
-      console.log(`Trial ${trial.number}/12 ${trial.arm}${trial.competing ? ' competing' : ''}: ${entry.status}`);
-      if (entry.status !== 'passed') break;
+      console.log(`Trial ${trial.number}/${state.plan.length} ${trial.arm}${trial.competing ? ' competing' : ''}: ${entry.status}`);
+      if (screenShouldStop(entry)) break;
     }
     if (!['superseded-source', 'setup-blocked'].includes(state.status)) {
-      if (state.trials.length === 12 && state.trials.every(t => t.status === 'passed')) state.status = 'passed-bounded-12-trials';
+      if (state.trials.length === state.plan.length && state.trials.every(t => t.status === 'passed')) {
+        state.status = config.passedStatus; state.experimentComplete = true;
+      }
       else state.status = 'stopped-first-failure';
     }
   } catch (error) { state.status = 'stopped-first-failure'; state.failure ||= error.message; }
@@ -442,8 +549,8 @@ async function runExperiment(outputBase) {
     state.finishedUTC = now(); state.completedTrials = state.trials.filter(t => t.status === 'passed').length;
     flush();
   }
-  console.log(`${state.status}: ${state.completedTrials}/12; ${CAVEAT}`);
-  process.exitCode = state.status === 'passed-bounded-12-trials' ? 0 : 1;
+  console.log(`${state.status}: ${state.completedTrials}/${state.plan.length}; ${config.caveat}; ${CAVEAT}`);
+  process.exitCode = state.status === config.passedStatus ? 0 : 1;
 }
 
 const role = process.env.EW_UPDATE_EXPERIMENT_ROLE;
@@ -452,7 +559,6 @@ if (role === 'inventory') {
 } else if (role === 'workload') {
   await runWorkload(process.env.EW_UPDATE_EXPERIMENT_TELEMETRY);
 } else if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
-  const args = process.argv.slice(2);
-  if (args.length && (args.length !== 2 || args[0] !== '--output')) throw Error('Usage: node tests/emberwake-update-experiment.mjs [--output DIRECTORY]');
-  await runExperiment(args[1] || process.env.EW_UPDATE_EXPERIMENT_OUTPUT || path.join(ROOT, 'qa/correction/update-experiment'));
+  const options = parseExperimentArgs(process.argv.slice(2));
+  await runExperiment(options.output || process.env.EW_UPDATE_EXPERIMENT_OUTPUT || path.join(ROOT, 'qa/correction/update-experiment'), options);
 }

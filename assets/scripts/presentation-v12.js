@@ -85,7 +85,11 @@ R.chapterDeliveryProp=function(npc){
  const deliveries=Object.values(d.deliveries).filter(m=>m.sceneId===g.scene.id&&g.chapterHas?.('deliveries',m.id));
  if(!deliveries.length)return;
  const x=npc.x+76-this.cam;if(x<-100||x>this.w+100)return;const c=this.c;
- c.save();c.translate(x,npc.y);
+ c.save();
+ // A local, static pool of warmth unifies the existing committed-repair prop.
+ // It cannot appear for possession/signature alone and never changes hazards.
+ this.glow(x,npc.y-28,58,'#e6c695',.075);
+ c.translate(x,npc.y);c.scale(1.14,1);
  for(const m of deliveries){
   if(m.id==='ch1:delivery:water-remembers'){
    this.poly([[-26,-22],[-20,0],[23,0],[29,-22]],'#73624d','#a5b18b');c.fillStyle='#263b32';c.fillRect(-23,-24,49,6);
@@ -108,15 +112,19 @@ const chapterNPC=R.npc;R.npc=function(o){this.chapterDeliveryProp(o);return chap
 const chapterBoss=R.boss;R.boss=function(e){
  if(e?.id!=='ch1:enemy:archivist-engine')return chapterBoss.call(this,e);
  if(e.hp<=0)return;const c=this.c,x=e.x+48-this.cam,y=e.y+140;if(x<-200||x>this.w+200)return;
- const wind=e.state==='windup',color=wind?'#ffd18c':'#c1dfff';c.save();c.translate(x,y);if(e.flash>0)c.globalAlpha=.65;
+ const wind=e.state==='windup',recover=e.state==='recover',color=wind?'#ffd18c':recover?'#c5cebd':'#c1dfff';c.save();c.translate(x,y);if(e.flash>0)c.globalAlpha=.65;
  this.glow(0,-72,105,color,wind?.18:.05);
  c.fillStyle='#0c1a2388';c.beginPath();c.ellipse(0,0,56,8,0,0,Math.PI*2);c.fill();
  // No face, crown, staff or limbs: a suspended archive drum within a square yoke.
  this.poly([[-44,0],[-44,-127],[-28,-140],[28,-140],[44,-127],[44,0],[29,0],[29,-116],[-29,-116],[-29,0]],'#536973','#acbcb080',2);
+ // Articulated drum only: the yoke, collision silhouette and warnings stay fixed.
+ const lift=wind?-4:recover?7:this.app.settings.reduceMotion?0:Math.sin(this.t*1.6)*1.5;
+ c.save();c.translate(0,lift);
  this.poly([[-27,-33],[-33,-81],[-21,-112],[21,-112],[33,-81],[27,-33]],'#203b4b','#9daea8',2);
- for(let i=0;i<4;i++){c.fillStyle='#8c9c99';c.fillRect(-25,-101+i*17,50,5);c.fillStyle='#273e48';c.fillRect(-15,-100+i*17,30,2);}
+ for(let i=0;i<4;i++){c.fillStyle='#8c9c99';c.fillRect(-25+(recover?(i%2?3:-3):0),-101+i*17,50,5);c.fillStyle='#273e48';c.fillRect(-15,-100+i*17,30,2);}
  this.glow(0,-74,33,color,.22);this.poly([[0,-95],[-14,-74],[0,-53],[14,-74]],color,'#e4ead5');
  c.strokeStyle='#91aaa9';c.lineWidth=2;c.beginPath();c.ellipse(0,-74,38,31,0,0,Math.PI*2);c.stroke();
+ c.restore();
  for(const dx of [-38,38]){c.fillStyle='#b4c3b8';c.fillRect(dx-4,-106,8,14);c.fillRect(dx-4,-49,8,14);}
  c.fillStyle='#6c807e';c.fillRect(-48,-8,28,8);c.fillRect(20,-8,28,8);
  if(wind){c.strokeStyle=color;c.lineWidth=3;c.strokeRect(-38,-118,76,88);c.fillStyle='#ffe0a1';c.font='bold 31px Georgia';c.textAlign='center';c.fillText('!',0,-164);}
@@ -124,7 +132,23 @@ const chapterBoss=R.boss;R.boss=function(e){
 };
 
 const terrain=R.terrain;R.terrain=function(s,level){terrain.call(this,s,level);if(s.oneWay)return;const c=this.c,k=this.app.game.sceneRealmIndex??this.app.game.progress?.level??0,x=s.x-this.cam;if(x+s.w<0||x>this.w)return;c.save();const a=Math.max(0,Math.floor((this.cam-s.x)/90)),z=Math.min(Math.ceil(s.w/90),a+Math.ceil(this.w/90)+1),restored=!!level.boss&&(this.app.game.inChapterRoom?this.app.game.chapterHas('defeated',level.boss.id):this.app.game.has('defeated',level.boss.id));for(let i=a;i<z;i++){const px=x+i*90+22;if(k===0){c.strokeStyle=restored?'#9ebd82':'#657d65';c.lineWidth=2;c.beginPath();c.moveTo(px,s.y+19);c.bezierCurveTo(px+8,s.y+35,px-11,s.y+53,px+16,s.y+72);c.stroke();if(restored){c.fillStyle='#f0d4a0';for(let j=-1;j<=1;j++){c.beginPath();c.ellipse(px+j*3,s.y-10,2.5,4,j,0,Math.PI*2);c.fill();}}}else if(k===1){c.strokeStyle='#b6976b';c.lineWidth=1;c.strokeRect(px,s.y+13,54,21);c.fillStyle='#ddb579';c.fillRect(px+4,s.y+18,2,2);c.fillRect(px+46,s.y+28,2,2);c.strokeStyle=restored?'#8ec7bb':'#985b39';c.beginPath();c.moveTo(px+12,s.y+40);c.lineTo(px+28,s.y+51);c.lineTo(px+39,s.y+40);c.stroke();}else{c.strokeStyle=restored?'#cfbc8a':'#899fb1';c.lineWidth=1;c.beginPath();c.moveTo(px,s.y+18);c.lineTo(px+16,s.y+30);c.lineTo(px+32,s.y+18);c.moveTo(px+16,s.y+30);c.lineTo(px+16,s.y+44);c.stroke();}}c.restore();};
-const hero=R.hero;R.hero=function(p,ghost){this.c.save();if(!ghost){this.c.shadowColor='#03121c';this.c.shadowBlur=4;}hero.call(this,p,ghost);this.c.restore();};
+// Read-only phase classification; the original sword path/reach/timer is delegated unchanged.
+R.heroVisualPhase=function(p){return p.attack>0?(p.attack>.17?'set':p.attack>.075?'strike':'followthrough'):p.dash>0?'dash':'idle';};
+const hero=R.hero;R.hero=function(p,ghost){
+ const c=this.c,phase=this.heroVisualPhase(p),still=this.app.settings.reduceMotion,t=this.t;
+ c.save();if(!ghost){
+  c.shadowColor='#03121c';c.shadowBlur=4;
+  if(phase!=='idle'){
+   c.save();c.translate(p.x+14-this.cam,p.y+54);c.scale(p.face,1);
+   // A restrained rear cloth fold, not a weapon trail or a larger attack arc.
+   const tail=still?-29:phase==='strike'?-34:phase==='followthrough'?-31:-29;
+   this.poly([[-12,-36],[tail,-18],[-26,-10],[-15,-15]],'#9f5945','#d88d6770',1);
+   this.line([[-14,-31],[tail+3,-18]],'#e2ad8255',1);c.restore();
+  }
+ }
+ // Freeze only decorative Aster/invulnerability time modulation, never attack phases.
+ if(still)this.t=0;try{hero.call(this,p,ghost);}finally{this.t=t;c.restore();}
+};
 const draw=R.draw;R.draw=function(dt){draw.call(this,dt);const g=this.app.game;if(this.app.paused||!g.bossActive)return;const c=this.c;c.save();c.setTransform(this.sx,0,0,this.sy,0,-(this.camY||0)*this.sy);for(const mark of g.bossTelegraphs||[]){const x=mark.x-this.cam,end=mark.endX-this.cam,warn=mark.phase==='warning',color=mark.kind==='root'?'#a4efbb':mark.kind==='light'?'#d9e9ff':'#ffd18c';if(Math.max(x,end)<-60||Math.min(x,end)>this.w+60)continue;c.strokeStyle=color;c.fillStyle=warn?color+'29':color+'80';c.lineWidth=warn?2:3;const y=mark.y+17;if(mark.kind==='charge'||mark.kind==='groundwave'){c.fillRect(Math.min(x,end)-mark.radius,y-14,Math.abs(end-x)+mark.radius*2,14);c.strokeRect(Math.min(x,end)-mark.radius,y-14,Math.abs(end-x)+mark.radius*2,14);c.beginPath();c.moveTo(end-mark.direction*14,y-27);c.lineTo(end,y-20);c.lineTo(end-mark.direction*14,y-13);c.stroke();}else{c.beginPath();c.ellipse(x,y,mark.radius,9,0,0,Math.PI*2);c.fill();c.stroke();if(mark.kind==='root'){for(let j=-1;j<=1;j++){c.beginPath();c.moveTo(x+j*11,y);c.lineTo(x+j*11-4,y-(warn?12:40));c.stroke();}}else{c.setLineDash([4,6]);c.beginPath();c.moveTo(x,y-72);c.lineTo(x,y-17);c.stroke();c.setLineDash([]);}}if(warn){const total=mark.warningDuration||1,ready=1-mark.remaining/total;c.fillStyle='#09151c';c.fillRect(x-24,y-58,48,18);c.fillStyle=color;c.font='bold 11px system-ui';c.textAlign='center';c.fillText(mark.kind==='light'?'LIGHT':mark.kind==='root'?'ROOT':mark.kind==='charge'?'CHARGE':'WAVE',x,y-45);c.lineWidth=3;c.beginPath();c.arc(x,y-26,8,-Math.PI/2,-Math.PI/2+Math.PI*2*ready);c.stroke();}}
 c.restore();};
 if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>{});

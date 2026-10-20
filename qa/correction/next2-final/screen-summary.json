@@ -1,0 +1,115 @@
+{
+  "status": "passed-screen4-non-reproduction",
+  "experimentComplete": true,
+  "plannedCells": 4,
+  "passedCells": 4,
+  "unrunCells": [],
+  "checksPassed": 16,
+  "checksFailed": 0,
+  "elapsedMs": 123163,
+  "sourceSHA256": "9a93d9e77e2f3b5b3766dee7829411ecfc85e7f7746bddd4b7ae9db6eddd0bf9",
+  "workerSHA256": "76c5b624e7b7011e5336cf9e21c79f490163be46170f94d733d5e2405470d98b",
+  "browser": "153.0.8010.12",
+  "postRunFreezeErrors": [],
+  "sourceChanges": [],
+  "repeatabilityClearance": false,
+  "interpretation": "Four-cell causal SCREEN only: passes mean non-reproduction under recorded conditions, not cause closure, historical12 completion, repeatability clearance or production robustness.",
+  "evidenceDir": "/data/work/plan/next2-causal-screen/2026-10-20T18-46-16-537Z-cddb3412",
+  "trials": [
+    {
+      "number": 1,
+      "arm": "rollback-only",
+      "competing": false,
+      "status": "passed",
+      "checksPassed": 1,
+      "checksFailed": 0,
+      "harnessMs": 6406,
+      "sourceChanges": [],
+      "diagnosticDropped": {},
+      "fixtureDiagnosticWriteErrors": 0,
+      "contexts": 1,
+      "pages": 4
+    },
+    {
+      "number": 2,
+      "arm": "full",
+      "competing": false,
+      "status": "passed",
+      "checksPassed": 7,
+      "checksFailed": 0,
+      "harnessMs": 41766,
+      "sourceChanges": [],
+      "diagnosticDropped": {},
+      "fixtureDiagnosticWriteErrors": 0,
+      "contexts": 5,
+      "pages": 24
+    },
+    {
+      "number": 3,
+      "arm": "rollback-only",
+      "competing": true,
+      "status": "passed",
+      "checksPassed": 1,
+      "checksFailed": 0,
+      "harnessMs": 7651,
+      "sourceChanges": [],
+      "diagnosticDropped": {},
+      "fixtureDiagnosticWriteErrors": 0,
+      "contexts": 1,
+      "pages": 4,
+      "workloadProgress": {
+        "ok": true,
+        "continuousMeasuredProgress": true,
+        "deltas": [
+          {
+            "pageId": 1,
+            "frames": 39,
+            "elapsedMs": 7010.40000000014,
+            "drawMs": 24.800000000046566
+          },
+          {
+            "pageId": 2,
+            "frames": 39,
+            "elapsedMs": 7010.299999999814,
+            "drawMs": 19.800000000512227
+          }
+        ]
+      },
+      "workloadErrors": []
+    },
+    {
+      "number": 4,
+      "arm": "full",
+      "competing": true,
+      "status": "passed",
+      "checksPassed": 7,
+      "checksFailed": 0,
+      "harnessMs": 59889,
+      "sourceChanges": [],
+      "diagnosticDropped": {},
+      "fixtureDiagnosticWriteErrors": 0,
+      "contexts": 5,
+      "pages": 24,
+      "workloadProgress": {
+        "ok": true,
+        "continuousMeasuredProgress": true,
+        "deltas": [
+          {
+            "pageId": 1,
+            "frames": 196,
+            "elapsedMs": 59022.10000000009,
+            "drawMs": 97.00000000256114
+          },
+          {
+            "pageId": 2,
+            "frames": 197,
+            "elapsedMs": 59022,
+            "drawMs": 93.69999999878928
+          }
+        ]
+      },
+      "workloadErrors": []
+    }
+  ],
+  "cleanupVerified": true
+}

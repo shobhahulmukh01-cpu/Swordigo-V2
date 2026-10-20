@@ -1,0 +1,220 @@
+{
+  "workerCache": "emberwake-11943f254523",
+  "sourceDistServedFiles": 35,
+  "firstLoadScriptsAndStyles": 14,
+  "workerDeclaredEntries": 24,
+  "allSRIAndDigestURLsValid": true,
+  "files": [
+    {
+      "path": "assets/data/browser-test-results.json",
+      "bytes": 8306,
+      "sha256": "27a9ec7ae2b9cc0600a6a5211bb6a011d779b553232baf79d96f16d123e015dc",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/data/release.json",
+      "bytes": 1979,
+      "sha256": "b356a6813015865ae4fb410e0833efc85104c7a6195c3f3f6971f517472dc608",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/images/chapter-archive.webp",
+      "bytes": 66122,
+      "sha256": "8494293e82ea87af884ee490e86954f70c41498afa40e148e5bec06b5fee2896",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/images/chapter-cooling.webp",
+      "bytes": 93986,
+      "sha256": "9797b2a88e3da709d8198959760c7dbaa38a4ab8f82f0132b801b5bccaa3fa74",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/images/chapter-millpond.webp",
+      "bytes": 97708,
+      "sha256": "f8bb5d4fe47edb828693ecd085643aec440f29c03f64f301cdfb782ae42e4249",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/images/chapter-rootcellar.webp",
+      "bytes": 82010,
+      "sha256": "782e16aad4fc05af4408b76e79bb39d585fa27e49f8d1c1e54439a26f98215fe",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/images/cinderworks_hd.webp",
+      "bytes": 327328,
+      "sha256": "5efad2ebd7979485a94d8107ddc8fb1892c9c42edf22c541efb33760d9889c52",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/images/emberwake_panorama.png",
+      "bytes": 2612529,
+      "sha256": "df46625ae34641b7a68aa74607e387621dafd191fa626a7af9f695fc2e6f7740",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/images/hollowspire_hd.webp",
+      "bytes": 438576,
+      "sha256": "e3957419c3aec2ee16536ffb8d06b4550aff89fc1fd23102dfb4fc8430442e03",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/images/moonroot_hd.webp",
+      "bytes": 417744,
+      "sha256": "fb0347cb3d06f62a3c9a10f8a11f5e475c6b8580ace85da0cd40ff3067c0856f",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/legacy.html",
+      "bytes": 2743,
+      "sha256": "e9d479e98a8797396f2ab7aec6911e1a48c44fa9c7f64628dadb046980843841",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/lumen-preview.html",
+      "bytes": 4160,
+      "sha256": "201514eab37eb3582428def0835d679a08e248c9b1c622912f5b5507847a25a8",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/lumen/game.css",
+      "bytes": 10528,
+      "sha256": "f956c5a64f901ec6b25a787bee99b83440eeb60ec5e99c39f80cdfb65b19314f",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/lumen/game.js",
+      "bytes": 599867,
+      "sha256": "592d2f96b0777aa753e51b7116ed8274c3cb2762cc575724f3021b9c8743219d",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/lumen/icon-192.png",
+      "bytes": 3464,
+      "sha256": "e7d58e38a5be148cc95e0077bcd7c9aa6d2a5cbb2d9c7e20088a87a666afb0c2",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/lumen/icon-512.png",
+      "bytes": 53664,
+      "sha256": "39c7d8243e89fc49b2007f42dc6b3265f9cdb1149c2984f5ee5fee0e3e596026",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/lumen/icon.svg",
+      "bytes": 381,
+      "sha256": "83e845c869e778a3e119061956b18cfddc267b5efe85a6dd31c5e9a8d3287dba",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/lumen/manifest.webmanifest",
+      "bytes": 375,
+      "sha256": "32bc461cb134e777d945dd26820acab8587492d7bc466548ba46665d470ccb23",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/lumen/third-party.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/chapter-data.js",
+      "bytes": 40701,
+      "sha256": "cab3d4328dab188682ea78624e83ca51fe04b33d23b50a90a4a39ba39a3b2216",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/chapter-runtime.js",
+      "bytes": 14179,
+      "sha256": "2cefaa3968d72cfed56ecb4655f61e85bda3b6b86c6feef9828fb23184015ada",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/chapter-save.js",
+      "bytes": 14573,
+      "sha256": "35e6099582e3a55b219adc369b5e108596f5d1a0b19ab5f175b8efb4cf9f357b",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/client.js",
+      "bytes": 98271,
+      "sha256": "dcc82411b583170674fe3727be585f0d72662da65c62c6ee8812919fc9f06863",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/controls-v11.js",
+      "bytes": 12462,
+      "sha256": "2683e5223e5dd567b5d3f8422d5d6cbe62bdab411a47a6826e5c72ef80366b8f",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/core-v11.js",
+      "bytes": 7290,
+      "sha256": "50f39aeb9bceaa2f5eff825c0b89a0005ea7c3e1242cf7e6df41f4ca443daa31",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/encounters-v12.js",
+      "bytes": 7375,
+      "sha256": "0a6e03cdfb352be8b5c0e6ccaf8417db6d59cc1616e9b59acfb5fd2e5bba5abe",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/engine.js",
+      "bytes": 22117,
+      "sha256": "c780eaf19f759eb1ce53b582d1e1df647356f6029103ada69a929ef23269a2dd",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/journal-v12.js",
+      "bytes": 3072,
+      "sha256": "297fdd10d6ef18cf4480feecce9a6415fa213769938f998eedcd04a09b15ec4c",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/journey-v11.js",
+      "bytes": 12333,
+      "sha256": "74b21176361e5c8c30399bfc30f4ff5a84d575b7d260750daf511cfd4cb553b6",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/presentation-v12.js",
+      "bytes": 16037,
+      "sha256": "8444e29ab9f4b231e54fe2abb598c0e071b736a286581db8d49cff50d8bfe9f1",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/realm-v11.js",
+      "bytes": 9660,
+      "sha256": "3618deb3cbe6f65a6d0ec8a94954b4b1348af81d7c21cd5cbc5a71e1fed3f4e5",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/scripts/worlds.js",
+      "bytes": 13964,
+      "sha256": "32eb12c3920fc8c5ab00e6f9accd3e909fb504605573c880067232383fc4ca9a",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "assets/styles/sequel-v12.css",
+      "bytes": 11067,
+      "sha256": "77b609696d8e4d432c0937351e563cbea9727cd4a92d254775c9a382fff52c7e",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "index.html",
+      "bytes": 5364,
+      "sha256": "6c31e251955edc8fb1f4be74de017b1a778b7e87edec8918c56747cb2ecb000a",
+      "sourceDistServedEqual": true
+    },
+    {
+      "path": "sw.js",
+      "bytes": 4299,
+      "sha256": "76c5b624e7b7011e5336cf9e21c79f490163be46170f94d733d5e2405470d98b",
+      "sourceDistServedEqual": true
+    }
+  ],
+  "allMatch": true
+}

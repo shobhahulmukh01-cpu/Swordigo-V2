@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       EW_EVIDENCE_WORKFLOW: pages
-      EW_EVIDENCE_STATE: ${{ github.workspace }}/../emberwake-release-state
-      EW_EVIDENCE_RAW: ${{ github.workspace }}/../emberwake-release-raw
-      EW_EVIDENCE_OUTPUT: ${{ github.workspace }}/../emberwake-release-evidence
+      EW_EVIDENCE_STATE: /tmp/emberwake-release-state
+      EW_EVIDENCE_RAW: /tmp/emberwake-release-raw
+      EW_EVIDENCE_OUTPUT: /tmp/emberwake-release-evidence
     steps:
       - id: checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -71,8 +71,8 @@ jobs:
         with:
           name: release-evidence-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
-            ${{ github.workspace }}/../emberwake-release-evidence/index.json
-            ${{ github.workspace }}/../emberwake-release-evidence/reports.json
+            /tmp/emberwake-release-evidence/index.json
+            /tmp/emberwake-release-evidence/reports.json
           if-no-files-found: error
           include-hidden-files: false
           retention-days: 14

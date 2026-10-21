@@ -288,7 +288,7 @@ test('both workflows preserve required gates, exact upload allowlist, pinned act
     A.match(text, /name: Finalize artifact-bound release evidence\n\s+if: always\(\)/);
     A.match(text, /name: Retain allowlisted release diagnostics\n\s+if: always\(\) && steps\.evidence\.outputs\.upload_safe == 'true'/);
     A.match(text, /upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4\.6\.2/);
-    A.match(text, /path: \|\n\s+\$\{\{ github.workspace \}\}\/\.\.\/emberwake-release-evidence\/index.json\n\s+\$\{\{ github.workspace \}\}\/\.\.\/emberwake-release-evidence\/reports.json/);
+    A.match(text, /path: \|\n\s+\/tmp\/emberwake-release-evidence\/index.json\n\s+\/tmp\/emberwake-release-evidence\/reports.json/);
     A.ok(!/continue-on-error:|path: (?:qa|\*|dist\/)/.test(text)); A.match(text, /retention-days: 14/);
     A.ok([...text.matchAll(/uses: ([^\s]+)/g)].every(x => /@[a-f0-9]{40}$/.test(x[1])));
     A.match(text, new RegExp('EW_EVIDENCE_WORKFLOW: ' + ['ci', 'pages'][i]));

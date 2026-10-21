@@ -13,7 +13,7 @@ This change adds release evidence, not gameplay changes or release qualification
 
 `scripts/release-evidence.mjs` is a dependency-free Node module/CLI. It reads existing `loadDist` validation without invoking the builder itself. Existing `npm run build` remains the only workflow build command.
 
-Both workflows set isolated paths as siblings of `github.workspace` (outside the checkout). This uses a context valid at job-definition time while retaining the same separation from source and `dist`:
+Both workflows set isolated absolute paths under the runner's ephemeral `/tmp` (outside the checkout). This avoids invalid job-level context use and the artifact action's refusal of `..` paths while retaining separation from source and `dist`:
 
 | Directory | Purpose | Uploaded? |
 | --- | --- | --- |

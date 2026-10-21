@@ -19,7 +19,7 @@ test('hints use current primary key and remain read-only',()=>{
 test('coarse-pointer defaults and real keyboard or touch input select truthful labels',()=>{
  const {app,listeners}=harness(true);assert.equal(app.inputLabel('spell'),'Tap LUMEN');
  const target={matches:()=>false};listeners.keydown[0]({target});assert.equal(app.inputLabel('spell'),'K');
- listeners.pointerdown[0]({pointerType:'touch'});assert.equal(app.inputLabel('interact'),'Tap INTERACT');assert.equal(app.inputLabel('drop'),'Down (keyboard/controller)');
+ listeners.pointerdown[0]({pointerType:'touch'});assert.equal(app.inputLabel('interact'),'Tap INTERACT');assert.equal(app.inputLabel('drop'),'Hold DOWN');
  listeners.pointerdown[0]({pointerType:'mouse'});assert.equal(app.inputLabel('interact'),'E');
 });
 test('idle connected pads do not steal hints; used standard and generic pads label honestly',()=>{

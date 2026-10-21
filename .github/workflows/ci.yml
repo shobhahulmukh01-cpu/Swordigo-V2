@@ -8,35 +8,70 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      EW_EVIDENCE_WORKFLOW: ci
+      EW_EVIDENCE_STATE: ${{ runner.temp }}/emberwake-release-state
+      EW_EVIDENCE_RAW: ${{ runner.temp }}/emberwake-release-raw
+      EW_EVIDENCE_OUTPUT: ${{ runner.temp }}/emberwake-release-evidence
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - id: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 0
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - id: node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '24'
-      - run: npm ci
-      - run: npm test && npm run check:secrets && npm run build && npm run test:campaign && npm run test:chapter:earned
+      - name: Initialize isolated release evidence
+        run: node scripts/release-evidence.mjs init
+      - name: Install dependencies
+        run: node scripts/release-evidence.mjs run install
+      - name: Required source and earned campaign checks
+        shell: bash
+        run: |
+          node scripts/release-evidence.mjs run unit
+          node scripts/release-evidence.mjs run secrets
+          node scripts/release-evidence.mjs run build
+          node scripts/release-evidence.mjs run artifact-bind
+          node scripts/release-evidence.mjs run campaign
+          node scripts/release-evidence.mjs run chapter-earned
       - name: Required browser harness
         shell: bash
         run: |
-          chrome="$(command -v google-chrome || command -v google-chrome-stable || true)"
-          test -n "$chrome" || { echo 'Google Chrome is required' >&2; exit 1; }
-          export CHROME_BIN="$chrome" CHROME_PATH="$chrome"
-          npm run test:browser
+          node scripts/release-evidence.mjs run browser-identity
+          node scripts/release-evidence.mjs run browser-harness
       - name: Emberwake upgrade and offline checks
         shell: bash
         run: |
-          export CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable)"
-          node scripts/serve.mjs --port 4173 --base /Swordigo-V2/ > /tmp/emberwake-server.log 2>&1 &
+          node scripts/serve.mjs --port 4173 --base /Swordigo-V2/ > /dev/null 2>&1 &
           server=$!
-          trap 'kill "$server"' EXIT
-          for n in $(seq 1 30); do curl -sf http://127.0.0.1:4173/Swordigo-V2/ > /dev/null && break; sleep 1; done
-          python3 tests/browser-smoke.py --base-url http://127.0.0.1:4173/Swordigo-V2/ --output /tmp/emberwake-http-qa
-          npm run test:firstload:browser
-          npm run test:chapter:browser
-          npm run test:upgrade:browser
-          npm run test:hud:browser
-          npm run test:persistence:browser
-          npm run test:update:browser
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          node scripts/release-evidence.mjs run http-ready
+          node scripts/release-evidence.mjs run http-smoke
+          node scripts/release-evidence.mjs run firstload
+          node scripts/release-evidence.mjs run chapter-browser
+          node scripts/release-evidence.mjs run upgrade
+          node scripts/release-evidence.mjs run hud
+          node scripts/release-evidence.mjs run persistence
+          node scripts/release-evidence.mjs run update
+      - id: evidence
+        name: Finalize artifact-bound release evidence
+        if: always()
+        env:
+          EW_CHECKOUT_OUTCOME: ${{ steps.checkout.outcome }}
+          EW_NODE_OUTCOME: ${{ steps.node.outcome }}
+        run: node scripts/release-evidence.mjs finalize
+      - name: Retain allowlisted release diagnostics
+        if: always() && steps.evidence.outputs.upload_safe == 'true'
+        # Official tag-to-commit reference checked by parent; provenance in ALPHA5-CI-EVIDENCE.md.
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: release-evidence-ci-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/emberwake-release-evidence/index.json
+            ${{ runner.temp }}/emberwake-release-evidence/reports.json
+          if-no-files-found: error
+          include-hidden-files: false
+          retention-days: 14
+          compression-level: 9

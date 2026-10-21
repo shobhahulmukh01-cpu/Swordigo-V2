@@ -1,0 +1,1272 @@
+{
+  "kind": "Alpha.5 source-grounded native Chromium acceptance",
+  "pass": true,
+  "startedAt": "2026-10-21T17:03:23.080Z",
+  "base": "http://127.0.0.1:4173/",
+  "harnessSHA256": "66d7947b3b958b8105ed91b2025d5fc760bdf2d7df36c2cf21519c88b020bbf8",
+  "cases": [
+    {
+      "name": "desktop-native",
+      "scope": "Fresh desktop UI; native settings, input-earned cache and correspondence reader",
+      "status": "pass",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "titleIsolation": {
+        "kind": "settings",
+        "modalInert": false,
+        "titleInert": true,
+        "worldInert": true,
+        "liveInert": false,
+        "importInert": false,
+        "importInModal": true,
+        "importHidden": true,
+        "focusInside": true
+      },
+      "invalidOrigin": {
+        "scope": "explicit hidden-DOM-origin fixture",
+        "fallback": "begin"
+      },
+      "atlas": {
+        "quality": "high",
+        "ready": true,
+        "failed": false,
+        "width": 1264,
+        "height": 848,
+        "path": "/assets/art/terrain-materials-v13.png",
+        "selected": true
+      },
+      "layout": {
+        "overflow": false,
+        "touch": []
+      },
+      "controllerLabels": {
+        "mode": "gamepad",
+        "jump": "A",
+        "attack": "X",
+        "drop": "D-pad down",
+        "guide": "A · DOUBLE-JUMP\nX chains strikes · LT precision guard\nY unseals world-runes",
+        "badges": [
+          "X",
+          "Y",
+          "B",
+          "LB",
+          "LT"
+        ]
+      },
+      "earnedCorrespondence": {
+        "id": "m-ch0",
+        "acquisition": "Fresh native walk and KeyE; no game/position/fact injection",
+        "originalText": "A letter to spring: If you return, you will find your garden waiting.",
+        "goldBefore": 0,
+        "goldAfter": 60,
+        "readerImmutable": true
+      },
+      "nativeChooserCancel": {
+        "trusted": true,
+        "value": "",
+        "triggerVisible": true,
+        "triggerValid": true,
+        "focused": true,
+        "contained": true,
+        "hidden": true
+      },
+      "importCancelledImmutable": true,
+      "keyboardLabels": {
+        "mode": "keyboard",
+        "jump": "Space",
+        "attack": "J",
+        "drop": "S",
+        "guide": "Space · DOUBLE-JUMP\nJ chains strikes · Q precision guard\nK unseals world-runes",
+        "badges": [
+          "J",
+          "K",
+          "Shift",
+          "R",
+          "Q"
+        ]
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:03:41.163Z"
+    },
+    {
+      "name": "portrait-touch",
+      "scope": "Fresh 390x844 UI; CDP-dispatched touch, held drop and cancelled multitouch recovery",
+      "status": "pass",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "atlas": {
+        "quality": "high",
+        "ready": true,
+        "failed": false,
+        "width": 1264,
+        "height": 848,
+        "path": "/assets/art/terrain-materials-v13.png",
+        "selected": true
+      },
+      "layout": {
+        "overflow": false,
+        "touch": [
+          {
+            "action": "left",
+            "x": 16,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "left",
+            "onscreen": true
+          },
+          {
+            "action": "right",
+            "x": 70,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "right",
+            "onscreen": true
+          },
+          {
+            "action": "drop",
+            "x": 43,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "drop",
+            "onscreen": true
+          },
+          {
+            "action": "parry",
+            "x": 218,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "parry",
+            "onscreen": true
+          },
+          {
+            "action": "heal",
+            "x": 272,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "heal",
+            "onscreen": true
+          },
+          {
+            "action": "dash",
+            "x": 326,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "dash",
+            "onscreen": true
+          },
+          {
+            "action": "spell",
+            "x": 218,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "spell",
+            "onscreen": true
+          },
+          {
+            "action": "attack",
+            "x": 272,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "attack",
+            "onscreen": true
+          },
+          {
+            "action": "jump",
+            "x": 326,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "jump",
+            "onscreen": true
+          }
+        ]
+      },
+      "touchLabels": {
+        "mode": "touch",
+        "jump": "Tap JUMP",
+        "attack": "Tap STRIKE",
+        "drop": "Hold DOWN",
+        "guide": "Tap JUMP · DOUBLE-JUMPTap STRIKE chains strikes · Tap GUARD precision guardTap LUMEN unseals world-runes",
+        "badges": [
+          "Tap STRIKE",
+          "Tap LUMEN",
+          "Tap DASH",
+          "Tap FLASK",
+          "Tap GUARD"
+        ]
+      },
+      "pointerTrace": [
+        {
+          "type": "pointerdown",
+          "pointerId": 7,
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 8,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 9,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerup",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 10,
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 11,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 12,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        },
+        {
+          "type": "pointerup",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        }
+      ],
+      "touch": {
+        "source": "Chromium CDP Input.dispatchTouchEvent; trusted DOM touch pointer events",
+        "simultaneousHeld": {
+          "held": [
+            [
+              "pointer:7",
+              "right"
+            ],
+            [
+              "pointer:8",
+              "drop"
+            ]
+          ],
+          "axis": 1,
+          "drop": true
+        },
+        "cancelledRecovery": true,
+        "modalClear": true,
+        "freshJumpAfterCancel": true,
+        "platformDescent": "unrun; no earned one-way shelf reached"
+      },
+      "layoutAfter": {
+        "overflow": false,
+        "touch": [
+          {
+            "action": "left",
+            "x": 16,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "left",
+            "onscreen": true
+          },
+          {
+            "action": "right",
+            "x": 70,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "right",
+            "onscreen": true
+          },
+          {
+            "action": "drop",
+            "x": 43,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "drop",
+            "onscreen": true
+          },
+          {
+            "action": "parry",
+            "x": 218,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "parry",
+            "onscreen": true
+          },
+          {
+            "action": "heal",
+            "x": 272,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "heal",
+            "onscreen": true
+          },
+          {
+            "action": "dash",
+            "x": 326,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "dash",
+            "onscreen": true
+          },
+          {
+            "action": "spell",
+            "x": 218,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "spell",
+            "onscreen": true
+          },
+          {
+            "action": "attack",
+            "x": 272,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "attack",
+            "onscreen": true
+          },
+          {
+            "action": "jump",
+            "x": 326,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "jump",
+            "onscreen": true
+          }
+        ]
+      },
+      "keyboardLabels": {
+        "mode": "keyboard",
+        "jump": "Space",
+        "attack": "J",
+        "drop": "S",
+        "guide": "Tap JUMP · DOUBLE-JUMPTap STRIKE chains strikes · Tap GUARD precision guardTap LUMEN unseals world-runes",
+        "badges": [
+          "Tap STRIKE",
+          "Tap LUMEN",
+          "Tap DASH",
+          "Tap FLASK",
+          "Tap GUARD"
+        ]
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:03:43.765Z"
+    },
+    {
+      "name": "landscape-touch",
+      "scope": "Fresh 844x390 UI; CDP-dispatched touch, held drop and cancelled multitouch recovery",
+      "status": "pass",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "atlas": {
+        "quality": "high",
+        "ready": true,
+        "failed": false,
+        "width": 1264,
+        "height": 848,
+        "path": "/assets/art/terrain-materials-v13.png",
+        "selected": true
+      },
+      "layout": {
+        "overflow": false,
+        "touch": [
+          {
+            "action": "left",
+            "x": 16,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "left",
+            "onscreen": true
+          },
+          {
+            "action": "right",
+            "x": 70,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "right",
+            "onscreen": true
+          },
+          {
+            "action": "drop",
+            "x": 124,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "drop",
+            "onscreen": true
+          },
+          {
+            "action": "parry",
+            "x": 510,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "parry",
+            "onscreen": true
+          },
+          {
+            "action": "heal",
+            "x": 564,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "heal",
+            "onscreen": true
+          },
+          {
+            "action": "dash",
+            "x": 618,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "dash",
+            "onscreen": true
+          },
+          {
+            "action": "spell",
+            "x": 672,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "spell",
+            "onscreen": true
+          },
+          {
+            "action": "attack",
+            "x": 726,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "attack",
+            "onscreen": true
+          },
+          {
+            "action": "jump",
+            "x": 780,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "jump",
+            "onscreen": true
+          }
+        ]
+      },
+      "touchLabels": {
+        "mode": "touch",
+        "jump": "Tap JUMP",
+        "attack": "Tap STRIKE",
+        "drop": "Hold DOWN",
+        "guide": "Tap JUMP · DOUBLE-JUMPTap STRIKE chains strikes · Tap GUARD precision guardTap LUMEN unseals world-runes",
+        "badges": [
+          "Tap STRIKE",
+          "Tap LUMEN",
+          "Tap DASH",
+          "Tap FLASK",
+          "Tap GUARD"
+        ]
+      },
+      "pointerTrace": [
+        {
+          "type": "pointerdown",
+          "pointerId": 7,
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 8,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 9,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerup",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 10,
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 11,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 12,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        },
+        {
+          "type": "pointerup",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        }
+      ],
+      "touch": {
+        "source": "Chromium CDP Input.dispatchTouchEvent; trusted DOM touch pointer events",
+        "simultaneousHeld": {
+          "held": [
+            [
+              "pointer:7",
+              "right"
+            ],
+            [
+              "pointer:8",
+              "drop"
+            ]
+          ],
+          "axis": 1,
+          "drop": true
+        },
+        "cancelledRecovery": true,
+        "modalClear": true,
+        "freshJumpAfterCancel": true,
+        "platformDescent": "unrun; no earned one-way shelf reached"
+      },
+      "layoutAfter": {
+        "overflow": false,
+        "touch": [
+          {
+            "action": "left",
+            "x": 16,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "left",
+            "onscreen": true
+          },
+          {
+            "action": "right",
+            "x": 70,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "right",
+            "onscreen": true
+          },
+          {
+            "action": "drop",
+            "x": 124,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "drop",
+            "onscreen": true
+          },
+          {
+            "action": "parry",
+            "x": 510,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "parry",
+            "onscreen": true
+          },
+          {
+            "action": "heal",
+            "x": 564,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "heal",
+            "onscreen": true
+          },
+          {
+            "action": "dash",
+            "x": 618,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "dash",
+            "onscreen": true
+          },
+          {
+            "action": "spell",
+            "x": 672,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "spell",
+            "onscreen": true
+          },
+          {
+            "action": "attack",
+            "x": 726,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "attack",
+            "onscreen": true
+          },
+          {
+            "action": "jump",
+            "x": 780,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "jump",
+            "onscreen": true
+          }
+        ]
+      },
+      "keyboardLabels": {
+        "mode": "keyboard",
+        "jump": "Space",
+        "attack": "J",
+        "drop": "S",
+        "guide": "Tap JUMP · DOUBLE-JUMPTap STRIKE chains strikes · Tap GUARD precision guardTap LUMEN unseals world-runes",
+        "badges": [
+          "Tap STRIKE",
+          "Tap LUMEN",
+          "Tap DASH",
+          "Tap FLASK",
+          "Tap GUARD"
+        ]
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:03:46.451Z"
+    },
+    {
+      "name": "atlas-missing-fallback",
+      "scope": "Fresh native UI with an explicitly aborted atlas request; degraded renderer",
+      "status": "pass",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "fallback": {
+        "quality": "high",
+        "ready": false,
+        "failed": true,
+        "selected": false,
+        "canvasWidth": 1440,
+        "canvasHeight": 1000,
+        "pixels": 255,
+        "requests": 1,
+        "scope": "deliberately aborted authored atlas; inspect capture manually"
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:03:50.641Z"
+    },
+    {
+      "name": "letter-coda-fixtures",
+      "scope": "Validated synthetic imports; native approach and interact, not earned campaigns/repairs",
+      "status": "pass",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "reads": [
+        {
+          "ending": "mercy",
+          "repaired": false,
+          "complete": false,
+          "first": {
+            "before": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"mercy\"},\"chapter\":{\"active\":true,\"complete\":false,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[],\"items\":[],\"deliveries\":[],\"defeated\":[\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.166666666666665,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":357.5,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.166666666666725,\"anim\":1.166666666666665,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":1,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":false,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":0,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[],\\\"sigils\\\":[],\\\"defeated\\\":[],\\\"seen\\\":[\\\"moonroot\\\"]},\\\"checkpoint\\\":\\\"m-cp0\\\",\\\"stats\\\":{\\\"time\\\":0.3583333333333336,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":false,\\\"ending\\\":null},\\\"chapter\\\":{\\\"active\\\":false,\\\"complete\\\":false,\\\"discovered\\\":[],\\\"mechanisms\\\":[],\\\"items\\\":[],\\\"deliveries\\\":[],\\\"defeated\\\":[],\\\"anchor\\\":null,\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":3}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "after": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"mercy\"},\"chapter\":{\"active\":true,\"complete\":false,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[],\"items\":[\"ch1:item:open-letter\"],\"deliveries\":[],\"defeated\":[\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.166666666666665,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":357.5,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.166666666666725,\"anim\":1.166666666666665,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":2,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":false,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":0,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[],\\\"sigils\\\":[],\\\"defeated\\\":[],\\\"seen\\\":[\\\"moonroot\\\"]},\\\"checkpoint\\\":\\\"m-cp0\\\",\\\"stats\\\":{\\\"time\\\":0.3583333333333336,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":false,\\\"ending\\\":null},\\\"chapter\\\":{\\\"active\\\":false,\\\"complete\\\":false,\\\"discovered\\\":[],\\\"mechanisms\\\":[],\\\"items\\\":[],\\\"deliveries\\\":[],\\\"defeated\\\":[],\\\"anchor\\\":null,\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":3}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "emitted": [
+              {
+                "type": "dialogue",
+                "lines": [
+                  "Lyra: Tomorrow is not a promise that nothing will hurt. It is a promise that the next page is ours.",
+                  "The letter remains open. None of the optional deliveries can take your original ending away."
+                ]
+              },
+              {
+                "type": "save"
+              }
+            ],
+            "lines": [
+              "Lyra: Tomorrow is not a promise that nothing will hurt. It is a promise that the next page is ours.",
+              "The letter remains open. None of the optional deliveries can take your original ending away."
+            ]
+          },
+          "repeat": {
+            "before": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"mercy\"},\"chapter\":{\"active\":true,\"complete\":false,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[],\"items\":[\"ch1:item:open-letter\"],\"deliveries\":[],\"defeated\":[\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.6833333333333298,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":392.5,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.683333333333417,\"anim\":1.6833333333333298,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":2,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":false,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":1.166666666666665,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":false,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":4}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "after": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"mercy\"},\"chapter\":{\"active\":true,\"complete\":false,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[],\"items\":[\"ch1:item:open-letter\"],\"deliveries\":[],\"defeated\":[\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.6833333333333298,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":392.5,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.683333333333417,\"anim\":1.6833333333333298,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":2,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":false,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":1.166666666666665,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":false,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":4}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "emitted": [
+              {
+                "type": "dialogue",
+                "lines": [
+                  "Already read: Lyra’s open letter",
+                  "Lyra: Tomorrow is not a promise that nothing will hurt. It is a promise that the next page is ours.",
+                  "The letter remains open. None of the optional deliveries can take your original ending away."
+                ]
+              }
+            ],
+            "lines": [
+              "Already read: Lyra’s open letter",
+              "Lyra: Tomorrow is not a promise that nothing will hurt. It is a promise that the next page is ours.",
+              "The letter remains open. None of the optional deliveries can take your original ending away."
+            ]
+          }
+        },
+        {
+          "ending": "mercy",
+          "repaired": false,
+          "scope": "synthetic imported eligibility; native normal findNearby/interact dispatch",
+          "proof": {
+            "before": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"mercy\"},\"chapter\":{\"active\":true,\"complete\":true,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[],\"items\":[\"ch1:item:open-letter\"],\"deliveries\":[],\"defeated\":[\"ch1:enemy:archivist-engine\",\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.1999999999999982,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":360,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.20000000000006,\"anim\":1.1999999999999982,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":1,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":false,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":1.9416666666666622,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":6}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "after": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"mercy\"},\"chapter\":{\"active\":true,\"complete\":true,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[],\"items\":[\"ch1:item:open-letter\"],\"deliveries\":[],\"defeated\":[\"ch1:enemy:archivist-engine\",\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.1999999999999982,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":360,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.20000000000006,\"anim\":1.1999999999999982,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":1,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":false,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":1.9416666666666622,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":6}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "emitted": [
+              {
+                "type": "dialogue",
+                "lines": [
+                  "Lyra: The hearts are free, and the archived hours belong to their keepers. This is the page we write afterward.",
+                  "Mara’s measurements can still be brought home; freedom is not the same as finished repair.",
+                  "Tovan’s hearth is still waiting for Summer Coal.",
+                  "The Charter is not yet published. That work remains ours to choose.",
+                  "Orin’s signed testimony is still there to read.",
+                  "The king has a tomorrow. His orders stay in the public record.",
+                  "Lyra: No new crown. No perfect tomorrow. Just people who can choose what comes next."
+                ]
+              }
+            ],
+            "lines": [
+              "Lyra: The hearts are free, and the archived hours belong to their keepers. This is the page we write afterward.",
+              "Mara’s measurements can still be brought home; freedom is not the same as finished repair.",
+              "Tovan’s hearth is still waiting for Summer Coal.",
+              "The Charter is not yet published. That work remains ours to choose.",
+              "Orin’s signed testimony is still there to read.",
+              "The king has a tomorrow. His orders stay in the public record.",
+              "Lyra: No new crown. No perfect tomorrow. Just people who can choose what comes next."
+            ]
+          }
+        },
+        {
+          "ending": "mercy",
+          "repaired": true,
+          "scope": "synthetic imported eligibility; native normal findNearby/interact dispatch",
+          "proof": {
+            "before": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"mercy\"},\"chapter\":{\"active\":true,\"complete\":true,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[\"ch1:mechanism:rootbridge\",\"ch1:mechanism:seal-charter\",\"ch1:mechanism:seal-summer\",\"ch1:mechanism:seal-water\",\"ch1:mechanism:valve-east\",\"ch1:mechanism:valve-west\",\"ch1:mechanism:vent-east\",\"ch1:mechanism:vent-west\"],\"items\":[\"ch1:item:charter\",\"ch1:item:open-letter\",\"ch1:item:orin-testimony\",\"ch1:item:summer-coal\",\"ch1:item:water-letter\"],\"deliveries\":[\"ch1:delivery:charter\",\"ch1:delivery:summer-coal\",\"ch1:delivery:water-remembers\"],\"defeated\":[\"ch1:enemy:archivist-engine\",\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.1833333333333316,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":357.5,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.183333333333392,\"anim\":1.1833333333333316,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":1,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[\\\"ch1:mechanism:rootbridge\\\",\\\"ch1:mechanism:seal-charter\\\",\\\"ch1:mechanism:seal-summer\\\",\\\"ch1:mechanism:seal-water\\\",\\\"ch1:mechanism:valve-east\\\",\\\"ch1:mechanism:valve-west\\\",\\\"ch1:mechanism:vent-east\\\",\\\"ch1:mechanism:vent-west\\\"],\\\"items\\\":[\\\"ch1:item:charter\\\",\\\"ch1:item:open-letter\\\",\\\"ch1:item:orin-testimony\\\",\\\"ch1:item:summer-coal\\\",\\\"ch1:item:water-letter\\\"],\\\"deliveries\\\":[\\\"ch1:delivery:charter\\\",\\\"ch1:delivery:summer-coal\\\",\\\"ch1:delivery:water-remembers\\\"],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":1.466666666666664,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":8}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "after": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"mercy\"},\"chapter\":{\"active\":true,\"complete\":true,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[\"ch1:mechanism:rootbridge\",\"ch1:mechanism:seal-charter\",\"ch1:mechanism:seal-summer\",\"ch1:mechanism:seal-water\",\"ch1:mechanism:valve-east\",\"ch1:mechanism:valve-west\",\"ch1:mechanism:vent-east\",\"ch1:mechanism:vent-west\"],\"items\":[\"ch1:item:charter\",\"ch1:item:open-letter\",\"ch1:item:orin-testimony\",\"ch1:item:summer-coal\",\"ch1:item:water-letter\"],\"deliveries\":[\"ch1:delivery:charter\",\"ch1:delivery:summer-coal\",\"ch1:delivery:water-remembers\"],\"defeated\":[\"ch1:enemy:archivist-engine\",\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.1833333333333316,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":357.5,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.183333333333392,\"anim\":1.1833333333333316,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":1,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[\\\"ch1:mechanism:rootbridge\\\",\\\"ch1:mechanism:seal-charter\\\",\\\"ch1:mechanism:seal-summer\\\",\\\"ch1:mechanism:seal-water\\\",\\\"ch1:mechanism:valve-east\\\",\\\"ch1:mechanism:valve-west\\\",\\\"ch1:mechanism:vent-east\\\",\\\"ch1:mechanism:vent-west\\\"],\\\"items\\\":[\\\"ch1:item:charter\\\",\\\"ch1:item:open-letter\\\",\\\"ch1:item:orin-testimony\\\",\\\"ch1:item:summer-coal\\\",\\\"ch1:item:water-letter\\\"],\\\"deliveries\\\":[\\\"ch1:delivery:charter\\\",\\\"ch1:delivery:summer-coal\\\",\\\"ch1:delivery:water-remembers\\\"],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":1.466666666666664,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":8}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "emitted": [
+              {
+                "type": "dialogue",
+                "lines": [
+                  "Lyra: The hearts are free, and the archived hours belong to their keepers. This is the page we write afterward.",
+                  "Mara’s terraces have their measured share.",
+                  "Tovan’s banked hearth warms a home without stolen years.",
+                  "The Common Hearth Charter stands in the public record.",
+                  "Orin’s signed testimony remains named beside his part in the orders.",
+                  "The king has a tomorrow. His orders stay in the public record.",
+                  "Lyra: No new crown. No perfect tomorrow. Just people who can choose what comes next."
+                ]
+              }
+            ],
+            "lines": [
+              "Lyra: The hearts are free, and the archived hours belong to their keepers. This is the page we write afterward.",
+              "Mara’s terraces have their measured share.",
+              "Tovan’s banked hearth warms a home without stolen years.",
+              "The Common Hearth Charter stands in the public record.",
+              "Orin’s signed testimony remains named beside his part in the orders.",
+              "The king has a tomorrow. His orders stay in the public record.",
+              "Lyra: No new crown. No perfect tomorrow. Just people who can choose what comes next."
+            ]
+          }
+        },
+        {
+          "ending": "rekindle",
+          "repaired": false,
+          "scope": "synthetic imported eligibility; native normal findNearby/interact dispatch",
+          "proof": {
+            "before": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"rekindle\"},\"chapter\":{\"active\":true,\"complete\":true,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[],\"items\":[\"ch1:item:open-letter\"],\"deliveries\":[],\"defeated\":[\"ch1:enemy:archivist-engine\",\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.1499999999999984,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":352.5,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.150000000000057,\"anim\":1.1499999999999984,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":1,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"rekindle\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[\\\"ch1:mechanism:rootbridge\\\",\\\"ch1:mechanism:seal-charter\\\",\\\"ch1:mechanism:seal-summer\\\",\\\"ch1:mechanism:seal-water\\\",\\\"ch1:mechanism:valve-east\\\",\\\"ch1:mechanism:valve-west\\\",\\\"ch1:mechanism:vent-east\\\",\\\"ch1:mechanism:vent-west\\\"],\\\"items\\\":[\\\"ch1:item:charter\\\",\\\"ch1:item:open-letter\\\",\\\"ch1:item:orin-testimony\\\",\\\"ch1:item:summer-coal\\\",\\\"ch1:item:water-letter\\\"],\\\"deliveries\\\":[\\\"ch1:delivery:charter\\\",\\\"ch1:delivery:summer-coal\\\",\\\"ch1:delivery:water-remembers\\\"],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":1.441666666666664,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":10}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "after": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"rekindle\"},\"chapter\":{\"active\":true,\"complete\":true,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[],\"items\":[\"ch1:item:open-letter\"],\"deliveries\":[],\"defeated\":[\"ch1:enemy:archivist-engine\",\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.1499999999999984,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":352.5,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.150000000000057,\"anim\":1.1499999999999984,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":1,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"rekindle\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"mercy\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[\\\"ch1:mechanism:rootbridge\\\",\\\"ch1:mechanism:seal-charter\\\",\\\"ch1:mechanism:seal-summer\\\",\\\"ch1:mechanism:seal-water\\\",\\\"ch1:mechanism:valve-east\\\",\\\"ch1:mechanism:valve-west\\\",\\\"ch1:mechanism:vent-east\\\",\\\"ch1:mechanism:vent-west\\\"],\\\"items\\\":[\\\"ch1:item:charter\\\",\\\"ch1:item:open-letter\\\",\\\"ch1:item:orin-testimony\\\",\\\"ch1:item:summer-coal\\\",\\\"ch1:item:water-letter\\\"],\\\"deliveries\\\":[\\\"ch1:delivery:charter\\\",\\\"ch1:delivery:summer-coal\\\",\\\"ch1:delivery:water-remembers\\\"],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":1.441666666666664,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":10}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "emitted": [
+              {
+                "type": "dialogue",
+                "lines": [
+                  "Lyra: The hearts are free, and the archived hours belong to their keepers. This is the page we write afterward.",
+                  "Mara’s measurements can still be brought home; freedom is not the same as finished repair.",
+                  "Tovan’s hearth is still waiting for Summer Coal.",
+                  "The Charter is not yet published. That work remains ours to choose.",
+                  "Orin’s signed testimony is still there to read.",
+                  "The palace is fading. Its orders stay in the public record.",
+                  "Lyra: No new crown. No perfect tomorrow. Just people who can choose what comes next."
+                ]
+              }
+            ],
+            "lines": [
+              "Lyra: The hearts are free, and the archived hours belong to their keepers. This is the page we write afterward.",
+              "Mara’s measurements can still be brought home; freedom is not the same as finished repair.",
+              "Tovan’s hearth is still waiting for Summer Coal.",
+              "The Charter is not yet published. That work remains ours to choose.",
+              "Orin’s signed testimony is still there to read.",
+              "The palace is fading. Its orders stay in the public record.",
+              "Lyra: No new crown. No perfect tomorrow. Just people who can choose what comes next."
+            ]
+          }
+        },
+        {
+          "ending": "rekindle",
+          "repaired": true,
+          "scope": "synthetic imported eligibility; native normal findNearby/interact dispatch",
+          "proof": {
+            "before": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"rekindle\"},\"chapter\":{\"active\":true,\"complete\":true,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[\"ch1:mechanism:rootbridge\",\"ch1:mechanism:seal-charter\",\"ch1:mechanism:seal-summer\",\"ch1:mechanism:seal-water\",\"ch1:mechanism:valve-east\",\"ch1:mechanism:valve-west\",\"ch1:mechanism:vent-east\",\"ch1:mechanism:vent-west\"],\"items\":[\"ch1:item:charter\",\"ch1:item:open-letter\",\"ch1:item:orin-testimony\",\"ch1:item:summer-coal\",\"ch1:item:water-letter\"],\"deliveries\":[\"ch1:delivery:charter\",\"ch1:delivery:summer-coal\",\"ch1:delivery:water-remembers\"],\"defeated\":[\"ch1:enemy:archivist-engine\",\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.1833333333333316,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":360,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.183333333333392,\"anim\":1.1833333333333316,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":1,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"rekindle\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[\\\"ch1:mechanism:rootbridge\\\",\\\"ch1:mechanism:seal-charter\\\",\\\"ch1:mechanism:seal-summer\\\",\\\"ch1:mechanism:seal-water\\\",\\\"ch1:mechanism:valve-east\\\",\\\"ch1:mechanism:valve-west\\\",\\\"ch1:mechanism:vent-east\\\",\\\"ch1:mechanism:vent-west\\\"],\\\"items\\\":[\\\"ch1:item:charter\\\",\\\"ch1:item:open-letter\\\",\\\"ch1:item:orin-testimony\\\",\\\"ch1:item:summer-coal\\\",\\\"ch1:item:water-letter\\\"],\\\"deliveries\\\":[\\\"ch1:delivery:charter\\\",\\\"ch1:delivery:summer-coal\\\",\\\"ch1:delivery:water-remembers\\\"],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"rekindle\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":1.416666666666664,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":12}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "after": "{\"journey\":{\"campaignId\":\"hollow-crown-v3\",\"base\":{\"version\":3,\"level\":2,\"mode\":\"story\",\"difficulty\":\"adventure\",\"gold\":0,\"xp\":0,\"rank\":1,\"upgrades\":{\"blade\":0,\"heart\":0,\"focus\":0},\"flags\":{\"chests\":[],\"runes\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"sigils\":[\"m-si0\",\"m-si1\",\"c-si0\",\"c-si1\",\"h-si0\",\"h-si1\"],\"defeated\":[\"m-boss\",\"m-e0\",\"m-e1\",\"m-e2\",\"m-e3\",\"m-e4\",\"m-e5\",\"m-e6\",\"m-e7\",\"c-boss\",\"c-e0\",\"c-e1\",\"c-e2\",\"c-e3\",\"c-e4\",\"c-e5\",\"c-e6\",\"c-e7\",\"c-e8\",\"h-boss\",\"h-e0\",\"h-e1\",\"h-e2\",\"h-e3\",\"h-e4\",\"h-e5\",\"h-e6\",\"h-e7\",\"h-e8\"],\"seen\":[\"moonroot\",\"cinderworks\",\"hollowspire\"]},\"checkpoint\":\"h-cp0\",\"stats\":{\"time\":0,\"kills\":0,\"deaths\":0},\"completed\":true,\"ending\":\"rekindle\"},\"chapter\":{\"active\":true,\"complete\":true,\"discovered\":[\"ch1:main:cinderworks\",\"ch1:main:hollowspire\",\"ch1:main:moonroot\",\"ch1:room:cooling-gallery\",\"ch1:room:millpond\",\"ch1:room:rootcellar\",\"ch1:room:star-archive\"],\"mechanisms\":[\"ch1:mechanism:rootbridge\",\"ch1:mechanism:seal-charter\",\"ch1:mechanism:seal-summer\",\"ch1:mechanism:seal-water\",\"ch1:mechanism:valve-east\",\"ch1:mechanism:valve-west\",\"ch1:mechanism:vent-east\",\"ch1:mechanism:vent-west\"],\"items\":[\"ch1:item:charter\",\"ch1:item:open-letter\",\"ch1:item:orin-testimony\",\"ch1:item:summer-coal\",\"ch1:item:water-letter\"],\"deliveries\":[\"ch1:delivery:charter\",\"ch1:delivery:summer-coal\",\"ch1:delivery:water-remembers\"],\"defeated\":[\"ch1:enemy:archivist-engine\",\"ch1:enemy:rootcellar-01\",\"ch1:enemy:rootcellar-02\",\"ch1:enemy:rootcellar-03\"],\"anchor\":{\"sceneId\":\"ch1:room:rootcellar\",\"anchorId\":\"ch1:anchor:rootcellar-entry\"},\"stats\":{\"time\":1.1833333333333316,\"kills\":0,\"deaths\":0}}},\"p\":{\"x\":360,\"y\":536,\"w\":28,\"h\":54,\"vx\":0,\"vy\":0,\"grounded\":true,\"jumps\":0,\"coyote\":0.11,\"jumpBuffer\":0,\"face\":1,\"hp\":100,\"mp\":100,\"flasks\":3,\"inv\":0,\"attack\":0,\"attackCD\":0,\"spellCD\":0,\"dash\":0,\"dashCD\":0,\"combo\":0,\"comboAge\":6.183333333333392,\"anim\":1.1833333333333316,\"parry\":0,\"parryCD\":0,\"guardFlash\":0},\"revision\":1,\"scene\":\"ch1:room:rootcellar\",\"store\":\"{\\\"game\\\":\\\"emberwake\\\",\\\"version\\\":4,\\\"current\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"rekindle\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[\\\"ch1:mechanism:rootbridge\\\",\\\"ch1:mechanism:seal-charter\\\",\\\"ch1:mechanism:seal-summer\\\",\\\"ch1:mechanism:seal-water\\\",\\\"ch1:mechanism:valve-east\\\",\\\"ch1:mechanism:valve-west\\\",\\\"ch1:mechanism:vent-east\\\",\\\"ch1:mechanism:vent-west\\\"],\\\"items\\\":[\\\"ch1:item:charter\\\",\\\"ch1:item:open-letter\\\",\\\"ch1:item:orin-testimony\\\",\\\"ch1:item:summer-coal\\\",\\\"ch1:item:water-letter\\\"],\\\"deliveries\\\":[\\\"ch1:delivery:charter\\\",\\\"ch1:delivery:summer-coal\\\",\\\"ch1:delivery:water-remembers\\\"],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"previous\\\":{\\\"campaignId\\\":\\\"hollow-crown-v3\\\",\\\"base\\\":{\\\"version\\\":3,\\\"level\\\":2,\\\"mode\\\":\\\"story\\\",\\\"difficulty\\\":\\\"adventure\\\",\\\"gold\\\":0,\\\"xp\\\":0,\\\"rank\\\":1,\\\"upgrades\\\":{\\\"blade\\\":0,\\\"heart\\\":0,\\\"focus\\\":0},\\\"flags\\\":{\\\"chests\\\":[],\\\"runes\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"sigils\\\":[\\\"m-si0\\\",\\\"m-si1\\\",\\\"c-si0\\\",\\\"c-si1\\\",\\\"h-si0\\\",\\\"h-si1\\\"],\\\"defeated\\\":[\\\"m-boss\\\",\\\"m-e0\\\",\\\"m-e1\\\",\\\"m-e2\\\",\\\"m-e3\\\",\\\"m-e4\\\",\\\"m-e5\\\",\\\"m-e6\\\",\\\"m-e7\\\",\\\"c-boss\\\",\\\"c-e0\\\",\\\"c-e1\\\",\\\"c-e2\\\",\\\"c-e3\\\",\\\"c-e4\\\",\\\"c-e5\\\",\\\"c-e6\\\",\\\"c-e7\\\",\\\"c-e8\\\",\\\"h-boss\\\",\\\"h-e0\\\",\\\"h-e1\\\",\\\"h-e2\\\",\\\"h-e3\\\",\\\"h-e4\\\",\\\"h-e5\\\",\\\"h-e6\\\",\\\"h-e7\\\",\\\"h-e8\\\"],\\\"seen\\\":[\\\"moonroot\\\",\\\"cinderworks\\\",\\\"hollowspire\\\"]},\\\"checkpoint\\\":\\\"h-cp0\\\",\\\"stats\\\":{\\\"time\\\":0,\\\"kills\\\":0,\\\"deaths\\\":0},\\\"completed\\\":true,\\\"ending\\\":\\\"rekindle\\\"},\\\"chapter\\\":{\\\"active\\\":true,\\\"complete\\\":true,\\\"discovered\\\":[\\\"ch1:main:cinderworks\\\",\\\"ch1:main:hollowspire\\\",\\\"ch1:main:moonroot\\\",\\\"ch1:room:cooling-gallery\\\",\\\"ch1:room:millpond\\\",\\\"ch1:room:rootcellar\\\",\\\"ch1:room:star-archive\\\"],\\\"mechanisms\\\":[],\\\"items\\\":[\\\"ch1:item:open-letter\\\"],\\\"deliveries\\\":[],\\\"defeated\\\":[\\\"ch1:enemy:archivist-engine\\\",\\\"ch1:enemy:rootcellar-01\\\",\\\"ch1:enemy:rootcellar-02\\\",\\\"ch1:enemy:rootcellar-03\\\"],\\\"anchor\\\":{\\\"sceneId\\\":\\\"ch1:room:rootcellar\\\",\\\"anchorId\\\":\\\"ch1:anchor:rootcellar-entry\\\"},\\\"stats\\\":{\\\"time\\\":1.416666666666664,\\\"kills\\\":0,\\\"deaths\\\":0}}},\\\"revision\\\":12}\",\"sceneIdentity\":{\"id\":\"ch1:room:rootcellar\",\"realmId\":\"moonroot\"},\"enemiesIdentity\":[],\"shotsIdentity\":[]}",
+            "emitted": [
+              {
+                "type": "dialogue",
+                "lines": [
+                  "Lyra: The hearts are free, and the archived hours belong to their keepers. This is the page we write afterward.",
+                  "Mara’s terraces have their measured share.",
+                  "Tovan’s banked hearth warms a home without stolen years.",
+                  "The Common Hearth Charter stands in the public record.",
+                  "Orin’s signed testimony remains named beside his part in the orders.",
+                  "The palace is fading. Its orders stay in the public record.",
+                  "Lyra: No new crown. No perfect tomorrow. Just people who can choose what comes next."
+                ]
+              }
+            ],
+            "lines": [
+              "Lyra: The hearts are free, and the archived hours belong to their keepers. This is the page we write afterward.",
+              "Mara’s terraces have their measured share.",
+              "Tovan’s banked hearth warms a home without stolen years.",
+              "The Common Hearth Charter stands in the public record.",
+              "Orin’s signed testimony remains named beside his part in the orders.",
+              "The palace is fading. Its orders stay in the public record.",
+              "Lyra: No new crown. No perfect tomorrow. Just people who can choose what comes next."
+            ]
+          }
+        }
+      ],
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:04:12.705Z"
+    },
+    {
+      "name": "short-room-camera-fixture",
+      "scope": "Render-only invariance + clamping; dynamic native movement screenshots are in fresh viewport cases. Full campaign/replay equivalence is a separate gate.",
+      "status": "pass",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "fixture": {
+        "levelWidth": 1900,
+        "overrideWidth": 2400,
+        "expectedKey": "ch1:room:rootcellar",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "integration": {
+          "width": 2400,
+          "key": "ch1:room:rootcellar"
+        },
+        "simulationUnchanged": true
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:04:17.527Z"
+    }
+  ],
+  "captures": [
+    {
+      "filename": "native-fresh-desktop-1440x1000.png",
+      "scope": "Native fresh launch, decoded atlas, no positioned game state",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "synthetic-pad-active-labels-desktop.png",
+      "scope": "SYNTHETIC standard-gamepad polling in fresh playing journey; active guide/badge labels, not hardware qualification",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "native-earned-correspondence-desktop.png",
+      "scope": "m-ch0 earned by fresh native movement/E; ordinary journal reader",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "native-traversal-desktop-1440x1000.png",
+      "scope": "Input-earned cache journey, native movement and active keyboard labels",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "native-fresh-portrait-390x844.png",
+      "scope": "Fresh native touch launch, decoded atlas; no positioned game state",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "filename": "native-held-drop-portrait-390x844.png",
+      "scope": "Trusted Chromium CDP touch pointers hold RIGHT + DOWN; not physical device or platform-descent proof",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "filename": "native-recovery-portrait-390x844.png",
+      "scope": "Fresh jump after cancelled multitouch; native active touch labels",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "filename": "native-fresh-landscape-844x390.png",
+      "scope": "Fresh native touch launch, decoded atlas; no positioned game state",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      }
+    },
+    {
+      "filename": "native-held-drop-landscape-844x390.png",
+      "scope": "Trusted Chromium CDP touch pointers hold RIGHT + DOWN; not physical device or platform-descent proof",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      }
+    },
+    {
+      "filename": "native-recovery-landscape-844x390.png",
+      "scope": "Fresh jump after cancelled multitouch; native active touch labels",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      }
+    },
+    {
+      "filename": "degraded-atlas-fallback.png",
+      "scope": "DEGRADED FALLBACK: authored atlas request deliberately aborted; human visual inspection required",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "fixture-first-letter-incomplete-archive.png",
+      "scope": "SYNTHETIC completed campaign but incomplete Archive; native first read, not earned progression",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "fixture-coda-mercy-unrepaired.png",
+      "scope": "SYNTHETIC validated ending/Archive/repair/cleared-room import; native walk/E reread, not earned progression",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "fixture-coda-mercy-repaired.png",
+      "scope": "SYNTHETIC validated ending/Archive/repair/cleared-room import; native walk/E reread, not earned progression",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "fixture-coda-rekindle-unrepaired.png",
+      "scope": "SYNTHETIC validated ending/Archive/repair/cleared-room import; native walk/E reread, not earned progression",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "fixture-coda-rekindle-repaired.png",
+      "scope": "SYNTHETIC validated ending/Archive/repair/cleared-room import; native walk/E reread, not earned progression",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "fixture-short-room-ultrawide.png",
+      "scope": "SYNTHETIC cleared-room import; 2560x600 viewport, render-only width clamp test; not earned traversal",
+      "viewport": {
+        "width": 2560,
+        "height": 600
+      }
+    }
+  ],
+  "limits": [
+    "No physical touch/controller, human discovery/pacing, screen-reader, Safari/Firefox or device-performance qualification.",
+    "Controller polling uses a labelled synthetic standard-gamepad event/navigator shim, not physical hardware.",
+    "Touch uses Chromium CDP Input.dispatchTouchEvent; no claim of real-device reach/comfort.",
+    "Only the first Moonroot cache is input-earned here; ending/Archive/repair/cleared-room imports are synthetic fixtures.",
+    "Touch drop proves held dispatch and cancelled-pointer recovery, not an earned one-way-platform descent.",
+    "Screenshots are evidence for individual human inspection, not an automatic visual/contrast/accessibility pass.",
+    "Camera rendering invariance is a bounded fixture; campaign and exact-replay gates remain separate."
+  ],
+  "browserVersion": "153.0.8010.12",
+  "executablePath": "/usr/local/bin/chromium",
+  "finishedAt": "2026-10-21T17:04:17.661Z"
+}

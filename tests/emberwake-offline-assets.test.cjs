@@ -7,8 +7,14 @@ test('all original and authored room plates are content-verified offline install
  for(const name of [...art,'emberwake_panorama.png','moonroot_hd.webp','cinderworks_hd.webp','hollowspire_hd.webp']){
   const p='assets/images/'+name;assert.equal(hashes[p],createHash('sha256').update(fs.readFileSync(path.join(dir,p))).digest('hex'));
  }
+ const atlas='assets/art/terrain-materials-v13.png';
+ assert.equal(hashes[atlas],createHash('sha256').update(fs.readFileSync(path.join(dir,atlas))).digest('hex'));
  assert(!worker.includes('skipWaiting('));
  }finally{fs.rmSync(dir,{recursive:true,force:true});}
+});
+test('missing terrain atlas refuses preparation rather than silently weakening the material fallback contract',()=>{
+ const dir=fixture();try{fs.unlinkSync(path.join(dir,'assets/art/terrain-materials-v13.png'));assert.throws(()=>execFileSync(process.execPath,[path.resolve('scripts/prepare-emberwake.mjs')],{cwd:dir,stdio:'pipe'}));}
+ finally{fs.rmSync(dir,{recursive:true,force:true});}
 });
 test('missing authored art refuses preparation rather than silently shipping incomplete room identities',()=>{
  const dir=fixture();try{fs.unlinkSync(path.join(dir,'assets/images',art[0]));assert.throws(()=>execFileSync(process.execPath,[path.resolve('scripts/prepare-emberwake.mjs')],{cwd:dir,stdio:'pipe'}));}

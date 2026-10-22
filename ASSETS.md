@@ -19,3 +19,11 @@ Four original AI-generated environment plates are shipped as `chapter-millpond.w
 | `assets/images/chapter-cooling.webp` | 93986 | `9797b2a88e3da709d8198959760c7dbaa38a4ab8f82f0132b801b5bccaa3fa74` |
 | `assets/images/chapter-rootcellar.webp` | 82010 | `782e16aad4fc05af4408b76e79bb39d585fa27e49f8d1c1e54439a26f98215fe` |
 | `assets/images/chapter-archive.webp` | 66122 | `8494293e82ea87af884ee490e86954f70c41498afa40e148e5bec06b5fee2896` |
+
+## Alpha.5 original terrain material atlas
+
+`assets/art/terrain-materials-v13.png` is an original AI-generated 1264×848 material sheet used only for quiet, clipped terrain-face detail. Its three horizontal bands depict rootstone/timber, forge iron/copper and archive slate. Existing collision geometry, bright terrain lips, hazards and the complete alpha.4 fallback renderer remain authoritative. The runtime validates exact dimensions after decode, disables the atlas at low quality and permanently falls back for the session after a missing, failed or malformed decode. The atlas is a digest-verified offline-shell member.
+
+| Runtime atlas | Bytes | SHA-256 |
+| --- | ---: | --- |
+| `assets/art/terrain-materials-v13.png` | 1365034 | `510598618f70fcb0381f74fc61fde4ab55efebafbe6b545c2bcde6d445827619` |

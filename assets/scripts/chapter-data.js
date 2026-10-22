@@ -116,6 +116,8 @@ const coal=item('summer-coal',R.gallery,1870,590,'Summer Coal');
 const charter=item('charter',R.cellar,1460,590,'Common Hearth Charter');
 const testimony=item('orin-testimony',M.spire,1000,590,'Orin’s signed testimony');
 const letter=item('open-letter',R.cellar,390,590,'Lyra’s open letter');
+// Authored correspondence remains readable; runtime owns read-only repeat dispatch.
+interactions[letter].reread=true;
 function delivery(slug,itemId,sceneId,x,label,gold){
  const id='ch1:delivery:'+slug;
  deliveries[id]={id,itemId,sceneId,phase:'delivery',label,gold,xp:0,requirements:[req('items',itemId)],optional:true,

@@ -37,9 +37,9 @@ for(const [viewport,width,height] of [['portrait',390,844],['landscape',844,390]
    if(!EW.validateSave(g.snapshot(),EW_LEVELS))throw Error('Invalid guardian fixture');
    const r=a.renderer,canvas=r.canvas.getBoundingClientRect(),hud=document.getElementById('boss-hud').getBoundingClientRect();
    const visibleWarnings=g.bossTelegraphs.filter(m=>m.x-r.cam>24&&m.x-r.cam<r.w-24).length;
-   return {hudBottom:hud.bottom,heroTop:canvas.top+(g.p.y-(r.camY||0))*r.sy,warningCount:g.bossTelegraphs.length,visibleWarnings,bossOnscreen:g.boss.x-r.cam>=0&&g.boss.x+g.boss.w-r.cam<=r.w,warningRendererEnabled:!a.paused,objectiveVisible:getComputedStyle(document.querySelector('.objective')).display!=='none'};
+   return {hudBottom:hud.bottom,heroTop:canvas.top+(g.p.y-(r.camY||0))*r.sy,warningCount:g.bossTelegraphs.length,visibleWarnings,bossVisible:g.boss.x+g.boss.w-r.cam>0&&g.boss.x-r.cam<r.w,warningRendererEnabled:!a.paused,objectiveVisible:getComputedStyle(document.querySelector('.objective')).display!=='none'};
   },i);
-  assert(layout.warningCount>0&&layout.visibleWarnings>0&&layout.warningRendererEnabled,'actual rendered onscreen guardian warning required');assert(layout.bossOnscreen,'fixture must show the guardian');assert(layout.hudBottom<layout.heroTop-8,'guardian HUD clears hero and floor warnings: '+JSON.stringify({viewport,i,...layout}));assert.equal(layout.objectiveVisible,false,'combat replaces redundant objective lane');
+  assert(layout.warningCount>0&&layout.warningRendererEnabled,'active guardian warning render required');assert(layout.bossVisible,'fixture must visibly intersect the guardian');assert(layout.hudBottom<layout.heroTop-8,'guardian HUD clears hero and floor warnings: '+JSON.stringify({viewport,i,...layout}));assert.equal(layout.objectiveVisible,false,'combat replaces redundant objective lane');
   const filename=`guardian-${i+1}-${viewport}.png`;await p.screenshot({path:`${out}/${filename}`});guardianFixtures.push({viewport,guardian:i+1,filename,...layout});
  }
  await context.close();

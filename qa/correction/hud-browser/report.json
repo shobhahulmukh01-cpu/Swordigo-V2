@@ -1,0 +1,148 @@
+{
+  "status": "pass",
+  "captures": 15,
+  "errors": [],
+  "results": [
+    {
+      "name": "portrait",
+      "objective": {
+        "x": 16,
+        "y": 220,
+        "width": 358,
+        "height": 107
+      },
+      "prompt": {
+        "x": 16,
+        "y": 360,
+        "width": 358,
+        "height": 44
+      },
+      "toast": {
+        "x": 48.75,
+        "y": 440,
+        "width": 292.5,
+        "height": 81
+      },
+      "toastText": "Welcome back, courier. Climb toward the first canopy rune and cast lumen at its seal."
+    },
+    {
+      "name": "landscape",
+      "objective": {
+        "x": 544,
+        "y": 90,
+        "width": 280,
+        "height": 84.5
+      },
+      "prompt": {
+        "x": 307,
+        "y": 110,
+        "width": 230,
+        "height": 60
+      },
+      "toast": {
+        "x": 124.3046875,
+        "y": 190,
+        "width": 595.390625,
+        "height": 41.59375
+      },
+      "toastText": "Welcome back, courier. Climb toward the first canopy rune and cast lumen at its seal."
+    },
+    {
+      "name": "desktop",
+      "objective": {
+        "x": 1132,
+        "y": 105,
+        "width": 280,
+        "height": 99.984375
+      },
+      "prompt": {
+        "x": 609.6640625,
+        "y": 756,
+        "width": 220.671875,
+        "height": 44
+      },
+      "toast": {
+        "x": 481.8125,
+        "y": 100,
+        "width": 476.375,
+        "height": 37
+      },
+      "toastText": "Welcome back, courier. Climb toward the first canopy rune and cast lumen at its seal."
+    }
+  ],
+  "guardianFixtures": [
+    {
+      "viewport": "portrait",
+      "guardian": 1,
+      "filename": "guardian-1-portrait.png",
+      "hudBottom": 302,
+      "heroTop": 628.3111111111111,
+      "warningCount": 2,
+      "visibleWarnings": 2,
+      "bossVisible": true,
+      "warningRendererEnabled": true,
+      "objectiveVisible": false
+    },
+    {
+      "viewport": "portrait",
+      "guardian": 2,
+      "filename": "guardian-2-portrait.png",
+      "hudBottom": 302,
+      "heroTop": 628.3111111111111,
+      "warningCount": 2,
+      "visibleWarnings": 0,
+      "bossVisible": true,
+      "warningRendererEnabled": true,
+      "objectiveVisible": false
+    },
+    {
+      "viewport": "portrait",
+      "guardian": 3,
+      "filename": "guardian-3-portrait.png",
+      "hudBottom": 302,
+      "heroTop": 628.3111111111111,
+      "warningCount": 2,
+      "visibleWarnings": 2,
+      "bossVisible": true,
+      "warningRendererEnabled": true,
+      "objectiveVisible": false
+    },
+    {
+      "viewport": "landscape",
+      "guardian": 1,
+      "filename": "guardian-1-landscape.png",
+      "hudBottom": 164.59375,
+      "heroTop": 240.5,
+      "warningCount": 2,
+      "visibleWarnings": 2,
+      "bossVisible": true,
+      "warningRendererEnabled": true,
+      "objectiveVisible": false
+    },
+    {
+      "viewport": "landscape",
+      "guardian": 2,
+      "filename": "guardian-2-landscape.png",
+      "hudBottom": 164.59375,
+      "heroTop": 240.5,
+      "warningCount": 2,
+      "visibleWarnings": 2,
+      "bossVisible": true,
+      "warningRendererEnabled": true,
+      "objectiveVisible": false
+    },
+    {
+      "viewport": "landscape",
+      "guardian": 3,
+      "filename": "guardian-3-landscape.png",
+      "hudBottom": 164.59375,
+      "heroTop": 240.5,
+      "warningCount": 2,
+      "visibleWarnings": 2,
+      "bossVisible": true,
+      "warningRendererEnabled": true,
+      "objectiveVisible": false
+    }
+  ],
+  "guardianScope": "Six explicit render fixtures, not earned campaigns, device or performance qualification."
+}

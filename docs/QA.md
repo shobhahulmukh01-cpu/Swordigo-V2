@@ -1,6 +1,14 @@
 # Emberwake — validation ledger and limits
 
-## Alpha.4 — current player-journey milestone
+## Alpha.5 — current player-polish milestone
+
+The frozen recovered alpha.5 build completed 393 Node checks, the retained 116-check simulation regression set, campaign/rush and optional-route matrices across both endings and 60/120 Hz, and four earned chapter completions with exact replay. The secret-pattern scan found no recognized findings. Final Chromium evidence passed the 54-check retained smoke suite, 13 upgrade checks, 19 persistence checks, 41 first-load/integrity checks, seven update/rollback checks, native optional-chapter traversal and the 15-capture HUD gate.
+
+The source-grounded alpha.5 Chromium harness passed all six independent cases with 17 captures: desktop native settings/controller-label/earned-letter/import-cancel behavior; portrait and landscape trusted CDP multitouch; atlas-request failure fallback; validated synthetic ending/coda fixtures; and a render-only short-room camera fixture. The recovered harness initially exposed stale binding-close and won-import assumptions; its failed report is retained separately and is not counted as a pass. The final report is `qa/correction/next3/native-browser/report.json`. Planning and CI evidence contracts are under `docs/plan/`.
+
+Physical devices/controllers, Safari/Firefox, screen-reader and contrast qualification, frame-time performance, human challenge/discovery/pacing, owner rights and public deployment remain open. Remote GitHub Actions, Pages bytes and exact published-head verification are separate gates and must not be inferred from local results. Product identity is **1.2.0-alpha.5**; retained engine/save compatibility identifiers remain intentionally unchanged.
+
+## Alpha.4 — previous player-journey milestone
 
 Current source-bound results live in `qa/correction/next2-final/validation.json` (evidence locations and external capture digests are indexed in `EVIDENCE.md`); runtime/build/served equality and all first-load/offline asset digests are recorded in `runtime-integrity.json`. This milestone extends the existing engine/campaign, not the archived Lumenblade prototype. Product identity is **1.2.0-alpha.4**; retained engine/save compatibility identifiers are intentionally unchanged. The game footer reads the product-version meta field.
 

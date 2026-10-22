@@ -1,6 +1,6 @@
 # EMBERWAKE — The Hollow Crown
 
-## In-place upgrade: 1.2.0-alpha.4
+## In-place upgrade: 1.2.0-alpha.5
 
 This branch evolves the supplied **Emberwake 1.1.0-rc.3**, rather than replacing it. The original Canvas 2D campaign, Lyra and Aster, Moonroot Vale/Cinderworks/Hollow Spire, painted realm plates, six world-runes, three guardians, mercy/rekindle endings and Echo Gauntlet remain the foundation. `Swordigo-V2` is the repository name, not an official Swordigo sequel or a claim of affiliation with Touch Foo.
 
@@ -13,6 +13,8 @@ This branch evolves the supplied **Emberwake 1.1.0-rc.3**, rather than replacing
 - Simulation-owned travel, death-terminal handling, combined-action priorities, expired-projectile authority and hardened persistence/offline update handling.
 
 Both original endings and the Echo Gauntlet remain playable. **The First Unwritten Day** adds four optional rooms—Millpond Irrigation Terraces, Cooling Gallery, Rootcellar Charter Desk and Star Archive—through five bidirectional links. Water Remembers and Summer Coal pay 60/80 embers once per saved journey; Charter/testimony remain optional. Rootbinding, marked-vent Cinderseal and same-scene Dawnstep derive from existing restored-heart facts; basic campaign moves remain available. After either original ending, choose **Continue deliveries** explicitly; the opt-in Archivist Engine and chapter completion never rewrite that ending or its recorded time/deaths.
+
+**Alpha.5 player polish:** ranged sentinels and wisps commit a truthful aim direction during windup, a fresh sword tap can buffer only in the final 80 ms of recovery, and pending combat input is cancelled at defensive, damage, pause and journey boundaries. A bounded horizontal camera adds velocity-based look-ahead without changing simulation or save state. The existing Moonroot letter can be reread through a current-journey correspondence journal without replaying rewards. Touch adds a dedicated DOWN control; modal focus isolation and native import-cancel restoration are explicit. Terrain faces use an original cached material atlas with a complete low-quality/missing/decode-failure fallback, while HUD labels remain bounded around actors and controls. CI evidence is checkout/build/browser bound, fail-closed and limited to two sanitized JSON artifacts. See `docs/plan/ALPHA5-PLAYER-POLISH.md`.
 
 **Alpha.4 player journey:** one contextual next action follows the current journey, with explicit optional delivery tracking and descriptive door/map leads. Shrine purchases preview their real current/next stats. After earning the Archivist victory, a return lamp provides a useful safe shortcut without healing or changing the original ending. Four original optional-room paintings distinguish the mill terraces, cooling chamber, cellar and Archive while all three main-world paintings remain intact. Completed saves offer explicit continuation; the open letter acknowledges only actual repairs. Existing save authority and rewards remain unchanged. See `docs/plan/ALPHA4-PLAYER-JOURNEY.md` for the council decisions and retained qualification boundaries.
 
@@ -66,7 +68,7 @@ Export valuable journeys outside the browser. Imports/new-run replacement first 
 ## Architecture and archived experiment
 
 - `assets/scripts/worlds.js`, `engine.js`, `core-v11.js`: original campaign, simulation, V3 validation and hardening.
-- `client.js`, `controls-v11.js`, `journey-v11.js`, `realm-v11.js`: Canvas/audio/UI, input, persistence/recovery and realm presentation.
+- `client.js`, `camera-v13.js`, `controls-v11.js`, `journey-v11.js`, `realm-v11.js`: Canvas/audio/UI, render-only camera, input, persistence/recovery and realm presentation.
 - `chapter-data.js`, `chapter-save.js`, `chapter-runtime.js`: optional authored scenes, bounded facts/rewards, V4 envelope and Game-owned scene authority/cache.
 - `encounters-v12.js`, `journal-v12.js`, `presentation-v12.js` and `assets/styles/sequel-v12.css`: guardian, derived-story and in-place presentation extensions.
 - `docs/correction/`: independent council reviews, decisions and [tool evidence](docs/correction/TOOL-EVIDENCE.md).

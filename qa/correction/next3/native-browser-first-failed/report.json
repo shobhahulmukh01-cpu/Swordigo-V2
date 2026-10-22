@@ -1,0 +1,995 @@
+{
+  "kind": "Alpha.5 source-grounded native Chromium acceptance",
+  "pass": false,
+  "startedAt": "2026-10-21T17:02:01.048Z",
+  "base": "http://127.0.0.1:4173/",
+  "harnessSHA256": "b9f2d00b0f2a31f785b3e28b4a6e4391b1bd591eb9bf3e38a9d22afa91134898",
+  "cases": [
+    {
+      "name": "desktop-native",
+      "scope": "Fresh desktop UI; native settings, input-earned cache and correspondence reader",
+      "status": "fail",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "titleIsolation": {
+        "kind": "settings",
+        "modalInert": false,
+        "titleInert": true,
+        "worldInert": true,
+        "liveInert": false,
+        "importInert": false,
+        "importInModal": true,
+        "importHidden": true,
+        "focusInside": true
+      },
+      "error": "locator.click: Error: strict mode violation: locator('#modal [data-act=\"close\"]') resolved to 2 elements:\n    1) <button id=\"modal-close\" data-act=\"close\" class=\"modal-close\" aria-label=\"Close dialog\">×</button> aka getByRole('button', { name: 'Close dialog' })\n    2) <button class=\"primary\" data-primary=\"\" data-act=\"close\">Done →</button> aka getByRole('button', { name: 'Done →' })\n\nCall log:\n  - waiting for locator('#modal [data-act=\"close\"]')\n\n    at click (/data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:96:22)\n    at desktop (/data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:355:9)\n    at async runCase (/data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:810:5)\n    at async file:///data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:839:3",
+      "observation": {
+        "status": "menu",
+        "modal": "bindings",
+        "paused": false,
+        "running": true,
+        "p": null,
+        "near": null,
+        "held": [],
+        "activeElement": "bind-change"
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:02:11.024Z"
+    },
+    {
+      "name": "portrait-touch",
+      "scope": "Fresh 390x844 UI; CDP-dispatched touch, held drop and cancelled multitouch recovery",
+      "status": "pass",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "atlas": {
+        "quality": "high",
+        "ready": true,
+        "failed": false,
+        "width": 1264,
+        "height": 848,
+        "path": "/assets/art/terrain-materials-v13.png",
+        "selected": true
+      },
+      "layout": {
+        "overflow": false,
+        "touch": [
+          {
+            "action": "left",
+            "x": 16,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "left",
+            "onscreen": true
+          },
+          {
+            "action": "right",
+            "x": 70,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "right",
+            "onscreen": true
+          },
+          {
+            "action": "drop",
+            "x": 43,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "drop",
+            "onscreen": true
+          },
+          {
+            "action": "parry",
+            "x": 218,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "parry",
+            "onscreen": true
+          },
+          {
+            "action": "heal",
+            "x": 272,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "heal",
+            "onscreen": true
+          },
+          {
+            "action": "dash",
+            "x": 326,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "dash",
+            "onscreen": true
+          },
+          {
+            "action": "spell",
+            "x": 218,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "spell",
+            "onscreen": true
+          },
+          {
+            "action": "attack",
+            "x": 272,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "attack",
+            "onscreen": true
+          },
+          {
+            "action": "jump",
+            "x": 326,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "jump",
+            "onscreen": true
+          }
+        ]
+      },
+      "touchLabels": {
+        "mode": "touch",
+        "jump": "Tap JUMP",
+        "attack": "Tap STRIKE",
+        "drop": "Hold DOWN",
+        "guide": "Tap JUMP · DOUBLE-JUMPTap STRIKE chains strikes · Tap GUARD precision guardTap LUMEN unseals world-runes",
+        "badges": [
+          "Tap STRIKE",
+          "Tap LUMEN",
+          "Tap DASH",
+          "Tap FLASK",
+          "Tap GUARD"
+        ]
+      },
+      "pointerTrace": [
+        {
+          "type": "pointerdown",
+          "pointerId": 7,
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 8,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 9,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerup",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 10,
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 11,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 12,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        },
+        {
+          "type": "pointerup",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        }
+      ],
+      "touch": {
+        "source": "Chromium CDP Input.dispatchTouchEvent; trusted DOM touch pointer events",
+        "simultaneousHeld": {
+          "held": [
+            [
+              "pointer:7",
+              "right"
+            ],
+            [
+              "pointer:8",
+              "drop"
+            ]
+          ],
+          "axis": 1,
+          "drop": true
+        },
+        "cancelledRecovery": true,
+        "modalClear": true,
+        "freshJumpAfterCancel": true,
+        "platformDescent": "unrun; no earned one-way shelf reached"
+      },
+      "layoutAfter": {
+        "overflow": false,
+        "touch": [
+          {
+            "action": "left",
+            "x": 16,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "left",
+            "onscreen": true
+          },
+          {
+            "action": "right",
+            "x": 70,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "right",
+            "onscreen": true
+          },
+          {
+            "action": "drop",
+            "x": 43,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "drop",
+            "onscreen": true
+          },
+          {
+            "action": "parry",
+            "x": 218,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "parry",
+            "onscreen": true
+          },
+          {
+            "action": "heal",
+            "x": 272,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "heal",
+            "onscreen": true
+          },
+          {
+            "action": "dash",
+            "x": 326,
+            "y": 726,
+            "width": 48,
+            "height": 52,
+            "centerAction": "dash",
+            "onscreen": true
+          },
+          {
+            "action": "spell",
+            "x": 218,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "spell",
+            "onscreen": true
+          },
+          {
+            "action": "attack",
+            "x": 272,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "attack",
+            "onscreen": true
+          },
+          {
+            "action": "jump",
+            "x": 326,
+            "y": 784,
+            "width": 48,
+            "height": 52,
+            "centerAction": "jump",
+            "onscreen": true
+          }
+        ]
+      },
+      "keyboardLabels": {
+        "mode": "keyboard",
+        "jump": "Space",
+        "attack": "J",
+        "drop": "S",
+        "guide": "Tap JUMP · DOUBLE-JUMPTap STRIKE chains strikes · Tap GUARD precision guardTap LUMEN unseals world-runes",
+        "badges": [
+          "Tap STRIKE",
+          "Tap LUMEN",
+          "Tap DASH",
+          "Tap FLASK",
+          "Tap GUARD"
+        ]
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:02:13.466Z"
+    },
+    {
+      "name": "landscape-touch",
+      "scope": "Fresh 844x390 UI; CDP-dispatched touch, held drop and cancelled multitouch recovery",
+      "status": "pass",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "atlas": {
+        "quality": "high",
+        "ready": true,
+        "failed": false,
+        "width": 1264,
+        "height": 848,
+        "path": "/assets/art/terrain-materials-v13.png",
+        "selected": true
+      },
+      "layout": {
+        "overflow": false,
+        "touch": [
+          {
+            "action": "left",
+            "x": 16,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "left",
+            "onscreen": true
+          },
+          {
+            "action": "right",
+            "x": 70,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "right",
+            "onscreen": true
+          },
+          {
+            "action": "drop",
+            "x": 124,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "drop",
+            "onscreen": true
+          },
+          {
+            "action": "parry",
+            "x": 510,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "parry",
+            "onscreen": true
+          },
+          {
+            "action": "heal",
+            "x": 564,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "heal",
+            "onscreen": true
+          },
+          {
+            "action": "dash",
+            "x": 618,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "dash",
+            "onscreen": true
+          },
+          {
+            "action": "spell",
+            "x": 672,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "spell",
+            "onscreen": true
+          },
+          {
+            "action": "attack",
+            "x": 726,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "attack",
+            "onscreen": true
+          },
+          {
+            "action": "jump",
+            "x": 780,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "jump",
+            "onscreen": true
+          }
+        ]
+      },
+      "touchLabels": {
+        "mode": "touch",
+        "jump": "Tap JUMP",
+        "attack": "Tap STRIKE",
+        "drop": "Hold DOWN",
+        "guide": "Tap JUMP · DOUBLE-JUMPTap STRIKE chains strikes · Tap GUARD precision guardTap LUMEN unseals world-runes",
+        "badges": [
+          "Tap STRIKE",
+          "Tap LUMEN",
+          "Tap DASH",
+          "Tap FLASK",
+          "Tap GUARD"
+        ]
+      },
+      "pointerTrace": [
+        {
+          "type": "pointerdown",
+          "pointerId": 7,
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 8,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 7,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 8,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 9,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerup",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 9,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 10,
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 11,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 10,
+          "action": "right",
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointercancel",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 11,
+          "action": "drop",
+          "trusted": true
+        },
+        {
+          "type": "pointerdown",
+          "pointerId": 12,
+          "trusted": true
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        },
+        {
+          "type": "pointerup",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerId": 12,
+          "action": "jump",
+          "trusted": true
+        }
+      ],
+      "touch": {
+        "source": "Chromium CDP Input.dispatchTouchEvent; trusted DOM touch pointer events",
+        "simultaneousHeld": {
+          "held": [
+            [
+              "pointer:7",
+              "right"
+            ],
+            [
+              "pointer:8",
+              "drop"
+            ]
+          ],
+          "axis": 1,
+          "drop": true
+        },
+        "cancelledRecovery": true,
+        "modalClear": true,
+        "freshJumpAfterCancel": true,
+        "platformDescent": "unrun; no earned one-way shelf reached"
+      },
+      "layoutAfter": {
+        "overflow": false,
+        "touch": [
+          {
+            "action": "left",
+            "x": 16,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "left",
+            "onscreen": true
+          },
+          {
+            "action": "right",
+            "x": 70,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "right",
+            "onscreen": true
+          },
+          {
+            "action": "drop",
+            "x": 124,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "drop",
+            "onscreen": true
+          },
+          {
+            "action": "parry",
+            "x": 510,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "parry",
+            "onscreen": true
+          },
+          {
+            "action": "heal",
+            "x": 564,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "heal",
+            "onscreen": true
+          },
+          {
+            "action": "dash",
+            "x": 618,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "dash",
+            "onscreen": true
+          },
+          {
+            "action": "spell",
+            "x": 672,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "spell",
+            "onscreen": true
+          },
+          {
+            "action": "attack",
+            "x": 726,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "attack",
+            "onscreen": true
+          },
+          {
+            "action": "jump",
+            "x": 780,
+            "y": 326,
+            "width": 48,
+            "height": 48,
+            "centerAction": "jump",
+            "onscreen": true
+          }
+        ]
+      },
+      "keyboardLabels": {
+        "mode": "keyboard",
+        "jump": "Space",
+        "attack": "J",
+        "drop": "S",
+        "guide": "Tap JUMP · DOUBLE-JUMPTap STRIKE chains strikes · Tap GUARD precision guardTap LUMEN unseals world-runes",
+        "badges": [
+          "Tap STRIKE",
+          "Tap LUMEN",
+          "Tap DASH",
+          "Tap FLASK",
+          "Tap GUARD"
+        ]
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:02:16.185Z"
+    },
+    {
+      "name": "atlas-missing-fallback",
+      "scope": "Fresh native UI with an explicitly aborted atlas request; degraded renderer",
+      "status": "pass",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "fallback": {
+        "quality": "high",
+        "ready": false,
+        "failed": true,
+        "selected": false,
+        "canvasWidth": 1440,
+        "canvasHeight": 1000,
+        "pixels": 255,
+        "requests": 1,
+        "scope": "deliberately aborted authored atlas; inspect capture manually"
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:02:20.237Z"
+    },
+    {
+      "name": "letter-coda-fixtures",
+      "scope": "Validated synthetic imports; native approach and interact, not earned campaigns/repairs",
+      "status": "fail",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "reads": [],
+      "error": "page.waitForFunction: Timeout 10000ms exceeded.\n    at importPayload (/data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:654:14)\n    at async codas (/data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:704:3)\n    at async runCase (/data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:810:5)\n    at async file:///data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:845:3",
+      "observation": {
+        "status": "won",
+        "modal": "ending",
+        "paused": false,
+        "running": true,
+        "scene": "ch1:main:hollowspire",
+        "p": {
+          "x": 150,
+          "y": 536,
+          "vx": 0,
+          "vy": 0,
+          "hp": 100,
+          "mp": 100
+        },
+        "near": null,
+        "held": [],
+        "activeElement": "title",
+        "atlas": {
+          "ready": true,
+          "failed": false
+        }
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:02:33.275Z"
+    },
+    {
+      "name": "short-room-camera-fixture",
+      "scope": "Imported cleared-room fixture and render-only invariance, not earned traversal",
+      "status": "fail",
+      "versions": {
+        "version": "1.2.0-alpha.5",
+        "engineVersion": "1.1.0-rc.3"
+      },
+      "error": "page.waitForFunction: Timeout 10000ms exceeded.\n    at importPayload (/data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:654:14)\n    at async cameraFixture (/data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:744:3)\n    at async runCase (/data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:810:5)\n    at async file:///data/work/Swordigo-V2/tests/emberwake-alpha5-browser.mjs:846:3",
+      "observation": {
+        "status": "won",
+        "modal": "ending",
+        "paused": false,
+        "running": true,
+        "scene": "ch1:main:hollowspire",
+        "p": {
+          "x": 150,
+          "y": 536,
+          "vx": 0,
+          "vy": 0,
+          "hp": 100,
+          "mp": 100
+        },
+        "near": null,
+        "held": [],
+        "activeElement": "title",
+        "atlas": {
+          "ready": true,
+          "failed": false
+        }
+      },
+      "unhandledRejections": [],
+      "pageExceptions": [],
+      "finishedAt": "2026-10-21T17:02:45.839Z"
+    }
+  ],
+  "captures": [
+    {
+      "filename": "failure-desktop-native.png",
+      "scope": "Failed original attempt; no retry/eligibility bypass",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "native-fresh-portrait-390x844.png",
+      "scope": "Fresh native touch launch, decoded atlas; no positioned game state",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "filename": "native-held-drop-portrait-390x844.png",
+      "scope": "Trusted Chromium CDP touch pointers hold RIGHT + DOWN; not physical device or platform-descent proof",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "filename": "native-recovery-portrait-390x844.png",
+      "scope": "Fresh jump after cancelled multitouch; native active touch labels",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "filename": "native-fresh-landscape-844x390.png",
+      "scope": "Fresh native touch launch, decoded atlas; no positioned game state",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      }
+    },
+    {
+      "filename": "native-held-drop-landscape-844x390.png",
+      "scope": "Trusted Chromium CDP touch pointers hold RIGHT + DOWN; not physical device or platform-descent proof",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      }
+    },
+    {
+      "filename": "native-recovery-landscape-844x390.png",
+      "scope": "Fresh jump after cancelled multitouch; native active touch labels",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      }
+    },
+    {
+      "filename": "degraded-atlas-fallback.png",
+      "scope": "DEGRADED FALLBACK: authored atlas request deliberately aborted; human visual inspection required",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "failure-letter-coda-fixtures.png",
+      "scope": "Failed original attempt; no retry/eligibility bypass",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "failure-short-room-camera-fixture.png",
+      "scope": "Failed original attempt; no retry/eligibility bypass",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    }
+  ],
+  "limits": [
+    "No physical touch/controller, human discovery/pacing, screen-reader, Safari/Firefox or device-performance qualification.",
+    "Controller polling uses a labelled synthetic standard-gamepad event/navigator shim, not physical hardware.",
+    "Touch uses Chromium CDP Input.dispatchTouchEvent; no claim of real-device reach/comfort.",
+    "Only the first Moonroot cache is input-earned here; ending/Archive/repair/cleared-room imports are synthetic fixtures.",
+    "Touch drop proves held dispatch and cancelled-pointer recovery, not an earned one-way-platform descent.",
+    "Screenshots are evidence for individual human inspection, not an automatic visual/contrast/accessibility pass.",
+    "Camera rendering invariance is a bounded fixture; campaign and exact-replay gates remain separate."
+  ],
+  "browserVersion": "153.0.8010.12",
+  "executablePath": "/usr/local/bin/chromium",
+  "finishedAt": "2026-10-21T17:02:45.978Z"
+}
